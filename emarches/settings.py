@@ -10,7 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+import django.conf.locale
+from django.conf import global_settings
+from django.contrib.messages import constants as messages
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,13 +25,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o+4kz-=5k9u^sfziomi5*nv1y*2k4d^7auc3)&*i18l%y7%grb'
-
+SECRET_KEY = 'django-insecure-$=q4z&(cbr^o_0)v6o5=w@35$x49g*2e7g9#42%0)l#*v2r390'
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS = [
+    'www.emarches.com',
+    'emarches.com',
+    'localhost' ,
+    '127.0.0.1',
+    ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://www.emarches.com',
+    'https://www.emarches.com',
+    'http://emarches.com',
+    'https://emarches.com',
+    ]
 
 # Application definition
 
@@ -37,6 +54,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.postgres', # Needed for unaccent extension.
+
+    'base',
+    'crm',
+    'portal',
+
+    'djqscsv',
+    'allauth',
+    'allauth.account',
+    'widget_tweaks',
+    'requests',
+    'slugify',
+    'bs4',
+    'axes',
+    'django_countries',
+    'bootstrap_admin',
 ]
 
 MIDDLEWARE = [
@@ -47,14 +81,21 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+
+    "allauth.account.middleware.AccountMiddleware",
+    'axes.middleware.AxesMiddleware',
 ]
 
-ROOT_URLCONF = 'emarches.urls'
+SITE_ID = 1
+# DEFAULT_DOMAIN = "94.72.98.224"
+DEFAULT_DOMAIN  = "emarches.com"
+ROOT_URLCONF    = 'emarches.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -62,62 +103,145 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'base.context_processors.pillets',
+                'django.template.context_processors.media',
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'emarches.wsgi.application'
+AUTHENTICATION_BACKENDS = [
+    # AxesStandaloneBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
+    'axes.backends.AxesStandaloneBackend',
 
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+WSGI_APPLICATION = 'emarches.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': '94.72.98.224',
+        'PORT': 46191,
+        'NAME': "emarches",
+        'USER': "archer",
+        'PASSWORD': "Ori9imChannay#wan",
     }
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
 ]
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
+EXTRA_LANG_INFO = {
+    'zg': {
+        'bidi': False, # right-to-left ?
+        'code': 'zg',
+        'name': 'Tamazight',
+        'name_local': 'ⵜⴰⵎⴰⵣⵉⵖⵜ', #unicode codepoints
+    },
+}
+
+LANG_INFO = {**django.conf.locale.LANG_INFO, **EXTRA_LANG_INFO}
+django.conf.locale.LANG_INFO = LANG_INFO
+
+LANGUAGES = [
+    ("en", _("English")),
+    ("zg", _("Amazigh")),
+    ("ar", _("Arabic")),
+    ("fr", _("French")),
+    ("es", _("Spanish")),
+    ("de", _("German")),
+    ]
+    
+LOCALE_PATHS = [BASE_DIR / "locale", ]
+USE_THOUSAND_SEPARATOR = True
+# NUMBER_GROUPING = 3
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'account_login'
+LOGIN_REDIRECT_URL = 'base_home'
+LOGOUT_REDIRECT_URL = 'portal_cons_favs'
+
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_CHANGE_EMAIL = False
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = 'eMarches - '
+ACCOUNT_SIGNUP_FORM_HONEYPOT_FIELD = 'age'
+ACCOUNT_USERNAME_BLACKLIST = ['admin', 'owner', 'wassim', 'm777', 'mode777', 'mode-777', 'emarches', 'root', 'insi', 'system']
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+ACCOUNT_USERNAME_VALIDATORS = 'base.validators.username_ASCII_validators'
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
+# ACCOUNT_EMAIL_VERIFICATION_BY_CODE_ENABLED = True
+# ACCOUNT_EMAIL_VERIFICATION_BY_CODE_MAX_ATTEMPTS = 5
+# ACCOUNT_EMAIL_VERIFICATION_BY_CODE_TIMEOUT = 900
+# ACCOUNT_EMAIL_NOTIFICATIONS = True
+
+
+AXES_FAILURE_LIMIT = 5# Number of failed login attempts before blocking
+AXES_COOLOFF_TIME = 1# Period before failed attempts are reset (in hours)
+AXES_IGNORE_USERNAME = ['socialaccount_user']# Prevent detection of "failed" logins for password-less (e.g., social) logins
+AXES_LOCKOUT_URL = 'base_lockout' # Redirect URL for lockouts
+AXES_LOGGING = True# Optional: Store logs for audit purposes
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.mode-777.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'accounts@emarches.com'
+EMAIL_HOST_PASSWORD = 'M}eQRNn3;5i9-Yn+hmCLg1~k7kV(YD(yF{g%iO27-fzGt8yh'
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = 'accounts@emarches.com'
+
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'secondary',
+        # messages.INFO: 'alert-info',
+        # messages.SUCCESS: 'alert-success',
+        # messages.WARNING: 'alert-warning',
+        messages.ERROR: 'danger',
+ }
+
+
+COUNTRIES_FIRST = ['MA', 'FR', 'US',]
