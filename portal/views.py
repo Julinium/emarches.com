@@ -385,7 +385,6 @@ def clear_favs(request):
 
 @login_required(login_url="account_login")
 def con_get_file(request, pk=None, fn=None):
-	# print("ddddddddddddddddddddddddddddddddddddddddddddd")
 
 	if request.method != 'GET': return HttpResponse(status=403)
 	if pk == None or fn == None: return HttpResponse(status=404)
@@ -414,7 +413,7 @@ def con_get_file(request, pk=None, fn=None):
 			)
 		udf.save()
 
-		# Deprecated: Seve using Python.
+		# Deprecated: Serve using Python.
 		# with open(file_fp, 'rb') as fh:
 		# 	response = HttpResponse(fh.read(), content_type="application/zip")
 		# 	response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_fp)
