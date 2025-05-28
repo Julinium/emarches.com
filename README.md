@@ -11,4 +11,6 @@ eMarches.com is a web full stack application for the public procurement market i
 6. Fill in settings in .env
 7. Setup database backend and potentially email backend.
 8. If running for the first time against the database, migrate models and create a superuser.
+9. Test locally using "python manage.py runserver".
+10. Deploy. I'm using gunicorn and nginx.
 

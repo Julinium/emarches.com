@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load the .env file from parent directory
-env_path = PBASE_DIR / '.env'
+env_path = BASE_DIR / '.env'
 load_dotenv(dotenv_path=env_path)
 
 SECRET_KEY = os.getenv("SECRET_KEY")
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'crm',
     'portal',
 
+    'dotenv',
     'djqscsv',
     'allauth',
     'allauth.account',
