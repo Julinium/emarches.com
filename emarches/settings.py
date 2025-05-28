@@ -17,10 +17,8 @@ DEBUG = os.getenv("DEBUG_MODE") == "True"
 
 
 ALLOWED_HOSTS = ['www.emarches.com', 'emarches.com', 'localhost' , '127.0.0.1', ]
-
 CSRF_TRUSTED_ORIGINS = ['https://www.emarches.com', 'https://emarches.com', ]
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -64,7 +62,6 @@ MIDDLEWARE = [
 ]
 
 SITE_ID = 1
-
 DEFAULT_DOMAIN  = "emarches.com"
 ROOT_URLCONF    = 'emarches.urls'
 
@@ -87,14 +84,9 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    # AxesStandaloneBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
-    'axes.backends.AxesStandaloneBackend',
-
-    # Needed to login by username in Django admin, regardless of `allauth`
-    'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by email
-    'allauth.account.auth_backends.AuthenticationBackend',
+    'axes.backends.AxesStandaloneBackend', # AxesStandaloneBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
+    'django.contrib.auth.backends.ModelBackend', # Needed to login by username in Django admin, regardless of `allauth`
+    'allauth.account.auth_backends.AuthenticationBackend', # `allauth` specific authentication methods, such as login by email
 ]
 
 WSGI_APPLICATION = 'emarches.wsgi.application'
