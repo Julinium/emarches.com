@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   fill="currentColor"
+   class="bi bi-search"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="broom.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="23.38093"
+     inkscape:cx="6.714874"
+     inkscape:cy="5.4103921"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g2" />
+  <g
+     id="g2"
+     transform="matrix(-0.74555173,-0.74552971,0.74555173,-0.74552971,8.4805613,17.40124)"
+     style="stroke-width:0.948449">
+    <g
+       id="g1"
+       transform="translate(-0.13890885,0.00126847)">
+      <path
+         id="rect2"
+         style="fill:#ffffff;fill-rule:evenodd;stroke:#0d6efd;stroke-width:0.948448;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         d="m 7.9768442,7.8445569 -2.3771363,-3.95e-5 5.14e-5,6.6708906 c 8e-7,0.428881 0.344008,0.772901 0.7729019,0.772902 l 0.8313582,1.3e-5 c 0.428894,10e-7 0.7728771,-0.343994 0.7728763,-0.772876 z"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         id="rect1"
+         style="fill:#ffffff;fill-rule:evenodd;stroke:#0d6efd;stroke-width:0.948448;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;paint-order:fill markers stroke"
+         d="m 11.094899,9.9561678 c 1.032465,1.71e-5 1.863691,-0.8312091 1.863674,-1.8636739 L 12.958474,2.1578758 9.5524214,2.1578191 8.753205,4.7771798 8.1719172,2.157767 3.5138794,2.1577187 3.6626984,6.180384 2.4941774,2.1577017 0.53012567,2.157669 0.53022439,8.0922871 C 0.53024157,9.1247519 1.361495,9.9560058 2.3939595,9.956023 Z"
+         sodipodi:nodetypes="ssccccccccsss" />
+    </g>
+  </g>
+</svg>
