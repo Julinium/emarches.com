@@ -1,0 +1,4254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-19 07:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: base/templates/base/about.html:5 base/templates/base/about.html:11
+msgid "About Us"
+msgstr "Sobre Nosotros"
+
+#: base/templates/base/about.html:12
+msgid "Learn more about who we are, what we do, and our journey."
+msgstr "Aprende más sobre quiénes somos, qué hacemos y nuestro camino."
+
+#: base/templates/base/about.html:20
+msgid "Who We Are"
+msgstr "Quiénes Somos"
+
+#: base/templates/base/about.html:22
+msgid ""
+"eMarches is a growing consultancy specializing in public procurement "
+"services in Morocco. Since our establishment in 2024, we have been dedicated "
+"to helping businesses and organizations unlock opportunities in the Moroccan "
+"public procurement market."
+msgstr ""
+"eMarches es una consultoría en crecimiento especializada en servicios de "
+"contratación pública en Marruecos. Desde nuestra fundación en 2024, nos "
+"hemos dedicado a ayudar a empresas y organizaciones a desbloquear "
+"oportunidades en el mercado de contratación pública de Marruecos."
+
+#: base/templates/base/about.html:28
+msgid "The Hedgehog"
+msgstr "El Erizo"
+
+#: base/templates/base/about.html:30
+msgid ""
+"The hedgehog symbolizes intelligence, adaptability, and strategic thinking. "
+"It reflects our resourceful approach to overcoming challenges. Like the "
+"hedgehog, we achieve success through clever solutions and resilience."
+msgstr ""
+"El erizo simboliza inteligencia, adaptabilidad y pensamiento estratégico. "
+"Refleja nuestro enfoque ingenioso para superar los desafíos. Al igual que el "
+"erizo, logramos el éxito a través de soluciones inteligentes y resiliencia."
+
+#: base/templates/base/about.html:36
+msgid "Our Mission"
+msgstr "Nuestra Misión"
+
+#: base/templates/base/about.html:37
+msgid ""
+"Our mission is to simplify and streamline the public procurement process for "
+"businesses, providing them with the expertise and tools needed to achieve "
+"success. We aim to foster transparency, compliance, and efficiency, enabling "
+"our clients to thrive in this competitive sector."
+msgstr ""
+"Nuestra misión es simplificar y agilizar el proceso de contratación pública "
+"para las empresas, proporcionando la experiencia y las herramientas "
+"necesarias para lograr éxito. Nuestro objetivo es fomentar la transparencia, "
+"el cumplimiento y la eficiencia, permitiendo a nuestros clientes prosperar "
+"en este sector competitivo."
+
+#: base/templates/base/about.html:42
+msgid "Our Journey"
+msgstr "Nuestro Viaje"
+
+#: base/templates/base/about.html:44
+msgid ""
+"eMarches was founded in 2024 by a team of young talented entrepreneurs , who "
+"recognized the growing need for expert guidance in Morocco’s public "
+"procurement landscape. What started as a small consultancy has evolved into "
+"a aspiring firm, serving clients across diverse industries."
+msgstr ""
+"eMarches fue fundada en 2024 por un equipo de jóvenes emprendedores "
+"talentosos, que reconocieron la creciente necesidad de orientación experta "
+"en el panorama de la contratación pública en Marruecos. Lo que comenzó como "
+"una pequeña consultoría ha evolucionado en una firma prometedora, que "
+"atiende a clientes de diversas industrias."
+
+#: base/templates/base/about.html:50
+msgid "Our Team"
+msgstr "Nuestro Equipo"
+
+#: base/templates/base/about.html:55
+msgid "Taheri"
+msgstr "Taheri"
+
+#: base/templates/base/about.html:57
+msgid "W. Taheri"
+msgstr "W. Taheri"
+
+#: base/templates/base/about.html:58
+msgid "CEO"
+msgstr "CEO"
+
+#: base/templates/base/about.html:59
+msgid ""
+"Strategic approach to leadership and integrate of cutting-edge technologies."
+msgstr ""
+"Enfoque estratégico en liderazgo e integración de tecnologías de vanguardia."
+
+#: base/templates/base/about.html:66
+msgid "Bouhou"
+msgstr "Bouhou"
+
+#: base/templates/base/about.html:68
+msgid "A. Bouhou"
+msgstr "A. Bouhou"
+
+#: base/templates/base/about.html:69
+msgid "CRM"
+msgstr "CRM"
+
+#: base/templates/base/about.html:70
+msgid "Identifying new opportunities, developing strategic partnerships."
+msgstr ""
+"Identificando nuevas oportunidades, desarrollando asociaciones estratégicas."
+
+#: base/templates/base/about.html:77
+msgid "Sebaai"
+msgstr "Sebai"
+
+#: base/templates/base/about.html:79
+msgid "R. Sebaai"
+msgstr "R. Sebai"
+
+#: base/templates/base/about.html:80
+msgid "CTO"
+msgstr "CTO"
+
+#: base/templates/base/about.html:81
+msgid "Ability to efficiently build scalable, secure, and innovative systems."
+msgstr ""
+"Capacidad para construir sistemas escalables, seguros e innovadores de "
+"manera eficiente."
+
+#: base/templates/base/about.html:86
+msgid ""
+"And a large number of skilled people in several key roles that complement "
+"the leadership team and support the business's growth."
+msgstr ""
+"Y una gran cantidad de personas cualificadas en varios roles clave que "
+"complementan el equipo de liderazgo y apoyan el crecimiento del negocio."
+
+#: base/templates/base/about.html:91
+msgid "Our Values"
+msgstr "Nuestros Valores"
+
+#: base/templates/base/about.html:92
+msgid "Integrity"
+msgstr "Integridad"
+
+#: base/templates/base/about.html:92
+msgid "Transparency and ethical practices form the foundation of our work."
+msgstr ""
+"La transparencia y las prácticas éticas forman la base de nuestro trabajo."
+
+#: base/templates/base/about.html:93
+msgid "Excellence"
+msgstr "Excelencia"
+
+#: base/templates/base/about.html:93
+msgid "We strive for the highest standards in every project we undertake."
+msgstr ""
+"Nos esforzamos por alcanzar los más altos estándares en cada proyecto que "
+"emprendemos."
+
+#: base/templates/base/about.html:94
+msgid "Collaboration"
+msgstr "Colaboración"
+
+#: base/templates/base/about.html:94
+msgid "We build long-term partnerships based on trust and shared goals."
+msgstr ""
+"Construimos asociaciones a largo plazo basadas en la confianza y objetivos "
+"comunes."
+
+#: base/templates/base/about.html:99
+msgid "Looking Ahead"
+msgstr "Mirando hacia el Futuro"
+
+#: base/templates/base/about.html:101
+msgid ""
+"As Morocco’s public procurement sector continues to grow, eMarches is "
+"committed to staying at the forefront of this dynamic market. We aim to "
+"expand our services, embrace new technologies, and support even more "
+"businesses in achieving their goals."
+msgstr ""
+"A medida que el sector de la contratación pública de Marruecos sigue "
+"creciendo, eMarches está comprometida a mantenerse a la vanguardia de este "
+"mercado dinámico. Nuestro objetivo es expandir nuestros servicios, adoptar "
+"nuevas tecnologías y apoyar a más empresas en la consecución de sus metas."
+
+#: base/templates/base/about.html:107
+msgid "Translations status"
+msgstr "Estado de las traducciones"
+
+#: base/templates/base/about.html:136
+msgid "Translations status not found !"
+msgstr "¡Estado de las traducciones no encontrado!"
+
+#: base/templates/base/about.html:139
+msgid ""
+"You can help us improve translations or add your language if it's not "
+"already supported."
+msgstr ""
+"Puedes ayudarnos a mejorar las traducciones o agregar tu idioma si aún no "
+"está soportado."
+
+#: base/templates/base/about.html:140
+msgid ""
+"Feel free to contact us using contact details on our website. Thank you."
+msgstr ""
+"No dudes en contactarnos utilizando los detalles de contacto en nuestro "
+"sitio web. Gracias."
+
+#: base/templates/base/contact.html:5 base/templates/base/contact.html:9
+msgid "Send Us a Message"
+msgstr "Envíanos un mensaje"
+
+#: base/templates/base/contact.html:10
+msgid ""
+"Feel free to reach out to us for any inquiries or assistance. Our team is "
+"here to help you!"
+msgstr ""
+"No dudes en contactarnos para cualquier consulta o asistencia. ¡Nuestro "
+"equipo está aquí para ayudarte!"
+
+#: base/templates/base/contact.html:18
+msgid "First Name"
+msgstr "Nombre"
+
+#: base/templates/base/contact.html:22
+msgid "Your Name"
+msgstr "Tu Nombre"
+
+#: base/templates/base/contact.html:23
+msgid "Enter your name"
+msgstr "Ingresa tu nombre"
+
+#: base/templates/base/contact.html:26
+msgid "Your Email"
+msgstr "Tu Correo Electrónico"
+
+#: base/templates/base/contact.html:27
+msgid "Enter your email"
+msgstr "Ingresa tu correo electrónico"
+
+#: base/templates/base/contact.html:30
+msgid "Your Phone"
+msgstr "Tu Teléfono"
+
+#: base/templates/base/contact.html:31
+#: base/templates/base/profile_update.html:84
+msgid "Enter your phone number"
+msgstr "Ingresa tu número de teléfono"
+
+#: base/templates/base/contact.html:34
+#: base/templates/base/emails/submitted-bs.html:22
+#: base/templates/base/emails/submitted.html:20 base/views.py:126
+#: crm/templates/crm/lead_edit.html:29
+msgid "Subject"
+msgstr "Asunto"
+
+#: base/templates/base/contact.html:35
+msgid "Enter the subject"
+msgstr "Ingresa el asunto"
+
+#: base/templates/base/contact.html:38
+#: base/templates/base/emails/submitted-bs.html:23
+#: base/templates/base/emails/submitted.html:21 base/views.py:127
+#: crm/templates/crm/lead_edit.html:36
+msgid "Message"
+msgstr "Mensaje"
+
+#: base/templates/base/contact.html:39
+msgid "Write your message"
+msgstr "Escribe tu mensaje"
+
+#: base/templates/base/contact.html:40
+msgid "Remaining charcters"
+msgstr "Caracteres restantes"
+
+#: base/templates/base/contact.html:52
+msgid "Preferred Contact Method"
+msgstr "Método de contacto preferido"
+
+#: base/templates/base/contact.html:54
+msgid "Any"
+msgstr "Cualquiera"
+
+#: base/templates/base/contact.html:55
+#: base/templates/base/emails/submitted-bs.html:20
+#: base/templates/base/emails/submitted.html:18
+#: base/templates/base/includes/footer.html:64
+#: base/templates/base/includes/footer.html:72
+#: base/templates/base/includes/xxx-footer.html:37
+#: base/templates/base/includes/xxx-footer.html:40
+#: base/templates/base/profile.html:218
+#: base/templates/base/profile_update.html:91 base/views.py:124
+#: crm/templates/crm/lead_edit.html:52
+#: portal/templates/portal/con-details.html:475
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#: base/templates/base/contact.html:56
+#: base/templates/base/emails/submitted-bs.html:21
+#: base/templates/base/emails/submitted.html:19
+#: base/templates/base/includes/footer.html:49
+#: base/templates/base/includes/footer.html:57
+#: base/templates/base/includes/xxx-footer.html:31
+#: base/templates/base/includes/xxx-footer.html:34
+#: base/templates/base/profile.html:211
+#: base/templates/base/profile_update.html:85 base/views.py:125
+#: crm/templates/crm/lead_edit.html:64
+#: portal/templates/portal/con-details.html:472
+msgid "Phone"
+msgstr "Teléfono"
+
+#: base/templates/base/contact.html:57
+#: base/templates/base/includes/footer.html:79
+#: base/templates/base/includes/footer.html:88
+#: base/templates/base/includes/xxx-footer.html:43
+#: base/templates/base/includes/xxx-footer.html:46
+#: base/templates/base/profile.html:225
+#: base/templates/base/profile_update.html:97
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: base/templates/base/contact.html:58
+msgid "Telegram"
+msgstr "Telegram"
+
+#: base/templates/base/contact.html:64
+msgid "Subscribe to our newsletter"
+msgstr "Suscríbete a nuestro boletín"
+
+#: base/templates/base/contact.html:70
+msgid "Receive promotional offers from us or our partners"
+msgstr "Recibe ofertas promocionales de nosotros o nuestros socios"
+
+#: base/templates/base/contact.html:73
+msgid "Send Message"
+msgstr "Enviar mensaje"
+
+#: base/templates/base/contact_success.html:5
+#: base/templates/base/lockout.html:5 base/views.py:108
+msgid "Message submitted"
+msgstr "Mensaje enviado"
+
+#: base/templates/base/contact_success.html:8
+#: base/templates/base/emails/submitted-bs.html:3
+#: base/templates/base/emails/submitted.html:6
+msgid "Message sent"
+msgstr "Mensaje enviado"
+
+#: base/templates/base/contact_success.html:9
+#: base/templates/base/emails/submitted-bs.html:8
+#: base/templates/base/emails/submitted.html:6
+msgid "Thank You !"
+msgstr "¡Gracias!"
+
+#: base/templates/base/contact_success.html:10
+#: base/templates/base/emails/submitted-bs.html:9
+#: base/templates/base/emails/submitted.html:7
+msgid ""
+"Your message has been successfully submitted. We will get back to you "
+"shortly."
+msgstr ""
+"Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto contigo "
+"pronto."
+
+#: base/templates/base/contact_success.html:13
+#: base/templates/base/errors/400.html:16
+#: base/templates/base/errors/403.html:16
+#: base/templates/base/errors/404.html:16
+#: base/templates/base/errors/500.html:17 base/templates/base/faqs.html:176
+#: base/templates/base/includes/wip.html:10 base/templates/base/lockout.html:17
+msgid "Go Home"
+msgstr "Ir a Inicio"
+
+#: base/templates/base/contact_success.html:14 base/templates/base/faqs.html:5
+#: base/templates/base/includes/footer.html:18
+#: base/templates/base/includes/wip.html:11
+#: base/templates/base/includes/xxx-footer.html:13
+msgid "FAQs"
+msgstr "Preguntas Frecuentes"
+
+#: base/templates/base/emails/submitted-bs.html:15
+#: base/templates/base/emails/submitted.html:12
+msgid ""
+"We sent you this message because your email was used on eMarches.com contact "
+"form."
+msgstr ""
+"Te enviamos este mensaje porque tu correo electrónico fue utilizado en el "
+"formulario de contacto de eMarches.com."
+
+#: base/templates/base/emails/submitted-bs.html:17
+#: base/templates/base/emails/submitted.html:15
+msgid "Here are some details of the contact"
+msgstr "Aquí tienes algunos detalles del contacto"
+
+#: base/templates/base/emails/submitted-bs.html:19
+#: base/templates/base/emails/submitted.html:17 base/views.py:123
+#: crm/templates/crm/lead_edit.html:17
+msgid "Name"
+msgstr "Nombre"
+
+#: base/templates/base/emails/submitted-bs.html:24
+#: base/templates/base/emails/submitted.html:22
+msgid "Date and time"
+msgstr "Fecha y hora"
+
+#: base/templates/base/emails/submitted-bs.html:25
+#: base/templates/base/emails/submitted.html:23
+msgid "IP address"
+msgstr "Dirección IP"
+
+#: base/templates/base/emails/submitted-bs.html:28
+#: base/templates/base/emails/submitted.html:27
+msgid ""
+"You can safely ignore this message if you do not recognize this activity."
+msgstr "Puedes ignorar este mensaje si no reconoces esta actividad."
+
+#: base/templates/base/emails/submitted-bs.html:29
+#: base/templates/base/emails/submitted.html:28
+msgid "Replies to this email are not read."
+msgstr "Las respuestas a este correo no se leen."
+
+#: base/templates/base/emails/submitted-bs.html:31
+#: base/templates/base/emails/submitted.html:32
+msgid "Best regards,"
+msgstr "Saludos cordiales,"
+
+#: base/templates/base/emails/submitted.html:31
+msgid "You can visit our Website for more information"
+msgstr "Puedes visitar nuestro sitio web para más información"
+
+#: base/templates/base/errors/400.html:5 base/templates/base/errors/400.html:9
+msgid "Bad Request Error"
+msgstr "Error de Solicitud Incorrecta"
+
+#: base/templates/base/errors/400.html:10
+msgid "We did not understand !"
+msgstr "¡No entendimos!"
+
+#: base/templates/base/errors/400.html:11
+msgid "Our server did not understand and could not handle your request."
+msgstr "Nuestro servidor no entendió y no pudo procesar tu solicitud."
+
+#: base/templates/base/errors/400.html:17
+#: base/templates/base/errors/403.html:17
+#: base/templates/base/errors/404.html:17
+#: base/templates/base/errors/500.html:18
+#: base/templates/base/errors/unallowed.html:19
+msgid "Read FAQs"
+msgstr "Leer Preguntas Frecuentes"
+
+#: base/templates/base/errors/403.html:5 base/templates/base/errors/403.html:9
+msgid "Forbidden Error"
+msgstr "Error Prohibido"
+
+#: base/templates/base/errors/403.html:10
+msgid "That's not for you !"
+msgstr "¡Eso no es para ti!"
+
+#: base/templates/base/errors/403.html:11
+msgid "You are not authorized to access this page or resource."
+msgstr "No estás autorizado para acceder a esta página o recurso."
+
+#: base/templates/base/errors/404.html:5 base/templates/base/errors/404.html:9
+msgid "Not Found Error"
+msgstr "Error No Encontrado"
+
+#: base/templates/base/errors/404.html:10
+msgid "We don't have it !"
+msgstr "¡No lo tenemos!"
+
+#: base/templates/base/errors/404.html:11
+msgid "Our server could not find the requested page or resource."
+msgstr "Nuestro servidor no pudo encontrar la página o recurso solicitado."
+
+#: base/templates/base/errors/500.html:5
+msgid "Internal Server Error"
+msgstr "Error Interno del Servidor"
+
+#: base/templates/base/errors/500.html:9
+msgid "Internal Server Error."
+msgstr "Error Interno del Servidor."
+
+#: base/templates/base/errors/500.html:10
+msgid "This one is on us !"
+msgstr "¡Este es nuestro error!"
+
+#: base/templates/base/errors/500.html:11
+msgid ""
+"Our server run into an error and could not properly handle your request. You "
+"can help us understand what happened and correct it. Thank you"
+msgstr ""
+"Nuestro servidor encontró un error y no pudo procesar correctamente su "
+"solicitud. Puede ayudarnos a entender lo que ocurrió y corregirlo. Gracias"
+
+#: base/templates/base/errors/unallowed.html:5
+msgid "Access denied"
+msgstr "Acceso denegado"
+
+#: base/templates/base/errors/unallowed.html:8
+msgid "Access denied."
+msgstr "Acceso denegado."
+
+#: base/templates/base/errors/unallowed.html:9
+msgid "This is not for you !"
+msgstr "¡Esto no es para ti!"
+
+#: base/templates/base/errors/unallowed.html:10
+msgid ""
+"You are not permitted to access this page. Please make sure you login using "
+"the right account."
+msgstr ""
+"No tiene permiso para acceder a esta página. Asegúrese de iniciar sesión con "
+"la cuenta correcta."
+
+#: base/templates/base/errors/unallowed.html:14
+msgid "Go home"
+msgstr "Ir a casa"
+
+#: base/templates/base/errors/unallowed.html:15
+#: base/templates/base/includes/pricing.html:70
+#: base/templates/base/lockout.html:16
+msgid "Contact us"
+msgstr "Contáctanos"
+
+#: base/templates/base/errors/unallowed.html:18
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: base/templates/base/faqs.html:8
+msgid "Frequently Asked Questions"
+msgstr "Preguntas Frecuentes"
+
+#: base/templates/base/faqs.html:9
+msgid ""
+"Have a question? Chances are someone already asked it and we answered it."
+msgstr ""
+"¿Tienes una pregunta? Es probable que alguien ya la haya hecho y nosotros la "
+"hayamos respondido."
+
+#: base/templates/base/faqs.html:19
+msgid "What is public procurement?"
+msgstr "¿Qué es la contratación pública?"
+
+#: base/templates/base/faqs.html:24
+msgid ""
+"Public procurement refers to the process by which government entities and "
+"public organizations acquire goods, services, or works from private sector "
+"businesses, individuals or organizations. This process is regulated to "
+"ensure transparency, fairness, and value for taxpayers."
+msgstr ""
+"La contratación pública se refiere al proceso mediante el cual las entidades "
+"gubernamentales y las organizaciones públicas adquieren bienes, servicios o "
+"trabajos de empresas del sector privado, individuos u organizaciones. Este "
+"proceso está regulado para garantizar transparencia, equidad y valor para "
+"los contribuyentes."
+
+#: base/templates/base/faqs.html:34
+msgid "Are you afficliated to governmental entity?"
+msgstr "¿Está usted afiliado a alguna entidad gubernamental?"
+
+#: base/templates/base/faqs.html:39
+msgid ""
+"No. We are not affiliated in any way to any public or governmental entity."
+msgstr ""
+"No. No estamos afiliados de ninguna manera a ninguna entidad pública o "
+"gubernamental."
+
+#: base/templates/base/faqs.html:49
+msgid "Where do you get your data from?"
+msgstr "¿De dónde obtienen sus datos?"
+
+#: base/templates/base/faqs.html:54
+msgid ""
+"We collect data from the portal dedicated to public tenders. We debloat, "
+"aggregate and reorganize data and store it in our database."
+msgstr ""
+"Recopilamos datos del portal dedicado a las licitaciones públicas. "
+"Depuramos, agregamos y reorganizamos los datos y los almacenamos en nuestra "
+"base de datos."
+
+#: base/templates/base/faqs.html:55
+msgid ""
+"Then we use tdata from our database to provide our services in a better, "
+"more ergonomic, and more meaningful way. "
+msgstr ""
+"Luego usamos los datos de nuestra base de datos para ofrecer nuestros "
+"servicios de una manera mejor, más ergonómica y más significativa. "
+
+#: base/templates/base/faqs.html:56
+msgid ""
+"To measure a bit of the difference that it makes, you can visit the official "
+"portal preferably using a mobile. Here is the link, good luck:"
+msgstr ""
+"Para medir un poco la diferencia que hace, puede visitar el portal oficial "
+"preferentemente desde un móvil. Aquí está el enlace, ¡buena suerte!"
+
+#: base/templates/base/faqs.html:66
+msgid "How often do you update the data ?"
+msgstr "¿Con qué frecuencia actualizan los datos?"
+
+#: base/templates/base/faqs.html:71
+msgid ""
+"We are trying to be as up-to-date as we can. Our teams work hard to bring "
+"any available data update as soon as it is published."
+msgstr ""
+"Estamos tratando de mantenernos lo más actualizados posible. Nuestros "
+"equipos trabajan arduamente para traer cualquier actualización de datos "
+"disponible tan pronto como se publique."
+
+#: base/templates/base/faqs.html:72
+msgid ""
+"For now, we update the list of available Tenders every 3 hours. If the need "
+"araises in the future, we may narrow down the gap to 1 hour or less."
+msgstr ""
+"Por ahora, actualizamos la lista de licitaciones disponibles cada 3 horas. "
+"Si surge la necesidad en el futuro, podemos reducir el intervalo a 1 hora o "
+"menos."
+
+#: base/templates/base/faqs.html:82
+msgid "How accurate is the information on your website about Tenders?"
+msgstr "¿Qué tan precisa es la información sobre licitaciones en su sitio web?"
+
+#: base/templates/base/faqs.html:87
+msgid ""
+"We get information on Tenders from the official public website as fidelly as "
+"possible."
+msgstr ""
+"Obtenemos información sobre licitaciones del portal público oficial de la "
+"manera más fiel posible."
+
+#: base/templates/base/faqs.html:88
+msgid ""
+"If information on our website is wrong or inaccurate, it most probably comes "
+"from the public portal."
+msgstr ""
+"Si la información en nuestro sitio web es incorrecta o imprecisa, lo más "
+"probable es que provenga del portal público."
+
+#: base/templates/base/faqs.html:98
+msgid "How can your consultancy help my business?"
+msgstr "¿Cómo puede ayudar su consultoría a mi empresa?"
+
+#: base/templates/base/faqs.html:103
+msgid ""
+"Our consultancy specializes in guiding businesses through the complexities "
+"of public procurement in Morocco. We provide services such as market "
+"research, bid preparation, compliance support, and training to ensure your "
+"success in this competitive sector."
+msgstr ""
+"Nuestra consultoría se especializa en guiar a las empresas a través de las "
+"complejidades de la contratación pública en Marruecos. Ofrecemos servicios "
+"como investigación de mercado, preparación de licitaciones, soporte de "
+"cumplimiento y formación para asegurar su éxito en este sector competitivo."
+
+#: base/templates/base/faqs.html:113
+msgid "What industries do you work with?"
+msgstr "¿Con qué industrias trabajan?"
+
+#: base/templates/base/faqs.html:118
+msgid ""
+"We work with a wide range of industries, including construction, technology, "
+"healthcare, manufacturing, and more. Our tailored approach ensures that our "
+"services meet the unique needs of each industry."
+msgstr ""
+"Trabajamos con una amplia gama de industrias, incluida la construcción, "
+"tecnología, salud, manufactura y más. Nuestro enfoque personalizado "
+"garantiza que nuestros servicios satisfagan las necesidades únicas de cada "
+"industria."
+
+#: base/templates/base/faqs.html:128
+msgid "Do you provide training for public procurement?"
+msgstr "¿Ofrecen formación en contratación pública?"
+
+#: base/templates/base/faqs.html:133
+msgid ""
+"Yes, we offer training and workshops designed to build your team’s expertise "
+"in public procurement processes, ensuring compliance and increasing your "
+"chances of success in bidding."
+msgstr ""
+"Sí, ofrecemos capacitación y talleres diseñados para desarrollar la "
+"experiencia de su equipo en los procesos de contratación pública, asegurando "
+"el cumplimiento y aumentando sus posibilidades de éxito en las licitaciones."
+
+#: base/templates/base/faqs.html:143
+msgid "How much does your services cost?"
+msgstr "¿Cuánto cuestan sus servicios?"
+
+#: base/templates/base/faqs.html:148
+msgid "Our pricing model has three tiers."
+msgstr "Nuestro modelo de precios tiene tres niveles."
+
+#: base/templates/base/faqs.html:149
+#: base/templates/base/includes/pricing.html:12
+#: base/templates/base/includes/pricing.html:83
+msgid "Public"
+msgstr "Público"
+
+#: base/templates/base/faqs.html:149
+msgid ""
+"Access to search and limited tenders information without even an account."
+msgstr ""
+"Acceso a búsqueda e información limitada de licitaciones sin necesidad de "
+"cuenta."
+
+#: base/templates/base/faqs.html:150
+#: base/templates/base/includes/pricing.html:35
+#: base/templates/base/includes/pricing.html:84
+msgid "Startup"
+msgstr "Startup"
+
+#: base/templates/base/faqs.html:150
+msgid ""
+"Access to advanced search, unlimited tenders information, limited files "
+"downloads, favourites, ... with a free account."
+msgstr ""
+"Acceso a búsqueda avanzada, información ilimitada de licitaciones, descargas "
+"de archivos limitadas, favoritos, ... con una cuenta gratuita."
+
+#: base/templates/base/faqs.html:151
+#: base/templates/base/includes/pricing.html:58
+#: base/templates/base/includes/pricing.html:85
+msgid "Pro"
+msgstr "Pro"
+
+#: base/templates/base/faqs.html:151
+msgid ""
+"Like Startup, with free unlimited files downloads, favourites, customized "
+"notifications, ... with a paid account."
+msgstr ""
+"Como Startup, pero con descargas ilimitadas de archivos gratuitas, "
+"favoritos, notificaciones personalizadas, ... con una cuenta de pago."
+
+#: base/templates/base/faqs.html:152
+msgid ""
+"You can also purchase extra services like Technical and Regulatory support, "
+"Bidding preparation, ..."
+msgstr ""
+"También puede adquirir servicios adicionales como soporte técnico y "
+"normativo, preparación de licitaciones, ..."
+
+#: base/templates/base/faqs.html:153
+msgid ""
+"As every business is unique, we calculate the price to charge for our "
+"services based on your business needs and goals."
+msgstr ""
+"Como cada negocio es único, calculamos el precio de nuestros servicios en "
+"función de las necesidades y objetivos de su empresa."
+
+#: base/templates/base/faqs.html:163
+msgid "How do I get started with your services?"
+msgstr "¿Cómo empiezo con sus servicios?"
+
+#: base/templates/base/faqs.html:168
+msgid ""
+"Getting started is simple! Contact us through our website or give us a call. "
+"We’ll schedule an initial consultation to understand your needs and discuss "
+"how our services can help you achieve your goals."
+msgstr ""
+"Empezar es fácil. Contáctenos a través de nuestro sitio web o llámenos. "
+"Agendaremos una consulta inicial para comprender sus necesidades y discutir "
+"cómo nuestros servicios pueden ayudarlo a lograr sus objetivos."
+
+#: base/templates/base/faqs.html:174
+msgid "Question still unanswered ?"
+msgstr "¿Pregunta aún sin respuesta?"
+
+#: base/templates/base/faqs.html:175 base/templates/base/includes/hero.html:10
+#: base/templates/base/legal.html:77 base/templates/base/legal.html:135
+msgid "Contact Us"
+msgstr "Contáctanos"
+
+#: base/templates/base/home.html:5
+msgid "Home of Public Procurement Market"
+msgstr "Hogar del Mercado de Contratación Pública"
+
+#: base/templates/base/includes/banner.html:4
+msgid "Site under construction. Some features may not work correctly."
+msgstr ""
+"Sitio en construcción. Algunas funciones pueden no funcionar correctamente."
+
+#: base/templates/base/includes/carousel.html:36
+#: crm/templates/crm/favos_list.html:36 crm/templates/crm/leads_list.html:48
+#: crm/templates/crm/searchquery_detail.html:33
+#: crm/templates/crm/searchquery_list.html:53
+#: crm/templates/crm/unfavs_list.html:34
+msgid "Previous"
+msgstr "Anterior"
+
+#: base/templates/base/includes/carousel.html:40
+#: crm/templates/crm/favos_list.html:58 crm/templates/crm/leads_list.html:70
+#: crm/templates/crm/searchquery_detail.html:43
+#: crm/templates/crm/searchquery_list.html:63
+#: crm/templates/crm/unfavs_list.html:56
+msgid "Next"
+msgstr "Siguiente"
+
+#: base/templates/base/includes/empty.html:4
+msgid "Nothing to show here"
+msgstr "Nada que mostrar aquí"
+
+#: base/templates/base/includes/footer.html:17
+#: base/templates/base/includes/xxx-footer.html:12
+msgid "About"
+msgstr "Acerca de"
+
+#: base/templates/base/includes/footer.html:19
+#: base/templates/base/includes/navbar.html:51
+#: base/templates/base/includes/xxx-footer.html:14
+#: portal/templates/portal/con-details.html:465
+msgid "Contact"
+msgstr "Contacto"
+
+#: base/templates/base/includes/footer.html:20
+#: base/templates/base/includes/xxx-footer.html:15
+msgid "Legal"
+msgstr "Legal"
+
+#: base/templates/base/includes/footer.html:33
+#: base/templates/base/includes/xxx-footer.html:25
+#, fuzzy
+#| msgid "IP Address"
+msgid "Address"
+msgstr "Dirección IP"
+
+#: base/templates/base/includes/footer.html:33
+#: base/templates/base/includes/xxx-footer.html:25
+#, fuzzy
+#| msgid "59, Avenue Ibn Sina, Appt 11, Agdal, Rabat, Morocco"
+msgid "N 59, Appt, 11 Av. Ibn Sina, Rabat, Morocco"
+msgstr "59, Avenue Ibn Sina, Appt 11, Agdal, Rabat, Morocco"
+
+#: base/templates/base/includes/footer.html:42
+#: base/templates/base/includes/xxx-footer.html:28
+#, fuzzy
+#| msgid "59, Avenue Ibn Sina, Appt 11, Agdal, Rabat, Morocco"
+msgid "59, Appt 11, Av. Ibn Sina, Agdal, Rabat, Morocco"
+msgstr "59, Avenue Ibn Sina, Appt 11, Agdal, Rabat, Morocco"
+
+#: base/templates/base/includes/footer.html:95
+#: base/templates/base/includes/footer.html:104
+#: base/templates/base/includes/xxx-footer.html:49
+#: base/templates/base/includes/xxx-footer.html:52
+msgid "X"
+msgstr ""
+
+#: base/templates/base/includes/footer.html:149
+#: base/templates/base/includes/xxx-footer.html:94
+msgid "All rights reserved."
+msgstr "Todos los derechos reservados."
+
+#: base/templates/base/includes/hero.html:3
+msgid "Your next great contract"
+msgstr "Tu próximo gran contrato"
+
+#: base/templates/base/includes/hero.html:6
+msgid ""
+"eMarches is your trusted partner in navigating the Moroccan public "
+"procurement market. With expertise and dedication, we help businesses "
+"succeed."
+msgstr ""
+"eMarches es tu socio confiable para navegar en el mercado de contratación "
+"pública de Marruecos. Con experiencia y dedicación, ayudamos a las empresas "
+"a tener éxito."
+
+#: base/templates/base/includes/hero.html:9
+#: base/templates/base/includes/navbar.html:34
+#: portal/templates/portal/bdc-landing.html:16
+msgid "Tenders"
+msgstr "Licitaciones"
+
+#: base/templates/base/includes/items-count.html:3
+msgid "Items found"
+msgstr "Artículos encontrados"
+
+#: base/templates/base/includes/items-count.html:5
+msgid "Showing"
+msgstr "Mostrando"
+
+#: base/templates/base/includes/navbar.html:40
+msgid "Expiring"
+msgstr ""
+
+#: base/templates/base/includes/navbar.html:42
+msgid "Newest"
+msgstr ""
+
+#: base/templates/base/includes/navbar.html:44
+#: portal/templates/portal/cons-list.html:58
+msgid "My Favourites"
+msgstr "Mis favoritos"
+
+#: base/templates/base/includes/navbar.html:46
+#: portal/templates/portal/cons_insights.html:6
+#: portal/templates/portal/cons_insights.html:10
+msgid "Insights"
+msgstr "Perspectivas"
+
+#: base/templates/base/includes/navbar.html:47
+#: portal/templates/portal/bdc-landing.html:5
+#: portal/templates/portal/bdc-landing.html:9
+msgid "Purchase Orders"
+msgstr "Ordenes de Compra"
+
+#: base/templates/base/includes/navbar.html:50
+#: portal/templates/portal/includes/cons-legend.html:25
+msgid "Services"
+msgstr "Servicios"
+
+#: base/templates/base/includes/navbar.html:106
+msgid "Profile"
+msgstr "Perfil"
+
+#: base/templates/base/includes/navbar.html:110
+#: templates/account/password_change.html:4
+#: templates/account/password_change.html:8
+#: templates/account/password_change.html:20
+#: templates/account/password_reset_from_key.html:5
+#: templates/account/password_reset_from_key.html:12
+#: templates/account/password_reset_from_key.html:30
+#: templates/account/password_reset_from_key_done.html:5
+#: templates/account/password_reset_from_key_done.html:9
+msgid "Change Password"
+msgstr "Cambiar Contraseña"
+
+#: base/templates/base/includes/navbar.html:114 templates/account/logout.html:4
+#: templates/account/logout.html:8 templates/account/logout.html:21
+#: templates/usersessions/usersession_list.html:64
+msgid "Sign Out"
+msgstr "Cerrar sesión"
+
+#: base/templates/base/includes/navbar.html:121
+#: crm/templates/crm/supervision.html:6 crm/templates/crm/supervision.html:9
+msgid "Supervision"
+msgstr "Supervisión"
+
+#: base/templates/base/includes/navbar.html:129
+msgid "Administration"
+msgstr "Administración"
+
+#: base/templates/base/includes/navbar.html:133
+msgid "Database"
+msgstr ""
+
+#: base/templates/base/includes/navbar.html:139
+#: base/templates/base/includes/pricing.html:50
+#: templates/account/confirm_login_code.html:5
+#: templates/account/confirm_login_code.html:27 templates/account/login.html:7
+#: templates/account/login.html:11 templates/account/login.html:33
+#: templates/account/request_login_code.html:5
+#: templates/mfa/authenticate.html:6 templates/mfa/authenticate.html:24
+#: templates/openid/login.html:5 templates/openid/login.html:9
+#: templates/openid/login.html:20 templates/socialaccount/login.html:5
+#: templates/socialaccount/login_redirect.html:5
+msgid "Sign In"
+msgstr "Iniciar sesión"
+
+#: base/templates/base/includes/pricing.html:3
+msgid "Pricing"
+msgstr "Precios"
+
+#: base/templates/base/includes/pricing.html:4
+msgid "Start for free."
+msgstr "Comienza gratis."
+
+#: base/templates/base/includes/pricing.html:5
+msgid ""
+"We provide our services FREE of charges for individuals, startups and SMBs. "
+"For Entreprises, we added a paid plan with extra services all at a fraction "
+"of the price."
+msgstr ""
+"Ofrecemos nuestros servicios GRATIS para individuos, startups y PYMEs. Para "
+"empresas, hemos añadido un plan de pago con servicios adicionales a una "
+"fracción del precio."
+
+#: base/templates/base/includes/pricing.html:7
+msgid "Tailored plans."
+msgstr "Planes personalizados."
+
+#: base/templates/base/includes/pricing.html:15
+msgid "No Account"
+msgstr "Sin cuenta"
+
+#: base/templates/base/includes/pricing.html:17
+msgid "Limited Search"
+msgstr "Búsqueda limitada"
+
+#: base/templates/base/includes/pricing.html:18
+msgid "Limited Information"
+msgstr "Información limitada"
+
+#: base/templates/base/includes/pricing.html:19
+msgid "No Downloads"
+msgstr "Sin descargas"
+
+#: base/templates/base/includes/pricing.html:20
+msgid "No Notifications"
+msgstr "Sin notificaciones"
+
+#: base/templates/base/includes/pricing.html:21
+msgid "FAQ Support"
+msgstr "Soporte de preguntas frecuentes"
+
+#: base/templates/base/includes/pricing.html:22
+#: base/templates/base/includes/pricing.html:45
+msgid "No Extra Services"
+msgstr "Sin servicios adicionales"
+
+#: base/templates/base/includes/pricing.html:27
+msgid "Limited Access"
+msgstr "Búsqueda limitada"
+
+#: base/templates/base/includes/pricing.html:38
+msgid "Free Account"
+msgstr "Cuenta gratuita"
+
+#: base/templates/base/includes/pricing.html:40 base/views.py:60
+msgid "Advanced Search"
+msgstr "Búsqueda avanzada"
+
+#: base/templates/base/includes/pricing.html:41
+#: base/templates/base/includes/pricing.html:64
+msgid "All Information"
+msgstr "Toda la información"
+
+#: base/templates/base/includes/pricing.html:42
+msgid "Limited Downloads"
+msgstr "Descargas limitadas"
+
+#: base/templates/base/includes/pricing.html:43
+msgid "Standard Notifications"
+msgstr "Notificaciones estándar"
+
+#: base/templates/base/includes/pricing.html:44
+msgid "Mail Support"
+msgstr "Soporte por correo"
+
+#: base/templates/base/includes/pricing.html:48
+msgid "Browse Tenders"
+msgstr "Explorar licitaciones"
+
+#: base/templates/base/includes/pricing.html:61
+msgid "Paid Account"
+msgstr "Cuenta de pago"
+
+#: base/templates/base/includes/pricing.html:63
+msgid "Customized Search"
+msgstr "Búsqueda personalizada"
+
+#: base/templates/base/includes/pricing.html:65
+msgid "Unlimited Downloads"
+msgstr "Descargas ilimitadas"
+
+#: base/templates/base/includes/pricing.html:66
+msgid "Customized Notifications"
+msgstr "Notificaciones Personalizadas"
+
+#: base/templates/base/includes/pricing.html:67
+msgid "Phone/mail Support"
+msgstr "Soporte Telefónico/correo"
+
+#: base/templates/base/includes/pricing.html:68
+msgid "Extra Services"
+msgstr "Servicios Adicionales"
+
+#: base/templates/base/includes/pricing.html:77
+msgid "Compare plans."
+msgstr "Comparar planes."
+
+#: base/templates/base/includes/pricing.html:90
+#: portal/templates/portal/cons-list.html:49
+#: portal/templates/portal/cons-search-advanced-form.html:181
+#: portal/templates/portal/cons-search-basic-form.html:66
+msgid "Search"
+msgstr "Buscar"
+
+#: base/templates/base/includes/pricing.html:96
+msgid "Shown data"
+msgstr "Datos mostrados"
+
+#: base/templates/base/includes/pricing.html:102
+#: crm/templates/crm/supervision.html:48
+msgid "Downloads"
+msgstr "Descargas"
+
+#: base/templates/base/includes/pricing.html:108
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: base/templates/base/includes/pricing.html:114
+msgid "Support"
+msgstr "Soporte"
+
+#: base/templates/base/includes/pricing.html:120
+msgid "Extra"
+msgstr "Extra"
+
+#: base/templates/base/includes/services.html:3
+msgid "Our Services"
+msgstr "Nuestros Servicios"
+
+#: base/templates/base/includes/services.html:8
+msgid "Market Research"
+msgstr "Investigación de Mercado"
+
+#: base/templates/base/includes/services.html:9
+msgid ""
+"Identify opportunities that perfectly align with your business goals by "
+"leveraging in-depth market analysis. We examine trends, competitor activity, "
+"and emerging sectors to provide insights that drive growth and enhance your "
+"strategic decision-making."
+msgstr ""
+"Identifique oportunidades que se alineen perfectamente con los objetivos de "
+"su negocio aprovechando un análisis de mercado profundo. Examinamos "
+"tendencias, actividad de competidores y sectores emergentes para "
+"proporcionar información que impulse el crecimiento y mejore su toma de "
+"decisiones estratégicas."
+
+#: base/templates/base/includes/services.html:11
+msgid "Search Tenders"
+msgstr "Buscar Licitaciones"
+
+#: base/templates/base/includes/services.html:18
+msgid "Bid Processing"
+msgstr "Procesamiento de Ofertas"
+
+#: base/templates/base/includes/services.html:19
+msgid ""
+"Leave the complexities of bid preparation to us. From drafting compliant and "
+"competitive proposals to ensuring timely submissions, we streamline the "
+"entire process to increase your chances of success in winning tenders and "
+"contracts."
+msgstr ""
+"Deje las complejidades de la preparación de ofertas en nuestras manos. Desde "
+"la redacción de propuestas competitivas y conformes hasta garantizar la "
+"entrega oportuna, optimizamos todo el proceso para aumentar sus "
+"posibilidades de éxito en ganar licitaciones y contratos."
+
+#: base/templates/base/includes/services.html:21
+#: base/templates/base/includes/services.html:31
+#: base/templates/base/includes/services.html:41
+#: base/templates/base/includes/services.html:51
+#: base/templates/base/includes/services.html:61
+msgid "Get a quote"
+msgstr "Obtener una cotización"
+
+#: base/templates/base/includes/services.html:28
+msgid "Regulatory Support"
+msgstr "Soporte Regulatorio"
+
+#: base/templates/base/includes/services.html:29
+msgid ""
+"Navigating Morocco's complex legal framework can be daunting. We simplify "
+"the process by offering tailored guidance to ensure your business remains "
+"compliant with all regulations, saving you time and avoiding unnecessary "
+"obstacles."
+msgstr ""
+"Navegar por el complejo marco legal de Marruecos puede ser desalentador. "
+"Nosotros simplificamos el proceso ofreciendo orientación personalizada para "
+"asegurar que su negocio cumpla con todas las regulaciones, ahorrándole "
+"tiempo y evitando obstáculos innecesarios."
+
+#: base/templates/base/includes/services.html:38
+msgid "Technical Assistance"
+msgstr "Asistencia Técnica"
+
+#: base/templates/base/includes/services.html:39
+msgid ""
+"Equipping your business with the right tools and expertise is essential for "
+"success. Whether you're implementing cutting-edge technology or fine-tuning "
+"existing systems, we ensure your operations are optimized for maximum "
+"efficiency."
+msgstr ""
+"Equipar su negocio con las herramientas y conocimientos adecuados es "
+"esencial para el éxito. Ya sea que esté implementando tecnología de "
+"vanguardia o ajustando sistemas existentes, nos aseguramos de que sus "
+"operaciones estén optimizadas para obtener la máxima eficiencia."
+
+#: base/templates/base/includes/services.html:48
+msgid "Training"
+msgstr "Capacitación"
+
+#: base/templates/base/includes/services.html:49
+msgid ""
+"Empower your team with the skills and knowledge needed to thrive in public "
+"procurement. Through interactive and customized training sessions, we ensure "
+"your workforce is well-prepared to tackle procurement challenges with "
+"confidence."
+msgstr ""
+"Empodere a su equipo con las habilidades y conocimientos necesarios para "
+"triunfar en las adquisiciones públicas. A través de sesiones de capacitación "
+"interactivas y personalizadas, garantizamos que su fuerza laboral esté bien "
+"preparada para abordar los desafíos de adquisiciones con confianza."
+
+#: base/templates/base/includes/services.html:58
+msgid "Post-Award Services"
+msgstr "Servicios Post-Asignación"
+
+#: base/templates/base/includes/services.html:59
+msgid ""
+"Winning a contract is just the beginning. We help ensure successful "
+"implementation by offering support in compliance, performance monitoring, "
+"and relationship management, enabling you to deliver excellence at every "
+"stage."
+msgstr ""
+"Ganar un contrato es solo el principio. Ayudamos a asegurar una "
+"implementación exitosa ofreciendo soporte en cumplimiento, monitoreo de "
+"desempeño y gestión de relaciones, permitiéndole entregar excelencia en cada "
+"etapa."
+
+#: base/templates/base/includes/testimonials.html:3
+msgid "What Our Clients Say"
+msgstr "Lo Que Dicen Nuestros Clientes"
+
+#: base/templates/base/includes/testimonials.html:4
+msgid ""
+"Stories from clients who trusted us to navigate the public market landscape."
+msgstr ""
+"Historias de clientes que confiaron en nosotros para navegar en el panorama "
+"del mercado público."
+
+#: base/templates/base/includes/testimonials.html:12
+msgid ""
+"Working with eMarches revolutionized our approach to public market "
+"strategies. Their expertise in market dynamics and tailored guidance led to "
+"impressive growth in just six months. We couldn’t have done it without them!"
+msgstr ""
+"Trabajar con eMarches revolucionó nuestro enfoque hacia las estrategias del "
+"mercado público. Su experiencia en dinámicas de mercado y orientación "
+"personalizada nos llevó a un crecimiento impresionante en solo seis meses. "
+"¡No lo habríamos hecho sin ellos!"
+
+#: base/templates/base/includes/testimonials.html:15
+msgid "Samia B"
+msgstr "Samia B"
+
+#: base/templates/base/includes/testimonials.html:15
+msgid "Atlanstic Solutions"
+msgstr "Atlanstic Solutions"
+
+#: base/templates/base/includes/testimonials.html:23
+msgid ""
+"The team at eMarches helped us navigate the complexities of entering new "
+"markets. Their expertise was invaluable, and their proactive communication "
+"made all the difference. We are now in a much stronger position to take on "
+"the competition."
+msgstr ""
+"El equipo de eMarches nos ayudó a navegar por las complejidades de entrar a "
+"nuevos mercados. Su experiencia fue invaluable, y su comunicación proactiva "
+"hizo toda la diferencia. Ahora estamos en una posición mucho más fuerte para "
+"enfrentar a la competencia."
+
+#: base/templates/base/includes/testimonials.html:26
+msgid "Rachid M"
+msgstr "Rachid M"
+
+#: base/templates/base/includes/testimonials.html:26
+msgid "SaharaNgeoce"
+msgstr "SaharaNgeoce"
+
+#: base/templates/base/includes/testimonials.html:34
+msgid ""
+"From consultation to market strategy, eMarches provided valuable insights "
+"and practical solutions. Their data-driven approach gave us the confidence "
+"to make bold decisions. Highly recommended!"
+msgstr ""
+"Desde la consulta hasta la estrategia de mercado, eMarches proporcionó "
+"información valiosa y soluciones prácticas. Su enfoque basado en datos nos "
+"dio la confianza para tomar decisiones audaces. ¡Altamente recomendados!"
+
+#: base/templates/base/includes/testimonials.html:37
+msgid "Mohssin K"
+msgstr "Mohssin K"
+
+#: base/templates/base/includes/testimonials.html:37
+msgid "Archiectop Services"
+msgstr "Archiectop Services"
+
+#: base/templates/base/includes/testimonials.html:45
+msgid ""
+"eMarches stands out for their deep understanding of our industry challenges. "
+"They refined our messaging and created impactful strategies that resonated "
+"in the public market. Their support has been a game-changer."
+msgstr ""
+"eMarches destaca por su profundo entendimiento de los desafíos de nuestra "
+"industria. Refinaron nuestro mensaje y crearon estrategias impactantes que "
+"resonaron en el mercado público. Su apoyo ha sido un cambio total."
+
+#: base/templates/base/includes/testimonials.html:48
+msgid "  Najim W"
+msgstr "  Najim W"
+
+#: base/templates/base/includes/testimonials.html:48
+msgid "CKFG SA"
+msgstr "CKFG SA"
+
+#: base/templates/base/includes/testimonials.html:56
+msgid ""
+"Ready to see what we can do for you? Contact us today to start your journey "
+"to success in the public market!"
+msgstr ""
+"¿Listo para ver lo que podemos hacer por usted? ¡Contáctenos hoy mismo para "
+"comenzar su viaje hacia el éxito en el mercado público!"
+
+#: base/templates/base/includes/testimonials.html:57
+msgid "Get in Touch"
+msgstr "Ponte en contacto"
+
+#: base/templates/base/includes/tutorial.html:4
+msgid "Watch our video"
+msgstr "Mire nuestro video"
+
+#: base/templates/base/includes/tutorial.html:5
+msgid ""
+"Discover the key features of our platform and learn how to make the most out "
+"of it to achieve your goals effortlessly."
+msgstr ""
+"Descubra las características clave de nuestra plataforma y aprenda cómo "
+"sacar el máximo provecho para lograr sus objetivos sin esfuerzo."
+
+#: base/templates/base/includes/tutorial.html:5
+msgid ""
+"The right video will be available soon as this one is only a placeholder."
+msgstr ""
+"El video correcto estará disponible pronto, ya que este es solo un marcador "
+"de posición."
+
+#: base/templates/base/includes/tutorial.html:10
+msgid "Your browser does not support the video tag."
+msgstr "Su navegador no es compatible con la etiqueta de video."
+
+#: base/templates/base/includes/wip.html:3
+msgid "Work in progress."
+msgstr "Trabajo en progreso."
+
+#: base/templates/base/includes/wip.html:4
+msgid "This page is under construction. It will be available soon."
+msgstr "Esta página está en construcción. Estará disponible pronto."
+
+#: base/templates/base/includes/xxx-footer.html:64
+msgid "Made with love"
+msgstr ""
+
+#: base/templates/base/includes/xxx-footer.html:76
+#: base/templates/base/includes/xxx-footer.html:80
+msgid "Portfolio"
+msgstr ""
+
+#: base/templates/base/legal.html:5 base/templates/base/legal.html:9
+#: base/templates/base/legal.html:11
+msgid "Legal Information"
+msgstr "Información Legal"
+
+#: base/templates/base/legal.html:12
+msgid ""
+"This page provides our essential legal information. Please review it to "
+"understand your rights and our commitments."
+msgstr ""
+"Esta página proporciona nuestra información legal esencial. Por favor, "
+"revísela para entender sus derechos y nuestros compromisos."
+
+#: base/templates/base/legal.html:17 base/templates/base/legal.html:28
+msgid "Privacy Policy"
+msgstr "Política de Privacidad"
+
+#: base/templates/base/legal.html:20 base/templates/base/legal.html:86
+msgid "Terms of Service"
+msgstr "Términos de Servicio"
+
+#: base/templates/base/legal.html:23 base/templates/base/legal.html:143
+msgid "Guarantee"
+msgstr "Garantía"
+
+#: base/templates/base/legal.html:30
+msgid ""
+"At eMarches.com, we value your privacy and are committed to safeguarding "
+"your personal information. This Privacy Policy outlines the types of "
+"information we collect, how we use it, and the measures we take to ensure "
+"your data is handled securely and responsibly."
+msgstr ""
+"En eMarches.com, valoramos su privacidad y estamos comprometidos a proteger "
+"su información personal. Esta Política de Privacidad describe los tipos de "
+"información que recopilamos, cómo la usamos y las medidas que tomamos para "
+"asegurar que sus datos sean manejados de manera segura y responsable."
+
+#: base/templates/base/legal.html:34
+msgid "Information We Collect"
+msgstr "Información que Recopilamos"
+
+#: base/templates/base/legal.html:35
+msgid ""
+"We only collect personal information explicitly provided by you. Examples "
+"include your name, email address, phone number, and any other details you "
+"submit through our contact forms or other interactions."
+msgstr ""
+"Solo recopilamos información personal proporcionada explícitamente por "
+"usted. Ejemplos incluyen su nombre, dirección de correo electrónico, número "
+"de teléfono y cualquier otro dato que envíe a través de nuestros formularios "
+"de contacto u otras interacciones."
+
+#: base/templates/base/legal.html:36
+msgid "For security purposes, we may also collect:"
+msgstr "Por motivos de seguridad, también podemos recopilar:"
+
+#: base/templates/base/legal.html:38
+msgid "IP Address: Used to ensure safe access and prevent fraudulent activity."
+msgstr ""
+"Dirección IP: Usada para garantizar un acceso seguro y prevenir actividades "
+"fraudulentas."
+
+#: base/templates/base/legal.html:39
+msgid ""
+"User-Agent Information: A string sent by your browser or device that helps "
+"identify the type of device, operating system, and browser being used."
+msgstr ""
+"Información del Agente de Usuario: Una cadena enviada por su navegador o "
+"dispositivo que ayuda a identificar el tipo de dispositivo, sistema "
+"operativo y navegador utilizados."
+
+#: base/templates/base/legal.html:44
+msgid "Use of Collected Data"
+msgstr "Uso de los Datos Recopilados"
+
+#: base/templates/base/legal.html:45
+msgid ""
+"The information you provide is used solely for the purposes for which it was "
+"submitted, such as responding to inquiries or providing requested services. "
+"In addition:"
+msgstr ""
+"La información que usted proporciona se utiliza únicamente para los fines "
+"para los cuales fue enviada, como responder consultas o proporcionar "
+"servicios solicitados. Además:"
+
+#: base/templates/base/legal.html:47
+msgid ""
+"We may send you commercial offers if, and only if, you have explicitly "
+"consented by checking the relevant box on our forms (this box is unchecked "
+"by default)."
+msgstr ""
+"Podemos enviarle ofertas comerciales si, y solo si, ha dado su "
+"consentimiento explícito marcando la casilla correspondiente en nuestros "
+"formularios (esta casilla está desmarcada por defecto)."
+
+#: base/templates/base/legal.html:48
+msgid ""
+"We do not sell, trade, or share your data with third parties for marketing "
+"purposes."
+msgstr ""
+"No vendemos, intercambiamos ni compartimos sus datos con terceros para fines "
+"de marketing."
+
+#: base/templates/base/legal.html:53
+msgid "Data Security"
+msgstr "Seguridad de los Datos"
+
+#: base/templates/base/legal.html:54
+msgid ""
+"We take every reasonable measure to protect your personal information. This "
+"includes implementing technical and organizational safeguards to prevent "
+"unauthorized access, loss, or misuse of data."
+msgstr ""
+"Tomamos todas las medidas razonables para proteger su información personal. "
+"Esto incluye la implementación de salvaguardias técnicas y organizativas "
+"para prevenir el acceso no autorizado, la pérdida o el uso indebido de los "
+"datos."
+
+#: base/templates/base/legal.html:58
+msgid "User Rights"
+msgstr "Derechos del Usuario"
+
+#: base/templates/base/legal.html:59
+msgid ""
+"You have the right to control how your data is used. Specifically, you may:"
+msgstr ""
+"Usted tiene el derecho de controlar cómo se utiliza su información. "
+"Específicamente, puede:"
+
+#: base/templates/base/legal.html:61
+msgid "Opt out of receiving promotional communications at any time."
+msgstr ""
+"Darse de baja de recibir comunicaciones promocionales en cualquier momento."
+
+#: base/templates/base/legal.html:62
+msgid ""
+"Request access to, correction of, or deletion of your personal data, subject "
+"to applicable legal obligations."
+msgstr ""
+"Solicitar acceso, corrección o eliminación de sus datos personales, sujeto a "
+"las obligaciones legales aplicables."
+
+#: base/templates/base/legal.html:67
+msgid "Compliance with Laws"
+msgstr "Cumplimiento de las Leyes"
+
+#: base/templates/base/legal.html:68
+msgid ""
+"We handle all user data in accordance with applicable laws and regulations "
+"in Morocco."
+msgstr ""
+"Manejamos todos los datos de los usuarios de acuerdo con las leyes y "
+"regulaciones aplicables en Marruecos."
+
+#: base/templates/base/legal.html:72
+msgid "Changes to this Policy"
+msgstr "Cambios en esta política"
+
+#: base/templates/base/legal.html:73
+msgid ""
+"We reserve the right to update this Privacy Policy to reflect changes in our "
+"practices or legal requirements. Updates will be communicated clearly and "
+"will take effect immediately upon publication."
+msgstr ""
+"Nos reservamos el derecho de actualizar esta Política de Privacidad para "
+"reflejar cambios en nuestras prácticas o requisitos legales. Las "
+"actualizaciones serán comunicadas claramente y entrarán en vigor "
+"inmediatamente después de su publicación."
+
+#: base/templates/base/legal.html:78
+msgid ""
+"If you have any questions or concerns about this Privacy Policy or how we "
+"handle your data, please contact us at"
+msgstr ""
+"Si tiene alguna pregunta o inquietud sobre esta Política de Privacidad o "
+"cómo manejamos sus datos, comuníquese con nosotros en"
+
+#: base/templates/base/legal.html:81 base/templates/base/legal.html:139
+#: base/templates/base/legal.html:176
+msgid "Effective Date:"
+msgstr "Fecha de vigencia:"
+
+#: base/templates/base/legal.html:87
+msgid ""
+"These Terms of Service ('Terms') govern your use of our website and "
+"services. By accessing or using our website, you agree to these Terms. "
+"Please read them carefully."
+msgstr ""
+"Estos Términos de Servicio ('Términos') rigen su uso de nuestro sitio web y "
+"servicios. Al acceder o utilizar nuestro sitio web, usted acepta estos "
+"Términos. Por favor, léalos cuidadosamente."
+
+#: base/templates/base/legal.html:90
+msgid "Use of the Website"
+msgstr "Uso del sitio web"
+
+#: base/templates/base/legal.html:91
+msgid ""
+"Our website and its content are provided for informational and personal use "
+"only. You agree to use the website in compliance with all applicable laws "
+"and regulations. You must not:"
+msgstr ""
+"Nuestro sitio web y su contenido se proporcionan solo para uso informativo y "
+"personal. Usted acepta utilizar el sitio web de acuerdo con todas las leyes "
+"y regulaciones aplicables. No debe:"
+
+#: base/templates/base/legal.html:93
+msgid "Engage in any unlawful or fraudulent activity."
+msgstr "Participar en actividades ilegales o fraudulentas."
+
+#: base/templates/base/legal.html:94
+msgid ""
+"Disrupt or attempt to interfere with the website’s functionality or security."
+msgstr ""
+"Interrumpir o intentar interferir con la funcionalidad o seguridad del sitio "
+"web."
+
+#: base/templates/base/legal.html:95
+msgid ""
+"Copy, reproduce, or distribute any content without our explicit consent."
+msgstr ""
+"Copiar, reproducir o distribuir cualquier contenido sin nuestro "
+"consentimiento explícito."
+
+#: base/templates/base/legal.html:100
+msgid "Intellectual Property"
+msgstr "Propiedad intelectual"
+
+#: base/templates/base/legal.html:101
+msgid ""
+"All content on this website, including text, images, graphics, logos, and "
+"code, is our property or licensed to us. Unauthorized use of this content is "
+"strictly prohibited."
+msgstr ""
+"Todo el contenido de este sitio web, incluyendo texto, imágenes, gráficos, "
+"logotipos y código, es nuestra propiedad o está licenciado a nosotros. El "
+"uso no autorizado de este contenido está estrictamente prohibido."
+
+#: base/templates/base/legal.html:105
+msgid "Third-Party Links"
+msgstr "Enlaces de terceros"
+
+#: base/templates/base/legal.html:106
+msgid ""
+"Our website may contain links to third-party websites. These links are "
+"provided for convenience only. We are not responsible for the content, "
+"policies, or practices of third-party websites, and your use of those "
+"websites is at your own risk."
+msgstr ""
+"Nuestro sitio web puede contener enlaces a sitios web de terceros. Estos "
+"enlaces se proporcionan solo por conveniencia. No somos responsables del "
+"contenido, políticas o prácticas de los sitios web de terceros, y el uso de "
+"dichos sitios web es bajo su propio riesgo."
+
+#: base/templates/base/legal.html:110
+msgid "Disclaimer of Warranties"
+msgstr "Descargo de garantías"
+
+#: base/templates/base/legal.html:111
+msgid ""
+"We provide this website on an 'as is' and 'as available' basis. We do not "
+"guarantee that the website will be error-free, secure, or uninterrupted. To "
+"the fullest extent permitted by law, we disclaim all warranties, express or "
+"implied."
+msgstr ""
+"Proporcionamos este sitio web 'tal como está' y 'según disponibilidad'. No "
+"garantizamos que el sitio web esté libre de errores, sea seguro o "
+"ininterrumpido. En la medida máxima permitida por la ley, renunciamos a "
+"todas las garantías, expresas o implícitas."
+
+#: base/templates/base/legal.html:115
+msgid "Limitation of Liability"
+msgstr "Limitación de responsabilidad"
+
+#: base/templates/base/legal.html:116
+msgid ""
+"We are not liable for any direct, indirect, incidental, or consequential "
+"damages arising from your use of our website or services, even if we have "
+"been advised of the possibility of such damages."
+msgstr ""
+"No somos responsables de daños directos, indirectos, incidentales o "
+"consecuentes derivados de su uso de nuestro sitio web o servicios, incluso "
+"si se nos ha informado de la posibilidad de dichos daños."
+
+#: base/templates/base/legal.html:120
+msgid "Termination"
+msgstr "Terminación"
+
+#: base/templates/base/legal.html:121
+msgid ""
+"We reserve the right to terminate your access to our website at any time, "
+"without notice, for any reason, including breach of these Terms."
+msgstr ""
+"Nos reservamos el derecho de terminar su acceso a nuestro sitio web en "
+"cualquier momento, sin previo aviso, por cualquier motivo, incluyendo el "
+"incumplimiento de estos Términos."
+
+#: base/templates/base/legal.html:125
+msgid "Governing Law"
+msgstr "Ley aplicable"
+
+#: base/templates/base/legal.html:126
+msgid ""
+"These Terms are governed by the laws of Morocco. Any disputes related to "
+"these Terms will be resolved exclusively in the courts of Morocco."
+msgstr ""
+"Estos Términos están regidos por las leyes de Marruecos. Cualquier disputa "
+"relacionada con estos Términos se resolverá exclusivamente en los tribunales "
+"de Marruecos."
+
+#: base/templates/base/legal.html:130
+msgid "Changes to the Terms"
+msgstr "Cambios en los Términos"
+
+#: base/templates/base/legal.html:131
+msgid ""
+"We may update these Terms from time to time. If we make significant changes, "
+"we will notify you by posting the updated Terms on this page. Continued use "
+"of the website after changes constitutes your acceptance of the revised "
+"Terms."
+msgstr ""
+"Podemos actualizar estos Términos de vez en cuando. Si realizamos cambios "
+"significativos, le notificaremos publicando los Términos actualizados en "
+"esta página. El uso continuado del sitio web después de los cambios "
+"constituye su aceptación de los Términos revisados."
+
+#: base/templates/base/legal.html:136
+msgid ""
+"If you have any questions or concerns about these Terms, please contact us at"
+msgstr ""
+"Si tiene alguna pregunta o inquietud sobre estos Términos, comuníquese con "
+"nosotros en"
+
+#: base/templates/base/legal.html:144
+msgid ""
+"We are committed to providing high-quality services and ensuring customer "
+"satisfaction. Our guarantee policy outlines the terms under which we stand "
+"by our commitments."
+msgstr ""
+"Nos comprometemos a proporcionar servicios de alta calidad y garantizar la "
+"satisfacción del cliente. Nuestra política de garantía describe los términos "
+"bajo los cuales cumplimos con nuestros compromisos."
+
+#: base/templates/base/legal.html:147
+msgid "Service Quality"
+msgstr "Calidad del servicio"
+
+#: base/templates/base/legal.html:148
+msgid ""
+"We guarantee that all services provided are delivered with professionalism, "
+"care, and accuracy to the best of our ability."
+msgstr ""
+"Garantizamos que todos los servicios proporcionados se entregan con "
+"profesionalismo, cuidado y precisión en la medida de nuestra capacidad."
+
+#: base/templates/base/legal.html:152
+msgid "User Satisfaction"
+msgstr "Satisfacción del usuario"
+
+#: base/templates/base/legal.html:153
+msgid ""
+"If you are dissatisfied with any aspect of our services, please contact us "
+"promptly. We will make every reasonable effort to address your concerns and "
+"rectify any issues."
+msgstr ""
+"Si no está satisfecho con algún aspecto de nuestros servicios, por favor "
+"contáctenos rápidamente. Haremos todo lo posible para atender sus "
+"inquietudes y corregir cualquier problema."
+
+#: base/templates/base/legal.html:157
+msgid "Limitations of Guarantee"
+msgstr "Limitaciones de la garantía"
+
+#: base/templates/base/legal.html:158
+msgid "This guarantee does not cover issues arising from:"
+msgstr "Esta garantía no cubre problemas derivados de:"
+
+#: base/templates/base/legal.html:160
+msgid "User-provided errors or misinformation."
+msgstr "Errores o desinformación proporcionados por el usuario."
+
+#: base/templates/base/legal.html:161
+msgid ""
+"Technical issues beyond our control, such as internet outages or third-party "
+"service failures."
+msgstr ""
+"Problemas técnicos fuera de nuestro control, como cortes de internet o "
+"fallos de servicios de terceros."
+
+#: base/templates/base/legal.html:162
+msgid "Unauthorized use or modification of our services."
+msgstr "Uso no autorizado o modificación de nuestros servicios."
+
+#: base/templates/base/legal.html:167
+msgid "Requesting Support"
+msgstr "Solicitar soporte"
+
+#: base/templates/base/legal.html:168
+msgid ""
+"To report a problem or request support, please contact us through the "
+"provided channels. Include detailed information about the issue to help us "
+"resolve it efficiently."
+msgstr ""
+"Para reportar un problema o solicitar soporte, comuníquese con nosotros a "
+"través de los canales proporcionados. Incluya información detallada sobre el "
+"problema para ayudarnos a resolverlo de manera eficiente."
+
+#: base/templates/base/legal.html:172
+msgid "No Financial Liability"
+msgstr "Sin responsabilidad financiera"
+
+#: base/templates/base/legal.html:173
+msgid ""
+"Our guarantee is limited to addressing issues within the scope of our "
+"services. We are not liable for any indirect or consequential damages "
+"resulting from the use or unavailability of our services."
+msgstr ""
+"Nuestra garantía se limita a abordar problemas dentro del alcance de "
+"nuestros servicios. No somos responsables de daños indirectos o consecuentes "
+"derivados del uso o la no disponibilidad de nuestros servicios."
+
+#: base/templates/base/lockout.html:8
+msgid "Suspect activity !"
+msgstr "¡Actividad sospechosa!"
+
+#: base/templates/base/lockout.html:9
+msgid "Too many failures"
+msgstr "Demasiados fallos"
+
+#: base/templates/base/lockout.html:10
+msgid "Our system detected a suspected activity from your address."
+msgstr "Nuestro sistema detectó una actividad sospechosa desde su dirección."
+
+#: base/templates/base/lockout.html:13
+msgid "Sorry for any inconvinience, but we take security seriously."
+msgstr "Disculpe cualquier inconveniente, pero tomamos la seguridad en serio."
+
+#: base/templates/base/lockout.html:14
+msgid "If you think we made a mistake, please let us know."
+msgstr "Si cree que cometimos un error, por favor háganoslo saber."
+
+#: base/templates/base/profile.html:5
+msgid "User Profile"
+msgstr "Perfil de usuario"
+
+#: base/templates/base/profile.html:47
+#, fuzzy
+#| msgid "Translations status"
+msgid "Subscription status"
+msgstr "Estado de las traducciones"
+
+#: base/templates/base/profile.html:52
+msgid "Current Plan"
+msgstr "Actual Plan"
+
+#: base/templates/base/profile.html:53
+msgid "Free"
+msgstr ""
+
+#: base/templates/base/profile.html:58
+msgid "Remaining days"
+msgstr "Dias restantes"
+
+#: base/templates/base/profile.html:75
+msgid "Expires on"
+msgstr ""
+
+#: base/templates/base/profile.html:83 base/templates/base/profile.html:141
+msgid "Upgrade Plan"
+msgstr "Mejorar Plan"
+
+#: base/templates/base/profile.html:89 base/templates/base/profile.html:147
+#: base/templates/base/profile.html:255
+msgid "User Profile not found"
+msgstr "Perfil de usuario no encontrado"
+
+#: base/templates/base/profile.html:99
+#, fuzzy
+#| msgid "Periods"
+msgid "Period Stats"
+msgstr "Períodos"
+
+#: base/templates/base/profile.html:105
+#, fuzzy
+#| msgid "Clear Favourites"
+msgid "Current favourites"
+msgstr "Borrar favoritos"
+
+#: base/templates/base/profile.html:122
+#, fuzzy
+#| msgid "Daily Mean"
+msgid "Daily links"
+msgstr "Promedio diario"
+
+#: base/templates/base/profile.html:126
+#, fuzzy
+#| msgid "Monthly Mean"
+msgid "Monthly links"
+msgstr "Promedio mensual"
+
+#: base/templates/base/profile.html:130
+#, fuzzy
+#| msgid "DCE Downloads"
+msgid "Daily Downloads"
+msgstr "Descargas DCE"
+
+#: base/templates/base/profile.html:134
+#, fuzzy
+#| msgid "No Downloads"
+msgid "Monthly Downloads"
+msgstr "Sin descargas"
+
+#: base/templates/base/profile.html:156
+msgid "Profile details"
+msgstr "Detalles del perfil"
+
+#: base/templates/base/profile.html:162
+#: base/templates/base/profile_update.html:43
+msgid "Company"
+msgstr "Compañía"
+
+#: base/templates/base/profile.html:169
+msgid "Sector"
+msgstr "Sector"
+
+#: base/templates/base/profile.html:176
+#: base/templates/base/profile_update.html:48
+#: base/templates/base/profile_update.html:49
+msgid "ICE"
+msgstr "ICE"
+
+#: base/templates/base/profile.html:183
+msgid "Established Since"
+msgstr "Establecido desde"
+
+#: base/templates/base/profile.html:190
+#: base/templates/base/profile_update.html:79
+msgid "Role"
+msgstr "Rol"
+
+#: base/templates/base/profile.html:197
+#: base/templates/base/profile_update.html:61
+msgid "City"
+msgstr "Ciudad"
+
+#: base/templates/base/profile.html:204
+#: base/templates/base/profile_update.html:67
+msgid "Country"
+msgstr "País"
+
+#: base/templates/base/profile.html:232
+#: base/templates/base/profile_update.html:103
+#: portal/templates/portal/con-details.html:478
+msgid "Fax"
+msgstr "Fax"
+
+#: base/templates/base/profile.html:239
+#: base/templates/base/profile_update.html:109
+msgid "Website"
+msgstr "Sitio web"
+
+#: base/templates/base/profile.html:246
+#: base/templates/base/profile_update.html:115
+#: templates/account/snippets/already_logged_in.html:7
+msgid "Note"
+msgstr "Nota"
+
+#: base/templates/base/profile.html:260
+msgid "Edit Profile"
+msgstr "Editar perfil"
+
+#: base/templates/base/profile_update.html:6
+msgid "Profile Details"
+msgstr "Detalles del perfil"
+
+#: base/templates/base/profile_update.html:33
+#, fuzzy
+#| msgid "The file must be JPG, PNG, or GIF."
+msgid "The file must be JPG, PNG, WEBP or GIF."
+msgstr "El archivo debe ser JPG, PNG, WEBP o GIF."
+
+#: base/templates/base/profile_update.html:34
+msgid "The image must be less than 1MB."
+msgstr "La imagen debe ser menor a 1 MB."
+
+#: base/templates/base/profile_update.html:35
+msgid "The image dimensions must be between 150x150 and 1024x1024 pixels."
+msgstr ""
+"Las dimensiones de la imagen deben estar entre 150x150 y 1024x1024 píxeles."
+
+#: base/templates/base/profile_update.html:42
+msgid "Company name or label"
+msgstr "Nombre de la empresa o etiqueta"
+
+#: base/templates/base/profile_update.html:54
+#: base/templates/base/profile_update.html:55
+msgid "Date Established"
+msgstr "Fecha de establecimiento"
+
+#: base/templates/base/profile_update.html:60
+msgid "Enter your city"
+msgstr "Ingrese su ciudad"
+
+#: base/templates/base/profile_update.html:66
+msgid "Enter your country"
+msgstr "Ingrese su país"
+
+#: base/templates/base/profile_update.html:72
+msgid "Enter your sector of activity"
+msgstr "Ingrese su sector de actividad"
+
+#: base/templates/base/profile_update.html:73
+msgid "Sector of Activity"
+msgstr "Sector de actividad"
+
+#: base/templates/base/profile_update.html:78
+msgid "Enter your role"
+msgstr "Ingrese su rol"
+
+#: base/templates/base/profile_update.html:90
+msgid "Enter your email address"
+msgstr "Ingrese su dirección de correo electrónico"
+
+#: base/templates/base/profile_update.html:96
+msgid "Enter your WhatsApp number"
+msgstr "Ingrese su número de WhatsApp"
+
+#: base/templates/base/profile_update.html:102
+msgid "Enter your fax number"
+msgstr "Ingrese su número de fax"
+
+#: base/templates/base/profile_update.html:108
+msgid "Enter your website URL"
+msgstr "Ingrese la URL de su sitio web"
+
+#: base/templates/base/profile_update.html:114
+msgid "Anything worth mentioning"
+msgstr "Algo que valga la pena mencionar"
+
+#: base/templates/base/profile_update.html:119
+#: templates/mfa/webauthn/edit_form.html:18
+msgid "Save"
+msgstr "Guardar"
+
+#: base/templatetags/taginos.py:105
+msgid ","
+msgstr ","
+
+#: base/views.py:60
+msgid "Easily find the exact tender that matches your business goals"
+msgstr ""
+"Encuentra fácilmente la licitación exacta que coincide con tus objetivos "
+"comerciales"
+
+#: base/views.py:61
+msgid "Effortless Downloads"
+msgstr "Descargas sin esfuerzo"
+
+#: base/views.py:61
+msgid "Download files for promising opportunities in just two clicks"
+msgstr "Descarga archivos para oportunidades prometedoras con solo dos clics"
+
+#: base/views.py:62
+msgid "Save Your Favorites"
+msgstr "Guarda tus favoritos"
+
+#: base/views.py:62
+msgid "Mark tenders as favorites for quick and easy access later"
+msgstr ""
+"Marca las licitaciones como favoritas para acceder rápidamente más tarde"
+
+#: base/views.py:63
+msgid "Responsive Design"
+msgstr "Diseño adaptable"
+
+#: base/views.py:63
+msgid "Our elegant interface adapts seamlessly to any screen size"
+msgstr ""
+"Nuestra interfaz elegante se adapta sin problemas a cualquier tamaño de "
+"pantalla"
+
+#: base/views.py:64
+msgid "Multi-Language"
+msgstr "Multilingüe"
+
+#: base/views.py:64
+msgid "Choose from Arabic, Tamazight, English, French, or Spanish"
+msgstr "Elige entre árabe, tamazight, inglés, francés o español"
+
+#: base/views.py:65
+msgid "Free Services"
+msgstr "Servicios gratuitos"
+
+#: base/views.py:65
+msgid "Enjoy all our services completely free of charge"
+msgstr "Disfruta de todos nuestros servicios completamente gratis"
+
+#: base/views.py:66
+msgid "Exciting Updates"
+msgstr "Actualizaciones emocionantes"
+
+#: base/views.py:66
+msgid "We’re just getting started. More amazing features are coming soon"
+msgstr ""
+"Apenas estamos comenzando. Pronto llegarán más características increíbles"
+
+#: base/views.py:122
+msgid "Some one submitted a message on eMarches.com using Contact form"
+msgstr ""
+"Alguien envió un mensaje en eMarches.com usando el formulario de contacto"
+
+#: base/views.py:128 crm/templates/crm/lead_edit.html:23
+msgid "Prefferred contact method"
+msgstr "Método de contacto preferido"
+
+#: base/views.py:129 crm/templates/crm/lead_edit.html:110
+msgid "Subscribe to Newsletter"
+msgstr "Suscribirse al boletín"
+
+#: base/views.py:130
+msgid "Subscribe to Offers"
+msgstr "Suscribirse a ofertas"
+
+#: base/views.py:131
+msgid "Submitted on"
+msgstr "Enviado el"
+
+#: base/views.py:132
+msgid "New Contact"
+msgstr "Nuevo contacto"
+
+#: base/views.py:193
+msgid "Submitted. Thank you for contacting us"
+msgstr "Enviado. Gracias por contactarnos"
+
+#: base/views.py:198
+msgid "Something went wrong"
+msgstr "Algo salió mal"
+
+#: base/views.py:254
+msgid "Your profile has been updated successfully"
+msgstr "Tu perfil ha sido actualizado exitosamente"
+
+#: base/views.py:257
+msgid "There was an error updating your profile"
+msgstr "Hubo un error al actualizar tu perfil"
+
+#: crm/templates/crm/downloads_list.html:6
+#: crm/templates/crm/downloads_list.html:9
+msgid "DCE Downloads"
+msgstr "Descargas DCE"
+
+#: crm/templates/crm/downloads_list.html:12
+#: crm/templates/crm/favorisations_list.html:11
+#: crm/templates/crm/favourites_list.html:14
+#: crm/templates/crm/unfavorisations_list.html:11
+msgid "Total count"
+msgstr "Recuento total"
+
+#: crm/templates/crm/downloads_list.html:15
+msgid "Total downloaded size"
+msgstr "Tamaño total descargado"
+
+#: crm/templates/crm/downloads_list.html:16
+msgid "bytes"
+msgstr "bytes"
+
+#: crm/templates/crm/downloads_list.html:18
+msgid "Top last"
+msgstr "Top últimas"
+
+#: crm/templates/crm/downloads_list.html:18
+#: portal/templates/portal/con-details.html:107
+msgid "days"
+msgstr "días"
+
+#: crm/templates/crm/downloads_list.html:26
+#: crm/templates/crm/favorisations_list.html:22
+#: crm/templates/crm/favourites_list.html:24
+#: crm/templates/crm/unfavorisations_list.html:22
+msgid "Latest"
+msgstr "Últimos"
+
+#: crm/templates/crm/downloads_list.html:33
+#: crm/templates/crm/favorisations_list.html:29
+#: crm/templates/crm/favos_list.html:27
+#: crm/templates/crm/favourites_list.html:31
+#: crm/templates/crm/leads_list.html:39
+#: crm/templates/crm/searchquery_detail.html:19
+#: crm/templates/crm/searchquery_list.html:37
+#: crm/templates/crm/unfavorisations_list.html:29
+#: crm/templates/crm/unfavs_list.html:25
+msgid "No records found."
+msgstr "No se encontraron registros."
+
+#: crm/templates/crm/downloads_list.html:37
+#: crm/templates/crm/favorisations_list.html:33
+#: crm/templates/crm/favos_list.html:72
+#: crm/templates/crm/favourites_list.html:35
+#: crm/templates/crm/lead_edit.html:176 crm/templates/crm/leads_list.html:84
+#: crm/templates/crm/searchquery_detail.html:58
+#: crm/templates/crm/searchquery_list.html:78
+#: crm/templates/crm/supervision.html:90
+#: crm/templates/crm/unfavorisations_list.html:33
+#: crm/templates/crm/unfavs_list.html:70
+msgid "Not allowed"
+msgstr "No permitido"
+
+#: crm/templates/crm/favorisations_list.html:6
+#: crm/templates/crm/favorisations_list.html:9
+#: crm/templates/crm/supervision.html:68
+msgid "Favorisations"
+msgstr "Favorizaciones"
+
+#: crm/templates/crm/favorisations_list.html:14
+#: crm/templates/crm/favourites_list.html:17
+#: crm/templates/crm/unfavorisations_list.html:14
+msgid "Top Tenders"
+msgstr "Principales licitaciones"
+
+#: crm/templates/crm/favos_list.html:6 crm/templates/crm/favos_list.html:9
+msgid "Favorisations List"
+msgstr "Lista de Favorizaciones"
+
+#: crm/templates/crm/favos_list.html:32 crm/templates/crm/leads_list.html:44
+#: crm/templates/crm/searchquery_detail.html:24
+#: crm/templates/crm/searchquery_list.html:44
+#: crm/templates/crm/unfavs_list.html:30
+msgid "Page navigation"
+msgstr "Navegación de página"
+
+#: crm/templates/crm/favourites_list.html:6
+#: crm/templates/crm/favourites_list.html:9
+#: crm/templates/crm/supervision.html:58
+msgid "Favourites"
+msgstr "Favoritos"
+
+#: crm/templates/crm/lead_edit.html:6 crm/templates/crm/lead_edit.html:9
+msgid "Lead Details"
+msgstr "Detalles del contacto"
+
+#: crm/templates/crm/lead_edit.html:43
+msgid "Submitted since"
+msgstr "Enviado desde"
+
+#: crm/templates/crm/lead_edit.html:76
+msgid "Authenticated user"
+msgstr "Usuario autenticado"
+
+#: crm/templates/crm/lead_edit.html:79 crm/templates/crm/lead_edit.html:113
+#: crm/templates/crm/lead_edit.html:126 crm/templates/crm/lead_edit.html:139
+#: portal/templates/portal/con-details.html:146
+#: portal/templates/portal/con-details.html:356
+#: portal/templates/portal/con-details.html:379
+msgid "Yes"
+msgstr "Sí"
+
+#: crm/templates/crm/lead_edit.html:81 crm/templates/crm/lead_edit.html:115
+#: crm/templates/crm/lead_edit.html:128 crm/templates/crm/lead_edit.html:141
+#: portal/templates/portal/con-details.html:146
+#: portal/templates/portal/con-details.html:356
+#: portal/templates/portal/con-details.html:379
+msgid "No"
+msgstr "No"
+
+#: crm/templates/crm/lead_edit.html:90
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: crm/templates/crm/lead_edit.html:98
+msgid "User email"
+msgstr "Correo electrónico del usuario"
+
+#: crm/templates/crm/lead_edit.html:123
+msgid "Subscribe to Promotions"
+msgstr "Suscribirse a promociones"
+
+#: crm/templates/crm/lead_edit.html:136 crm/templates/crm/leads_list.html:27
+msgid "Replied"
+msgstr "Respondido"
+
+#: crm/templates/crm/lead_edit.html:157
+msgid "Mark as Replied"
+msgstr "Marcar como respondido"
+
+#: crm/templates/crm/lead_edit.html:160
+msgid "Actions"
+msgstr "Acciones"
+
+#: crm/templates/crm/lead_edit.html:164
+msgid "Results"
+msgstr "Resultados"
+
+#: crm/templates/crm/lead_edit.html:168
+msgid "Notes"
+msgstr "Notas"
+
+#: crm/templates/crm/lead_edit.html:171
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: crm/templates/crm/leads_list.html:6 crm/templates/crm/leads_list.html:9
+msgid "Leads List"
+msgstr "Lista de contactos"
+
+#: crm/templates/crm/leads_list.html:29
+msgid "Not Replied"
+msgstr "No respondido"
+
+#: crm/templates/crm/newsletters_list.html:5
+msgid "Newsletters List"
+msgstr "Lista de boletines"
+
+#: crm/templates/crm/searchquery_detail.html:6
+#: crm/templates/crm/searchquery_detail.html:9
+msgid "Search Query Details"
+msgstr "Detalles de la consulta de búsqueda"
+
+#: crm/templates/crm/searchquery_detail.html:28
+#: crm/templates/crm/searchquery_list.html:48
+msgid "First"
+msgstr "Primera"
+
+#: crm/templates/crm/searchquery_detail.html:48
+#: crm/templates/crm/searchquery_list.html:68
+msgid "Last"
+msgstr "Última"
+
+#: crm/templates/crm/searchquery_list.html:6
+#: crm/templates/crm/searchquery_list.html:9
+msgid "Search Queries List"
+msgstr "Lista de consultas de búsqueda"
+
+#: crm/templates/crm/searchquery_list.html:31
+msgid "Anonymous"
+msgstr "Anónimo"
+
+#: crm/templates/crm/searchquery_list.html:59
+msgid "Page"
+msgstr "Página"
+
+#: crm/templates/crm/supervision.html:17
+msgid "Leads"
+msgstr "Prospectos"
+
+#: crm/templates/crm/supervision.html:22
+msgid "Contacts and messages sent from the website form"
+msgstr ""
+
+#: crm/templates/crm/supervision.html:28
+msgid "Newsletters"
+msgstr "Boletines"
+
+#: crm/templates/crm/supervision.html:32
+#, fuzzy
+#| msgid "This page is under construction. It will be available soon."
+msgid ""
+"This feature is still under devlopment and will be available in future "
+"versions"
+msgstr "Esta página está en construcción. Estará disponible pronto."
+
+#: crm/templates/crm/supervision.html:38
+msgid "Search Queries"
+msgstr "Consultas de búsqueda"
+
+#: crm/templates/crm/supervision.html:42
+msgid ""
+"What are the visitors searching for and how they want the results to be shown"
+msgstr ""
+
+#: crm/templates/crm/supervision.html:52
+msgid "What files do registered users download"
+msgstr ""
+
+#: crm/templates/crm/supervision.html:62
+msgid "Tenders that are in users Favourites"
+msgstr ""
+
+#: crm/templates/crm/supervision.html:72
+#, fuzzy
+#| msgid "Item added to Favourites."
+msgid "What Tenders have been added to Favorites"
+msgstr "Elemento añadido a favoritos."
+
+#: crm/templates/crm/supervision.html:78
+#: crm/templates/crm/unfavorisations_list.html:6
+#: crm/templates/crm/unfavorisations_list.html:9
+msgid "Unfavorisations"
+msgstr "Desfavorizaciones"
+
+#: crm/templates/crm/supervision.html:82
+#, fuzzy
+#| msgid "Item removed from Favourites."
+msgid "What Tenders have been removed from Favorites"
+msgstr "Elemento eliminado de favoritos."
+
+#: crm/templates/crm/unfavs_list.html:6 crm/templates/crm/unfavs_list.html:9
+msgid "Unfavorisations List"
+msgstr "Lista de no favorizados"
+
+#: emarches/settings.py:176
+msgid "English"
+msgstr "Inglés"
+
+#: emarches/settings.py:177
+msgid "Amazigh"
+msgstr "Amazigh"
+
+#: emarches/settings.py:178
+msgid "Arabic"
+msgstr "Árabe"
+
+#: emarches/settings.py:179
+msgid "French"
+msgstr "Francés"
+
+#: emarches/settings.py:180
+msgid "Spanish"
+msgstr "Español"
+
+#: emarches/settings.py:181
+msgid "German"
+msgstr ""
+
+#: portal/models.py:343
+msgid "Download DCE"
+msgstr "Descargar DCE"
+
+#: portal/models.py:344
+msgid "Downloads DCE"
+msgstr "Descargas DCE"
+
+#: portal/templates/portal/bdc-landing.html:12
+msgid ""
+"We think the Official portal did a decent work regarding the POs feature and "
+"there is no huge improvement we could bring to it. "
+msgstr ""
+"Creemos que el portal oficial hizo un trabajo decente con respecto a la "
+"función de PO y no hay ninguna mejora importante que podamos aportar."
+
+#: portal/templates/portal/bdc-landing.html:21
+msgid "Browse POs on Official Website"
+msgstr "Explorar el Sitio Web Oficial"
+
+#: portal/templates/portal/con-details.html:7
+#: portal/templates/portal/con-details.html:58
+msgid "Tender details"
+msgstr "Detalles de la licitación"
+
+#: portal/templates/portal/con-details.html:13
+msgid "Download should start shortly... Please wait."
+msgstr "La descarga debería comenzar en breve... Por favor, espere."
+
+#: portal/templates/portal/con-details.html:14
+msgid ""
+"Sorry, we could not get your files. If this happens often, please let us "
+"know."
+msgstr ""
+"Lo siento, no pudimos obtener tus archivos. Si esto ocurre con frecuencia, "
+"por favor avísanos."
+
+#: portal/templates/portal/con-details.html:15
+msgid "Item added to Favourites."
+msgstr "Elemento añadido a favoritos."
+
+#: portal/templates/portal/con-details.html:16
+msgid "Item removed from Favourites."
+msgstr "Elemento eliminado de favoritos."
+
+#: portal/templates/portal/con-details.html:24
+msgid "Download Tender's files"
+msgstr "Descargar los archivos de la licitación"
+
+#: portal/templates/portal/con-details.html:28
+msgid "Here is a list of files associated with the Tender."
+msgstr "Aquí hay una lista de archivos asociados con la licitación."
+
+#: portal/templates/portal/con-details.html:29
+msgid ""
+"Once you click on an item, your browser or device should handle the download "
+"process."
+msgstr ""
+"Una vez que hagas clic en un elemento, tu navegador o dispositivo debería "
+"manejar el proceso de descarga."
+
+#: portal/templates/portal/con-details.html:38
+msgid "Sorry. We could not get the files for this Tender."
+msgstr "Lo siento. No pudimos obtener los archivos de esta licitación."
+
+#: portal/templates/portal/con-details.html:39
+msgid "Please try again later, or contact us if this problem persists."
+msgstr ""
+"Por favor, intenta de nuevo más tarde o contáctanos si el problema persiste."
+
+#: portal/templates/portal/con-details.html:43
+#: portal/templates/portal/cons-favs.html:25
+#: portal/templates/portal/cons-favs.html:45
+#: portal/templates/portal/cons-list.html:26
+msgid "Dismiss"
+msgstr "Descartar"
+
+#: portal/templates/portal/con-details.html:53
+#: portal/templates/portal/includes/con.html:36
+#, fuzzy
+#| msgid "Cancel"
+msgid "Cancelled"
+msgstr "Cancelar"
+
+#: portal/templates/portal/con-details.html:68 templates/mfa/index.html:102
+msgid "Download"
+msgstr "Descargar"
+
+#: portal/templates/portal/con-details.html:78
+msgid "Toggle Favourite"
+msgstr "Alternar favorito"
+
+#: portal/templates/portal/con-details.html:87
+msgid "Bid"
+msgstr "Oferta"
+
+#: portal/templates/portal/con-details.html:96
+#: portal/templates/portal/con-details.html:372
+#: portal/templates/portal/cons-search-advanced-form.html:17
+#: portal/templates/portal/cons-search-basic-form.html:17
+msgid "Object"
+msgstr "Objeto"
+
+#: portal/templates/portal/con-details.html:103
+msgid "Bidding Deadline"
+msgstr "Fecha límite de licitación"
+
+#: portal/templates/portal/con-details.html:103
+msgid "Morocco time"
+msgstr ""
+
+#: portal/templates/portal/con-details.html:112
+#: portal/templates/portal/cons-search-advanced-form.html:169
+#: portal/templates/portal/cons-search-advanced-form.html:170
+#: portal/templates/portal/cons-search-basic-form.html:54
+#: portal/templates/portal/cons-search-basic-form.html:55
+msgid "Total Estimate"
+msgstr "Estimación total"
+
+#: portal/templates/portal/con-details.html:115
+msgid "Multi-lots"
+msgstr "Multilotes"
+
+#: portal/templates/portal/con-details.html:122
+#: portal/templates/portal/cons-search-advanced-form.html:171
+#: portal/templates/portal/cons-search-advanced-form.html:172
+#: portal/templates/portal/cons-search-basic-form.html:56
+#: portal/templates/portal/cons-search-basic-form.html:57
+msgid "Temporary Caution"
+msgstr "Cautión temporal"
+
+#: portal/templates/portal/con-details.html:129
+#: portal/templates/portal/con-details.html:166
+#: portal/templates/portal/con-details.html:180
+#: portal/templates/portal/con-details.html:203
+#: portal/templates/portal/con-details.html:262
+#: portal/templates/portal/con-details.html:281
+#: portal/templates/portal/con-details.html:300
+#: portal/templates/portal/con-details.html:319
+#: portal/templates/portal/con-details.html:338
+#: portal/templates/portal/con-details.html:409
+#: portal/templates/portal/con-details.html:425
+#: portal/templates/portal/con-details.html:441
+#: portal/templates/portal/con-details.html:457
+#: portal/templates/portal/con-details.html:484
+msgid "Log In"
+msgstr "Iniciar sesión"
+
+#: portal/templates/portal/con-details.html:136
+msgid "Main Category"
+msgstr "Categoría principal"
+
+#: portal/templates/portal/con-details.html:144
+msgid "Reserved to SMB+"
+msgstr "Reservado para SMB+"
+
+#: portal/templates/portal/con-details.html:149
+msgid "Lots count"
+msgstr "Recuento de lotes"
+
+#: portal/templates/portal/con-details.html:159
+msgid "Date published"
+msgstr "Fecha de publicación"
+
+#: portal/templates/portal/con-details.html:173
+#: portal/templates/portal/cons-search-advanced-form.html:23
+#: portal/templates/portal/cons-search-basic-form.html:23
+msgid "Reference"
+msgstr "Referencia"
+
+#: portal/templates/portal/con-details.html:190
+msgid "Execution location"
+msgstr "Ubicación de ejecución"
+
+#: portal/templates/portal/con-details.html:196
+msgid "Public client"
+msgstr "Cliente público"
+
+#: portal/templates/portal/con-details.html:214
+#: portal/templates/portal/cons-search-advanced-form.html:59
+msgid "Procedure"
+msgstr "Procedimiento"
+
+#: portal/templates/portal/con-details.html:223
+msgid "Electronic response and signature"
+msgstr "Respuesta electrónica y firma"
+
+#: portal/templates/portal/con-details.html:226
+#: portal/templates/portal/cons-search-advanced-form.html:120
+msgid "Required, e-Sign required"
+msgstr "Requerido, se requiere firma electrónica"
+
+#: portal/templates/portal/con-details.html:227
+#: portal/templates/portal/cons-search-advanced-form.html:121
+msgid "Required, e-Sign not required"
+msgstr "Requerido, no se requiere firma electrónica"
+
+#: portal/templates/portal/con-details.html:228
+#: portal/templates/portal/cons-search-advanced-form.html:122
+msgid "Not required, e-Sign required"
+msgstr "No requerido, se requiere firma electrónica"
+
+#: portal/templates/portal/con-details.html:229
+#: portal/templates/portal/cons-search-advanced-form.html:123
+msgid "Not required, e-Sign not required"
+msgstr "No requerido, no se requiere firma electrónica"
+
+#: portal/templates/portal/con-details.html:230
+#: portal/templates/portal/cons-search-advanced-form.html:124
+msgid "Not Applicable"
+msgstr "No aplicable"
+
+#: portal/templates/portal/con-details.html:238
+msgid "Domains of activity"
+msgstr "Ámbitos de actividad"
+
+#: portal/templates/portal/con-details.html:252
+#: portal/templates/portal/con-details.html:382
+msgid "Qualifications"
+msgstr "Calificaciones"
+
+#: portal/templates/portal/con-details.html:271
+#: portal/templates/portal/con-details.html:385
+msgid "Agrements"
+msgstr "Acuerdos"
+
+#: portal/templates/portal/con-details.html:290
+#: portal/templates/portal/con-details.html:389
+msgid "Samples"
+msgstr "Muestras"
+
+#: portal/templates/portal/con-details.html:309
+#: portal/templates/portal/con-details.html:393
+msgid "Meetings"
+msgstr "Reuniones"
+
+#: portal/templates/portal/con-details.html:328
+#: portal/templates/portal/con-details.html:397
+msgid "In-Site Visits"
+msgstr "Visitas en el sitio"
+
+#: portal/templates/portal/con-details.html:348
+msgid "Price of Plans"
+msgstr "Precio de los planes"
+
+#: portal/templates/portal/con-details.html:354
+#: portal/templates/portal/con-details.html:401
+msgid "Variante"
+msgstr "Variante"
+
+#: portal/templates/portal/con-details.html:365
+msgid "Lots details"
+msgstr "Detalles de los lotes"
+
+#: portal/templates/portal/con-details.html:371
+#: portal/templates/portal/cons-search-advanced-form.html:48
+msgid "Category"
+msgstr "Categoría"
+
+#: portal/templates/portal/con-details.html:374
+msgid "Description"
+msgstr "Descripción"
+
+#: portal/templates/portal/con-details.html:376
+msgid "Estimate"
+msgstr "Estimación"
+
+#: portal/templates/portal/con-details.html:377
+msgid "Caution"
+msgstr "Cautión"
+
+#: portal/templates/portal/con-details.html:379
+#: portal/templates/portal/cons-search-advanced-form.html:136
+msgid "Reserved to SMB"
+msgstr "Reservado para SMB"
+
+#: portal/templates/portal/con-details.html:418
+msgid "Withdrawal address"
+msgstr "Dirección de retiro"
+
+#: portal/templates/portal/con-details.html:434
+msgid "Bidding address"
+msgstr "Dirección de licitación"
+
+#: portal/templates/portal/con-details.html:450
+msgid "Opening address"
+msgstr "Dirección de apertura"
+
+#: portal/templates/portal/con-details.html:469
+msgid "Person"
+msgstr "Persona"
+
+#: portal/templates/portal/cons-favs.html:6
+#: portal/templates/portal/cons-favs.html:58
+#: portal/templates/portal/cons-favs.html:59
+msgid "My Favourite Tenders"
+msgstr "Mis licitaciones favoritas"
+
+#: portal/templates/portal/cons-favs.html:14
+msgid "Download Favourites list"
+msgstr "Descargar lista de favoritos"
+
+#: portal/templates/portal/cons-favs.html:17
+#: portal/templates/portal/cons-list.html:18
+msgid "Save a list of shown Tenders as a '.csv' file to your local device."
+msgstr ""
+"Guarda una lista de las licitaciones mostradas como un archivo '.csv' en tu "
+"dispositivo local."
+
+#: portal/templates/portal/cons-favs.html:18
+#: portal/templates/portal/cons-list.html:19
+msgid ""
+"These files can be opened in many spreadsheet processors like LibreOffice "
+"Calc and MS Excel, ..."
+msgstr ""
+"Estos archivos pueden abrirse en muchos procesadores de hojas de cálculo "
+"como LibreOffice Calc y MS Excel, ..."
+
+#: portal/templates/portal/cons-favs.html:21
+#: portal/templates/portal/cons-list.html:22
+msgid "Items count"
+msgstr "Recuento de elementos"
+
+#: portal/templates/portal/cons-favs.html:24
+#: portal/templates/portal/cons-list.html:25
+msgid "Download file"
+msgstr "Descargar archivo"
+
+#: portal/templates/portal/cons-favs.html:35
+#: portal/templates/portal/cons-favs.html:74
+msgid "Clear Favourites"
+msgstr "Borrar favoritos"
+
+#: portal/templates/portal/cons-favs.html:38
+msgid "Clear your list of Favourite Tenders."
+msgstr "Borra tu lista de licitaciones favoritas."
+
+#: portal/templates/portal/cons-favs.html:39
+msgid ""
+"This only will remove your stars from the Tenders, not the Tenders "
+"themselves. "
+msgstr ""
+"Esto solo eliminará tus estrellas de las licitaciones, no las licitaciones "
+"en sí mismas."
+
+#: portal/templates/portal/cons-favs.html:40
+msgid "This operation can not be reversed. "
+msgstr "Esta operación no puede deshacerse."
+
+#: portal/templates/portal/cons-favs.html:43
+msgid "Clear Expired"
+msgstr "Borrar vencidos"
+
+#: portal/templates/portal/cons-favs.html:44
+msgid "Clear All"
+msgstr "Borrar todo"
+
+#: portal/templates/portal/cons-favs.html:52
+msgid "Favourites cleared succcessfully."
+msgstr "Favoritos borrados exitosamente."
+
+#: portal/templates/portal/cons-favs.html:53
+msgid "Something went wrong."
+msgstr "Algo salió mal."
+
+#: portal/templates/portal/cons-favs.html:54
+msgid "Nothing to clear."
+msgstr "Nada que borrar."
+
+#: portal/templates/portal/cons-favs.html:83
+#: portal/templates/portal/cons-list.html:68
+msgid "Download List"
+msgstr "Descargar lista"
+
+#: portal/templates/portal/cons-favs.html:100
+msgid "Last updated"
+msgstr "Última actualización"
+
+#: portal/templates/portal/cons-list.html:7
+msgid "Tenders list"
+msgstr "Lista de licitaciones"
+
+#: portal/templates/portal/cons-list.html:15
+msgid "Download Tenders list"
+msgstr "Descargar lista de licitaciones"
+
+#: portal/templates/portal/cons-list.html:36
+msgid "You have no Favourites."
+msgstr "No tienes favoritos."
+
+#: portal/templates/portal/cons-list.html:42
+msgid "Tenders List"
+msgstr "Lista de licitaciones"
+
+#: portal/templates/portal/cons-list.html:94
+msgid "Updated since"
+msgstr "Actualizado desde"
+
+#: portal/templates/portal/cons-search-advanced-form.html:9
+#: portal/templates/portal/cons-search-basic-form.html:9
+msgid "Tenders Search"
+msgstr "Buscar Licitaciones"
+
+#: portal/templates/portal/cons-search-advanced-form.html:33
+msgid "Estimate Min"
+msgstr "Estimación mínima"
+
+#: portal/templates/portal/cons-search-advanced-form.html:39
+msgid "Estimate Max"
+msgstr "Estimación máxima"
+
+#: portal/templates/portal/cons-search-advanced-form.html:50
+#: portal/templates/portal/cons-search-advanced-form.html:61
+#: portal/templates/portal/cons-search-advanced-form.html:119
+msgid "All"
+msgstr "Todo"
+
+#: portal/templates/portal/cons-search-advanced-form.html:73
+msgid "Deadline Min"
+msgstr "Fecha límite mínima"
+
+#: portal/templates/portal/cons-search-advanced-form.html:79
+msgid "Deadline Max"
+msgstr "Fecha límite máxima"
+
+#: portal/templates/portal/cons-search-advanced-form.html:88
+msgid "Published Min"
+msgstr "Publicado mínimo"
+
+#: portal/templates/portal/cons-search-advanced-form.html:94
+msgid "Published Max"
+msgstr "Publicado máximo"
+
+#: portal/templates/portal/cons-search-advanced-form.html:102
+msgid "Client"
+msgstr "Cliente"
+
+#: portal/templates/portal/cons-search-advanced-form.html:108
+msgid "Exec. Location"
+msgstr "Ubicación de ejecución"
+
+#: portal/templates/portal/cons-search-advanced-form.html:117
+msgid "Electronic Response"
+msgstr "Respuesta electrónica"
+
+#: portal/templates/portal/cons-search-advanced-form.html:132
+msgid "Single Lot only"
+msgstr "Solo un lote"
+
+#: portal/templates/portal/cons-search-advanced-form.html:151
+#: portal/templates/portal/cons-search-basic-form.html:36
+msgid "Results per page"
+msgstr "Resultados por página"
+
+#: portal/templates/portal/cons-search-advanced-form.html:163
+#: portal/templates/portal/cons-search-basic-form.html:48
+msgid "Order by"
+msgstr "Ordenar por"
+
+#: portal/templates/portal/cons-search-advanced-form.html:165
+#: portal/templates/portal/cons-search-advanced-form.html:166
+#: portal/templates/portal/cons-search-basic-form.html:50
+#: portal/templates/portal/cons-search-basic-form.html:51
+msgid "Deadline"
+msgstr "Fecha límite"
+
+#: portal/templates/portal/cons-search-advanced-form.html:167
+#: portal/templates/portal/cons-search-advanced-form.html:168
+#: portal/templates/portal/cons-search-basic-form.html:52
+#: portal/templates/portal/cons-search-basic-form.html:53
+msgid "Published Date"
+msgstr "Fecha de publicación"
+
+#: portal/templates/portal/cons-search-advanced-form.html:182
+#: portal/templates/portal/cons-search-basic-form.html:67
+msgid "Reset"
+msgstr "Restablecer"
+
+#: portal/templates/portal/cons-search-advanced-form.html:187
+#: portal/templates/portal/cons-search-basic-form.html:71
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: portal/templates/portal/cons-search-paginator.html:10
+msgid "Showing items"
+msgstr "Mostrando elementos"
+
+#: portal/templates/portal/cons-search-paginator.html:10
+msgid "from"
+msgstr "de"
+
+#: portal/templates/portal/cons_insights.html:11
+msgid ""
+"Tremendous amounts of money are regularly awarded in public contracts and "
+"your chances are greater than you may think. Statistics do not lie."
+msgstr ""
+"Se otorgan grandes cantidades de dinero regularmente en contratos públicos y "
+"tus oportunidades son mayores de lo que piensas. Las estadísticas no mienten."
+
+#: portal/templates/portal/cons_insights.html:20
+msgid "Periods"
+msgstr "Períodos"
+
+#: portal/templates/portal/cons_insights.html:22
+msgid "Weeks"
+msgstr "Semanas"
+
+#: portal/templates/portal/cons_insights.html:23
+msgid "Months"
+msgstr "Meses"
+
+#: portal/templates/portal/cons_insights.html:24
+msgid "Quarters"
+msgstr "Trimestres"
+
+#: portal/templates/portal/cons_insights.html:25
+msgid "Years"
+msgstr "Años"
+
+#: portal/templates/portal/cons_insights.html:27
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: portal/templates/portal/cons_insights.html:36
+msgid "Evolution"
+msgstr "Evolución"
+
+#: portal/templates/portal/cons_insights.html:46
+msgid "Distribution"
+msgstr "Distribución"
+
+#: portal/templates/portal/cons_insights.html:55
+msgid "Figures"
+msgstr "Cifras"
+
+#: portal/templates/portal/cons_insights.html:66
+msgid "Grand Total"
+msgstr "Gran total"
+
+#: portal/templates/portal/cons_insights.html:73
+msgid "Monthly Mean"
+msgstr "Promedio mensual"
+
+#: portal/templates/portal/cons_insights.html:80
+msgid "Daily Mean"
+msgstr "Promedio diario"
+
+#: portal/templates/portal/cons_insights.html:87
+msgid "Tenders count"
+msgstr "Cantidad de licitaciones"
+
+#: portal/templates/portal/cons_insights.html:94
+msgid "Tenders per day"
+msgstr "Licitaciones por día"
+
+#: portal/templates/portal/cons_insights.html:104
+msgid "About these stats"
+msgstr "Acerca de estas estadísticas"
+
+#: portal/templates/portal/cons_insights.html:105
+msgid ""
+"The dates we consider for Tenders are the bidding deadlines. The shown "
+"amounts are those of the Tenders as they are advertised on the public "
+"portal. We do not account for later modifications or cancellations and we do "
+"not know whether or not the Tenders were really awarded and whether or not "
+"the works were executed... Some figures, especially percentages, may have "
+"been rounded."
+msgstr ""
+"Las fechas que consideramos para las licitaciones son las fechas límite de "
+"la licitación. Las cantidades mostradas corresponden a las licitaciones tal "
+"como se anuncian en el portal público. No tenemos en cuenta las "
+"modificaciones posteriores o cancelaciones y no sabemos si las licitaciones "
+"fueron realmente adjudicadas o si los trabajos fueron ejecutados... Algunas "
+"cifras, especialmente los porcentajes, pueden haber sido redondeadas."
+
+#: portal/templates/portal/cons_insights.html:106
+msgid ""
+"The stats shown for future periods may change as Tenders may change and new "
+"Tenders may be posted."
+msgstr ""
+"Las estadísticas mostradas para períodos futuros pueden cambiar, ya que las "
+"licitaciones pueden cambiar y se pueden publicar nuevas licitaciones."
+
+#: portal/templates/portal/cons_insights.html:107
+msgid ""
+"Depending on the availability of data, the data for first period may not be "
+"accurate at all."
+msgstr ""
+"Dependiendo de la disponibilidad de los datos, los datos del primer período "
+"pueden no ser exactos en absoluto."
+
+#: portal/templates/portal/cons_insights.html:108
+msgid "These statistics are given for reference only."
+msgstr "Estas estadísticas son solo de referencia."
+
+#: portal/templates/portal/includes/con.html:16
+msgid "Lots"
+msgstr "Lotes"
+
+#: portal/templates/portal/includes/con.html:58
+msgid "Only registered users can see this"
+msgstr "Solo los usuarios registrados pueden ver esto"
+
+#: portal/templates/portal/includes/con.html:84
+msgid "Details not available"
+msgstr "Detalles no disponibles"
+
+#: portal/templates/portal/includes/cons-legend.html:8
+msgid "Legend"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:17
+#, fuzzy
+#| msgid "Figures"
+msgid "Fournitures"
+msgstr "Cifras"
+
+#: portal/templates/portal/includes/cons-legend.html:21
+msgid "Travaux"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:30
+msgid "Elément ajouté aux favoris"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:35
+msgid "Consultation annulée"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:40
+msgid "Procédure de consultation ouverte"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:44
+msgid "Procédure de consultation restreinte ou limitée"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:49
+msgid ""
+"Réservé à la TPE et PME installées au Maroc, jeunes entreprises innovantes, "
+"Coopératives et auto-entrepreneurs"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:54
+msgid ""
+"Réponse éléctronique obligatoire, avec signature éléctronique obligatoire"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:58
+msgid ""
+"Réponse éléctronique obligatoire, avec signature éléctronique non obligatoire"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:62
+msgid ""
+"Réponse éléctronique non obligatoire, avec signature éléctronique obligatoire"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:66
+msgid ""
+"Réponse éléctronique non obligatoire, avec signature éléctronique non "
+"obligatoire"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:70
+msgid "Réponse éléctronique non applicable"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:75
+msgid "Lieu d'execution"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:79
+msgid "Acheteur public"
+msgstr ""
+
+#: portal/templates/portal/includes/cons-legend.html:83
+msgid "Certaines informations sont reservées aux utilisateurs enregistrés"
+msgstr ""
+
+#: portal/templates/portal/includes/search-help.html:5
+msgid "Search isgnores case and accents:"
+msgstr "La búsqueda ignora mayúsculas y acentos:"
+
+#: portal/templates/portal/includes/search-help.html:7
+msgid "Search criterias are joined with"
+msgstr "Los criterios de búsqueda se combinan con"
+
+#: portal/views.py:62
+msgid "Your Favourites list is empty"
+msgstr "Tu lista de favoritos está vacía"
+
+#: portal/views.py:384
+msgid "Favourites cleared succcessfully"
+msgstr "Favoritos borrados exitosamente"
+
+#: portal/views.py:593
+msgid ""
+"This file is only for authenticated users and you should not have accessed "
+"it."
+msgstr ""
+"Este archivo es solo para usuarios autenticados y no deberías haber accedido "
+"a él."
+
+#: portal/views.py:594
+msgid ""
+"Our servers security mechanism replaced the original content with this "
+"message."
+msgstr ""
+"Nuestro mecanismo de seguridad de servidores reemplazó el contenido original "
+"con este mensaje."
+
+#: portal/views.py:595
+msgid ""
+"If you got this file from our servers, we would like to know how you did."
+msgstr ""
+"Si obtuviste este archivo de nuestros servidores, nos gustaría saber cómo lo "
+"hiciste."
+
+#: portal/views.py:596
+msgid "We may hire you. Please contact us. Links on eMarches.com"
+msgstr "Podemos contratarte. Por favor, contáctanos. Enlaces en eMarches.com."
+
+#: templates/account/account_inactive.html:5
+#: templates/account/account_inactive.html:9
+msgid "Account Inactive"
+msgstr "Cuenta inactiva"
+
+#: templates/account/account_inactive.html:12
+msgid "This account is inactive."
+msgstr "Esta cuenta está inactiva."
+
+#: templates/account/base_reauthenticate.html:5
+#: templates/account/base_reauthenticate.html:9
+msgid "Confirm Access"
+msgstr "Confirmar acceso"
+
+#: templates/account/base_reauthenticate.html:12
+msgid "Please reauthenticate to safeguard your account."
+msgstr "Por favor, vuelve a autenticarte para proteger tu cuenta."
+
+#: templates/account/base_reauthenticate.html:19
+#: templates/mfa/authenticate.html:37
+msgid "Alternative options"
+msgstr "Opciones alternativas"
+
+#: templates/account/confirm_email_verification_code.html:5
+msgid "Email Verification"
+msgstr "Verificación de correo electrónico"
+
+#: templates/account/confirm_email_verification_code.html:9
+msgid "Enter Email Verification Code"
+msgstr "Introduce el código de verificación de correo electrónico"
+
+#: templates/account/confirm_email_verification_code.html:15
+#: templates/account/confirm_login_code.html:15
+#, python-format
+msgid ""
+"We’ve sent a code to %(email_link)s. The code expires shortly, so please "
+"enter it soon."
+msgstr ""
+"Te hemos enviado un código a %(email_link)s. El código expirará en breve, "
+"así que por favor introdúcelo pronto."
+
+#: templates/account/confirm_email_verification_code.html:27
+#: templates/account/email_confirm.html:24
+#: templates/account/reauthenticate.html:18
+#: templates/mfa/reauthenticate.html:18
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: templates/account/confirm_email_verification_code.html:31
+#: templates/account/confirm_email_verification_code.html:35
+#: templates/account/confirm_login_code.html:32
+#: templates/mfa/authenticate.html:28 templates/mfa/authenticate.html:44
+#: templates/mfa/webauthn/signup_form.html:26
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/account/confirm_login_code.html:9
+msgid "Enter Sign-In Code"
+msgstr "Introduce el código de acceso"
+
+#: templates/account/email.html:4 templates/account/email.html:8
+msgid "Email Addresses"
+msgstr "Direcciones de correo electrónico"
+
+#: templates/account/email.html:12
+msgid "The following email addresses are associated with your account:"
+msgstr ""
+"Las siguientes direcciones de correo electrónico están asociadas con tu "
+"cuenta:"
+
+#: templates/account/email.html:25
+msgid "Verified"
+msgstr "Verificado"
+
+#: templates/account/email.html:29
+msgid "Unverified"
+msgstr "No verificado"
+
+#: templates/account/email.html:34
+msgid "Primary"
+msgstr "Primario"
+
+#: templates/account/email.html:44
+msgid "Make Primary"
+msgstr "Hacer principal"
+
+#: templates/account/email.html:47 templates/account/email_change.html:37
+msgid "Re-send Verification"
+msgstr "Reenviar verificación"
+
+#: templates/account/email.html:50
+#: templates/mfa/webauthn/authenticator_confirm_delete.html:16
+#: templates/mfa/webauthn/authenticator_list.html:60
+#: templates/socialaccount/connections.html:40
+msgid "Remove"
+msgstr "Eliminar"
+
+#: templates/account/email.html:59
+msgid "Add Email Address"
+msgstr "Añadir dirección de correo electrónico"
+
+#: templates/account/email.html:70
+msgid "Add Email"
+msgstr "Añadir correo electrónico"
+
+#: templates/account/email.html:79
+msgid "Do you really want to remove the selected email address?"
+msgstr ""
+"¿Realmente quieres eliminar la dirección de correo electrónico seleccionada?"
+
+#: templates/account/email/account_already_exists_message.txt:4
+msgid ""
+"You are receiving this email because you or someone else tried to signup for "
+"an account using email address:"
+msgstr ""
+"Estás recibiendo este correo electrónico porque tú o alguien más intentaron "
+"registrarse para una cuenta usando la dirección de correo electrónico:"
+
+#: templates/account/email/account_already_exists_message.txt:8
+msgid ""
+"However, an account using that email address already exists.  In case you "
+"have forgotten about this, please use the password forgotten procedure to "
+"recover your account:"
+msgstr ""
+"Sin embargo, ya existe una cuenta con esa dirección de correo electrónico. "
+"En caso de que lo hayas olvidado, por favor utiliza el procedimiento de "
+"recuperación de contraseña para recuperar tu cuenta:"
+
+#: templates/account/email/account_already_exists_subject.txt:3
+msgid "Account Already Exists"
+msgstr "La cuenta ya existe"
+
+#: templates/account/email/base_message.txt:4
+#, python-format
+msgid "Hello from %(site_name)s!"
+msgstr "¡Hola desde %(site_name)s!"
+
+#: templates/account/email/base_message.txt:8
+#, python-format
+msgid "Thank you for using %(site_name)s!"
+msgstr "¡Gracias por usar %(site_name)s!"
+
+#: templates/account/email/base_notification.txt:5
+msgid ""
+"You are receiving this mail because the following change was made to your "
+"account:"
+msgstr ""
+"Estás recibiendo este correo electrónico porque se realizó el siguiente "
+"cambio en tu cuenta:"
+
+#: templates/account/email/base_notification.txt:10
+msgid ""
+"If you do not recognize this change then please take proper security "
+"precautions immediately. The change to your account originates from:"
+msgstr ""
+"Si no reconoces este cambio, por favor toma las medidas de seguridad "
+"correspondientes de inmediato. El cambio en tu cuenta proviene de:"
+
+#: templates/account/email/base_notification.txt:12
+msgid "IP address:"
+msgstr "Dirección IP:"
+
+#: templates/account/email/base_notification.txt:13
+msgid "Browser:"
+msgstr "Navegador:"
+
+#: templates/account/email/base_notification.txt:14
+msgid "Date:"
+msgstr "Fecha:"
+
+#: templates/account/email/email_changed_message.txt:4
+#, python-format
+msgid "Your email has been changed from %(from_email)s to %(to_email)s."
+msgstr ""
+"Tu correo electrónico ha sido cambiado de %(from_email)s a %(to_email)s."
+
+#: templates/account/email/email_changed_subject.txt:3
+msgid "Email Changed"
+msgstr "Correo electrónico cambiado"
+
+#: templates/account/email/email_confirm_message.txt:4
+msgid "Your email has been confirmed."
+msgstr "Tu correo electrónico ha sido confirmado."
+
+#: templates/account/email/email_confirm_subject.txt:3
+msgid "Email Confirmation"
+msgstr "Confirmación de correo electrónico"
+
+#: templates/account/email/email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"You're receiving this email because user %(user_display)s has given your "
+"email address to register an account on %(site_domain)s."
+msgstr ""
+"Estás recibiendo este correo electrónico porque el usuario %(user_display)s "
+"ha proporcionado tu dirección de correo electrónico para registrar una "
+"cuenta en %(site_domain)s."
+
+#: templates/account/email/email_confirmation_message.txt:7
+msgid ""
+"Your email verification code is listed below. Please enter it in your open "
+"browser window."
+msgstr ""
+"Tu código de verificación de correo electrónico está listado a continuación. "
+"Por favor, ingrésalo en la ventana de tu navegador abierta."
+
+#: templates/account/email/email_confirmation_message.txt:9
+#, python-format
+msgid "To confirm this is correct, go to %(activate_url)s"
+msgstr "Para confirmar que esto es correcto, ve a %(activate_url)s"
+
+#: templates/account/email/email_confirmation_subject.txt:3
+msgid "Please Confirm Your Email Address"
+msgstr "Por favor, confirma tu dirección de correo electrónico"
+
+#: templates/account/email/email_deleted_message.txt:4
+#, python-format
+msgid "Email address %(deleted_email)s has been removed from your account."
+msgstr ""
+"La dirección de correo electrónico %(deleted_email)s ha sido eliminada de tu "
+"cuenta."
+
+#: templates/account/email/email_deleted_subject.txt:3
+msgid "Email Removed"
+msgstr "Correo electrónico eliminado"
+
+#: templates/account/email/login_code_message.txt:5
+msgid ""
+"Your sign-in code is listed below. Please enter it in your open browser "
+"window."
+msgstr ""
+"Tu código de inicio de sesión está listado a continuación. Por favor, "
+"ingrésalo en la ventana de tu navegador abierta."
+
+#: templates/account/email/login_code_message.txt:9
+#: templates/account/email/unknown_account_message.txt:6
+msgid "This mail can be safely ignored if you did not initiate this action."
+msgstr ""
+"Este correo puede ser ignorado de manera segura si no iniciaste esta acción."
+
+#: templates/account/email/login_code_subject.txt:3
+msgid "Sign-In Code"
+msgstr "Código de inicio de sesión"
+
+#: templates/account/email/password_changed_message.txt:4
+msgid "Your password has been changed."
+msgstr "Tu contraseña ha sido cambiada."
+
+#: templates/account/email/password_changed_subject.txt:3
+msgid "Password Changed"
+msgstr "Contraseña cambiada"
+
+#: templates/account/email/password_reset_key_message.txt:4
+msgid ""
+"You're receiving this email because you or someone else has requested a "
+"password reset for your user account."
+msgstr ""
+"Estás recibiendo este correo electrónico porque tú o alguien más ha "
+"solicitado un restablecimiento de contraseña para tu cuenta de usuario."
+
+#: templates/account/email/password_reset_key_message.txt:5
+msgid ""
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
+msgstr ""
+"Puede ser ignorado de manera segura si no solicitaste un restablecimiento de "
+"contraseña. Haz clic en el enlace a continuación para restablecer tu "
+"contraseña."
+
+#: templates/account/email/password_reset_key_message.txt:9
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr ""
+"En caso de que lo hayas olvidado, tu nombre de usuario es %(username)s."
+
+#: templates/account/email/password_reset_key_subject.txt:3
+msgid "Password Reset Email"
+msgstr "Correo electrónico de restablecimiento de contraseña"
+
+#: templates/account/email/password_reset_message.txt:4
+msgid "Your password has been reset."
+msgstr "Tu contraseña ha sido restablecida."
+
+#: templates/account/email/password_reset_subject.txt:3
+#: templates/account/password_reset.html:4
+#: templates/account/password_reset.html:8
+#: templates/account/password_reset_done.html:6
+#: templates/account/password_reset_done.html:10
+msgid "Password Reset"
+msgstr "Restablecimiento de contraseña"
+
+#: templates/account/email/password_set_message.txt:4
+msgid "Your password has been set."
+msgstr "Tu contraseña ha sido configurada."
+
+#: templates/account/email/password_set_subject.txt:3
+msgid "Password Set"
+msgstr "Contraseña configurada"
+
+#: templates/account/email/unknown_account_message.txt:4
+#, python-format
+msgid ""
+"You are receiving this email because you, or someone else, tried to access "
+"an account with email %(email)s. However, we do not have any record of such "
+"an account in our database."
+msgstr ""
+"Estás recibiendo este correo electrónico porque tú, o alguien más, "
+"intentaron acceder a una cuenta con el correo electrónico %(email)s. Sin "
+"embargo, no tenemos ningún registro de tal cuenta en nuestra base de datos."
+
+#: templates/account/email/unknown_account_message.txt:8
+msgid "If it was you, you can sign up for an account using the link below."
+msgstr ""
+"Si fuiste tú, puedes registrarte para una cuenta usando el siguiente enlace."
+
+#: templates/account/email/unknown_account_subject.txt:3
+msgid "Unknown Account"
+msgstr "Cuenta desconocida"
+
+#: templates/account/email_change.html:5 templates/account/email_change.html:9
+msgid "Email Address"
+msgstr "Dirección de correo electrónico"
+
+#: templates/account/email_change.html:21
+#: templates/account/email_change.html:29
+msgid "Current email"
+msgstr "Correo actual"
+
+#: templates/account/email_change.html:31
+msgid "Changing to"
+msgstr "Cambiando a"
+
+#: templates/account/email_change.html:35
+msgid "Your email address is still pending verification."
+msgstr "Tu dirección de correo electrónico aún está pendiente de verificación."
+
+#: templates/account/email_change.html:41
+msgid "Cancel Change"
+msgstr "Cancelar cambio"
+
+#: templates/account/email_change.html:49
+msgid "Change to"
+msgstr "Cambiar a"
+
+#: templates/account/email_change.html:55
+msgid "Change Email"
+msgstr "Cambiar correo electrónico"
+
+#: templates/account/email_confirm.html:6
+#: templates/account/email_confirm.html:10
+msgid "Confirm Email Address"
+msgstr "Confirmar dirección de correo electrónico"
+
+#: templates/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an email "
+"address for user %(user_display)s."
+msgstr ""
+"Por favor confirma que <a href=\"mailto:%(email)s\">%(email)s</a> es una "
+"dirección de correo electrónico para el usuario %(user_display)s."
+
+#: templates/account/email_confirm.html:30
+#: templates/account/messages/email_confirmation_failed.txt:2
+#, python-format
+msgid ""
+"Unable to confirm %(email)s because it is already confirmed by a different "
+"account."
+msgstr ""
+"No se puede confirmar %(email)s porque ya está confirmado por una cuenta "
+"diferente."
+
+#: templates/account/email_confirm.html:36
+#, python-format
+msgid ""
+"This email confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new email confirmation request</a>."
+msgstr ""
+"Este enlace de confirmación de correo electrónico ha caducado o es inválido. "
+"Por favor <a href=\"%(email_url)s\">emite una nueva solicitud de "
+"confirmación de correo electrónico</a>."
+
+#: templates/account/login.html:21
+#, python-format
+msgid ""
+"If you have not created an account yet, then please %(link)ssign "
+"up%(end_link)s first."
+msgstr ""
+"Si aún no has creado una cuenta, por favor %(link)screa una%(end_link)s "
+"primero."
+
+#: templates/account/login.html:44
+msgid "Sign in with a passkey"
+msgstr "Iniciar sesión con una llave de acceso"
+
+#: templates/account/login.html:49 templates/account/request_login_code.html:9
+msgid "Mail me a sign-in code"
+msgstr "Envíame un código de inicio de sesión"
+
+#: templates/account/logout.html:11
+msgid "Are you sure you want to sign out?"
+msgstr "¿Estás seguro de que deseas cerrar sesión?"
+
+#: templates/account/messages/cannot_delete_primary_email.txt:2
+#, python-format
+msgid "You cannot remove your primary email address (%(email)s)."
+msgstr ""
+"No puedes eliminar tu dirección de correo electrónico principal (%(email)s)."
+
+#: templates/account/messages/email_confirmation_sent.txt:2
+#, python-format
+msgid "Confirmation email sent to %(email)s."
+msgstr "Correo electrónico de confirmación enviado a %(email)s."
+
+#: templates/account/messages/email_confirmed.txt:2
+#, python-format
+msgid "You have confirmed %(email)s."
+msgstr "Has confirmado %(email)s."
+
+#: templates/account/messages/email_deleted.txt:2
+#, python-format
+msgid "Removed email address %(email)s."
+msgstr "Dirección de correo electrónico %(email)s eliminada."
+
+#: templates/account/messages/logged_in.txt:4
+#, python-format
+msgid "Successfully signed in as %(name)s."
+msgstr "Has iniciado sesión con éxito como %(name)s."
+
+#: templates/account/messages/logged_out.txt:2
+msgid "You have signed out."
+msgstr "Has cerrado sesión."
+
+#: templates/account/messages/login_code_sent.txt:2
+#, python-format
+msgid "A sign-in code has been mailed to %(email)s."
+msgstr "Se ha enviado un código de inicio de sesión a %(email)s."
+
+#: templates/account/messages/password_changed.txt:2
+msgid "Password successfully changed."
+msgstr "Contraseña cambiada con éxito."
+
+#: templates/account/messages/password_set.txt:2
+msgid "Password successfully set."
+msgstr "Contraseña establecida con éxito."
+
+#: templates/account/messages/primary_email_set.txt:2
+msgid "Primary email address set."
+msgstr "Dirección de correo electrónico principal establecida."
+
+#: templates/account/messages/unverified_primary_email.txt:2
+msgid "Your primary email address must be verified."
+msgstr "Tu dirección de correo electrónico principal debe ser verificada."
+
+#: templates/account/password_change.html:22
+msgid "Forgot Password?"
+msgstr "¿Olvidaste tu contraseña?"
+
+#: templates/account/password_reset.html:14
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll send you "
+"an email allowing you to reset it."
+msgstr ""
+"¿Olvidaste tu contraseña? Ingresa tu dirección de correo electrónico a "
+"continuación, y te enviaremos un correo para que puedas restablecerla."
+
+#: templates/account/password_reset.html:25
+msgid "Reset My Password"
+msgstr "Restablecer mi contraseña"
+
+#: templates/account/password_reset.html:30
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+"Por favor, contáctanos si tienes problemas para restablecer tu contraseña."
+
+#: templates/account/password_reset_done.html:16
+msgid ""
+"We have sent you an email. If you have not received it please check your "
+"spam folder. Otherwise contact us if you do not receive it in a few minutes."
+msgstr ""
+"Te hemos enviado un correo electrónico. Si no lo has recibido, revisa tu "
+"carpeta de spam. Si no lo recibes en unos minutos, contáctanos."
+
+#: templates/account/password_reset_from_key.html:10
+msgid "Bad Token"
+msgstr "Token inválido"
+
+#: templates/account/password_reset_from_key.html:18
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"El enlace para restablecer la contraseña es inválido, posiblemente porque ya "
+"ha sido utilizado. Solicita un <a href=\"%(passwd_reset_url)s\">nuevo "
+"restablecimiento de contraseña</a>."
+
+#: templates/account/password_reset_from_key_done.html:12
+msgid "Your password is now changed."
+msgstr "Tu contraseña ha sido cambiada."
+
+#: templates/account/password_set.html:5 templates/account/password_set.html:9
+#: templates/account/password_set.html:21
+msgid "Set Password"
+msgstr "Establecer contraseña"
+
+#: templates/account/reauthenticate.html:6
+msgid "Enter your password:"
+msgstr "Ingresa tu contraseña:"
+
+#: templates/account/request_login_code.html:12
+msgid ""
+"You will receive an email containing a special code for a password-free sign-"
+"in."
+msgstr ""
+"Recibirás un correo electrónico con un código especial para un inicio de "
+"sesión sin contraseña."
+
+#: templates/account/request_login_code.html:24
+msgid "Request Code"
+msgstr "Solicitar código"
+
+#: templates/account/request_login_code.html:30
+msgid "Other sign-in options"
+msgstr "Otras opciones de inicio de sesión"
+
+#: templates/account/signup.html:5 templates/account/signup_by_passkey.html:4
+#: templates/socialaccount/signup.html:5
+msgid "Signup"
+msgstr "Registrarse"
+
+#: templates/account/signup.html:11 templates/account/signup.html:32
+#: templates/account/signup_by_passkey.html:29
+#: templates/socialaccount/signup.html:9 templates/socialaccount/signup.html:25
+msgid "Sign Up"
+msgstr "Registrarse"
+
+#: templates/account/signup.html:16 templates/account/signup_by_passkey.html:17
+#, python-format
+msgid "Already have an account? Then please %(link)ssign in%(end_link)s."
+msgstr ""
+"¿Ya tienes una cuenta? Entonces por favor %(link)sinicia sesión%(end_link)s."
+
+#: templates/account/signup.html:26
+msgid "Terms and conditions apply"
+msgstr "Se aplican términos y condiciones"
+
+#: templates/account/signup.html:26
+msgid "Read more"
+msgstr "Leer mas"
+
+#: templates/account/signup.html:43
+msgid "Sign up using a passkey"
+msgstr "Regístrate usando una llave de acceso"
+
+#: templates/account/signup_by_passkey.html:8
+msgid "Passkey Sign Up"
+msgstr "Registro con llave de acceso"
+
+#: templates/account/signup_by_passkey.html:36
+msgid "Other options"
+msgstr "Otras opciones"
+
+#: templates/account/signup_closed.html:5
+#: templates/account/signup_closed.html:9
+msgid "Sign Up Closed"
+msgstr "Registro cerrado"
+
+#: templates/account/signup_closed.html:12
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "Lo sentimos, pero el registro está actualmente cerrado."
+
+#: templates/account/snippets/already_logged_in.html:7
+#, python-format
+msgid "You are already logged in as %(user_display)s."
+msgstr "Ya has iniciado sesión como %(user_display)s."
+
+#: templates/account/snippets/warn_no_email.html:3
+msgid "Warning:"
+msgstr "Advertencia:"
+
+#: templates/account/snippets/warn_no_email.html:3
+msgid ""
+"You currently do not have any email address set up. You should really add an "
+"email address so you can receive notifications, reset your password, etc."
+msgstr ""
+"Actualmente no tienes ninguna dirección de correo electrónico configurada. "
+"Deberías añadir una dirección de correo electrónico para poder recibir "
+"notificaciones, restablecer tu contraseña, etc."
+
+#: templates/account/verification_sent.html:5
+#: templates/account/verification_sent.html:9
+#: templates/account/verified_email_required.html:5
+#: templates/account/verified_email_required.html:9
+msgid "Verify Your Email Address"
+msgstr "Verifica tu dirección de correo electrónico"
+
+#: templates/account/verification_sent.html:12
+msgid ""
+"We have sent an email to you for verification. Follow the link provided to "
+"finalize the signup process. If you do not see the verification email in "
+"your main inbox, check your spam folder. Please contact us if you do not "
+"receive the verification email within a few minutes."
+msgstr ""
+"Te hemos enviado un correo electrónico para su verificación. Sigue el enlace "
+"proporcionado para finalizar el proceso de registro. Si no ves el correo de "
+"verificación en tu bandeja de entrada principal, revisa tu carpeta de spam. "
+"Por favor, contáctanos si no lo recibes en unos minutos."
+
+#: templates/account/verified_email_required.html:13
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your email address. "
+msgstr ""
+"Esta parte del sitio requiere que verifiquemos que\n"
+"eres quien dices ser. Para esto, necesitamos que\n"
+"verifiques la propiedad de tu dirección de correo electrónico."
+
+#: templates/account/verified_email_required.html:18
+msgid ""
+"We have sent an email to you for\n"
+"verification. Please click on the link inside that email. If you do not see "
+"the verification email in your main inbox, check your spam folder. "
+"Otherwise\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"Te hemos enviado un correo electrónico para\n"
+"verificación. Haz clic en el enlace dentro de ese correo. Si no ves el "
+"correo de verificación en tu bandeja de entrada principal, revisa tu carpeta "
+"de spam. De lo contrario,\n"
+"contáctanos si no lo recibes en unos minutos."
+
+#: templates/account/verified_email_required.html:23
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
+"email address</a>."
+msgstr ""
+"<strong>Nota:</strong> aún puedes <a href=\"%(email_url)s\">cambiar tu "
+"dirección de correo electrónico</a>."
+
+#: templates/admin/base_site.html:7 templates/admin/login.html:7
+msgid "Django administration"
+msgstr "Administración de Django"
+
+#: templates/allauth/elements/fields.html:38
+msgid "Show Password"
+msgstr "Mostrar contraseña"
+
+#: templates/includes/head.html:13
+msgid ""
+"eMarches portal. Morocco Public Procurement Market. Access to public Tenders "
+"and Puchase orders. Paperless dematerialized procedure"
+msgstr ""
+
+#: templates/includes/head.html:14
+msgid ""
+"PMMP Morocco Public Procurement Market Purchase Order Tenders Offers Free "
+"Listing Files Download"
+msgstr ""
+
+#: templates/mfa/authenticate.html:10 templates/mfa/index.html:5
+#: templates/mfa/index.html:9
+msgid "Two-Factor Authentication"
+msgstr "Autenticación en dos pasos"
+
+#: templates/mfa/authenticate.html:13
+msgid ""
+"Your account is protected by two-factor authentication. Please enter an "
+"authenticator code:"
+msgstr ""
+"Tu cuenta está protegida por autenticación en dos pasos. Por favor, ingresa "
+"un código de autenticador:"
+
+#: templates/mfa/authenticate.html:41
+#: templates/mfa/webauthn/reauthenticate.html:15
+msgid "Use a security key"
+msgstr "Usar una llave de seguridad"
+
+#: templates/mfa/email/recovery_codes_generated_message.txt:4
+msgid ""
+"A new set of Two-Factor Authentication recovery codes has been generated."
+msgstr ""
+"Se ha generado un nuevo conjunto de códigos de recuperación para la "
+"autenticación en dos pasos."
+
+#: templates/mfa/email/recovery_codes_generated_subject.txt:3
+msgid "New Recovery Codes Generated"
+msgstr "Se han generado nuevos códigos de recuperación"
+
+#: templates/mfa/email/totp_activated_message.txt:4
+#: templates/mfa/messages/totp_activated.txt:2
+msgid "Authenticator app activated."
+msgstr "Aplicación de autenticador activada."
+
+#: templates/mfa/email/totp_activated_subject.txt:3
+msgid "Authenticator App Activated"
+msgstr "Aplicación de autenticador activada"
+
+#: templates/mfa/email/totp_deactivated_message.txt:4
+#: templates/mfa/messages/totp_deactivated.txt:2
+msgid "Authenticator app deactivated."
+msgstr "Aplicación de autenticador desactivada."
+
+#: templates/mfa/email/totp_deactivated_subject.txt:3
+msgid "Authenticator App Deactivated"
+msgstr "Aplicación de autenticador desactivada"
+
+#: templates/mfa/email/webauthn_added_message.txt:4
+msgid "A new security key has been added."
+msgstr "Se ha añadido una nueva llave de seguridad."
+
+#: templates/mfa/email/webauthn_added_subject.txt:3
+msgid "Security Key Added"
+msgstr "Llave de seguridad añadida"
+
+#: templates/mfa/email/webauthn_removed_message.txt:4
+msgid "A security key has been removed."
+msgstr "Se ha eliminado una clave de seguridad."
+
+#: templates/mfa/email/webauthn_removed_subject.txt:3
+msgid "Security Key Removed"
+msgstr "Clave de seguridad eliminada"
+
+#: templates/mfa/index.html:14 templates/mfa/totp/base.html:4
+msgid "Authenticator App"
+msgstr "Aplicación de autenticador"
+
+#: templates/mfa/index.html:19
+msgid "Authentication using an authenticator app is active."
+msgstr "La autenticación mediante una aplicación de autenticador está activa."
+
+#: templates/mfa/index.html:23
+msgid "An authenticator app is not active."
+msgstr "Una aplicación de autenticador no está activa."
+
+#: templates/mfa/index.html:32 templates/mfa/totp/deactivate_form.html:24
+msgid "Deactivate"
+msgstr "Desactivar"
+
+#: templates/mfa/index.html:36 templates/mfa/totp/activate_form.html:32
+msgid "Activate"
+msgstr "Activar"
+
+#: templates/mfa/index.html:45 templates/mfa/webauthn/authenticator_list.html:8
+#: templates/mfa/webauthn/base.html:4
+msgid "Security Keys"
+msgstr "Claves de seguridad"
+
+#: templates/mfa/index.html:50
+#, python-format
+msgid "You have added %(count)s security key."
+msgid_plural "You have added %(count)s security keys."
+msgstr[0] "Has agregado %(count)s clave de seguridad."
+msgstr[1] "Has agregado %(count)s claves de seguridad."
+
+#: templates/mfa/index.html:54
+#: templates/mfa/webauthn/authenticator_list.html:12
+msgid "No security keys have been added."
+msgstr "No se han agregado claves de seguridad."
+
+#: templates/mfa/index.html:62
+msgid "Manage"
+msgstr "Gestionar"
+
+#: templates/mfa/index.html:67 templates/mfa/webauthn/add_form.html:18
+#: templates/mfa/webauthn/authenticator_list.html:70
+msgid "Add"
+msgstr "Agregar"
+
+#: templates/mfa/index.html:77 templates/mfa/recovery_codes/base.html:4
+#: templates/mfa/recovery_codes/generate.html:6
+#: templates/mfa/recovery_codes/index.html:6
+msgid "Recovery Codes"
+msgstr "Códigos de recuperación"
+
+#: templates/mfa/index.html:82 templates/mfa/recovery_codes/index.html:9
+#, python-format
+msgid ""
+"There is %(unused_count)s out of %(total_count)s recovery codes available."
+msgid_plural ""
+"There are %(unused_count)s out of %(total_count)s recovery codes available."
+msgstr[0] ""
+"Hay %(unused_count)s de %(total_count)s códigos de recuperación disponibles."
+msgstr[1] ""
+"Hay %(unused_count)s de %(total_count)s códigos de recuperación disponibles."
+
+#: templates/mfa/index.html:86
+msgid "No recovery codes set up."
+msgstr "No se han configurado códigos de recuperación."
+
+#: templates/mfa/index.html:96
+msgid "View"
+msgstr "Ver"
+
+#: templates/mfa/index.html:110 templates/mfa/recovery_codes/generate.html:29
+msgid "Generate"
+msgstr "Generar"
+
+#: templates/mfa/messages/recovery_codes_generated.txt:2
+msgid "A new set of recovery codes has been generated."
+msgstr "Se ha generado un nuevo conjunto de códigos de recuperación."
+
+#: templates/mfa/messages/webauthn_added.txt:2
+msgid "Security key added."
+msgstr "Clave de seguridad agregada."
+
+#: templates/mfa/messages/webauthn_removed.txt:2
+msgid "Security key removed."
+msgstr "Clave de seguridad eliminada."
+
+#: templates/mfa/reauthenticate.html:6
+msgid "Enter an authenticator code:"
+msgstr "Introduce un código de autenticador:"
+
+#: templates/mfa/recovery_codes/generate.html:9
+msgid "You are about to generate a new set of recovery codes for your account."
+msgstr ""
+"Estás a punto de generar un nuevo conjunto de códigos de recuperación para "
+"tu cuenta."
+
+#: templates/mfa/recovery_codes/generate.html:11
+msgid "This action will invalidate your existing codes."
+msgstr "Esta acción invalidará tus códigos existentes."
+
+#: templates/mfa/recovery_codes/generate.html:13
+msgid "Are you sure?"
+msgstr "¿Estás seguro?"
+
+#: templates/mfa/recovery_codes/index.html:13
+msgid "Unused codes"
+msgstr "Códigos no utilizados"
+
+#: templates/mfa/recovery_codes/index.html:25
+msgid "Download codes"
+msgstr "Descargar códigos"
+
+#: templates/mfa/recovery_codes/index.html:30
+msgid "Generate new codes"
+msgstr "Generar nuevos códigos"
+
+#: templates/mfa/totp/activate_form.html:4
+#: templates/mfa/totp/activate_form.html:8
+msgid "Activate Authenticator App"
+msgstr "Activar la aplicación de autenticador"
+
+#: templates/mfa/totp/activate_form.html:11
+msgid ""
+"To protect your account with two-factor authentication, scan the QR code "
+"below with your authenticator app. Then, input the verification code "
+"generated by the app below."
+msgstr ""
+"Para proteger tu cuenta con autenticación en dos factores, escanea el código "
+"QR de abajo con tu aplicación de autenticador. Luego, introduce el código de "
+"verificación generado por la aplicación abajo."
+
+#: templates/mfa/totp/activate_form.html:21
+msgid "Authenticator secret"
+msgstr "Secreto del autenticador"
+
+#: templates/mfa/totp/activate_form.html:24
+msgid ""
+"You can store this secret and use it to reinstall your authenticator app at "
+"a later time."
+msgstr ""
+"Puedes almacenar este secreto y usarlo para reinstalar tu aplicación de "
+"autenticador en un momento posterior."
+
+#: templates/mfa/totp/deactivate_form.html:5
+#: templates/mfa/totp/deactivate_form.html:9
+msgid "Deactivate Authenticator App"
+msgstr "Desactivar la aplicación de autenticador"
+
+#: templates/mfa/totp/deactivate_form.html:12
+msgid ""
+"You are about to deactivate authenticator app based authentication. Are you "
+"sure?"
+msgstr ""
+"Estás a punto de desactivar la autenticación basada en la aplicación de "
+"autenticador. ¿Estás seguro?"
+
+#: templates/mfa/webauthn/add_form.html:7
+msgid "Add Security Key"
+msgstr "Agregar clave de seguridad"
+
+#: templates/mfa/webauthn/authenticator_confirm_delete.html:6
+msgid "Remove Security Key"
+msgstr "Eliminar clave de seguridad"
+
+#: templates/mfa/webauthn/authenticator_confirm_delete.html:9
+msgid "Are you sure you want to remove this security key?"
+msgstr "¿Estás seguro de que deseas eliminar esta clave de seguridad?"
+
+#: templates/mfa/webauthn/authenticator_list.html:18
+msgid "Key"
+msgstr "Clave"
+
+#: templates/mfa/webauthn/authenticator_list.html:21
+msgid "Usage"
+msgstr "Uso"
+
+#: templates/mfa/webauthn/authenticator_list.html:33
+msgid "Passkey"
+msgstr "Clave de acceso"
+
+#: templates/mfa/webauthn/authenticator_list.html:37
+msgid "Security key"
+msgstr "Clave de seguridad"
+
+#: templates/mfa/webauthn/authenticator_list.html:40
+msgid "This key does not indicate whether it is a passkey."
+msgstr "Esta clave no indica si es una clave de acceso."
+
+#: templates/mfa/webauthn/authenticator_list.html:41
+msgid "Unspecified"
+msgstr "No especificado"
+
+#: templates/mfa/webauthn/authenticator_list.html:46
+#, python-format
+msgid "Added on %(created_at)s"
+msgstr "Agregada el %(created_at)s"
+
+#: templates/mfa/webauthn/authenticator_list.html:48
+#, python-format
+msgid "Last used %(last_used)s"
+msgstr "Último uso: %(last_used)s"
+
+#: templates/mfa/webauthn/authenticator_list.html:56
+msgid "Edit"
+msgstr "Editar"
+
+#: templates/mfa/webauthn/edit_form.html:7
+msgid "Edit Security Key"
+msgstr "Editar clave de seguridad"
+
+#: templates/mfa/webauthn/signup_form.html:7
+msgid "Create Passkey"
+msgstr "Crear clave de acceso"
+
+#: templates/mfa/webauthn/signup_form.html:10
+msgid ""
+"You are about to create a passkey for your account. As you can add "
+"additional keys later on, you can use a descriptive name to tell the keys "
+"apart."
+msgstr ""
+"Estás a punto de crear una clave de acceso para tu cuenta. Como puedes "
+"agregar claves adicionales más tarde, puedes usar un nombre descriptivo para "
+"distinguir las claves."
+
+#: templates/mfa/webauthn/signup_form.html:21
+msgid "Create"
+msgstr "Crear"
+
+#: templates/mfa/webauthn/snippets/scripts.html:2
+msgid "This functionality requires JavaScript."
+msgstr "Esta funcionalidad requiere JavaScript."
+
+#: templates/socialaccount/authentication_error.html:5
+#: templates/socialaccount/authentication_error.html:9
+msgid "Third-Party Login Failure"
+msgstr "Error al iniciar sesión con cuenta de terceros"
+
+#: templates/socialaccount/authentication_error.html:12
+msgid ""
+"An error occurred while attempting to login via your third-party account."
+msgstr ""
+"Se produjo un error al intentar iniciar sesión mediante tu cuenta de "
+"terceros."
+
+#: templates/socialaccount/connections.html:5
+#: templates/socialaccount/connections.html:9
+msgid "Account Connections"
+msgstr "Conexiones de cuenta"
+
+#: templates/socialaccount/connections.html:13
+msgid ""
+"You can sign in to your account using any of the following third-party "
+"accounts:"
+msgstr ""
+"Puedes iniciar sesión en tu cuenta usando cualquiera de las siguientes "
+"cuentas de terceros:"
+
+#: templates/socialaccount/connections.html:46
+msgid "You currently have no third-party accounts connected to this account."
+msgstr "Actualmente no tienes cuentas de terceros conectadas a esta cuenta."
+
+#: templates/socialaccount/connections.html:50
+msgid "Add a Third-Party Account"
+msgstr "Agregar una cuenta de terceros"
+
+#: templates/socialaccount/email/account_connected_message.txt:4
+#, python-format
+msgid ""
+"A third-party account from %(provider)s has been connected to your account."
+msgstr "Una cuenta de terceros de %(provider)s se ha conectado a tu cuenta."
+
+#: templates/socialaccount/email/account_connected_subject.txt:3
+msgid "Third-Party Account Connected"
+msgstr "Cuenta de terceros conectada"
+
+#: templates/socialaccount/email/account_disconnected_message.txt:4
+#, python-format
+msgid ""
+"A third-party account from %(provider)s has been disconnected from your "
+"account."
+msgstr ""
+"Una cuenta de terceros de %(provider)s se ha desconectado de tu cuenta."
+
+#: templates/socialaccount/email/account_disconnected_subject.txt:3
+msgid "Third-Party Account Disconnected"
+msgstr "Cuenta de terceros desconectada"
+
+#: templates/socialaccount/login.html:10
+#, python-format
+msgid "Connect %(provider)s"
+msgstr "Conectar %(provider)s"
+
+#: templates/socialaccount/login.html:13
+#, python-format
+msgid "You are about to connect a new third-party account from %(provider)s."
+msgstr ""
+"Estás a punto de conectar una nueva cuenta de terceros de %(provider)s."
+
+#: templates/socialaccount/login.html:17
+#, python-format
+msgid "Sign In Via %(provider)s"
+msgstr "Iniciar sesión a través de %(provider)s"
+
+#: templates/socialaccount/login.html:20
+#, python-format
+msgid "You are about to sign in using a third-party account from %(provider)s."
+msgstr ""
+"Estás a punto de iniciar sesión utilizando una cuenta de terceros de "
+"%(provider)s."
+
+#: templates/socialaccount/login.html:27
+#: templates/socialaccount/login_redirect.html:10
+msgid "Continue"
+msgstr "Continuar"
+
+#: templates/socialaccount/login_cancelled.html:5
+#: templates/socialaccount/login_cancelled.html:9
+msgid "Login Cancelled"
+msgstr "Inicio de sesión cancelado"
+
+#: templates/socialaccount/login_cancelled.html:13
+#, python-format
+msgid ""
+"You decided to cancel logging in to our site using one of your existing "
+"accounts. If this was a mistake, please proceed to <a "
+"href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+"Decidiste cancelar el inicio de sesión en nuestro sitio utilizando una de "
+"tus cuentas existentes. Si esto fue un error, por favor procede a <a "
+"href=\"%(login_url)s\">iniciar sesión</a>."
+
+#: templates/socialaccount/messages/account_connected.txt:2
+msgid "The third-party account has been connected."
+msgstr "La cuenta de terceros ha sido conectada."
+
+#: templates/socialaccount/messages/account_connected_other.txt:2
+msgid "The third-party account is already connected to a different account."
+msgstr "La cuenta de terceros ya está conectada a una cuenta diferente."
+
+#: templates/socialaccount/messages/account_disconnected.txt:2
+msgid "The third-party account has been disconnected."
+msgstr "La cuenta de terceros ha sido desconectada."
+
+#: templates/socialaccount/signup.html:12
+#, python-format
+msgid ""
+"You are about to use your %(provider_name)s account to login to\n"
+"%(site_name)s. As a final step, please complete the following form:"
+msgstr ""
+"Estás a punto de usar tu cuenta de %(provider_name)s para iniciar sesión en\n"
+"%(site_name)s. Como último paso, por favor completa el siguiente formulario:"
+
+#: templates/socialaccount/snippets/login.html:10
+msgid "Or use a third-party"
+msgstr "O usa una cuenta de terceros"
+
+#: templates/usersessions/messages/sessions_logged_out.txt:2
+msgid "Signed out of all other sessions."
+msgstr "Has cerrado sesión en todas las demás sesiones."
+
+#: templates/usersessions/usersession_list.html:6
+#: templates/usersessions/usersession_list.html:10
+msgid "Sessions"
+msgstr "Sesiones"
+
+#: templates/usersessions/usersession_list.html:23
+msgid "Started At"
+msgstr "Iniciado en"
+
+#: templates/usersessions/usersession_list.html:24
+msgid "IP Address"
+msgstr "Dirección IP"
+
+#: templates/usersessions/usersession_list.html:25
+msgid "Browser"
+msgstr "Navegador"
+
+#: templates/usersessions/usersession_list.html:27
+msgid "Last seen at"
+msgstr "Última vez visto en"
+
+#: templates/usersessions/usersession_list.html:47
+msgid "Current"
+msgstr "Actual"
+
+#: templates/usersessions/usersession_list.html:60
+msgid "Sign Out Other Sessions"
+msgstr "Cerrar sesión en otras sesiones"
+
+#~ msgid "Mobile"
+#~ msgstr "Móvil"
+
+#~ msgid "Profile not set"
+#~ msgstr "Perfil no configurado"
+
+#~ msgid "Profile Stats"
+#~ msgstr "Statisticas del perfil"
+
+#~ msgid "Unlimited"
+#~ msgstr "Ilimitadas"
+
+#~ msgid "Browse"
+#~ msgstr "Explorar"
+
+#~ msgid "Manage Addresses"
+#~ msgstr "Gestionar direcciones"
+
+#~ msgid "Exit Favourites"
+#~ msgstr "Salir de favoritos"
+
+#~ msgid "Forgot your password?"
+#~ msgstr "¿Olvidaste tu contraseña?"

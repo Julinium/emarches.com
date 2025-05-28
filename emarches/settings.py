@@ -186,7 +186,7 @@ AXES_FAILURE_LIMIT = 5# Number of failed login attempts before blocking
 AXES_COOLOFF_TIME = 1# Period before failed attempts are reset (in hours)
 AXES_IGNORE_USERNAME = ['socialaccount_user']# Prevent detection of "failed" logins for password-less (e.g., social) logins
 AXES_LOCKOUT_URL = 'base_lockout' # Redirect URL for lockouts
-AXES_LOGGING = True# Optional: Store logs for audit purposes
+AXES_LOGGING = True # Optional: Store logs for audit purposes
 
 # Coloring messages for UI styling
 MESSAGE_TAGS = {

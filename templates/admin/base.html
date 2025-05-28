@@ -1,0 +1,17 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+
+{% block extrastyle %}{{ block.super }}
+  <!-- <link rel="stylesheet" href="{% static 'bcons/bootstrap-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}"> -->
+<style>
+html[data-theme="light"], :root {
+  --primary: #530087;
+  --secondary: #8d4692;
+  --link-fg: #530087;
+  --link-selected-fg: #eb7f12;
+}
+</style>
+{% endblock %}

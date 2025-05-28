@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+{% get_current_language_bidi as LB %}
+
+<html lang="en" dir="{% if LB %}rtl{% else %}ltr{% endif %}">
+	<head>
+		<title>eMarches | {% block title %}{% endblock title %}</title>
+		{% include 'includes/head.html' %}
+	</head>
+
+	<body>
+		{% include 'includes/preloader.html' %}	
+		{% include 'base/includes/navbar.html' %}
+		
+		<div id="main-content" style="display: none;">
+			<div class="container mt-4">
+				<div class="row justify-content-center">
+					<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+						{% if messages %}
+							{% include 'base/includes/messages.html' %}
+						{% endif %}
+						{% block content %}{% endblock %}
+					</div>
+				</div>
+			</div>
+		</div>
+		{% include 'includes/knee.html' %}
+	</body>
+</html>
