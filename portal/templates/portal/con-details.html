@@ -1,0 +1,536 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load taginos %}
+{% load tz %}
+
+{% block title %}{% translate 'Tender details' %} {% endblock title %}
+
+
+{% block content %}
+    {% if con %}
+        <div id="tosts-container" class="toast-container bottom-0 end-0 p-3" style="position: fixed; z-index: 99;">
+            {% include 'base/includes/message.html' with id="dlToast" teint='info' message=_('Download should start shortly... Please wait.') %}
+            {% include 'base/includes/message.html' with id="erToast" teint='danger' message=_('Sorry, we could not get your files. If this happens often, please let us know.') %}
+            {% include 'base/includes/message.html' with id="favToast" teint='success' message=_('Item added to Favourites.') %}
+            {% include 'base/includes/message.html' with id="defToast" teint='success' message=_('Item removed from Favourites.') %}
+        </div>
+    
+
+        <div id="dldModal" class="modal fade" tabindex="-1" aria-labelledby="dldModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="dldModalLabel">{% translate "Download Tender's files" %}</h1>
+                    </div>
+                    <div class="modal-body">
+                        {% if flist  %}
+                            <div>{% translate "Here is a list of files associated with the Tender." %}</div>
+                            <div class="small text-muted">{% translate "Once you click on an item, your browser or device should handle the download process." %}</div>
+                            <ul class="list-group my-3 p-0 shadow-sm">
+                                {% for filename in flist %}
+                                    <a class="text-decoration-none" href="{% url 'portal_con_get_file' con.id filename %}"{% if flist|length == 1 %} data-bs-dismiss="modal"{% endif %}>
+                                        <li class="list-group-item" style="direction: ltr;">{{ filename }}</li>
+                                    </a>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <div class="text-danger">{% translate "Sorry. We could not get the files for this Tender." %}</div>
+                            <div class="small text-muted">{% translate "Please try again later, or contact us if this problem persists." %}</div>
+                        {% endif %}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">{% translate 'Dismiss' %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="page-title" class="d-flex flex-wrap align-items-center mt-4 mb-2">
+            <div id="cancelledStar" {% if con.cancelled %}style="display:block;"{% else %}style="display:none;"{% endif %}>
+                <!-- <img class="me-2" src="{% static 'img/cancelled.svg' %}" height="24" alt="Fav"> -->
+                <span class="mb-1 fw-bold fs-2 me-3 text-danger"><img src="{% static 'img/cancelled.svg' %}" class="pb-1 mx-1" alt="{% translate 'Cancelled' %}">{% translate 'Cancelled' %}</span>
+            </div>
+            <div id="favedStar" {% if faved %}style="display:block;"{% else %}style="display:none;"{% endif %}>
+                <img class="me-2" src="{% static 'img/star-fill.svg' %}" height="24" alt="Fav">
+            </div>
+            <h1 class="mb-0">{% translate 'Tender details' %}</h1>
+        </div>
+        
+        <div id="con-details">
+            <div id="top-actions" class="py-2">
+                <a type="button" class="btn btn-outline-primary mt-1 px-2" {% if request.user.is_authenticated %} data-bs-toggle="modal" data-bs-target="#dldModal"{% else %} href="{% url 'account_login' %}?next={{ request.get_full_path }}"{% endif %}>
+                    <div class="d-flex justify-content-center">
+                        {% if not request.user.is_authenticated %}
+                            <img class="mx-1" src="{% static 'img/lock.svg' %}" height="24">
+                        {% endif %}
+                        <div class="mx-1"><i class="bi bi-arrow-down-square-fill"></i> {% translate 'Download' %}{% if flist %} |{% endif %}</div>
+                        {% if flist %}<span class="px-1">{{ dsize|filesizeformat }}</span>{% endif %}
+                    </div>
+                </a>
+
+                <a id="favbtn" type="button" class="btn btn-outline-primary mt-1 px-2 btn-outline-primary" {% if request.user.is_authenticated %} onclick="toggleFav('/cons/fav/{{ con.id }}')" {% else %} href="{% url 'account_login' %}?next={{ request.get_full_path }}"{% endif %}>
+                    <div class="d-flex justify-content-center">
+                        {% if not request.user.is_authenticated %}
+                            <img class="mx-1" src="{% static 'img/lock.svg' %}" height="24">
+                        {% endif %}
+                        <div class="mx-1"><i class="bi bi-star-half"></i> {% translate 'Toggle Favourite' %}</div>                        
+                    </div>
+                </a>
+
+                <a type="button" class="btn btn-outline-primary mt-1 px-2" {% if request.user.is_authenticated %}  target="_blank" href="{{ con.portal_link }}"{% else %} href="{% url 'account_login' %}?next={{ request.get_full_path }}"{% endif %}>
+                    <div class="d-flex justify-content-center">
+                        {% if not request.user.is_authenticated %}
+                            <img class="mx-1" src="{% static 'img/lock.svg' %}" height="24">
+                        {% endif %}
+                        <div class="mx-1"><i class="bi bi-box-arrow-up-right"></i> {% translate 'Bid' %}</div>
+                    </div>
+                </a>
+
+            </div>
+
+            {% get_current_language as LC %}
+            <div id="con-destails" class="my-2">
+                <div>
+                    <div class="text-muted small">{% translate 'Object' %}</div>
+                    <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="pe-1 d-inline fw-bold">{{ con.objet }}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="text-muted small">{% translate 'Bidding Deadline' %} ({% translate 'Morocco time' %})</div>
+                        {% timezone "Africa/Casablanca" %}
+                            <div class="card p-2 mb-3 shadow-sm d-block {{ con.remaining_days | bg_teint }}">
+                                <div class="pe-1 d-inline fw-bold">{{ con.date_limite_depot|localtime  }}</div> |
+                                <div class="user-select-all {% if con.remaining_days > 29 %} text-success {% else %} text-danger {% endif%} fw-bold d-inline"> {{ con.remaining_days }} {% translate 'days' %}</div>
+                            </div>
+                        {% endtimezone %}
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="text-muted small">{% translate 'Total Estimate' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline fw-bold">{{ con.total_estimation | floatformat:'2g' }}</div>
+                            {% if con.nombre_lots > 1 %}<img src="{% static 'icons/grid-2x2-gap.svg' %}" height="16" alt="{% translate 'Multi-lots' %}">{% endif %}
+                        </div>
+                    </div>   
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="text-muted small">{% translate 'Temporary Caution' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline">
+                                {% if request.user.is_authenticated %}
+                                    {{ con.caution_provisoire | floatformat:'2g' }}
+                                {% else %}
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="text-muted small">{% translate 'Main Category' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline fw-bold">{{ con.categorie }}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-3">
+                        {% if con.nombre_lots == 1 %}
+                            <div class="text-muted small">{% translate 'Reserved to SMB+' %}</div>
+                            <div class="card p-2 mb-3 shadow-sm d-block">
+                                <div class="pe-1 d-inline">{% if con.lot_set.first.reserve_pme %}{% translate 'Yes' %}{% else %}{% translate 'No' %}{% endif %}</div>
+                            </div>
+                        {% else %}
+                            <div class="text-muted small">{% translate 'Lots count' %}</div>
+                            <div class="card p-2 mb-3 shadow-sm d-block">
+                                <div class="pe-1 d-inline">{{ con.nombre_lots }}</div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="text-muted small">{% translate 'Date published' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline">                                
+                                {% if request.user.is_authenticated %}
+                                    {{ con.date_publication|date }}
+                                {% else %}
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="text-muted small">{% translate 'Reference' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline" style="direction: ltr;">
+                                {% if request.user.is_authenticated %}
+                                    {{ con.reference }}
+                                {% else %}
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="text-muted small">{% translate 'Execution location' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline fw-bold">{{ con.lieu_execution }}</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="text-muted small">{% translate 'Public client' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline fw-bold">
+                                {% if request.user.is_authenticated %}
+                                    {{ con.acheteur_public }}
+                                {% else %}
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="text-muted small">{% translate 'Procedure' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline">{{ con.procedure_annonce }}</div>
+                            <div class="pe-1 d-inline">|</div>
+                            <div class="pe-1 d-inline">{{ con.mode_passation }}</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="text-muted small">{% translate 'Electronic response and signature' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline">
+                                {% if con.reponse_electronique == 'RR' %}{% translate 'Required, e-Sign required' %}{% endif %}
+                                {% if con.reponse_electronique == 'RO' %}{% translate 'Required, e-Sign not required' %}{% endif %}
+                                {% if con.reponse_electronique == 'OR' %}{% translate 'Not required, e-Sign required' %}{% endif %}
+                                {% if con.reponse_electronique == 'OO' %}{% translate 'Not required, e-Sign not required' %}{% endif %}
+                                {% if con.reponse_electronique == 'I' or con.reponse_electronique == '' %}{% translate 'Not Applicable' %}{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% if con.domaines %}
+                    <div id="domains">
+                        <div class="text-muted small">{% translate 'Domains of activity' %}</div>
+                        <ul class="list-group mb-3 p-0 shadow-sm">
+                            {% for d in con.domaines.all %}
+                                <li class="list-group-item">{{ d.domaine }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                
+                {% if con.nombre_lots == 1 %}
+
+                    {% if con.lot_set.first.qualifications.all %}
+                        <div id="qualifs">
+                            <div class="text-muted small">{% translate 'Qualifications' %}</div>                              
+                            {% if request.user.is_authenticated %}
+                                <ul class="list-group mb-3 p-0 shadow-sm">  
+                                    {% for q in con.lot_set.first.qualifications.all %}
+                                        <li class="list-group-item">{{ q.qualification }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if con.lot_set.first.agrements.all %}
+                        <div id="agrements">
+                            <div class="text-muted small">{% translate 'Agrements' %}</div>
+                            {% if request.user.is_authenticated %}
+                                <ul class="list-group mb-3 p-0 shadow-sm">
+                                    {% for a in con.lot_set.first.agrements.all %}
+                                        <li class="list-group-item">{{ a.agrement }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if con.lot_set.first.echantillons %}
+                        <div id="agrements">
+                            <div class="text-muted small">{% translate 'Samples' %}</div>
+                            {% if request.user.is_authenticated %}
+                                <ul class="list-group mb-3 p-0 shadow-sm">
+                                    {% for ech in con.lot_set.first.echantillons %}
+                                        <li class="list-group-item"><span class="fw-bold">{{ ech.Date|parse_iso_date }}</span> - {{ ech.Lieu }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if con.lot_set.first.reunions %}
+                        <div id="agrements">
+                            <div class="text-muted small">{% translate 'Meetings' %}</div>
+                            {% if request.user.is_authenticated %}
+                                <ul class="list-group mb-3 p-0 shadow-sm">
+                                    {% for reu in con.lot_set.first.reunions %}
+                                        <li class="list-group-item"><span class="fw-bold">{{ reu.Date|parse_iso_date }}</span> - {{ reu.Lieu }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if con.lot_set.first.visites %}
+                        <div id="agrements">
+                            <div class="text-muted small">{% translate 'In-Site Visits' %}</div>
+                            {% if request.user.is_authenticated %}
+                                <ul class="list-group mb-3 p-0 shadow-sm">
+                                    {% for vis in con.lot_set.first.visites %}
+                                        <li class="list-group-item"><span class="fw-bold">{{ vis.Date|parse_iso_date }}</span> - {{ vis.Lieu }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if con.lot_set.first.variante != 'Non' or con.prix_acquisition_plans != 0 %}
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="text-muted small">{% translate 'Price of Plans' %}</div>
+                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                    <div class="pe-1 d-inline">{{ con.prix_acquisition_plans | floatformat:'2g' }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="text-muted small">{% translate 'Variante' %}</div>
+                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                    <div class="pe-1 d-inline">{% if con.lot_set.first.variante == 'Non' %}{% translate 'No' %}{% else %}{% translate 'Yes' %}{% endif %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+
+                {% if con.nombre_lots > 1 %}
+                    <div>
+                        <div class="text-muted small">{% translate 'Lots details' %}</div>
+                        {% if request.user.is_authenticated %}
+                            <ul class="list-group mb-3 p-0 shadow-sm">
+                                {% for l in con.lot_set.all %}
+                                    <li class="list-group-item">
+                                        <strong">Lot {{ l.lot_number }} :</strong>
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Category' %}: </span><span>{{ l.categorie }}</span></div>
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Object' %}: </span><span>{{ l.objet }}</span></div>
+                                        {% if l.description %}
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Description' %}: </span><span>{{ l.description }}</span></div>
+                                        {% endif %}
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Estimate' %}: </span><span>{{ l.estimation | floatformat:'2g' }}</span></div>
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Caution' %}: </span><span>{{ l.caution_provisoire | floatformat:'2g' }}</span></div>
+                                        {% if l.reserve_pme %}
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Reserved to SMB' %}: </span><span>{% if l.reserve_pme %}{% translate 'Yes' %}{% else %}{% translate 'No' %}{% endif %}</span></div>
+                                        {% endif %}
+                                        {% if l.qualifications.all %}
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Qualifications' %}: </span><span><ul>{% for q in l.qualifications.all %}<li>{{ q.qualification }}</li>{% endfor %}</ul></span></div>
+                                        {% endif %}
+                                        {% if l.agrements.all %}
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Agrements' %}: </span><span><ul>{% for a in l.agrements.all %}<li>{{ a.agrement }}</li>{% endfor %}</ul></span></div>
+                                        {% endif %}
+
+                                        {% if l.echantillons %}
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Samples' %}: </span><span><ul>{% for e in l.echantillons %}<li>{{ e.Date|parse_iso_date }} - {{ e.Lieu }}</li>{% endfor %}</ul></span></div>
+                                        {% endif %}
+
+                                        {% if l.reunions %}
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Meetings' %}: </span><span><ul>{% for m in l.reunions %}<li>{{ m.Date|parse_iso_date }} - {{ m.Lieu }}</li>{% endfor %}</ul></span></div>
+                                        {% endif %}
+
+                                        {% if l.visites %}
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'In-Site Visits' %}: </span><span><ul>{% for v in l.visites %}<li>{{ v.Date|parse_iso_date }} - {{ v.Lieu }}</li>{% endfor %}</ul></span></div>
+                                        {% endif %}
+
+                                        {% if l.variante != 'Non' %}
+                                        <div class="small px-2"><span class="text-muted">— {% translate 'Variante' %}: </span><span>{{ l.variante }}</span></div>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <div class="card p-2 mb-3 shadow-sm d-block">
+                                <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                    <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                
+                {% if con.retrait_dossiers_adresse %}
+                    <div>
+                        <div class="text-muted small">{% translate 'Withdrawal address' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline">
+                                {% if request.user.is_authenticated %}
+                                    {{ con.retrait_dossiers_adresse }}
+                                {% else %}
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if con.depot_offres_adresse %}
+                    <div>
+                        <div class="text-muted small">{% translate 'Bidding address' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline">
+                                {% if request.user.is_authenticated %}
+                                    {{ con.depot_offres_adresse }}
+                                {% else %}
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if con.ouverture_plis_adresse %}
+                    <div>
+                        <div class="text-muted small">{% translate 'Opening address' %}</div>
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="pe-1 d-inline">
+                                {% if request.user.is_authenticated %}
+                                    {{ con.ouverture_plis_adresse }}
+                                {% else %}
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <div>
+                    <div class="text-muted small">{% translate 'Contact' %}</div>
+                    {% if request.user.is_authenticated %}
+                    <ul class="list-group mb-3 p-0 shadow-sm">
+                        <li class="list-group-item">
+                            <div class="small text-muted">{% translate 'Person' %}: <strong class="user-select-all">{{ con.contact_nom }}</strong></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="small text-muted">{% translate 'Phone' %}: <strong class="user-select-all">{{ con.contact_tel }}</strong></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="small text-muted">{% translate 'Email' %}: <strong class="user-select-all">{{ con.contact_email }}</strong></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="small text-muted">{% translate 'Fax' %}: <strong class="user-select-all">{{ con.contact_fax }}</strong></div>
+                        </li>
+                    </ul>
+                    {% else %}
+                        <div class="card p-2 mb-3 shadow-sm d-block">
+                            <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {% include empty.html %}
+    {% endif %}
+
+    <script>
+        function generateDCE(url) {
+            try{
+                let dlToast = document.getElementById('dlToast');
+                let bsAlert = new bootstrap.Toast(dlToast);
+                bsAlert.show();
+                window.location=url;
+                if ( response.status != 200 ) {
+                    let erToast = document.getElementById('erToast');
+                    let erAlert = new bootstrap.Toast(erToast);
+                    erAlert.show();
+                }
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+        
+        async function toggleFav(url) {
+            try {
+                let response = await fetch(url, {credentials: "same-origin",});
+                
+                let favStar = document.getElementById('favedStar');
+
+                if ( response.status == 200 ) {
+                    favStar.style.display = "none";
+                    const defToast = document.getElementById('defToast');
+                    const defAlert = new bootstrap.Toast(defToast);
+                    defAlert.show();
+                }
+                if ( response.status == 201 ) {
+                    favStar.style.display = "block";
+                    let favToast = document.getElementById('favToast');
+                    let favAlert = new bootstrap.Toast(favToast);
+                    favAlert.show();
+                }
+
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+    </script>
+{% endblock %}

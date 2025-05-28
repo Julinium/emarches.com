@@ -1,0 +1,42 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+
+  <div dir="ltr" class="carousel-indicators">
+    {% for line in scripts %}
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="{{ forloop.counter|add:-1 }}" {% if forloop.first %}class="active" aria-current="true" {% endif %}aria-label="Slide {{ forloop.counter }}"></button>
+    {% endfor %}
+  </div>
+  <div class="position-relative">
+    <div class="position-absolute top-0 start-50 translate-middle-x mt-3 mx-3 fw-bold" style="z-index: 2; opacity: 0.5;">
+      <img class="img-fluid" src="{% if LANGUAGE_CODE == 'ar' %}{% static 'img/emarches-name-white-ar.svg' %}{% else %}{% static 'img/emarches-name-white.svg' %}{% endif %}" alt="eMarches" style="max-height: 1rem;">
+    </div>
+    <div class="carousel-inner">
+      {% for line in scripts %}
+      <div class="carousel-item{% if forloop.first %} active{% endif %}" id="line.name">
+        {% with 'img/carousel/'|add:line.image as file_name %}
+          <img src="{% static file_name %}-{{ m7 }}.webp" style="height: 22rem; object-fit: cover;" class="d-block w-100 rounded" alt="Slide {{ forloop.counter }}">
+          <div class="position-absolute top-0 start-0 w-100 h-100 rounded" style="background-color: rgba(0, 0, 0, 0.5);"></div>
+          <div class="carousel-caption">
+            {% with scripts|slice:forloop.counter|last as current_item %}
+              <h2 class="twolines">{{ line.header }}</h2>
+              <p class="m-0 threelines">{{ line.detail }}</p>
+            {% endwith %}
+          </div>
+        {% endwith %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">{% translate 'Previous' %}</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">{% translate 'Next' %}</span>
+  </button>
+</div>

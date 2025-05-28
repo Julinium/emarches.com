@@ -1,0 +1,90 @@
+{% load i18n %}
+<section>
+    <div class="accordion mt-3" id="legendAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="legendHeading">
+                <button class="accordion-button collapsed fw-light bg-light py-2" type="button" data-bs-toggle="collapse" data-bs-target="#legendCollapse" aria-expanded="false" aria-controls="legendCollapse">
+                    <i class="bi bi-info-square"></i>
+                    <span class="px-2">{% translate 'Legend' %}</span>
+                </button>
+            </h2>
+            <div id="legendCollapse" class="accordion-collapse collapse" aria-labelledby="legendHeading" data-bs-parent="#legendAccordion">
+                <div class="accordion-body">
+                    <div class="small fw-light">
+
+                        <div class="">
+                            <img class="d-inline" height="14" src="/static/icons/Fournitures.svg">
+                            {% translate 'Fournitures' %}
+                        </div>
+                        <div class="">
+                            <img class="d-inline" height="14" src="/static/icons/Travaux.svg">
+                            {% translate 'Travaux' %}
+                        </div>
+                        <div class="">
+                            <img class="d-inline" height="14" src="/static/icons/Services.svg">
+                            {% translate 'Services' %}
+                        </div>
+
+                        <div class="mt-2">
+                            <img class="d-inline" height="14" src="/static/img/star-fill.svg">
+                            {% translate 'Elément ajouté aux favoris' %}
+                        </div>
+
+                        <div class="mt-2">
+                            <img class="d-inline" height="14" src="/static/img/cancelled.svg">
+                            {% translate 'Consultation annulée' %}
+                        </div>
+            
+                        <div class="mt-2">
+                            <img class="d-inline" height="14" src="/static/img/proc/speaker.svg">
+                            {% translate 'Procédure de consultation ouverte' %}
+                        </div>
+                        <div class="">
+                            <img class="d-inline" height="14" src="/static/img/proc/silent.svg">
+                            {% translate 'Procédure de consultation restreinte ou limitée' %}
+                        </div>
+            
+                        <div class="mt-2">
+                            <img class="d-inline" height="14" src="/static/img/pme/sucker.svg">
+                            {% translate 'Réservé à la TPE et PME installées au Maroc, jeunes entreprises innovantes, Coopératives et auto-entrepreneurs' %}
+                        </div>
+            
+                        <div class="mt-2">
+                            <img class="d-inline" height="14" src="/static/img/re/RR.svg">
+                            {% translate 'Réponse éléctronique obligatoire, avec signature éléctronique obligatoire' %}
+                        </div>
+                        <div class="">
+                            <img class="d-inline" height="14" src="/static/img/re/RO.svg">
+                            {% translate 'Réponse éléctronique obligatoire, avec signature éléctronique non obligatoire' %}
+                        </div>
+                        <div class="">
+                            <img class="d-inline" height="14" src="/static/img/re/OR.svg">
+                            {% translate 'Réponse éléctronique non obligatoire, avec signature éléctronique obligatoire' %}
+                        </div>
+                        <div class="">
+                            <img class="d-inline" height="14" src="/static/img/re/OO.svg">
+                            {% translate 'Réponse éléctronique non obligatoire, avec signature éléctronique non obligatoire' %}
+                        </div>
+                        <div class="">
+                            <img class="d-inline" height="14" src="/static/img/re/I.svg">
+                            {% translate 'Réponse éléctronique non applicable' %}
+                        </div>
+            
+                        <div class="mt-2">
+                            <img class="d-inline" height="14" src="/static/icons/geo-alt.svg">
+                            {% translate "Lieu d'execution" %}
+                        </div>
+                        <div class="">
+                            <img class="d-inline" height="14" src="/static/icons/buildings.svg">
+                            {% translate 'Acheteur public' %}
+                        </div>
+                        <div class="mt-2">
+                            <img class="d-inline" height="14" src="/static/img/lock.svg">
+                            {% translate 'Certaines informations sont reservées aux utilisateurs enregistrés' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

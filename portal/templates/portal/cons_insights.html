@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+{% load taginos %}
+
+{% block title %} {% translate 'Insights' %} {% endblock title %}
+
+{% block content %}
+
+{% trans "Insights" as subtitle %}
+{% trans "Tremendous amounts of money are regularly awarded in public contracts and your chances are greater than you may think. Statistics do not lie." as paragraph %} 
+{% with 'img/stats/stats-'|add:m7|add:'.webp' as image %}
+    {% include 'base/includes/page-top.html' with image=image subtitle=subtitle paragraph=paragraph %}
+{% endwith %}
+
+<div class="row g-2 mb-2 justify-content-center">
+  <div class="col-12 col-md-6">
+    <form method="get">
+        <div id="period" class="input-group mt-2">
+          <label class="input-group-text small text-muted" for="periodInput">{% translate 'Periods' %}</label>
+          <select name="period" class="form-select sel-preload" id="periodInput">
+            <option value="weeks" {% if period == 'weeks' %}selected{% endif %}>{% translate 'Weeks' %}</option>
+            <option value="months" {% if period == 'months' %}selected{% endif %}>{% translate 'Months' %}</option>
+            <option value="quarters" {% if period == 'quarters' %}selected{% endif %}>{% translate 'Quarters' %}</option>
+            <option value="years" {% if period == 'years' %}selected{% endif %}>{% translate 'Years' %}</option>
+          </select>
+          <!-- <button class="btn btn-primary" type="submit" id="period-submit">{% translate 'Refresh' %}</button> -->
+        </div>
+    </form>
+  </div>
+</div>
+
+
+
+<section id="barchat">
+  <h3 class="mt-5 fw-light pb-1 border-bottom">{% trans 'Evolution' %}</h3>
+  <div class="mb-4 pt-2">
+      <canvas id="stackedBarChart" width="480" height="270"></canvas>
+  </div>    
+</section>
+
+<div class="row g-4 mt-4">
+
+  <div class="col-md-6 col-12">
+    <section id="doughnutchart">
+      <h3 class="fw-light mb-3 border-bottom py-2">{% trans 'Distribution' %}</h3>
+      <div class="mb-4 pt-2">
+        <canvas id="doughnutCanvas" width="480" height="270"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-md-6 col-12">
+    <section id="statsTable">
+      <h3 class="fw-light mb-3 border-bottom py-2">{% trans 'Figures' %}</h3>
+      <div class="text-muted small text-center mt-4">
+        <p class="mt-4 mb-2 fw-semibold">&#x25b6; {{ start_date|date }} — {{ final_date|date }} &#x25c0;</p>
+      </div>
+      <table class="table">
+          <tbody>
+            <tr class="border-bottom lh-lg">
+              <td class="text-end">
+                <span class="text-muted small fw-light">{{ grand_total | floatformat:'2g' }} ~ </span>
+                <strong>{{ grand_total | shortify }}</strong>
+              </td>
+              <td class="text-muted mx-0 px-0">{% trans 'Grand Total' %}</td>              
+            </tr>
+            <tr class="border-bottom lh-lg">
+              <td class="text-end">
+                <span class="text-muted small fw-light">{{ month_mean | floatformat:'2g' }} ~ </span>
+                <strong>{{ month_mean | shortify }}</strong>
+              </td>
+              <td class="text-muted mx-0 px-0">{% trans 'Monthly Mean' %}</td>
+            </tr>
+            <tr class="border-bottom lh-lg">
+              <td class="text-end">
+                <span class="text-muted small fw-light">{{ daily_mean | floatformat:'2g' }} ~ </span>
+                <strong>{{ daily_mean | shortify }}</strong>
+              </td>
+              <td class="text-muted mx-0 px-0">{% trans 'Daily Mean' %}</td>
+            </tr>
+            <tr class="border-bottom lh-lg">
+              <td class="text-end">
+                <span class="text-muted small fw-light">{{ grand_count}} ~ </span>
+                <strong>{{ grand_count | shortify }}</strong>
+              </td>
+              <td class="text-muted mx-0 px-0">{% trans 'Tenders count' %}</td>              
+            </tr>
+            <tr class="border-bottom lh-lg">
+              <td class="text-end">
+                <span class="text-muted small fw-light">{{ grand_count }} / {{ days_count }} ~ </span>
+                <strong>{{ daily_count | floatformat:'2g' }}</strong>
+              </td>
+              <td class="text-muted mx-0 px-0">{% trans 'Tenders per day' %}</td>              
+            </tr>
+          </tbody>
+      </table>
+    </section>
+  </div>
+
+</div>
+
+<section id="about-stats">
+  <h3 class="mt-5 fw-light pb-1 border-bottom text-muted">{% trans 'About these stats' %}</h3>
+  <p class="small text-muted">{% trans 'The dates we consider for Tenders are the bidding deadlines. The shown amounts are those of the Tenders as they are advertised on the public portal. We do not account for later modifications or cancellations and we do not know whether or not the Tenders were really awarded and whether or not the works were executed... Some figures, especially percentages, may have been rounded.' %}</p>
+  <p class="small text-muted">{% trans 'The stats shown for future periods may change as Tenders may change and new Tenders may be posted.' %}</p>
+  <p class="small text-muted">{% trans 'Depending on the availability of data, the data for first period may not be accurate at all.' %}</p>
+  <p class="small text-muted">{% trans 'These statistics are given for reference only.' %}</p>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<div id="doughnut-chart-data" type="application/json">
+  {{ doughnut_charts|json_script:"doughnut-chart-data" }}
+</div>
+
+<script>
+
+  const select_el = document.getElementById("periodInput");
+  select_el.addEventListener("change", function () {
+    this.form.submit();
+	});
+
+
+  function formatNumber(value, fp=0) {
+    if (value >= 1e12) return (value / 1e12).toFixed(fp) + 'T'; // Billion
+    if (value >= 1e9) return (value / 1e9).toFixed(fp) + 'B'; // Billion
+    if (value >= 1e6) return (value / 1e6).toFixed(fp) + 'M'; // Million
+    if (value >= 1e3) return (value / 1e3).toFixed(fp) + 'k'; // Thousand
+    return value; // Less than 1k
+  }  
+  
+// Get all months from the data
+  const statsData = JSON.parse(document.getElementById('doughnut-chart-data').textContent);
+  
+  const ctx1 = document.getElementById('stackedBarChart').getContext('2d');
+  const ctx2 = document.getElementById('doughnutCanvas').getContext('2d');
+
+  // Calculate total amounts for each month and category
+  const monthTotals = {};
+  for (const monthData of statsData) {
+    for (const month in monthData) {
+      monthTotals[month] = {};
+      for (let i = 0; i < monthData[month].labels.length; i++) {
+        const label = monthData[month].labels[i];
+        monthTotals[month][label] = monthData[month].datasets[0].data[i];
+      }
+    }
+  }
+
+  // Prepare data for stacked bar chart
+  const labels = Object.keys(monthTotals[Object.keys(monthTotals)[0]]); // Get labels from the first month
+  const stackedBarChartData = {
+    labels: Object.keys(monthTotals),
+    datasets: labels.map((label, index) => ({
+      label: label,
+      data: Object.keys(monthTotals).map(month => monthTotals[month][label]),
+      backgroundColor: getBackgroundColor(index),
+      stack: 'Stack 0',
+      // borderColor: ['#FFFFFF'], // Custom border colors
+      // borderWidth: 1 // Adjust border thickness
+    }))
+  };
+
+  // Calculate total amounts for all categories
+  const categoryTotals = labels.reduce((acc, label) => {
+    acc[label] = 0;
+    return acc;
+  }, {});
+
+  for (const month in monthTotals) {
+    for (const label in monthTotals[month]) {
+      categoryTotals[label] += monthTotals[month][label];
+    }
+  }
+
+  // Prepare data for doughnut chart
+  const doughnutChartData = {
+    labels: labels,
+    datasets: [
+      {
+        data: Object.values(categoryTotals),
+        backgroundColor: labels.map((_, index) => getBackgroundColor(index)), 
+        borderColor: 'transparent',
+        // borderWidth: 4,
+        // borderColor: ['#FF0000', '#0000FF', '#008000'], // Custom border colors
+        // borderColor: ['#FFFFFF'], // Custom border colors
+        // borderWidth: 1 // Adjust border thickness
+      }
+    ]
+  }; 
+
+  // Create bar chart
+  const stackedBarChart = new Chart(ctx1, {
+    type: 'bar',
+    data: stackedBarChartData,
+    options: {
+      responsive: true, 
+      maintainAspectRatio: false, 
+      scales: {
+        x: {
+          grid: {
+            display: false, // Disables vertical gridlines
+          },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: (value) => formatNumber(value) // Format axis labels
+          },
+        }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: (tooltipItem) => {
+              const categoryLabel = tooltipItem.dataset.label || 'Category'; // Dataset label (e.g., "Fournitures")
+              return categoryLabel;
+            },
+            afterLabel: (tooltipItem) => {
+              const value = tooltipItem.raw; // Raw value for the category
+              const datasetIndex = tooltipItem.datasetIndex; // Index of the dataset
+              const monthIndex = tooltipItem.dataIndex; // Index of the month
+              const total = stackedBarChartData.datasets.reduce((sum, dataset) => sum + dataset.data[monthIndex], 0); // Total of the month
+              const percentage = ((value / total) * 100).toFixed(0); // Calculate percentage
+              return [`${percentage}% ~ ${formatNumber(value,1)}`, `${value.toFixed(2)}`];
+            }
+          }
+        }
+      },
+      // overlayPlugin,
+    }
+  });
+
+  // Create doughnut chart
+  const doughnutChart = new Chart(ctx2, {
+    type: 'doughnut',
+    data: doughnutChartData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '60%',
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const value = context.raw; // Raw value for the sector
+              const total = context.dataset.data.reduce((a, b) => a + b, 0); // Total of all sectors
+              const percentage = ((value / total) * 100).toFixed(0); // Calculate percentage
+              return [`${percentage}% ~ ${formatNumber(value,1)}`, `${value.toFixed(2)}`];
+            },
+          }
+        },
+      },
+    }
+  });
+
+  // Set a minimum width and height dynamically
+  const doughnutCanvas = document.getElementById('doughnutCanvas');
+  // doughnutCanvas.style.minWidth = '280px';
+  doughnutCanvas.style.minHeight = '280px';
+  const stackedCanvas = document.getElementById('stackedBarChart');
+  // stackedCanvas.style.minWidth = '280px';
+  stackedCanvas.style.minHeight = '280px';
+
+  // Function to get consistent background colors
+  function getBackgroundColor(index) {
+    const baseColors = [
+      'rgba(255, 99, 132, 0.9)', // Red
+      'rgba(75, 192, 192, 0.9)', // Green
+      'rgba(255, 206, 86, 0.9)', // Yellow
+      'rgba(54, 162, 235, 0.9)', // Blue
+    ];
+    return index < baseColors.length ? baseColors[index] : `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 0.8)`;
+  }
+
+</script>
+
+
+
+
+{% endblock content %}

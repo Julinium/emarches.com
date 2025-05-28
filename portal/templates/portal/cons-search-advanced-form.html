@@ -1,0 +1,195 @@
+{% load i18n %}
+{% load static %}
+{% load taginos %}
+
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="searchModalLabel">{% translate 'Tenders Search' %}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="{% url 'portal_cons_list' %}">
+                <div class="row g-2 mb-2">
+                    <div class="col-12 col-lg-6">
+                        <div id="groupObject" class="input-group mt-2">
+                            <span class="input-group-text small text-muted" id="objetSpan">{% translate 'Object' %}</span>
+                            <input name="o" type="text" value="{% if qd.o %}{{ qd.o }}{% endif %}" class="form-control" id="objetInput" aria-describedby="objetSpan">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div id="groupReference" class="input-group mt-2">
+                            <span class="input-group-text small text-muted" id="refSpan">{% translate 'Reference' %}</span>
+                            <input name="r" type="text" value="{% if qd.r %}{{ qd.r }}{% endif %}" class="form-control" id="refInput" aria-describedby="refSpan">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collapse" id="collapseAdvanced">
+                    <div class="row g-2 mb-2">
+                        <div class="col-12 col-lg-6">
+                            <div id="groupEstimateMin" class="input-group mt-2">
+                                <span class="input-group-text small text-muted" id="minSpan">{% translate 'Estimate Min' %}</span>
+                                <input name="mn" type="text" value="{% if qd.mn %}{{ qd.mn }}{% endif %}" class="form-control" id="minInput" aria-describedby="minSpan">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div id="groupEstimateMax" class=" input-group mt-2">
+                                <span class="input-group-text small text-muted" id="maxSpan">{% translate 'Estimate Max' %}</span>
+                                <input name="mx" type="text" value="{% if qd.mx %}{{ qd.mx }}{% endif %}" class="form-control" id="maxInput" aria-describedby="maxSpan">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-2 mb-2">
+                        <div class="col-12 col-lg-6">
+                            <div id="groupCategory" class="input-group mt-2">
+                                <label class="input-group-text small text-muted" for="categInput">{% translate 'Category' %}</label>
+                                <select name="ct" class="form-select" id="categInput">
+                                    <option value="" {% if not qd.ct %}selected{% endif %}>{% translate 'All' %}</option>
+                                    {% for cat in cats %}
+                                        <option value="{{ cat.id }}" {% if qd.ct == cat.id|stringify  %}selected{% endif %}>{{ cat.nom }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div id="groupProcedure" class="input-group mt-2">
+                                <label class="input-group-text small text-muted" for="procInput">{% translate 'Procedure' %}</label>
+                                <select name="pr" class="form-select" id="procInput">
+                                    <option value="" {% if not qd.pr %}selected{% endif %}>{% translate 'All' %}</option>
+                                    {% for proc in procs %}
+                                        <option value="{{ proc.id }}" {% if qd.pr == proc.id|stringify  %}selected{% endif %}>{{ proc.nom }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-2 mb-2">
+                        <div class="col-12 col-lg-6">
+                            <div id="groupDeadlineMin" class=" input-group mt-2">
+                                <span class="input-group-text small text-muted" id="deadlineSpan">{% translate 'Deadline Min' %}</span>
+                                <input name="dd" type="date" placeholder="" value="{% if qd.dd %}{{ qd.dd }}{% else %}{% now "Y-m-d" %}{% endif %}" class="form-control" id="deadlineInput" aria-describedby="deadlineSpan">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div id="groupDeadlineMax" class=" input-group mt-2">
+                                <span class="input-group-text small text-muted" id="livelineSpan">{% translate 'Deadline Max' %}</span>
+                                <input name="ld" type="date" placeholder="" value="{% if qd.ld %}{{ qd.ld }}{% endif %}" class="form-control" id="livelineInput" aria-describedby="livelineSpan">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-2 mb-2">
+                        <div class="col-12 col-lg-6"> 
+                            <div id="groupPublishedMin" class=" input-group mt-2">
+                                <span class="input-group-text small text-muted" id="publishedMinSpan">{% translate 'Published Min' %}</span>
+                                <input name="pdn" type="date" placeholder="" value="{% if qd.pdn %}{{ qd.pdn }}{% endif %}" class="form-control" id="publishedMinInput" aria-describedby="publishedMinSpan">
+                            </div>                       
+                        </div>
+                        <div class="col-12 col-lg-6">  
+                            <div id="groupPublishedMax" class=" input-group mt-2">
+                                <span class="input-group-text small text-muted" id="publishedMaxSpan">{% translate 'Published Max' %}</span>
+                                <input name="pdx" type="date" placeholder="" value="{% if qd.pdx %}{{ qd.pdx }}{% else %}{% now "Y-m-d" %}{% endif %}" class="form-control" id="publishedMaxInput" aria-describedby="publishedMaxSpan">
+                            </div>                      
+                        </div>
+                    </div>
+                    <div class="row g-2 mb-2">
+                        <div class="col-12 col-lg-6"> 
+                            <div id="groupClient" class="input-group mt-2">
+                                <span class="input-group-text small text-muted" id="clientSpan">{% translate 'Client' %}</span>
+                                <input name="c" type="text" value="{% if qd.c %}{{ qd.c }}{% endif %}" class="form-control" id="clientInput" aria-describedby="clientSpan">
+                            </div>                       
+                        </div>
+                        <div class="col-12 col-lg-6">  
+                            <div id="groupLocation" class="input-group mt-2">
+                                <span class="input-group-text small text-muted" id="locationSpan">{% translate 'Exec. Location' %}</span>
+                                <input name="l" type="text" value="{% if qd.l %}{{ qd.l }}{% endif %}" class="form-control" id="locationInput" aria-describedby="locationSpan">
+                            </div>                      
+                        </div>
+                    </div>
+                    
+                    <div class="row g-2 mb-2">
+                        <div class="col-12 col-lg-6">
+                            <div id="groupElectronicResponse" class="input-group mt-2">
+                                <label class="input-group-text small text-muted" for="groupElectronicResponse">{% translate 'Electronic Response' %}</label>
+                                <select name="re" class="form-select" id="repelInput">
+                                    <option value="" {% if not qd.re %}selected{% endif %}>{% translate 'All' %}</option>
+                                    <option value="RR" {% if qd.re == 'RR'  %}selected{% endif %}>{% translate 'Required, e-Sign required' %}</option>
+                                    <option value="RO" {% if qd.re == 'RO'  %}selected{% endif %}>{% translate 'Required, e-Sign not required' %}</option>
+                                    <option value="OR" {% if qd.re == 'OR'  %}selected{% endif %}>{% translate 'Not required, e-Sign required' %}</option>
+                                    <option value="OO" {% if qd.re == 'OO'  %}selected{% endif %}>{% translate 'Not required, e-Sign not required' %}</option>
+                                    <option value="I" {% if qd.re == 'I' %}selected{% endif %}>{% translate 'Not Applicable' %}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="d-flex align-items-center gap-3 mt-2">
+                                <div class="form-check">
+                                    <input name="sl" class="form-check-input" type="checkbox" value="" id="lotsCheck" {% if qd.sl %}checked{% endif %}>
+                                    <label class="form-check-label" for="lotsCheck">{% translate 'Single Lot only' %}</label>
+                                </div>
+                                <div class="form-check">
+                                    <input name="rs" class="form-check-input" type="checkbox" value="" id="resmbCheck" {% if qd.rs %}checked{% endif %}>
+                                    <label class="form-check-label" for="resmbCheck">{% translate 'Reserved to SMB' %}</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mt-1">
+                    <hr class="flex-grow-1">
+                </div>
+
+                <div class="row g-2 mb-2">
+                    <div class="col-12 col-lg-6">
+                        <div id="groupResultsPerPAge" class="input-group mt-2">
+                            <label class="input-group-text small text-muted" for="ippInput">{% translate 'Results per page' %}</label>
+                            <select name="pp" class="form-select" id="ippInput">
+                            <option value="10" {% if qd.pp == 10 %}selected{% endif %}>10</option>
+                            <option value="20" {% if qd.pp == 20 %}selected{% endif %}>20</option>
+                            <option value="25" {% if qd.pp == 25 %}selected{% endif %}>25</option>
+                            <option value="50" {% if qd.pp == 50 %}selected{% endif %}>50</option>
+                            <option value="100" {% if qd.pp == 100 %}selected{% endif %}>100</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div id="groupOrderBy" class="input-group mt-2">
+                            <label class="input-group-text small text-muted" for="orderInput">{% translate 'Order by' %}</label>
+                            <select name="ob" class="form-select" id="orderInput">
+                                <option value="DL" {% if qd.ob == 'DL' %}selected{% endif %}>{% translate 'Deadline' %} &#8599;</option>
+                                <option value="-DL" {% if qd.ob == '-DL' %}selected{% endif %}>{% translate 'Deadline' %} &#8600;</option>
+                                <option value="DP" {% if qd.ob == 'DP' %}selected{% endif %}>{% translate 'Published Date' %} &#8599;</option>
+                                <option value="-DP" {% if qd.ob == '-DP' %}selected{% endif %}>{% translate 'Published Date' %} &#8600;</option>
+                                <option value="TE" {% if qd.ob == 'TE' %}selected{% endif %}>{% translate 'Total Estimate' %} &#8599;</option>
+                                <option value="-TE" {% if qd.ob == '-TE' %}selected{% endif %}>{% translate 'Total Estimate' %} &#8600;</option>
+                                <option value="TC" {% if qd.ob == 'TC' %}selected{% endif %}>{% translate 'Temporary Caution' %} &#8599;</option>
+                                <option value="-TC" {% if qd.ob == '-TC' %}selected{% endif %}>{% translate 'Temporary Caution' %} &#8600;</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-2 mb-2">
+                    <div class="text-end py-2">
+                        <!-- {% include 'portal/includes/section-title.html' with label='Search Results' %} -->
+                        <button type="submit" class="btn btn-primary mt-2 px-3">{% translate 'Search' %}</button>
+                        <a href="{% url 'portal_cons_list' %}" class="btn btn-outline-secondary mt-2 px-3">{% translate 'Reset' %}</a>
+                        <button class="btn btn-outline-secondary mt-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdvanced" aria-expanded="false" aria-controls="collapseAdvanced">
+                            {% if not request.user.is_authenticated %}
+                                <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16">                          
+                            {% endif %}
+                            {% translate 'Advanced' %}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,14 @@
+{% load static %}
+
+{% if top_title %}<h2 class="fw-semibold text-center mb-4">{{ top_title }}</h2>{% endif %}          
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-10 col-xl-8 text-center">
+            <div class="card border-0" data-bs-toggle="tooltip" title="{{ title }}">
+                {% if image %}<img src="{% static image %}" alt="" class="card-img-top rounded-circle mx-auto mt-3" style="width: 10rem; height: 10rem; object-fit: cover;">{% endif %} 
+                <div class="card-body">
+                    {% if subtitle %}<h2 class="fs-1">{{ subtitle }}</h2>{% endif %}  
+                    {% if paragraph %}<p class="text-muted">{{ paragraph }}</p>{% endif %}  
+                </div>
+            </div>
+        </div>
+    </div>

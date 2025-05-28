@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+
+{% block title %} 400 - {% translate 'Bad Request Error' %} {% endblock title %}
+
+
+{% block content %}
+    {% trans "Bad Request Error" as top_title %}
+    {% trans "We did not understand !" as subtitle %}
+    {% trans "Our server did not understand and could not handle your request." as paragraph %}
+    {% with 'img/errors/error-'|add:m7|add:'.jpg' as image %}
+        {% include 'base/includes/page-top.html' with image=image %}
+    {% endwith %}
+
+    {% translate 'Go Home' as caption_primary %}
+    {% translate 'Read FAQs' as caption_secondary %}
+    {% include 'base/includes/page-cta.html' with url_primary='base_home' url_secondary='base_faqs' %}
+
+{% endblock %}

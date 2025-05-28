@@ -1,0 +1,67 @@
+{% load i18n %}
+
+    <h2 class="pb-2 border-bottom">{% trans "Our Services" %}</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+
+      <div class="feature col my-4">        
+        <i class="bi bi-binoculars-fill fs-1 text-primary"></i>
+        <h3 class="fs-3">{% trans "Market Research" %}</h3>
+        <p>{% trans "Identify opportunities that perfectly align with your business goals by leveraging in-depth market analysis. We examine trends, competitor activity, and emerging sectors to provide insights that drive growth and enhance your strategic decision-making." %}</p>
+        <a href="{% url 'portal_cons_list' %}" class="icon-link">
+            {% trans "Search Tenders" %}
+            <i class="bi bi-chevron-right"></i>
+        </a>
+    </div>
+    
+    <div class="feature col my-4">
+        <i class="bi bi-sign-turn-slight-right-fill fs-1 text-primary"></i>
+        <h3 class="fs-3">{% trans "Bid Processing" %}</h3>
+        <p>{% trans "Leave the complexities of bid preparation to us. From drafting compliant and competitive proposals to ensuring timely submissions, we streamline the entire process to increase your chances of success in winning tenders and contracts." %}</p>
+        <a href="{% url 'base_contact' %}" class="icon-link">
+            {% trans "Get a quote" %}
+            <i class="bi bi-chevron-right"></i>
+        </a>
+    </div>
+    
+    <div class="feature col my-4">
+        <i class="bi bi-signpost-2-fill fs-1 text-primary"></i>
+        <h3 class="fs-3">{% trans "Regulatory Support" %}</h3>
+        <p>{% trans "Navigating Morocco's complex legal framework can be daunting. We simplify the process by offering tailored guidance to ensure your business remains compliant with all regulations, saving you time and avoiding unnecessary obstacles." %}</p>
+        <a href="{% url 'base_contact' %}" class="icon-link">
+            {% trans "Get a quote" %}
+            <i class="bi bi-chevron-right"></i>
+        </a>
+    </div>
+    
+    <div class="feature col my-4">        
+        <i class="bi bi-gear-fill fs-1 text-primary"></i>
+        <h3 class="fs-3">{% trans "Technical Assistance" %}</h3>
+        <p>{% trans "Equipping your business with the right tools and expertise is essential for success. Whether you're implementing cutting-edge technology or fine-tuning existing systems, we ensure your operations are optimized for maximum efficiency." %}</p>
+        <a href="{% url 'base_contact' %}" class="icon-link">
+            {% trans "Get a quote" %}
+            <i class="bi bi-chevron-right"></i>
+        </a>
+    </div>
+    
+    <div class="feature col my-4">
+        <i class="bi bi-slash-square-fill fs-1 text-primary"></i>
+        <h3 class="fs-3">{% trans "Training" %}</h3>
+        <p>{% trans "Empower your team with the skills and knowledge needed to thrive in public procurement. Through interactive and customized training sessions, we ensure your workforce is well-prepared to tackle procurement challenges with confidence." %}</p>
+        <a href="{% url 'base_contact' %}" class="icon-link">
+            {% trans "Get a quote" %}
+            <i class="bi bi-chevron-right"></i>
+        </a>
+    </div>
+    
+    <div class="feature col my-4">
+        <i class="bi bi-trophy-fill fs-1 text-primary"></i>
+        <h3 class="fs-3">{% trans "Post-Award Services" %}</h3>
+        <p>{% trans "Winning a contract is just the beginning. We help ensure successful implementation by offering support in compliance, performance monitoring, and relationship management, enabling you to deliver excellence at every stage." %}</p>
+        <a href="{% url 'base_contact' %}" class="icon-link">
+            {% trans "Get a quote" %}
+            <i class="bi bi-chevron-right"></i>
+        </a>
+    </div>
+    
+
+    </div>

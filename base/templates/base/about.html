@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+
+{% block title %} {% translate 'About Us' %} {% endblock title %}
+
+{% block content %}
+
+
+<!-- Logo Section -->
+{% trans "About Us" as subtitle %}
+{% trans "Learn more about who we are, what we do, and our journey." as paragraph %}
+{% with 'img/about/about-'|add:m7|add:'.webp' as image %}
+    {% include 'base/includes/page-top.html' with image=image subtitle=subtitle paragraph=paragraph %}
+{% endwith %}
+
+
+<!-- Who We Are -->
+<div class="mb-5">
+    <h2 class="pb-2 border-bottom mb-3">{% trans "Who We Are" %}</h2>
+    <p>
+        {% trans 'eMarches is a growing consultancy specializing in public procurement services in Morocco. Since our establishment in 2024, we have been dedicated to helping businesses and organizations unlock opportunities in the Moroccan public procurement market.' %}
+    </p>
+</div>
+
+<!-- The hedgehog -->
+<div class="mb-5">
+    <h2 class="pb-2 border-bottom mb-3">{% trans "The Hedgehog" %}</h2>
+    <p>
+        {% trans "The hedgehog symbolizes intelligence, adaptability, and strategic thinking. It reflects our resourceful approach to overcoming challenges. Like the hedgehog, we achieve success through clever solutions and resilience." %}
+    </p>
+</div>
+
+<!-- Our Mission -->
+<div class="mb-5">
+    <h2 class="pb-2 border-bottom mb-3">{% trans "Our Mission" %}</h2>
+    <p>{% trans "Our mission is to simplify and streamline the public procurement process for businesses, providing them with the expertise and tools needed to achieve success. We aim to foster transparency, compliance, and efficiency, enabling our clients to thrive in this competitive sector." %}</p>
+</div>
+
+<!-- Our Journey -->
+<div class="mb-5">
+    <h2 class="pb-2 border-bottom mb-3">{% trans "Our Journey" %}</h2>
+    <p>
+        {% trans 'eMarches was founded in 2024 by a team of young talented entrepreneurs , who recognized the growing need for expert guidance in Morocco’s public procurement landscape. What started as a small consultancy has evolved into a aspiring firm, serving clients across diverse industries.' %}
+    </p>
+</div>
+
+<!-- Our Team -->
+<div class="mb-5">
+    <h2 class="pb-2 border-bottom mb-3">{% trans "Our Team" %}</h2>
+    <div class="row g-4">
+        <!-- Team Member 1 -->
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow bg-light">
+                <img src="{% static 'img/team/taheri.webp' %}" alt="{% trans 'Taheri' %}" class="card-img-top rounded-circle mx-auto mt-3" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{% trans "W. Taheri" %}</h5>
+                    <p class="card-text">{% trans "CEO" %}</p>
+                    <p class="text-muted">{% trans "Strategic approach to leadership and integrate of cutting-edge technologies." %}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow bg-light">
+                <img src="{% static 'img/team/bouhou.webp' %}" alt="{% trans 'Bouhou' %}" class="card-img-top rounded-circle mx-auto mt-3" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{% trans "A. Bouhou" %}</h5>
+                    <p class="card-text">{% trans "CRM" %}</p>
+                    <p class="text-muted">{% trans "Identifying new opportunities, developing strategic partnerships." %}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow bg-light">
+                <img src="{% static 'img/team/sebaai.webp' %}" alt="{% trans 'Sebaai' %}" class="card-img-top rounded-circle mx-auto mt-3" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{% trans "R. Sebaai" %}</h5>
+                    <p class="card-text">{% trans "CTO" %}</p>
+                    <p class="text-muted">{% trans "Ability to efficiently build scalable, secure, and innovative systems." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-muted py-3 mt-3">{% trans "And a large number of skilled people in several key roles that complement the leadership team and support the business's growth." %}</p>
+</div>
+
+<!-- Values Section -->
+<div class="mb-5">
+    <h2 class="pb-2 border-bottom mb-3">{% trans "Our Values" %}</h2>
+    <p><strong>{% trans "Integrity" %}:</strong> {% trans "Transparency and ethical practices form the foundation of our work." %}</p>
+    <p><strong>{% trans "Excellence" %}:</strong> {% trans "We strive for the highest standards in every project we undertake." %}</p>
+    <p><strong>{% trans "Collaboration" %}:</strong> {% trans "We build long-term partnerships based on trust and shared goals." %}</p>
+</div>
+
+<!-- Looking Ahead -->
+<div class="mb-5">
+    <h2 class="pb-2 border-bottom mb-3">{% trans "Looking Ahead" %}</h2>
+    <p>
+        {% trans 'As Morocco’s public procurement sector continues to grow, eMarches is committed to staying at the forefront of this dynamic market. We aim to expand our services, embrace new technologies, and support even more businesses in achieving their goals.' %}
+    </p>
+</div>
+
+<!-- Translations -->
+<div class="mb-5">
+    <h2 class="pb-2 border-bottom mb-3">{% trans "Translations status" %}</h2>
+    <ul class="list-group list-group-flush">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% for trans in transes %}
+            <li class="list-group-item border-0 px-0 mb-2">
+                <div class="d-flex justify-content-between">
+                    <div class="{% if trans.code == LANGUAGE_CODE %}fw-bold{% endif %}">
+                        <span>{% if trans.code == LANGUAGE_CODE %}<i class="bi bi-check-circle-fill me-2"></i>{% endif %}<img height="16" src="{% static 'flags/' %}{{ trans.code }}.svg" alt="{{ trans.code|upper }}"></span>
+                        <span class="ms-1">
+                            {{ trans.name_translated }}
+                                <span class="text-muted small  mx-2">{{ trans.name_local }}</span>
+                        </span>
+                    </div>
+                    <div class="ms-1">{{ trans.ratio }}%</div>
+                </div>                
+                <span>
+                    <div class="progress bg-danger" style="height: 0.32rem;">
+                        <div
+                            class="progress-bar bg-primary"
+                            role="progressbar"
+                            style="width: {{ trans.ratio }}%;"
+                            aria-valuenow="{{ trans.ratio }}"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
+                        </div>
+                    </div>
+                </span>
+            </li>
+        {% empty %}
+            <p class="text-danger">{% trans "Translations status not found !" %}</p>
+        {% endfor %}
+    </ul>
+    <p class="mt-4">{% trans "You can help us improve translations or add your language if it's not already supported." %}
+        <span>{% trans "Feel free to contact us using contact details on our website. Thank you." %}</span>
+    </p>
+
+</div>
+
+
+
+{% endblock content %}

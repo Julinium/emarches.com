@@ -1,0 +1,12 @@
+{% load i18n %}
+{% load static %}
+
+<h2 class="pb-2 border-bottom">{% trans 'Watch our video' %} <span class="text-danger"></span></h2>
+<p class="lead">{% trans 'Discover the key features of our platform and learn how to make the most out of it to achieve your goals effortlessly.' %}<span class="small text-danger mx-2">{% trans 'The right video will be available soon as this one is only a placeholder.' %}</span></p>
+
+<div class="ratio ratio-16x9 mt-4">
+    <video controls>
+        <source src="{% static 'video/snowy-highway.webm' %}" type="video/webm">
+        {% trans 'Your browser does not support the video tag.' %}
+    </video>
+</div>

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+
+{% block title %} {% translate 'Send Us a Message' %} {% endblock title %}
+
+{% block content %}
+
+    {% trans "Send Us a Message" as subtitle %}
+    {% trans "Feel free to reach out to us for any inquiries or assistance. Our team is here to help you!" as paragraph %}
+    {% include 'base/includes/page-top.html' with image='img/contact.webp' %}
+    <div class="row gy-5 gx-lg-5 justify-content-center">
+        <!-- Contact Form -->
+        <div class="col-12 col-md-11 col-lg-9">
+            <form method="post" action="{% url 'base_contact' %}">
+                {% csrf_token %}
+                <div class="visually-hidden" aria-hidden="true">
+                    <label for="thammnn" class="form-label">{% trans "First Name" %}</label>
+                    <input type="text" id="thammnn" name="thammnn" tabindex="-1">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label fw-semibold">{% trans "Your Name" %}</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="{% trans 'Enter your name' %}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-semibold">{% trans "Your Email" %}</label>
+                    <input type="email" class="form-control" id="email" name="email" {% if request.user.is_authenticated %}value="{{ request.user.email }}"{% endif %} placeholder="{% trans 'Enter your email' %}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">{% trans "Your Phone" %}</label>
+                    <input type="phone" class="form-control" id="phone" name="phone" placeholder="{% trans 'Enter your phone number' %}">
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label fw-semibold">{% trans "Subject" %}</label>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="{% trans 'Enter the subject' %}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label fw-semibold">{% trans "Message" %}</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="{% trans 'Write your message' %}" maxlength="1024" required  oninput="updateRemainingChars()"></textarea>
+                    <div class="small text-muted px-2 text-end pt-2">{% trans 'Remaining charcters' %}: <strobg id="charCount">1024</strobg></div>
+                </div>
+
+                <script>
+                    function updateRemainingChars() {
+                        const textarea = document.getElementById('message');
+                        const charCount = document.getElementById('charCount');
+                        const remaining = textarea.maxLength - textarea.value.length;
+                        charCount.textContent = `${remaining}`;
+                    }
+                </script>
+                <div class="mb-3">
+                    <label for="contact_method" class="form-label">{% trans "Preferred Contact Method" %}</label>
+                    <select class="form-select" id="contact_method" name="contact_method">
+                        <option value="any">{% trans "Any" %}</option>
+                        <option value="email" selected>{% trans "Email" %}</option>
+                        <option value="phone">{% trans "Phone" %}</option>
+                        <option value="whatsapp">{% trans "WhatsApp" %}</option>
+                        <option value="telegram">{% trans "Telegram" %}</option>
+                    </select>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="subscribe_newsletter" name="subscribe_newsletter">
+                    <label class="form-check-label" for="subscribe_newsletter">
+                        {% trans "Subscribe to our newsletter" %}
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="subscribe_promotions" name="subscribe_promotions">
+                    <label class="form-check-label" for="subscribe_promotions">
+                        {% trans "Receive promotional offers from us or our partners" %}
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-preload">{% trans "Send Message" %}</button>
+            </form>
+        </div>
+    </div>
+
+    
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+
+{% block title %} 500 - {% translate 'Internal Server Error' %} {% endblock title %}
+
+
+{% block content %}
+    {% trans "Internal Server Error." as top_title %}
+    {% trans "This one is on us !" as subtitle %}
+    {% trans "Our server run into an error and could not properly handle your request. You can help us understand what happened and correct it. Thank you" as paragraph %}
+    {% with 'img/errors/error-'|add:m7|add:'.jpg' as image %}
+        {% include 'base/includes/page-top.html' with image=image %}
+    {% endwith %}
+
+
+    {% translate 'Go Home' as caption_primary %}
+    {% translate 'Read FAQs' as caption_secondary %}
+    {% include 'base/includes/page-cta.html' with url_primary='base_home' url_secondary='base_faqs' %}
+
+{% endblock %}

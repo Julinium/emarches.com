@@ -1,0 +1,8 @@
+
+<div class="py-5">
+    {% if recap %}<p class="text-center">{{ recap }}</p>{% endif %}
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        {% if url_primary %}<a href="{% url url_primary %}" class="btn btn-primary btn-preload btn-lg px-4 me-md-2">{{ caption_primary }}</a>{% endif %}
+        {% if url_secondary %}<a href="{% url url_secondary %}" class="btn btn-outline-secondary btn-preload btn-lg px-4 me-md-2">{{ caption_secondary }}</a>{% endif %}
+    </div>
+</div>

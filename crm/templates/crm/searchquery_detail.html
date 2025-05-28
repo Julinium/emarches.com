@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+{% load taginos %}
+
+{% block title %} {% translate 'Search Query Details' %} {% endblock title %}
+
+{% block content %}
+    <h1 class="text-center mb-4">{% trans "Search Query Details" %}</h1>
+
+    {% if request.user|in_group:'CRM' %}
+        <div class="list-group">
+            <h3 class="my-3 fw-light mt-5"></h3>
+            {% for field_name, value in searchquery_fields %}
+              {% if value %}
+                <li class="mt-2"><strong>{{ field_name|capfirst }}:</strong><span class="text-break"> {{ value }}</span></li>
+              {% endif %}        
+            {% empty %}
+                <p class="text-center">{% trans "No records found." %}</p>
+            {% endfor %}
+        </div>
+
+        
+
+        {% else %}
+        <p class="text-danger">{% trans 'Not allowed' %}</p>
+    {% endif %}
+{% endblock %}

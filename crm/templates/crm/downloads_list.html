@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+{% load taginos %}
+
+{% block title %} {% translate 'DCE Downloads' %} {% endblock title %}
+
+{% block content %}
+    <h1 class="text-center mb-4">{% trans "DCE Downloads" %}</h1>
+
+    {% if request.user|in_group:'CRM' %}
+    <h3 class="my-3 fw-light mt-5">{% trans 'Total count' %}</h3>
+    {% include 'crm/includes/counter.html' with total_count=total_count %}
+
+    <h3 class="my-3 fw-light mt-5">{% trans 'Total downloaded size' %}</h3>
+    <div class="text-center"><strong>{{ total_download_size|filesizeformat }}</strong><span class="text-muted"> = {{ total_download_size }} {% trans 'bytes' %}</span></div>
+
+    <h3 class="my-3 fw-light mt-5">{% trans 'Top last' %} {{ last_days }} {% trans 'days' %}</h3>
+    <div class="list-group">
+        {% for download in top_downloads %}
+            {% with con=cons_dict|gettify:download.consultation %}
+                <a href="{% url 'portal_con_details' con.id %}" class="text-decoration-none">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="me-auto">
+                            <div class="oneline" data-bs-toggle="tooltip" title="{{ con.objet }}"><strong>{{ forloop.counter }}</strong>. {{ con.objet|upper }}</div>
+                            <span class="oneline text-muted">{% trans 'Latest' %}: {{ download.last_download_date }}</span>
+                        </div>
+                        <span class="badge bg-primary text-white rounded-pill">{{ download.download_count }}</span>
+                    </li>
+                </a>
+            {% endwith %}
+        {% empty %}
+            <p class="text-center">{% trans "No records found." %}</p>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p class="text-danger">{% trans 'Not allowed' %}</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+{% load taginos %}
+
+{% block title %} {% translate 'Unfavorisations' %} {% endblock title %}
+
+{% block content %}
+    <h1 class="text-center mb-4">{% trans "Unfavorisations" %}</h1>
+    {% if request.user|in_group:'CRM' %}
+    <h3 class="my-3 fw-light mt-5">{% trans 'Total count' %}</h3>
+    {% include 'crm/includes/counter.html' with total_count=total_count %}
+
+    <h3 class="my-3 fw-light mt-5">{% trans 'Top Tenders' %}</h3>
+        <div class="list-group">
+            {% for unfavorisation in top_unfavorisations %}
+                {% with con=cons_dict|gettify:unfavorisation.consultation %}
+                    <a href="{% url 'portal_con_details' con.id %}" class="text-decoration-none">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="mx-0 my-2">
+                                <div class="oneline" data-bs-toggle="tooltip" title="{{ con.objet }}"><strong>{{ forloop.counter }}</strong>. {{ con.objet|upper }}</div>
+                                <span class="oneline text-muted">{% trans 'Latest' %}: {{ unfavorisation.last_unfavorisation_date }}</span>
+                            </div>
+                            <span class="badge text-white bg-primary rounded-pill">{{ unfavorisation.unfavorisation_count }}</span>
+                        </li>
+                    </a>
+                {% endwith %}
+            {% empty %}
+                <p class="text-center">{% trans "No records found." %}</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-danger">{% trans 'Not allowed' %}</p>
+    {% endif %}
+{% endblock %}

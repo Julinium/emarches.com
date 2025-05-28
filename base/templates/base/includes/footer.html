@@ -1,0 +1,163 @@
+{% load i18n %}
+{% load static %}
+{% now "Y" as current_year %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+<div class="container text-center pb-3">
+
+    <div class="container text-center">
+      <div id="footer-links" class="row g-3 my-2 justify-content-center align-items-center">
+              <div class="d-flex flex-wrap justify-content-center">
+                <a class="mx-1 px-1 btn-preload" href="{% url 'base_home' %}" style="text-decoration: none;"><img class="img-fluid" src="{% if LANGUAGE_CODE == 'ar' %}{% static 'img/insi-brand-ar.svg' %}{% else %}{% static 'img/insi-brand.svg' %}{% endif %}" alt="eMarches" style="max-height: 1.2rem;"></a>
+              </div>
+      </div>
+      <div id="footer-links" class="row my-2 justify-content-center align-items-center">
+              <div class="d-flex flex-wrap justify-content-center">
+                    <a class="text-decoration-none mx-2 my-1 text-nowrap btn-preload" href="{% url 'base_about' %}"><i class="bi bi-info-circle"></i> {% translate 'About'%}</a>
+                    <a class="text-decoration-none mx-2 my-1 text-nowrap btn-preload" href="{% url 'base_faqs' %}"><i class="bi bi-question-circle"></i> {% translate 'FAQs'%}</a>
+                    <a class="text-decoration-none mx-2 my-1 text-nowrap btn-preload" href="{% url 'base_contact' %}"><i class="bi bi-chat-text"></i> {% translate 'Contact'%}</a>
+                    <a class="text-decoration-none mx-2 my-1 text-nowrap btn-preload" href="{% url 'base_legal' %}"><i class="bi bi-exclamation-diamond"></i> {% translate 'Legal'%}</a>
+                  </div>
+      </div>
+    </div>
+
+
+    <div class="container text-center">
+      <div id="footer-icons" class="row g-3 my-4 justify-content-center align-items-center">
+          <div class="col-12 col-md-6 col-xl-5 mb-2">
+              <div class="d-flex flex-wrap justify-content-center justify-content-md-end me-md-3 mt-1">
+                  <div
+                    class="m-1 mx-xl-2"
+                    data-bs-toggle="tooltip"
+                    title='{% translate "Address" %}: {% translate "N 59, Appt, 11 Av. Ibn Sina, Rabat, Morocco" %}'>
+                    <a
+                      target="_blank" 
+                      href="https://maps.app.goo.gl/9guSvvpQTmgMEzDw6" 
+                      class="d-flex align-items-center justify-content-center rounded rounded-3 border p-2" 
+                      style="width: 40px; height: 40px;">
+                      <img 
+                        class="img-fluid" 
+                        src="{% static 'img/location.svg' %}" 
+                        alt='{% translate "59, Appt 11, Av. Ibn Sina, Agdal, Rabat, Morocco" %}' 
+                        style="max-height: 36px; pointer-events: none;">
+                    </a>
+                  </div>
+                  <div 
+                    class="m-1 mx-xl-2" 
+                    data-bs-toggle="tooltip" 
+                    title='{% translate "Phone" %}'>
+                    <a 
+                      href="tel:+212606881972"
+                      class="d-flex align-items-center justify-content-center rounded rounded-3 border p-2" 
+                      style="width: 40px; height: 40px;">
+                      <img 
+                        class="img-fluid" 
+                        src="{% static 'img/phone.svg' %}" 
+                        alt='{% translate "Phone" %}' 
+                        style="max-height: 36px; pointer-events: none;">
+                    </a>
+                  </div>
+                  <div 
+                    class="m-1 mx-xl-2" 
+                    data-bs-toggle="tooltip" 
+                    title='{% translate "Email" %}'>
+                    <a 
+                      href="mailto:contact@emarches.com" 
+                      class="d-flex align-items-center justify-content-center rounded rounded-3 border p-2" 
+                      style="width: 40px; height: 40px;">
+                      <img 
+                        class="img-fluid" 
+                        src="{% static 'img/mail.svg' %}" 
+                        alt='{% translate "Email" %}' 
+                        style="max-height: 36px; pointer-events: none;">
+                    </a>
+                  </div>
+                  <div 
+                    class="m-1 mx-xl-2" 
+                    data-bs-toggle="tooltip" 
+                    title='{% translate "WhatsApp" %}'>
+                    <a 
+                      target="_blank" 
+                      href="https://wa.me/212606881972"
+                      class="d-flex align-items-center justify-content-center rounded rounded-3 border p-2" 
+                      style="width: 40px; height: 40px; background-color: #00d40055;">
+                      <img 
+                        class="img-fluid" 
+                        src="{% static 'img/whatsapp.svg' %}"
+                        alt='{% translate "WhatsApp" %}' 
+                        style="max-height: 36px; pointer-events: none;">
+                    </a>
+                  </div>
+                  <div
+                    class="m-1 mx-xl-2" 
+                    data-bs-toggle="tooltip" 
+                    title='{% translate "X" %}'>
+                    <a 
+                      target="_blank" 
+                      href="https://x.com/MODE_777_IT" 
+                      class="d-flex align-items-center justify-content-center rounded rounded-3 border p-2 deactivated" 
+                      style="width: 40px; height: 40px;">
+                      <img 
+                        class="img-fluid" 
+                        src="{% static 'img/x-icon.svg' %}" 
+                        alt='{% translate "X" %}' 
+                        style="max-height: 36px; pointer-events: none;">
+                    </a>
+                  </div>
+              </div>
+            </div>
+
+          <div class="col-12 col-md-6 col-xl-5 mb-2">
+              <div class="d-flex flex-wrap justify-content-center justify-content-md-start ms-md-3">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <!-- <div class="mx-1 small text-muted" style="font-size:x-small;">Powered by</div> -->
+
+                    <div class="mx-0">
+                      <img 
+                        class="img-fluid" 
+                        src="{% static 'img/powered-by.svg' %}" 
+                        alt="Powered by" 
+                        style="height: 24px; pointer-events: none;">
+                    </div>
+
+                    <a class="mx-1" data-bs-toggle="tooltip" title="MODE-777.com" href="https://mode-777.com" target="_blank">
+                      <img 
+                        class="img-fluid" 
+                        src="{% static 'img/m777-logo.svg' %}" 
+                        alt="MODE-777" 
+                        style="height: 24px; pointer-events: none;">
+                    </a>
+
+                    <a class="mx-1" data-bs-toggle="tooltip" title="Portfolio" href="https://portfolio.emarches.com" target="_blank">
+                      <img 
+                        class="img-fluid" 
+                        src="{% static 'img/portfolio-link.svg' %}" 
+                        alt="Portfolio" 
+                        style="height: 24px; pointer-events: none;">
+                    </a>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div id="credits" class="mb-5 text-center">
+        <div id="copyright" class="small">
+            <div>Copyright <strong>©2024-{{ current_year }}</strong></div>
+            <p class="small">{% translate 'All rights reserved.'%}</p>
+        </div>
+    </div>
+    <div style="margin-top:4rem;"></div>
+</div>
+
+<a id="scrollBtn" class="mb-2" type="button" onclick="scrollToTop()"><i class="bi bi-chevron-bar-up fs-1 fw-bold"></i></a>
+
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+

@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load taginos %}
+
+{% block title %}{% translate 'My Favourite Tenders' %} {% endblock title %}
+
+{% block content %}
+
+    <div class="modal fade" id="csvModal" tabindex="-1" aria-labelledby="csvModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="csvModalLabel">{% translate 'Download Favourites list' %}</h1>
+                </div>
+                <div class="modal-body">
+                    <div>{% translate "Save a list of shown Tenders as a '.csv' file to your local device." %}</div>
+                    <div class="small text-muted">{% translate "These files can be opened in many spreadsheet processors like LibreOffice Calc and MS Excel, ..." %}</div>
+                </div>
+                <div class="modal-body py-2">                    
+                    <div class="small text-muted text-end">{% translate 'Items count' %}: <span class="fw-normal">{% if page_obj.paginator %}{{ page_obj.paginator.count }}{% else %}0{% endif %}</span></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="downloadCSV()">{% translate 'Download file' %}</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal"">{% translate 'Dismiss' %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="clrModal" tabindex="-1" aria-labelledby="clrModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="clrModalLabel">{% translate 'Clear Favourites' %}</h1>
+                </div>
+                <div class="modal-body">
+                    <div>{% translate "Clear your list of Favourite Tenders." %}</div>
+                    <div class="small text-muted">{% translate "This only will remove your stars from the Tenders, not the Tenders themselves. " %}</div>
+                    <div class="small text-muted">{% translate "This operation can not be reversed. " %}</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="clearFavs('past')">{% translate 'Clear Expired' %}</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" onclick="clearFavs('unfavourite-all')">{% translate 'Clear All' %}</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal"">{% translate 'Dismiss' %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container bottom-0 end-0 p-3" style="position: fixed; z-index: 99;">
+        {% include 'base/includes/message.html' with id="toast-200" teint='success' message=_('Favourites cleared succcessfully.') %}
+        {% include 'base/includes/message.html' with id="toast-410" teint='danger' message=_('Something went wrong.') %}
+        {% include 'base/includes/message.html' with id="toast-304" teint='warning' message=_('Nothing to clear.') %}
+    </div>
+
+
+    <!-- <h1 class="mt-4">{% translate 'My Favourite Tenders' %}</h1> -->
+    {% trans "My Favourite Tenders" as subtitle %}
+    {% include 'base/includes/page-top.html' with image='img/favs.webp' %}
+    <div class="text-center">{% include 'base/includes/items-count.html' with page_obj=page_obj %}</div>
+
+    <!-- {% include 'base/includes/items-count.html' with page_obj=page_obj %} -->
+
+
+    {% if page_obj %}
+        <div id="top-actions" class="py-2 text-center">
+
+            <a id="clrbtn" type="button" class="btn btn-outline-primary mt-1 px-2" {% if request.user.is_authenticated %} data-bs-toggle="modal" data-bs-target="#clrModal"{% else %} href="{% url 'account_login' %}?next={{ request.get_full_path }}"{% endif %}>
+                <div class="d-flex justify-content-center">
+                    {% if not request.user.is_authenticated %}
+                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="24">
+                    {% endif %}
+                    <div class="mx-1"><i class="bi bi-stars"></i> {% translate 'Clear Favourites' %}</div>
+                </div>
+            </a>
+
+            <a type="button" class="btn btn-outline-primary mt-1 px-2 {% if not page_obj %}disabled{% endif %}" {% if request.user.is_authenticated %} data-bs-toggle="modal" data-bs-target="#csvModal"{% else %} href="{% url 'account_login' %}?next={{ request.get_full_path }}"{% endif %}>
+                <div class="d-flex justify-content-center">
+                    {% if not request.user.is_authenticated %}
+                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="24">
+                    {% endif %}
+                    <div class="mx-1"><i class="bi bi-journal-arrow-down"></i> {% translate 'Download List' %}</div>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="list-group mt-2 my-0">
+            {% for con in page_obj %}
+                {% include 'portal/includes/con.html' with con=con faved='Favourite' %}
+            {% endfor %}
+        </div>
+        {% include 'portal/cons-search-paginator.html' %}
+        <div class="mt-2">{% include 'portal/includes/cons-legend.html' %}</div>
+    {% else %}
+        <div class="mt-3">{% include 'base/includes/empty.html' %}</div>
+    {% endif %}
+
+    {% if cons_age %}<div class="text-center d-block mt-3"><div class="small text-muted">{% translate 'Last updated' %}: <strong>{{ cons_age }}</strong><span class="ms-1">{{ cons_age|date:'e' }}</span></div></div>{% endif %}
+
+    <script>
+        function downloadCSV() { window.location += "?&dld=csv"; }
+
+        function showToast(code) {
+            let toastino = document.getElementById('toast-' + code);
+            let alertino = new bootstrap.Toast(toastino);
+            alertino.show();
+        }
+
+        async function clearFavs(sco='past') {
+            
+            try {
+                url = '/cons/clear_favs?&sco=' + sco;
+                let response = await fetch(url, {credentials: "same-origin",});
+
+                if ( response.status == 200 ) {
+                    document.location.reload(true);
+                }else{showToast(response.status)}
+
+            } catch (error) {
+                console.error(error.message);
+                showToast(410);
+            }
+        }
+    </script>
+
+{% endblock %}

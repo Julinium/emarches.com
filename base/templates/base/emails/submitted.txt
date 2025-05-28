@@ -1,0 +1,23 @@
+
+Message submitted. Thank You !
+Your message on eMarches.com has been successfully submitted. 
+We will get back to you shortly.
+
+
+Here are some details of the contact:
+Name: {{ instance.name }}
+Email: {{ instance.email }}
+Phone: {{ instance.phone }}
+Subject: {{ instance.subject }}
+Message: {{ instance.message }}
+Date and time: {{ instance.date_submitted }}
+IP address: {{ instance.ip_address }}
+
+==========================================
+You can safely ignore this message if you do not recognize this activity.
+Replies to this email are not read.
+==========================================
+
+Best regards,
+eMarches.com
+

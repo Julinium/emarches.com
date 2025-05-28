@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load static %}
+{% load taginos %}
+
+{% if page_obj.paginator.num_pages > 1 %}
+        <ul class="pagination justify-content-center flex-wrap mt-3 mb-3">
+            {% for i in page_range %}
+                {% if page_obj.number == i %}
+                    <li class="active page-item" data-bs-toggle="tooltip"
+                        title="{% translate 'Showing items' %} {{ page_obj.start_index }}-{{ page_obj.end_index }} {% translate 'from' %} {{ page_obj.paginator.count }}">
+                        <span class="page-link px-3 py-2 fw-bold">{{ i }}</span>
+                    </li>
+                {% else %}
+                    {% if i == page_obj.paginator.ELLIPSIS %}
+                        <li class="page-item"><span class="page-link px-1 py-2">{{ i }}</span></li>
+                    {% else %}
+                    <li class="page-item"><a class="page-link px-3 py-2" href="?{{ qd | querize }}{% if request.GET.query %}query={{ request.GET.query }}{% endif %}&page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+{% endif %}

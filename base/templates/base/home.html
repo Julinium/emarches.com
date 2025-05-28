@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+
+{% block title %} {% translate 'Home of Public Procurement Market' %} {% endblock title %}
+
+{% block content %}
+
+
+<div class="container pb-5 text-center" id="lead">
+{% include 'base/includes/hero.html' %}
+</div>
+
+{% include 'base/includes/carousel.html' with jpg_files=jpg_files scripts=scripts %}
+
+<!-- <div class="container py-5" id="tutorial">
+  {% include 'base/includes/tutorial.html' %}  
+</div> -->
+
+<div class="container py-5" id="our-services">
+  {% include 'base/includes/services.html' %}  
+</div>
+
+<div class="container py-5" id="pricing">
+  {% include 'base/includes/pricing.html' %}    
+</div>
+
+<div class="container py-5" id="testimonials">
+  {% include 'base/includes/testimonials.html' %}    
+</div>
+{% endblock content %}

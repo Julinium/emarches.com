@@ -1,0 +1,185 @@
+{% extends "base_narrow.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>{% trans 'Profile Details' %}</h2>
+
+    <form method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <!-- Avatar Preview -->
+        <div class="mb-3 text-center">
+            <div>
+                <img 
+                    id="avatar-preview"
+                    src="{% if request.user.profile.avatar %}{{ request.user.profile.avatar.url }}{% else %}/media/users/avatars/default.png{% endif %}" 
+                    alt="Avatar"
+                    class="rounded-circle shadow shadow-md mx-auto mt-3" 
+                    style="width: 160px; height: 160px; object-fit: cover;"
+                >
+            </div>
+            <input 
+                type="file" 
+                class="form-control mt-3" 
+                id="id_avatar" 
+                name="avatar" 
+                onchange="validateAvatar(this)"
+            >
+            <div 
+                id="avatar-error" 
+                class="text-danger mt-2"
+                data-file-type="{% trans 'The file must be JPG, PNG, WEBP or GIF.' %}"
+                data-file-size="{% trans 'The image must be less than 1MB.' %}"
+                data-dimensions="{% trans 'The image dimensions must be between 150x150 and 1024x1024 pixels.' %}"
+                >
+            </div>
+        </div>
+
+        <!-- Company -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_company" name="company" placeholder="{% trans 'Company name or label' %}" value="{{ form.company.value }}">
+            <label for="id_company">{% trans "Company" %}</label>
+        </div>
+
+        <!-- ICE -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_ice" name="ice" placeholder="{% trans 'ICE' %}" value="{{ form.ice.value }}">
+            <label for="id_ice">{% trans "ICE" %}</label>
+        </div>
+
+        <!-- Dtae Est -->
+        <div class="form-floating my-2">
+            <input type="date" class="form-control" id="id_date_est" name="date_est" placeholder="{% trans 'Date Established' %}" value="{{ form.date_est.value|date:'Y-m-d' }}">
+            <label for="id_date_est">{% trans "Date Established" %}</label>
+        </div>
+
+        <!-- City -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_city" name="city" value="{{ form.city.value }}" placeholder="{% trans 'Enter your city' %}">
+            <label for="id_city">{% trans "City" %}</label>
+        </div>
+
+        <!-- Country -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_country" name="country" value="{{ form.country.value }}" placeholder="{% trans 'Enter your country' %}">
+            <label for="id_country">{% trans "Country" %}</label>
+        </div>
+
+        <!-- Sector -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_sector" name="sector" value="{{ form.sector.value }}" placeholder="{% trans 'Enter your sector of activity' %}">
+            <label for="id_sector">{% trans "Sector of Activity" %}</label>
+        </div>
+
+        <!-- Role -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_role" name="role" value="{{ form.role.value }}" placeholder="{% trans 'Enter your role' %}">
+            <label for="id_role">{% trans "Role" %}</label>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_phone" name="phone" value="{{ form.phone.value }}" placeholder="{% trans 'Enter your phone number' %}">
+            <label for="id_phone" style="direction: ltr;">{% trans "Phone" %}</label>
+        </div>
+
+        <!-- Email -->
+        <div class="form-floating my-2">
+            <input type="email" class="form-control" id="id_email" name="email" value="{{ form.email.value }}" placeholder="{% trans 'Enter your email address' %}">
+            <label for="id_email">{% trans "Email" %}</label>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_whatsapp" name="whatsapp" value="{{ form.whatsapp.value }}" placeholder="{% trans 'Enter your WhatsApp number' %}">
+            <label for="id_whatsapp">{% trans "WhatsApp" %}</label>
+        </div>
+
+        <!-- Fax -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_faximili" name="faximili" value="{{ form.faximili.value }}" placeholder="{% trans 'Enter your fax number' %}">
+            <label for="id_faximili">{% trans "Fax" %}</label>
+        </div>
+
+        <!-- Website -->
+        <div class="form-floating my-2">
+            <input type="text" class="form-control" id="id_website" name="website" value="{{ form.website.value }}" placeholder="{% trans 'Enter your website URL' %}">
+            <label for="id_website">{% trans "Website" %}</label>
+        </div>
+
+        <!-- Note Input -->
+        <div class="form-floating my-2">
+            <textarea class="form-control" id="id_note" name="note" placeholder="{% trans 'Anything worth mentioning' %}" rows="3" style="height: auto;">{{ form.note.value }}</textarea>
+            <label for="id_note">{% trans "Note" %}</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-lg px-4 me-md-2 btn-preload">{% trans 'Save' %}</button>
+    </form>
+
+</div>
+
+<script>
+    // Constants for validation
+    const MAX_FILE_SIZE   = 1 * 1024 * 1024; // 1MB
+    const ALLOWED_FORMATS = ["image/jpeg", "image/jpg", "image/png", "image/gif", "image/webp"]; 
+    const MIN_WIDTH       = 150;
+    const MIN_HEIGHT      = 150;
+    const MAX_WIDTH       = 1024;
+    const MAX_HEIGHT      = 1024;
+    const savedAvatarUrl  = document.getElementById('avatar-preview').src;
+
+    function validateAvatar(input) {
+        const preview = document.getElementById('avatar-preview');
+        const errorDiv = document.getElementById('avatar-error');
+        const file = input.files[0];
+
+        // Get translations from `data-attributes`
+        const errorMessages = {
+            fileType: errorDiv.getAttribute("data-file-type"),
+            fileSize: errorDiv.getAttribute("data-file-size"),
+            dimensions: errorDiv.getAttribute("data-dimensions"),
+        };
+
+        errorDiv.textContent = ""; // Reset error
+
+        if (file) {
+            if (!ALLOWED_FORMATS.includes(file.type)) {
+                errorDiv.textContent = errorMessages.fileType;
+                input.value = "";
+                preview.src = savedAvatarUrl;
+                return;
+            }
+
+            if (file.size > MAX_FILE_SIZE) {
+                errorDiv.textContent = errorMessages.fileSize;
+                input.value = "";
+                preview.src = savedAvatarUrl;
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.src = e.target.result;
+                img.onload = function () {
+                    if (img.width < MIN_WIDTH || img.height < MIN_HEIGHT || img.width > MAX_WIDTH || img.height > MAX_HEIGHT) {
+                        errorDiv.textContent = errorMessages.dimensions;
+                        input.value = "";
+                        preview.src = savedAvatarUrl;
+                    } else {
+                        preview.src = e.target.result;
+                    }
+                };
+            };
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = savedAvatarUrl;
+        }
+    }
+</script>
+
+
+{% endblock %}

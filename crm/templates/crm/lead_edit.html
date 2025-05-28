@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+{% load taginos %}
+
+{% block title %} {% translate 'Lead Details' %} {% endblock title %}
+
+{% block content %}
+    <h1 class="text-center mb-4">{% trans "Lead Details" %}</h1>
+    {% if request.user|in_group:'CRM' %}
+    <div class="row gy-5 gx-lg-5 mt-3">
+            <div class="col-lg-6">
+                <table class="table">
+                    <tbody>
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Name" %}</span>
+                        <div class="text-muted mx-0 px-0"><strong>{{ lead.name }}</strong></div> 
+                        </td>             
+                    </tr>
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Prefferred contact method" %}</span>
+                        <div class="text-muted mx-0 px-0"><strong>{{ lead.contact_method|capfirst }}</div> 
+                        </td>             
+                    </tr>
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Subject" %}</span>
+                        <div class="text-muted mx-0 px-0"><strong>{{ lead.subject }}</strong></div>
+                        </td>
+                    </tr>
+        
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Message" %}</span>
+                        <div class="text-muted mx-0 px-0"><strong>{{ lead.message }}</strong></div>
+                        </td>
+                    </tr>
+        
+                    <tr class="border-bottom">
+                        <td>
+                            <span class="text-muted small fw-light text-end">{% trans "Submitted since" %}</span>
+                            <div class="text-muted mx-0 px-0">
+                                <strong>{{ lead.date_submitted|time1since }}</strong>: 
+                                <span class="text-muted m-0 p-0">{{ lead.date_submitted }}</span>
+                            </div>
+                        </td>             
+                    </tr>
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Email" %}</span>
+                        <div class="text-muted mx-0 px-0">
+                            {% if lead.email %}
+                                <a href="mailto:{{ lead.email }}" class="btn btn-outline-primary text-decoration-none">{{ lead.email }}</a>
+                            {% else %}
+                                -
+                            {% endif %}
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Phone" %}</span>
+                        <div class="text-muted mx-0 px-0 text-start" style="direction: ltr;">
+                            {% if lead.phone %}
+                                <a href="tel:{{ lead.phone }}" class="btn btn-outline-primary text-decoration-none">{{ lead.phone }}</a>
+                            {% else %}
+                                -
+                            {% endif %}</div>
+                        </td>
+                    </tr>
+        
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Authenticated user" %}</span>
+                        <div class="text-muted mx-0 px-0">
+                            {% if lead.user %}
+                                <strong class="text-success">{% trans "Yes" %}</strong>
+                            {% else %}
+                                <strong class="text-danger">{% trans "No" %}</strong>
+                            {% endif %}
+                        </div>
+                        </td>
+                    </tr>
+                
+                    {% if lead.user %}
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Username" %}</span>
+                        <div class="text-muted mx-0 px-0"><strong>{{ lead.user }}</strong></div>
+                        </td>
+                    </tr>
+                        {% if lead.user.email %}
+                            {% if lead.user.email != lead.email %}
+                                <tr class="border-bottom">
+                                    <td>
+                                        <span class="text-muted small fw-light text-end">{% trans "User email" %}</span>
+                                        <div class="text-muted mx-0 px-0 text-start" style="direction: ltr;">
+                                            <a href="mailto:{{ lead.user.email }}" class="btn btn-outline-primary text-decoration-none">{{ lead.user.email }}</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+        
+                    <tr class="border-bottom">
+                        <td>
+                            <span class="text-muted small fw-light text-end">{% trans "Subscribe to Newsletter" %}</span>
+                            <div class="text-muted mx-0 px-0">
+                                {% if lead.subscribe_newsletter %}
+                                    <strong class="text-success">{% trans "Yes" %}</strong>
+                                {% else %}
+                                    <strong class="text-danger">{% trans "No" %}</strong>
+                                {% endif %}
+                            </div>
+                        </td>
+                    </tr>
+        
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Subscribe to Promotions" %}</span>
+                        <div class="text-muted mx-0 px-0">
+                            {% if lead.subscribe_promotions %}
+                                <strong class="text-success">{% trans "Yes" %}</strong>
+                            {% else %}
+                                <strong class="text-danger">{% trans "No" %}</strong>
+                            {% endif %}
+                        </div>
+                        </td>
+                    </tr>
+        
+                    <tr class="border-bottom">
+                        <td>
+                        <span class="text-muted small fw-light text-end">{% trans "Replied" %}</span>
+                        <div class="text-muted mx-0 px-0">
+                            {% if lead.replied %}
+                                <strong class="text-success">{% trans "Yes" %}</strong>
+                            {% else %}
+                                <strong class="text-danger">{% trans "No" %}</strong>
+                            {% endif %}
+                        </div>
+                        </td>
+                    </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-lg-6">                
+                <form method="post" class="mt-3">
+                    {% csrf_token %}
+                    <input type="hidden" name="lead_id" value="{{ lead.id }}">
+                    <div class="mb-2">
+                        <input type="checkbox" name="replied" id="replied_{{ forloop.counter }}" {% if lead.replied %}checked{% endif %}>
+                        <label for="replied_{{ forloop.counter }}" class="form-label">{% trans "Mark as Replied" %}</label>
+                    </div>
+                    <div class="mb-2">
+                        <label for="actions_{{ forloop.counter }}" class="form-label">{% trans "Actions" %}</label>
+                        <input type="text" name="actions" id="actions_{{ forloop.counter }}" value="{{ lead.actions }}" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                        <label for="results_{{ forloop.counter }}" class="form-label">{% trans "Results" %}</label>
+                        <input type="text" name="results" id="results_{{ forloop.counter }}" value="{{ lead.results }}" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                        <label for="notes_{{ forloop.counter }}" class="form-label">{% trans "Notes" %}</label>
+                        <textarea name="notes" id="notes_{{ forloop.counter }}" class="form-control" rows="3">{{ lead.notes }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2">{% trans "Save Changes" %}</button>
+                </form>
+            </div>
+    </div>
+    {% else %}
+        <p class="text-danger">{% trans 'Not allowed' %}</p>
+    {% endif %}
+{% endblock %}

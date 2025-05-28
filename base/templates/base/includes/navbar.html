@@ -1,0 +1,149 @@
+{% load static %}
+{% load i18n %}
+{% load taginos %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+
+<nav class="navbar navbar-expand-lg pt-3 pb-4 navbar-light sticky-top">
+  <div class="container container-fluid">
+    <a class="navbar-brand btn-preload" href="{% url 'base_home' %}">      
+      <img class="img-fluid brandino" src="{% if LANGUAGE_CODE == 'ar' %}{% static 'img/insi-brand-ar.svg' %}{% else %}{% static 'img/insi-brand.svg' %}{% endif %}" alt="eMarches">
+    </a>
+    <button class="navbar-toggler border-0 px-1" type="button" 
+        data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" 
+        style="outline: none; box-shadow: none;"
+        aria-label="Toggle navigation">
+        {% if request.user.is_authenticated %}
+        <img class="img-fluid border rounded-circle" src="{% if request.user.profile.avatar %}{{ MEDIA_URL }}{{ request.user.profile.avatar }}{% else %}/static/media/users/avatars/default.png{% endif %}" alt="" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
+        {% endif %}
+        <span class="navbar-toggler-icon"></span>
+        {% if new_contactings %}
+          <span class="badge mb-2 px-1 bg-danger text-white"> </span>
+        {% else %}
+          {% if user_favs %}<span class="badge mb-2 px-1 bg-primary text-white "> </span>{% endif %}
+        {% endif %}
+    </button>
+      
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="portalScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-search"></i> {% translate 'Tenders' %}
+                {% if user_favs %}
+                  <span class="badge mb-2 px-1 text-white bg-primary"> </span>
+                {% endif %}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="portalScrollingDropdown">
+                <li><a class="dropdown-item btn-preload" href="{% url 'portal_cons_list' %}?ob=DL"><i class="bi bi-hourglass-split"></i> {% translate 'Expiring' %}</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item btn-preload" href="{% url 'portal_cons_list' %}?ob=-DP"><i class="bi bi-menu-app-fill"></i> {% translate 'Newest' %}</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item btn-preload" href="{% url 'portal_cons_favs' %}"><i class="bi bi-bookmark-heart-fill"></i> {% translate 'My Favourites' %}{% if user_favs %}<span class="badge bg-primary text-white mx-1">{{ user_favs.count }}</span>{% endif %}</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item btn-preload" aria-disabled="true" href="{% url 'portal_cons_insights' %}"><i class="bi bi-opencollective"></i> {% translate 'Insights' %}</a></li><li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item btn-preload" aria-disabled="true" href="{% url 'portal_bdc_landing' %}"><i class="bi bi-cart4"></i> {% translate 'Purchase Orders' %}</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link nav-section" tabindex="-1" aria-disabled="true" href="{% if request.path != '/'|add:request.LANGUAGE_CODE|add:'/' %}/{{ request.LANGUAGE_CODE }}/{% endif %}#our-services"><i class="bi bi-rocket-takeoff-fill"></i> {% translate 'Services' %}</a></li>
+            <li class="nav-item"><a class="nav-link btn-preload" tabindex="-1" aria-disabled="true" href="{% url 'base_contact' %}"><i class="bi bi-chat-text-fill"></i> {% translate 'Contact' %}</a></li>
+          </ul>
+
+          <span>
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll text-end">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img height="20" src="{% static 'flags/' %}{{ LANGUAGE_CODE }}.svg" alt="{{ LANGUAGE_CODE|upper }}">
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">                      
+                      {% for lang in transes %}
+                          <li>
+                            <a class="px-2 dropdown-item{% if lang.code != LANGUAGE_CODE %} btn-preload{% else %} fw-bold disabled{% endif %}"
+                            href="{% if lang.code != LANGUAGE_CODE %}{% switch_language_url lang.code %}{% endif %}" 
+                            data-bs-toggle="tooltip" title="{{ lang.name_translated|capfirst }}" type="button">
+                              <img src="{% static 'flags/' %}{{ lang.code }}.svg" height="20" alt="{{ lang.code|upper }}">
+                              {{ lang.name_local|capfirst }}
+                              <div class="progress bg-danger mt-1" style="height: 2px;">
+                                <div
+                                    class="progress-bar bg-primary"
+                                    role="progressbar"
+                                    style="width: {{ lang.ratio }}%;"
+                                    aria-valuenow="{{ lang.ratio }}"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100">
+                                </div>
+                              </div>
+                            </a>
+                          </li>
+                          {% if not forloop.last %}<li><hr class="dropdown-divider my-2"></li> {% endif %}
+                        
+                      {% endfor %}
+                  </ul>
+                </li>
+
+
+                <style>                                
+                  .circle {
+                    stroke-linecap: butt;
+                    /* transition: stroke-dasharray 0.6s ease; */
+                  }
+                </style>
+
+                {% if request.user.is_authenticated %}
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="img-fluid border rounded-circle mx-1" src="{% if request.user.profile.avatar %}{{ MEDIA_URL }}{{ request.user.profile.avatar }}{% else %}/static/media/users/avatars/default.png{% endif %}" alt="" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
+                    <span data-bs-toggle="tooltip" title="{{ request.user.username }}">{{ request.user.username|truncatechars:8 }}</span>
+                    {% if new_contactings %}
+                      <span class="badge mb-2 px-1 bg-danger text-white"> </span>
+                    {% endif %}
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li>
+                        <a class="dropdown-item btn-preload" href="{% url 'base_profile' %}"><i class="bi bi-person-circle"></i> {% translate 'Profile' %}</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item btn-preload" href="{% url 'account_change_password' %}"><i class="bi bi-shield-lock-fill"></i> {% translate 'Change Password' %}</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item btn-preload text-danger fw-bold" href="{% url 'account_logout' %}"><i class="bi bi-box-arrow-right"></i> {% translate 'Sign Out' %}</a>
+                    </li>
+                    
+                    {% if request.user|in_group:'CRM' %}
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                      <a class="dropdown-item btn-preload" href="{% url 'crm_supervision' %}">
+                        <i class="bi bi-eye-fill"></i> {% translate 'Supervision' %}
+                        {% if new_contactings %}<span class="badge bg-danger text-white mx-1">{{ new_contactings.count }}</span>{% endif %}
+                      </a>
+                    </li>
+                    {% endif %}
+                    {% if request.user.is_superuser %}
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item" target="_blank" href="/admin"><i class="bi bi-tools"></i> {% translate 'Administration' %}</a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item" target="_blank" href="https://pgadmin.emarches.com/"><i class="bi bi-database-fill-gear"></i> {% translate 'Database' %}</a>
+                    </li>
+                    {% endif %}
+                  </ul>
+                {% else %}
+                    <li class="dropdown-item btn-preload">
+                        <a class="btn btn-primary" href="{% url 'account_login' %}"><i class="bi bi-person-circle"></i> {% translate 'Sign In' %}</a>
+                    </li>
+                {% endif %}
+              </li>
+              </ul>
+          </span>
+      
+    </div>
+  </div>
+</nav>
+

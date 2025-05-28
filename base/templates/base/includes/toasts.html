@@ -1,0 +1,25 @@
+
+{% load static %}
+{% if messages %}
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" aria-live="polite" aria-atomic="true">
+            {% for message in messages %}
+                <div class="toast messagino 
+                    {% if message.tags %}
+                        {% if message.tags == 'error' %} dd-long
+                        {% else %}
+                            {% if message.tags == 'warning' %} dd-medium {% endif %}
+                        {% endif %}
+                    {% endif %}"
+                        role="alert" aria-live="assertive" aria-atomic="true" style="display: block;"
+                >
+                    <div class="toast-header bg-opacity-75 {% if message.tags %}{% if message.tags == 'error' %} bg-danger{% else %} bg-{{ message.tags }}{% endif %}{% endif %}">
+                        <strong class="me-auto text-uppercase">{{ message.tags | title }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" onclick="ffert(this.parentElement.parentElement)"></button>
+                    </div>
+                    <div class="toast-body">
+                        {{ message | truncatewords:50 | safe }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}

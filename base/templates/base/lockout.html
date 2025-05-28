@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+
+{% block title %} {% translate 'Message submitted' %} {% endblock title %}
+
+{% block content %}
+    {% trans "Suspect activity !" as top_title %}
+    {% trans "Too many failures" as subtitle %}
+    {% trans "Our system detected a suspected activity from your address." as paragraph %}
+    {% include 'base/includes/page-top.html' with top_title=top_title image='img/lockout-1.webp' subtitle=subtitle paragraph=paragraph %}
+    
+    <p>{% trans 'Sorry for any inconvinience, but we take security seriously.' %}</p>
+    <p>{% trans 'If you think we made a mistake, please let us know.' %}</p>
+    
+    {% translate 'Contact us' as caption_primary %}
+    {% translate 'Go Home' as caption_secondary %}
+    {% include 'base/includes/page-cta.html' with caption_primary=caption_primary url_primary='base_home' caption_secondary=caption_secondary url_secondary='base_contact' %}
+    
+{% endblock content %}
+
+

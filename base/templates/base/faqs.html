@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+
+{% block title %} {% translate 'FAQs' %} {% endblock title %}
+
+{% block content %}
+        {% trans "Frequently Asked Questions" as subtitle %}
+        {% trans "Have a question? Chances are someone already asked it and we answered it." as paragraph %}
+        {% with 'img/faqs/faq-'|add:m7|add:'.webp' as image %}
+            {% include 'base/includes/page-top.html' with image=image subtitle=subtitle paragraph=paragraph %}
+        {% endwith %}
+        
+        <div class="accordion my-4" id="faqAccordion1">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading1">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "What is public procurement?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion1">
+                    <div class="accordion-body">
+                        {% trans "Public procurement refers to the process by which government entities and public organizations acquire goods, services, or works from private sector businesses, individuals or organizations. This process is regulated to ensure transparency, fairness, and value for taxpayers." %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion my-4" id="faqAccordion2">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading2">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse1">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "Are you afficliated to governmental entity?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion2">
+                    <div class="accordion-body">
+                        {% trans "No. We are not affiliated in any way to any public or governmental entity." %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion my-4" id="faqAccordion3">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading3">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse1">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "Where do you get your data from?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion3">
+                    <div class="accordion-body">
+                        <p>{% trans "We collect data from the portal dedicated to public tenders. We debloat, aggregate and reorganize data and store it in our database." %}</p>
+                        <p>{% trans "Then we use tdata from our database to provide our services in a better, more ergonomic, and more meaningful way. " %}</p>
+                        <p>{% trans "To measure a bit of the difference that it makes, you can visit the official portal preferably using a mobile. Here is the link, good luck:" %}<a class="mx-2" target="_blank" href="https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseAdvancedSearch&searchAnnCons">www.marchespublics.gov.ma</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion my-4" id="faqAccordion9">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading9">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse9" aria-expanded="false" aria-controls="faqCollapse9">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "How often do you update the data ?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9" data-bs-parent="#faqAccordion9">
+                    <div class="accordion-body">
+                        <p>{% trans "We are trying to be as up-to-date as we can. Our teams work hard to bring any available data update as soon as it is published." %}</p>
+                        <p>{% trans "For now, we update the list of available Tenders every 3 hours. If the need araises in the future, we may narrow down the gap to 1 hour or less." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion my-4" id="faqAccordiona">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadinga">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapsea" aria-expanded="false" aria-controls="faqCollapsea">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "How accurate is the information on your website about Tenders?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapsea" class="accordion-collapse collapse" aria-labelledby="faqHeadinga" data-bs-parent="#faqAccordiona">
+                    <div class="accordion-body">
+                        <p>{% trans "We get information on Tenders from the official public website as fidelly as possible." %}</p>
+                        <p>{% trans "If information on our website is wrong or inaccurate, it most probably comes from the public portal." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion my-4" id="faqAccordion4">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading4">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "How can your consultancy help my business?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion4">
+                    <div class="accordion-body">
+                        {% trans "Our consultancy specializes in guiding businesses through the complexities of public procurement in Morocco. We provide services such as market research, bid preparation, compliance support, and training to ensure your success in this competitive sector." %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion my-4" id="faqAccordion5">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading5">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "What industries do you work with?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion5">
+                    <div class="accordion-body">
+                        {% trans "We work with a wide range of industries, including construction, technology, healthcare, manufacturing, and more. Our tailored approach ensures that our services meet the unique needs of each industry." %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion my-4" id="faqAccordion6">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading6">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "Do you provide training for public procurement?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion6">
+                    <div class="accordion-body">
+                        {% trans "Yes, we offer training and workshops designed to build your team’s expertise in public procurement processes, ensuring compliance and increasing your chances of success in bidding." %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion my-4" id="faqAccordion7">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading7">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "How much does your services cost?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#faqAccordion7">
+                    <div class="accordion-body">
+                        <p>{% trans "Our pricing model has three tiers." %}</p>
+                        <p>- {% trans "Public" %}: {% trans "Access to search and limited tenders information without even an account." %}<br>
+                        - {% trans "Startup" %}: {% trans "Access to advanced search, unlimited tenders information, limited files downloads, favourites, ... with a free account." %}<br>
+                        - {% trans "Pro" %}: {% trans "Like Startup, with free unlimited files downloads, favourites, customized notifications, ... with a paid account." %}<br></p>
+                        <p>{% trans "You can also purchase extra services like Technical and Regulatory support, Bidding preparation, ..." %}</p>
+                        <p>{% trans "As every business is unique, we calculate the price to charge for our services based on your business needs and goals." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion my-4" id="faqAccordion8">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading8">
+                    <button class="accordion-button collapsed fw-semibold bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
+                        <i class="bi bi-dice-1-fill"></i>
+                        <span class="px-2">{% trans "How do I get started with your services?" %}</span>
+                    </button>
+                </h2>
+                <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#faqAccordion8">
+                    <div class="accordion-body">
+                        {% trans "Getting started is simple! Contact us through our website or give us a call. We’ll schedule an initial consultation to understand your needs and discuss how our services can help you achieve your goals." %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% translate 'Question still unanswered ?' as recap %}
+        {% translate 'Contact Us' as caption_primary %}
+        {% translate 'Go Home' as caption_secondary %}
+        {% include 'base/includes/page-cta.html' with url_primary='base_contact' url_secondary='base_home' %}
+        
+    
+{% endblock content %}

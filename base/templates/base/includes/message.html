@@ -1,0 +1,11 @@
+
+<div class="toast bg-{{ teint }}-subtle {% if extra %}{{ extra }}{% endif %}" {% if id %}id="{{ id }}"{% else %}id="toast-message"{% endif %} role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+    <div class="d-flex  justify-content-between">
+        <div class="toast-body alert-success">
+            <strong class="me-auto" id="dlToastHeader">
+                {{ message }}
+            </strong>
+        </div>
+            <button type="button" class="btn-close me-2 m-2" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+</div> 

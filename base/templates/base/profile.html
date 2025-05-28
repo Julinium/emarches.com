@@ -1,0 +1,264 @@
+{% extends "account/base_entrance.html" %}
+{% load i18n %}
+{% load taginos %}
+
+{% block title %}{% translate 'User Profile' %}{% endblock title %}
+
+{% block content %}
+
+	<section id="userHeader">
+		<div class="row g-4 justify-content-center">
+			<div class="col-md-12 col-xl-10">
+				<div class="row g-3 align-items-center">
+					<div class="col-md-6 d-flex align-items-center justify-content-center">
+						<div class="card border-0" data-bs-toggle="tooltip" title="{{ request.user.username }}">
+							<img src="{% if request.user.profile.avatar %}{{ MEDIA_URL }}{{ request.user.profile.avatar }}{% else %}/static/media/users/avatars/default.png{% endif %}" alt="X" class="card-img-top rounded-circle mx-auto shadow shadow-md" style="width: 10rem; height: 10rem; object-fit: cover;">
+						</div>
+					</div>
+					<div class="col-md-6 d-flex align-items-center justify-content-center">
+						<div class="card border-0" data-bs-toggle="tooltip" title="{{ request.user.username }}">
+							<div class="card-body mx-0 px-0">
+								<h2 class="fs-2">{{ request.user.username }}</h2>
+								<p class="small text-muted mb-0">{{ request.user.email }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+			<!-- {% if payments %}
+				<div>
+					Payments
+					<ul>
+						{% for payment in payments %}
+							<li>{{ payment.amount }} - {{ payment.made_date }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+
+			<div>Active subscription: {{ active_sub.start_date }} - {{ active_sub.end_date }}</div>
+			<div>Active plan: {{ plan.name }}</div> -->
+
+
+	<section id="userStats">
+		<h3 class="fw-light mt-5 mb-3 border-bottom py-2">{% translate 'Subscription status' %}</h3>
+		{% if request.user.profile %}
+				<table class="table">
+					<tbody>
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Current Plan' %}</div>
+							<strong>{% if active_sub %}{{ plan.name }}{% else %} {% translate 'Free' %} {% endif %}</strong></td>
+						</tr>
+						{% if active_sub %}
+							<tr class="border-bottom">
+								<td>
+									<div class="text-muted small fw-light">{% trans 'Remaining days' %}</div>
+									<strong>{{ remaining_days }}</strong>
+									<span>
+										<div class="progress" style="height: 4px; background-color: green">
+											<div 
+												class="progress-bar" 
+												role="progressbar" 
+												style="width: 28%; background-color: orangered" 
+												aria-valuenow="8" 
+												aria-valuemin="0" 
+												aria-valuemax="30">
+											</div>
+										</div>
+									</span>
+								</td>
+							</tr>
+							<tr class="border-bottom">
+								<td><div class="text-muted small fw-light">{% trans 'Expires on' %}</div>
+								<strong>{{ active_sub.end_date }}</strong></td>
+							</tr>
+						{% endif %}
+					</tbody>
+				</table>
+
+			<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+				<a href="{% url 'base_home' %}" class="btn btn-outline-primary btn-lg px-4 me-md-2 btn-preload disabled">{% translate 'Upgrade Plan' %}</a>
+			</div>
+		
+		{% else %}
+			<div class="py-5">
+				<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+					<p class="text-danger fw-bold">{% trans 'User Profile not found' %}</p>
+				</div>
+			</div>
+		{% endif %}
+
+	</section>
+
+
+
+	<section id="userStats">
+		<h3 class="fw-light mt-5 mb-3 border-bottom py-2">{% translate 'Period Stats' %}</h3>
+		{% if request.user.profile %}
+				<table class="table">
+					<tbody>
+						<tr class="border-bottom">
+							<td>
+								<div class="text-muted small fw-light">{% trans 'Current favourites' %}</div>
+								<strong><span class="text-danger">11/15</span></strong>
+								<span>
+									<div class="progress" style="height: 4px; background-color: green">
+										<div 
+											class="progress-bar" 
+											role="progressbar" 
+											style="width: 78%; background-color: orangered" 
+											aria-valuenow="11" 
+											aria-valuemin="0" 
+											aria-valuemax="15">
+										</div>
+									</div>
+								</span>
+							</td>
+						</tr>
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Daily links' %}</div>
+							<strong><span class="text-danger"> -- Coming soon --</span></strong></td>
+						</tr>
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Monthly links' %}</div>
+							<strong><span class="text-danger"> -- Coming soon --</span></strong></td>
+						</tr>
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Daily Downloads' %}</div>
+							<strong><span class="text-danger"> -- Coming soon --</span></strong></td>
+						</tr>
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Monthly Downloads' %}</div>
+							<strong><span class="text-danger"> -- Coming soon --</span></strong></td>
+						</tr>
+					</tbody>
+				</table>
+
+			<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+				<a href="{% url 'base_home' %}" class="btn btn-outline-primary btn-lg px-4 me-md-2 btn-preload disabled">{% translate 'Upgrade Plan' %}</a>
+			</div>
+		
+		{% else %}
+			<div class="py-5">
+				<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+					<p class="text-danger fw-bold">{% trans 'User Profile not found' %}</p>
+				</div>
+			</div>
+		{% endif %}
+
+	</section>
+
+
+	<section id="profileInfo">
+		<h3 class="fw-light mt-5 mb-3 border-bottom py-2">{% translate 'Profile details' %}</h3>
+		{% if request.user.profile %}
+			<table class="table">
+				<tbody>
+					{% if request.user.profile.company %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Company' %}</div>
+							<strong>{{ request.user.profile.company }}</strong></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.sector %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Sector' %}</div>
+							<strong>{{ request.user.profile.sector }}</strong></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.ice %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'ICE' %}</div>
+							<strong>{{ request.user.profile.ice }}</strong></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.date_est %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Established Since' %}</div>
+							<strong>{{ request.user.profile.date_est|time1since }}</strong></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.role %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Role' %}</div>
+							<strong>{{ request.user.profile.role }}</strong></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.city %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'City' %}</div>
+							<strong>{{ request.user.profile.city }}</strong></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.country %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Country' %}</div>
+							<strong>{{ request.user.profile.country }}</strong></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.phone %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Phone' %}</div>
+							<div style="direction: ltr;" class="text-start"><strong>{{ request.user.profile.phone }}</strong></div></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.email %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Email' %}</div>
+							<strong>{{ request.user.profile.email }}</strong></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.whatsapp %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'WhatsApp' %}</div>
+							<div style="direction: ltr;" class="text-start"><strong>{{ request.user.profile.whatsapp }}</strong></div></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.faximili %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Fax' %}</div>
+							<div style="direction: ltr;" class="text-start"><strong>{{ request.user.profile.faximili }}</strong></div></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.website %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Website' %}</div>
+							<strong>{{ request.user.profile.website }}</strong></td>
+						</tr>
+					{% endif %}
+					
+					{% if request.user.profile.note %}
+						<tr class="border-bottom">
+							<td><div class="text-muted small fw-light">{% trans 'Note' %}</div>
+							<strong>{{ request.user.profile.note }}</strong></td>
+						</tr>
+					{% endif %}
+				</tbody>
+			</table>
+		{% else %}
+			<div class="py-5">
+				<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+					<p class="text-danger fw-bold">{% trans 'User Profile not found' %}</p>
+				</div>
+			</div>
+		{% endif %}
+		<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+			<a href="{% url 'base_profile_update' %}" class="btn btn-outline-primary btn-lg px-4 me-md-2 btn-preload">{% translate 'Edit Profile' %}</a>
+		</div>
+	</section>
+	
+{% endblock content %}

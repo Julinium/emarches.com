@@ -1,0 +1,12 @@
+{% load i18n %}
+
+    <h1 class="display-4 py-2">{% trans "Your next great contract" %}</h1>
+    <div class="col mx-auto">
+      <p class="lead fs-5 mb-4">
+        {% trans 'eMarches is your trusted partner in navigating the Moroccan public procurement market. With expertise and dedication, we help businesses succeed.' %}
+      </p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="{% url 'portal_cons_list' %}" class="btn btn-primary btn-preload btn-lg px-4 gap-3">{% translate 'Tenders' %}</a>
+        <a href="{% url 'base_contact' %}" class="btn btn-outline-secondary btn-preload btn-lg px-4">{% translate 'Contact Us' %}</a> 
+      </div>
+    </div>

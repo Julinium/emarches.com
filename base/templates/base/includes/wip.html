@@ -1,0 +1,12 @@
+{% load i18n %}
+
+{% trans "Work in progress." as subtitle %}
+{% trans "This page is under construction. It will be available soon." as paragraph %}
+
+{% with 'img/wip/wip-'|add:m7|add:'.webp' as image %}
+    {% include 'base/includes/page-top.html' with image=image subtitle=subtitle paragraph=paragraph %}
+{% endwith %}
+
+{% translate 'Go Home' as caption_primary %}
+{% translate 'FAQs' as caption_secondary %}
+{% include 'base/includes/page-cta.html' with url_primary='base_home' url_secondary='base_faqs' %}

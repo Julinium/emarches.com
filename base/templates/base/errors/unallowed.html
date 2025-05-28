@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+
+{% block title %} {% translate 'Access denied' %} {% endblock title %}
+
+{% block content %}
+    {% trans "Access denied." as top_title %}
+    {% trans "This is not for you !" as subtitle %}
+    {% trans "You are not permitted to access this page. Please make sure you login using the right account." as paragraph %}
+    {% include 'base/includes/page-top.html' with image='img/errors/5xx.jpg' %}
+
+    {% if request.user.is_authenticated %}
+        {% translate 'Go home' as caption_primary %}
+        {% translate 'Contact us' as caption_secondary %}
+        {% include 'base/includes/page-cta.html' with url_primary='base_home' url_secondary='base_contact' %}
+    {% else %}
+        {% translate 'Login' as caption_primary %}
+        {% translate 'Read FAQs' as caption_secondary %}
+        {% include 'base/includes/page-cta.html' with url_primary='account_login' url_secondary='base_faqs' %}
+    {% endif %}
+{% endblock %}

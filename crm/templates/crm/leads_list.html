@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+{% load taginos %}
+
+{% block title %} {% translate 'Leads List' %} {% endblock title %}
+
+{% block content %}
+    <h1 class="text-center mb-4">{% trans "Leads List" %}</h1>
+
+    {% if request.user|in_group:'CRM' %}
+        <div class="list-group">
+            {% include 'crm/includes/counter.html' with total_count=total_count %}        
+            <h3 class="my-3 fw-light mt-5"></h3>
+            {% for lead in leads %}
+                <a href="{% url 'lead_edit' lead.id %}" class="list-group-item list-group-item-action">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-start align-items-center">
+                            {% if lead.user %}
+                                {% if lead.user.profile.avatar %}
+                                    <img class="img-fluid border rounded-circle mx-1" src="{{ MEDIA_URL }}{{ lead.user.profile.avatar }}" alt="X" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
+                                {% endif %}
+                            {% endif %}
+                            <strong>{{ lead.subject }}</strong>
+                        </div>
+                        {% if lead.replied %}
+                            <span class="badge bg-success-subtle">{% trans "Replied" %}</span>
+                        {% else %}
+                            <span class="badge bg-danger">{% trans "Not Replied" %}</span>
+                        {% endif %}
+                    </div>
+                    <div class="d-flex justify-content-start text-muted">
+                        <span>{{ lead.name }}</span>
+                        <span class="mx-2"> - {{ lead.date_submitted|time1since }}</span>
+                    </div>
+                </a>
+
+            {% empty %}
+                <p class="text-center">{% trans "No records found." %}</p>
+            {% endfor %}
+        </div>
+
+        {% if leads.has_other_pages %}
+        <nav class="mt-4" aria-label="{% trans 'Page navigation' %}">
+            <ul class="pagination justify-content-center">
+                {% if leads.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ leads.previous_page_number }}" aria-label="{% trans 'Previous' %}">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link">&laquo;</span>
+                    </li>
+                {% endif %}
+
+                {% for page_num in page_range %}
+                    {% if leads.number == page_num %}
+                        <li class="page-item active"><span class="page-link">{{ page_num }}</span></li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if leads.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ leads.next_page_number }}" aria-label="{% trans 'Next' %}">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link">&raquo;</span>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+
+    {% else %}
+        <p class="text-danger">{% trans 'Not allowed' %}</p>
+    {% endif %}
+{% endblock %}

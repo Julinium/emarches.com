@@ -1,0 +1,58 @@
+{% load i18n %}
+
+<h2 class="pb-2 border-bottom">{% trans 'What Our Clients Say' %}</h2>
+<p class="lead">{% trans 'Stories from clients who trusted us to navigate the public market landscape.' %}</p>
+
+<div class="row">
+
+    <!-- Testimonial 1 -->
+    <figure class="mt-3">
+        <i class="bi bi-chat-square-quote-fill fs-2 text-success"></i>
+        <blockquote class="">
+            <p>{% trans 'Working with eMarches revolutionized our approach to public market strategies. Their expertise in market dynamics and tailored guidance led to impressive growth in just six months. We couldn’t have done it without them!' %}</p>
+        </blockquote>
+        <figcaption class="blockquote-footer text-center">
+          {% trans 'Samia B' %}. - <cite>{% trans 'Atlanstic Solutions' %}</cite>
+        </figcaption>
+    </figure>
+
+    <!-- Testimonial 2 -->
+    <figure class="mt-3">
+        <i class="bi bi-chat-square-quote-fill fs-2 text-success"></i>
+        <blockquote class="">
+            <p>{% trans 'The team at eMarches helped us navigate the complexities of entering new markets. Their expertise was invaluable, and their proactive communication made all the difference. We are now in a much stronger position to take on the competition.' %}</p>
+        </blockquote>
+        <figcaption class="blockquote-footer text-center">
+           {% trans 'Rachid M' %}. - <cite>{% trans 'SaharaNgeoce' %}</cite>
+        </figcaption>
+    </figure>
+
+    <!-- Testimonial 3 -->
+    <figure class="mt-3">
+        <i class="bi bi-chat-square-quote-fill fs-2 text-success"></i>
+        <blockquote class="">
+            <p>{% trans 'From consultation to market strategy, eMarches provided valuable insights and practical solutions. Their data-driven approach gave us the confidence to make bold decisions. Highly recommended!' %}</p>
+        </blockquote>
+        <figcaption class="blockquote-footer text-center">
+            {% trans 'Mohssin K' %}. - <cite>{% trans 'Archiectop Services' %}</cite>
+        </figcaption>
+    </figure>
+
+    <!-- Testimonial 4 -->
+    <figure class="mt-3">
+        <i class="bi bi-chat-square-quote-fill fs-2 text-success"></i>
+        <blockquote class="">
+            <p>{% trans 'eMarches stands out for their deep understanding of our industry challenges. They refined our messaging and created impactful strategies that resonated in the public market. Their support has been a game-changer.' %}</p>
+        </blockquote>
+        <figcaption class="blockquote-footer text-center">
+          {% trans '  Najim W' %}. - <cite>{% trans 'CKFG SA' %}</cite>
+        </figcaption>
+    </figure>
+
+</div>
+
+<!-- Call to Action -->
+<div class="text-center mt-5">
+    <p>{% trans 'Ready to see what we can do for you? Contact us today to start your journey to success in the public market!' %}</p>
+    <a href="{% url 'base_contact' %}" class="btn btn-lg btn-primary">{% trans 'Get in Touch' %}</a>
+</div>

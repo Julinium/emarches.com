@@ -1,0 +1,19 @@
+
+<div id="tosts-msg-container" class="toast-container bottom-0 end-0 p-3" style="position: fixed; z-index: 99;">  
+	{% for message in messages %}
+		{% include 'base/includes/message.html' with message=message teint=message.tags extra='msg-toast' %}
+	{% endfor %}
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+	  var toastElements = document.querySelectorAll('.msg-toast');
+	  toastElements.forEach(function (toastElement) {
+		if (!toastElement.classList.contains('bg-danger-subtle')) {
+			new bootstrap.Toast(toastElement, { autohide: true, delay: 5000 }).show();
+		}else{
+			new bootstrap.Toast(toastElement, { autohide: true, delay: 600000 }).show();
+		}
+	  });
+	});
+</script>

@@ -1,0 +1,33 @@
+{% load i18n %}
+
+<div style="display: flex; justify-content: center; gap: 1rem;">
+    <div style="max-width: 800px; text-align: center;">
+        <div style="border: none;">
+            <h2 style="font-size: 2rem;">{% trans "Message sent" %}. {% trans "Thank You !" %}</h2>
+            <p>{% trans "Your message has been successfully submitted. We will get back to you shortly." %}</p>
+        </div>
+    </div>
+</div>
+
+<p style="font-size: 0.875rem;">{% trans "We sent you this message because your email was used on eMarches.com contact form." %}</p>
+
+{% if instance %}
+    <p style="font-size: 1rem; font-weight: bold;">{% trans "Here are some details of the contact" %}:</p>
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;"><strong>{% trans "Name" %}:</strong> {{ instance.name }}</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;"><strong>{% trans "Email" %}:</strong> {{ instance.email }}</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;"><strong>{% trans "Phone" %}:</strong> {{ instance.phone }}</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;"><strong>{% trans "Subject" %}:</strong> {{ instance.subject }}</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;"><strong>{% trans "Message" %}:</strong> {{ instance.message }}</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;"><strong>{% trans "Date and time" %}:</strong> {{ instance.date_submitted }}</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #ddd;"><strong>{% trans "IP address" %}:</strong> {{ instance.ip_address }}</li>
+    </ul>
+{% endif %}
+
+<p style="font-size: 0.875rem;">{% trans "You can safely ignore this message if you do not recognize this activity." %}</p>
+<p style="font-size: 0.875rem;">{% trans "Replies to this email are not read." %}</p>
+
+
+<p style="margin-top: 3rem;">{% trans "You can visit our Website for more information" %} : <a href="www.emarches.com">eMarches.com</a></p>
+<p style="margin-top: 3rem;">{% trans "Best regards," %}</p>
+<p>eMarches.com</p>

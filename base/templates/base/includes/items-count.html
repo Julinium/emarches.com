@@ -1,0 +1,7 @@
+{% load i18n %}
+
+<div class="small text-muted mt-2">{% translate 'Items found' %}: <strong>{% if page_obj.paginator %}{{ page_obj.paginator.count }}{% endif %}.</strong>
+    {% if page_obj.paginator.count != 0 %}
+        <span class="ps-1 fw-light">{% translate 'Showing' %} {{ page_obj.start_index }}-{{ page_obj.end_index }}</span>
+    {% endif %}
+</div>

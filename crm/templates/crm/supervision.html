@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+{% load taginos %}
+
+{% block title %} {% translate 'Supervision' %} {% endblock title %}
+
+{% block content %}
+    <h1 class="text-center mb-4">{% trans "Supervision" %}</h1>
+
+    {% if request.user|in_group:'CRM' %}
+
+    <div class="list-group">
+        <a href="{% url 'crm_leads' %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start align-items-center">                    
+                    <strong><i class="bi bi-person-plus-fill"></i> {% translate 'Leads' %}</strong>
+                </div>
+                {% if new_contactings %}<span class="badge bg-danger text-white mx-1">{{ new_contactings.count }}</span>{% endif %}                
+            </div>
+            <div class="d-flex justify-content-start text-muted">
+                <span>{% translate 'Contacts and messages sent from the website form' %}.</span>
+            </div>
+        </a>
+        <a href="{% url 'crm_newsletters' %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start align-items-center">                    
+                    <strong><i class="bi bi-megaphone-fill"></i> {% translate 'Newsletters' %}</strong>
+                </div>
+            </div>
+            <div class="d-flex justify-content-start text-muted">
+                <span>{% translate 'This feature is still under devlopment and will be available in future versions' %}.</span>
+            </div>
+        </a>
+        <a href="{% url 'search_queries_list' %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start align-items-center">                    
+                    <strong><i class="bi bi-server"></i> {% translate 'Search Queries' %}</strong>
+                </div>
+            </div>
+            <div class="d-flex justify-content-start text-muted">
+                <span>{% translate 'What are the visitors searching for and how they want the results to be shown' %}.</span>
+            </div>
+        </a>
+        <a href="{% url 'crm_downloads' %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start align-items-center">                    
+                    <strong><i class="bi bi-arrow-down-square-fill"></i> {% translate 'Downloads' %}</strong>
+                </div>
+            </div>
+            <div class="d-flex justify-content-start text-muted">
+                <span>{% translate 'What files do registered users download' %}.</span>
+            </div>
+        </a>
+        <a href="{% url 'crm_favourites' %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start align-items-center">                    
+                    <strong><i class="bi bi-bookmark-check-fill"></i> {% translate 'Favourites' %}</strong>
+                </div>
+            </div>
+            <div class="d-flex justify-content-start text-muted">
+                <span>{% translate 'Tenders that are in users Favourites' %}.</span>
+            </div>
+        </a>
+        <a href="{% url 'crm_favorisations' %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start align-items-center">                    
+                    <strong><i class="bi bi-bookmark-plus-fill"></i> {% translate 'Favorisations' %}</strong>
+                </div>
+            </div>
+            <div class="d-flex justify-content-start text-muted">
+                <span>{% translate 'What Tenders have been added to Favorites' %}.</span>
+            </div>
+        </a>
+        <a href="{% url 'crm_unfavorisations' %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start align-items-center">                    
+                    <strong><i class="bi bi-bookmark-x-fill"></i> {% translate 'Unfavorisations' %}</strong>
+                </div>
+            </div>
+            <div class="d-flex justify-content-start text-muted">
+                <span>{% translate 'What Tenders have been removed from Favorites' %}.</span>
+            </div>
+        </a>
+  </div>
+
+
+
+    {% else %}
+        <p class="text-danger">{% trans 'Not allowed' %}</p>
+    {% endif %}
+{% endblock %}

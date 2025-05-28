@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% translate 'Purchase Orders' %}{% endblock title %}
+
+{% block content %}
+
+    {% trans "Purchase Orders" as subtitle %}
+    {% include 'base/includes/page-top.html' with image='img/list.webp' %}
+
+	<p class='text-muted'>{% translate 'We think the Official portal did a decent work regarding the POs feature and there is no huge improvement we could bring to it. ' %}<p>
+    <div id="top-actions" class="py-2 text-center">
+            <a type="button" class="btn btn-outline-primary mt-1 btn-preload px-2" href="{% url 'portal_cons_list' %}">
+                <div class="d-flex justify-content-center">
+                    <div class="mx-1"><i class="bi bi-arrow-90deg-left"></i> {% translate 'Tenders' %}</div>
+                </div>
+            </a>
+        <a id="bdc-button" type="button" class="btn btn-primary mt-1 px-2" href="https://www.marchespublics.gov.ma/bdc/entreprise/consultation/" target="_blank">
+            <div class="d-flex justify-content-center">
+                <div class="mx-1"><i class="bi bi-box-arrow-up-right"></i> {% translate 'Browse POs on Official Website' %} </div>
+            </div>
+        </a>
+    </div>
+
+{% endblock %}
