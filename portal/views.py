@@ -17,12 +17,13 @@ from decimal import Decimal
 from pathlib import Path
 
 
-from django.conf import settings
-from emarches import constants as C
+from django.conf import settings as C
+# from emarches import constants
 
 from . import stats
 from . models import Consultation, Profile, ProfileFavCon, UserDownloadFile, Categorie, Procedure, Reglage
 from crm.models import Favorisation, Unfavorisation, SearchQuery
+
 
 
 
@@ -654,7 +655,6 @@ def logSerachQuery(request, querydict, results_count):
 
         results_count = results_count,
         user = user,
-        # user = request.user if request.user.is_authenticated else None,
         ip_address = ip_address,
         user_agent = user_agent,
     )

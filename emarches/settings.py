@@ -202,3 +202,32 @@ DEFAULT_FROM_EMAIL  = os.getenv("DEFAULT_FROM_EMAIL")
 
 
 COUNTRIES_FIRST = ['MA', 'FR', 'US',]
+
+
+# DEBUG_MODE = False          # Display more output
+# HEADLESS_MODE = True        # Don't show web browser.
+# SITE_ROOT = "https://www.marchespublics.gov.ma/"
+# SITE_INDEX = "https://www.marchespublics.gov.ma/index.php"
+
+# WORKING_DIR = os.path.dirname(os.path.abspath(sys.argv[0]))
+# WORKING_DIR = '/var/opt/emarches.com'
+# MEDIA_ROOT = os.path.join(WORKING_DIR, "media")
+
+# Prefix for the downloaded DCE file. A unique integer id comes after this prefix.
+# DOWNLOAD_WAIT_TIME = 300
+
+# Credentials used to download the DCE's
+# DL_FIRST_NAME = 'Yassir'
+# DL_LAST_NAME = 'Benhammou'
+# DL_EMAIL = 'ybhammou@scilbup-sehcram.ma'
+
+
+DL_PATH_PREFIX = 'DCE-'
+ITEMS_PER_PAGE = 25
+NA_PLACE_HOLDER = '-'
+PAST_GRACEFUL_HOURS = 0
+# DEFAULT_DELAY_DAYS_MIN = 0
+# DEFAULT_DELAY_DAYS_MAX = 30
+
+
+# DEMO_LENGTH = 15
