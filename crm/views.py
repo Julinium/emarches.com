@@ -32,9 +32,8 @@ def padit(reading, pad=12):
 @login_required(login_url="account_login")
 def leads(request):
     if is_crm_user(request.user):
-        leads = Contacting.objects.all().order_by('replied', '-date_submitted') 
+        leads = Contacting.objects.all().order_by('replied', '-date_submitted')
 
-        # paginator = Paginator(leads, C.ITEMS_PER_PAGE)
         paginator = Paginator(leads, 10)
         page_number = request.GET.get("page", 1)
         if not str(page_number).isdigit():
@@ -49,14 +48,13 @@ def leads(request):
         context = {
             "total_count": padit(total_count, 10),
             "leads": page_obj,
-            "page_range": page_range,            
+            "page_range": page_range,
             }
-            
+
         return render(request, 'crm/leads_list.html', context)
     context = {}
-    
+
     raise PermissionDenied
-    #return render(request, 'base/errors/unallowed.html', context)
 
 
 @login_required(login_url="account_login")
@@ -70,21 +68,19 @@ def lead_edit(request, pk):
             lead.notes = request.POST.get("notes")
             lead.save()
             context = {}
-            return redirect('crm_leads') 
+            return redirect('crm_leads')
         context = {'lead': lead, }
         return render(request, 'crm/lead_edit.html', context)
     context = {}
-    
+
     raise PermissionDenied
-    #return render(request, 'base/errors/unallowed.html', context)
 
 
 @login_required(login_url="account_login")
 def favos(request):
     if is_crm_user(request.user):
-        favos = Favorisation.objects.all().order_by('-date_faved') 
+        favos = Favorisation.objects.all().order_by('-date_faved')
 
-        # paginator = Paginator(favos, C.ITEMS_PER_PAGE)
         paginator = Paginator(favos, 10)
         page_number = request.GET.get("page", 1)
         if not str(page_number).isdigit():
@@ -96,22 +92,20 @@ def favos(request):
 
         context = {
             "favos": page_obj,
-            "page_range": page_range,            
+            "page_range": page_range,
             }
-            
+
         return render(request, 'crm/favos_list.html', context)
     context = {}
-    
+
     raise PermissionDenied
-    #return render(request, 'base/errors/unallowed.html', context)
 
 
 @login_required(login_url="account_login")
 def unfavs(request):
     if is_crm_user(request.user):
-        unfavs = Unfavorisation.objects.all().order_by('-date_unfaved') 
+        unfavs = Unfavorisation.objects.all().order_by('-date_unfaved')
 
-        # paginator = Paginator(unfavs, C.ITEMS_PER_PAGE)
         paginator = Paginator(unfavs, 10)
         page_number = request.GET.get("page", 1)
         if not str(page_number).isdigit():
@@ -123,14 +117,13 @@ def unfavs(request):
 
         context = {
             "unfavs": page_obj,
-            "page_range": page_range,            
+            "page_range": page_range,
             }
-            
+
         return render(request, 'crm/unfavs_list.html', context)
     context = {}
-    
+
     raise PermissionDenied
-    #return render(request, 'base/errors/unallowed.html', context)
 
 
 @login_required(login_url="account_login")
@@ -147,13 +140,12 @@ def downloads(request):
             .filter(last_download_date__gte=wassa - timedelta(days=last_days), download_count__gt=0)
             .order_by("-download_count")[:10]
         )
-        
+
         cons_portal_ids = [con["consultation"] for con in top_downloads]
         cons = Consultation.objects.filter(portal_id__in=cons_portal_ids)
         cons_dict = {con.portal_id: con for con in cons}
 
         total_count = UserDownloadFile.objects.count()
-        # total_download_size = UserDownloadFile.objects.Sum("file_size")
         total_download_size = UserDownloadFile.objects.aggregate(Sum('file_size'))['file_size__sum'] or 0
 
         context = {
@@ -163,12 +155,11 @@ def downloads(request):
             "total_download_size": total_download_size,
             "cons_dict": cons_dict,
             }
-            
+
         return render(request, 'crm/downloads_list.html', context)
     context = {}
-    
+
     raise PermissionDenied
-    #return render(request, 'base/errors/unallowed.html', context)
 
 
 @login_required(login_url="account_login")
@@ -184,10 +175,10 @@ def favourites(request):
             .filter(favourite_count__gt=0)
             .order_by("-favourite_count")[:10]
         )
-        
+
         cons_portal_ids = [con["consultation"] for con in top_favourites]
         cons = Consultation.objects.filter(portal_id__in=cons_portal_ids)
-        
+
         cons_dict = {con.portal_id: con for con in cons}
 
         total_count = ProfileFavCon.objects.count()
@@ -197,12 +188,11 @@ def favourites(request):
             "top_favourites": top_favourites,
             "cons_dict": cons_dict,
             }
-            
+
         return render(request, 'crm/favourites_list.html', context)
     context = {}
-    
+
     raise PermissionDenied
-    #return render(request, 'base/errors/unallowed.html', context)
 
 
 @login_required(login_url="account_login")
@@ -218,10 +208,10 @@ def favorisations(request):
             .filter(favorisation_count__gt=0)
             .order_by("-favorisation_count")[:10]
         )
-        
+
         cons_portal_ids = [con["consultation"] for con in top_favorisations]
         cons = Consultation.objects.filter(portal_id__in=cons_portal_ids)
-        
+
         cons_dict = {con.portal_id: con for con in cons}
 
         total_count = Favorisation.objects.count()
@@ -231,12 +221,11 @@ def favorisations(request):
             "top_favorisations": top_favorisations,
             "cons_dict": cons_dict,
             }
-            
+
         return render(request, 'crm/favorisations_list.html', context)
     context = {}
-    
+
     raise PermissionDenied
-    #return render(request, 'base/errors/unallowed.html', context)
 
 
 @login_required(login_url="account_login")
@@ -252,10 +241,10 @@ def unfavorisations(request):
             .filter(unfavorisation_count__gt=0)
             .order_by("-unfavorisation_count")[:10]
         )
-        
+
         cons_portal_ids = [con["consultation"] for con in top_unfavorisations]
         cons = Consultation.objects.filter(portal_id__in=cons_portal_ids)
-        
+
         cons_dict = {con.portal_id: con for con in cons}
         total_count = Unfavorisation.objects.count()
 
@@ -264,10 +253,10 @@ def unfavorisations(request):
             "top_unfavorisations": top_unfavorisations,
             "cons_dict": cons_dict,
             }
-            
+
         return render(request, 'crm/unfavorisations_list.html', context)
     context = {}
-    
+
     raise PermissionDenied
     #return render(request, 'base/errors/unallowed.html', context)
 
@@ -279,9 +268,8 @@ def newsletters(request):
         context = {}
         return render(request, 'crm/newsletters_list.html', context)
     context = {}
-    
+
     raise PermissionDenied
-    #return render(request, 'base/errors/unallowed.html', context)
 
 
 @login_required(login_url="account_login")
@@ -291,9 +279,8 @@ def supervision(request):
         context = {}
         return render(request, 'crm/supervision.html', context)
     context = {}
-    
+
     raise PermissionDenied
-    #return render(request, 'base/errors/unallowed.html', context)
 
 
 class SearchQueryListView(LoginRequiredMixin, ListView):
@@ -303,18 +290,19 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
     ordering = ['-date_submitted', 'user', 'ip_address']
     paginate_by = 20
 
+
     def get_queryset(self):
         queryset = super().get_queryset()
         user_id = self.request.GET.get('user')
         country = self.request.GET.get('country')
-        # search_term = self.request.GET.get('q') # For a general search
+        language = self.request.GET.get('language')
 
-        # Apply filters if parameters are present
         if user_id:
             try: queryset = queryset.filter(user__id=int(user_id))
-            except ValueError: pass # Handle invalid user ID gracefully
+            except ValueError: pass
 
-        if country: queryset = queryset.filter(ip_country__icontains=country) # __icontains for case-insensitive partial match
+        if country: queryset = queryset.filter(ip_country=country)
+        if language: queryset = queryset.filter(query_language=language)
 
         return queryset
 
@@ -322,17 +310,9 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # Get all unique users who have made search queries
-        # This gets User objects that are linked to at least one SearchQuery
-
         context['total_count'] = padit(SearchQuery.objects.count(), 10)
         context['unique_users'] = User.objects.distinct().order_by('username')
-
-        # Get all distinct country values from SearchQuery model
-        # .exclude(country__isnull=True).exclude(country__exact='') ensures no None or empty string values
-        context['unique_countries'] = SearchQuery.objects.values_list('ip_country', flat=True).distinct().exclude(
-            Q(ip_country__isnull=True) | Q(ip_country__exact='')
-        ).order_by('ip_country')
+        context['unique_countries'] = SearchQuery.objects.values_list('ip_country', flat=True).distinct().exclude(Q(ip_country__isnull=True) | Q(ip_country__exact='')).order_by('ip_country')
 
         return context
 
@@ -345,11 +325,11 @@ class SearchQueryDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         searchquery = self.object
-        
+
         # Extract field names and values dynamically
         context['searchquery_fields'] = [
-            (field.verbose_name, getattr(searchquery, field.name)) 
+            (field.verbose_name, getattr(searchquery, field.name))
             for field in searchquery._meta.fields
         ]
-        
+
         return context

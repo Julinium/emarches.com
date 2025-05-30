@@ -11,44 +11,62 @@
     {% if request.user|in_group:'CRM' %}
 
 
-        <form method="GET" action="{% url 'search_queries_list' %}">
-        <fieldset>
-            <legend>Filter Search Queries</legend>
+        {% include 'crm/includes/counter.html' with total_count=total_count %}
 
-            <div>
-                <label for="user_filter">User:</label>
-                <select id="user_filter" name="user">
-                    <option value="">-- Select User --</option> {# Option to clear user filter #}
-                    {% for user_obj in unique_users %}
-                        <option value="{{ user_obj.id }}" {% if request.GET.user|add:"0" == user_obj.id|add:"0" %}selected{% endif %}>
-                            {{ user_obj.username }}
-                        </option>
-                    {% endfor %}
-                </select>
+    	<hr>
+        <form class="row g-3" method="GET" action="{% url 'search_queries_list' %}">
+
+            <div class="col-auto">
+                <div class="input-group mt-2">
+                    <label class="input-group-text small text-muted" for="country_filter">Country</label>
+                    <select class="form-select" id="country_filter" name="country">
+                        <option value="">-- Select Country --</option> {# Option to clear country filter #}
+                        {% for country_name in unique_countries %}
+                            <option value="{{ country_name }}" {% if request.GET.country == country_name %}selected{% endif %}>
+                                {{ country_name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
 
-            <div>
-                <label for="country_filter">Country:</label>
-                <select id="country_filter" name="country">
-                    <option value="">-- Select Country --</option> {# Option to clear country filter #}
-                    {% for country_name in unique_countries %}
-                        <option value="{{ country_name }}" {% if request.GET.country == country_name %}selected{% endif %}>
-                            {{ country_name }}
-                        </option>
-                    {% endfor %}
-                </select>
+            <div class="col-auto">
+                <div class="input-group mt-2">
+                    <label class="input-group-text small text-muted" for="language_filter">Language</label>
+                    <select class="form-select" id="language_filter" name="language">
+                        <option value="">-- Select Language --</option> {# Option to clear Language filter #}
+                        {% for lang in transes %}
+                            <option value="{{ lang.code }}" {% if request.GET.language == lang.code %}selected{% endif %}>
+                                {{ lang.name }} ({{ lang.code }})
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="input-group mt-2">
+                    <label class="input-group-text small text-muted" for="user_filter">User</label>
+                    <select class="form-select" id="user_filter" name="user">
+                        <option value="">-- Select User --</option> {# Option to clear user filter #}
+                        {% for user_obj in unique_users %}
+                            <option value="{{ user_obj.id }}" {% if request.GET.user|add:"0" == user_obj.id|add:"0" %}selected{% endif %}>
+                                {{ user_obj.username }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
 
-            <button type="submit">Apply Filters</button>
-            {% if request.GET %}
-                <a href="{% url 'search_queries_list' %}">Clear Filters</a>
-            {% endif %}
-        </fieldset>
-    </form>
+            <div class="col-auto">
+                <div class="text-end py-2">
+                    <button class="btn btn-primary px-3" type="submit">Filter items</button>
+                    {% if request.GET %}
+                        <a class="btn btn-outline-secondary px-3" href="{% url 'search_queries_list' %}">Clear Filters</a>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
 
-    <hr>
-
-        {% include 'crm/includes/counter.html' with total_count=total_count %}        
 
         <div class="list-group">
             <h3 class="my-3 fw-light mt-5"></h3>
@@ -59,12 +77,11 @@
                             {% if suery.query_language %}
                                     <img class="img-fluid mx-1" src="{% static 'flags/' %}{{ suery.query_language }}.svg" alt="{{ suery.query_language }}" style="height: 1rem; object-fit: cover;">
                             {% endif %}
-                            <!-- <strong>{% if suery.query_full_url %}{{ suery.query_full_url }}{% else %}{{ suery.queryterms }}{% endif %}</strong> -->
                             <strong class="twolines">{{ suery }}</strong>
                         </div>
                         <span class="badge bg-primary">{{ suery.results_count }}</span>
                     </div>
-                    <div class="d-flex justify-content-start text-muted">
+                    <div class="d-flex flex-row justify-content-start text-muted">
                         {% if suery.user %}
                             {% if suery.user.profile.avatar %}
                                 <img class="img-fluid border rounded-circle mx-1" src="{{ MEDIA_URL }}{{ suery.user.profile.avatar }}" alt="X" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
