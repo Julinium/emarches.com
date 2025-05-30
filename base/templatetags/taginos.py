@@ -2,15 +2,15 @@ import math, datetime, re
 from django import template
 from django.utils.translation import gettext
 from django.utils.timesince import timesince
-from django.conf import settings
+from django.conf import settings as C
 from urllib.parse import urlencode, urlparse, urlunparse
 
 from babel.numbers import format_decimal, format_compact_decimal, format_currency
 # from babel.numbers import format_number, format_percent
 
-from emarches import constants
+# from emarches import constants
 
-FULL_PERIOD = constants.DEFAULT_DELAY_DAYS_MAX
+FULL_PERIOD = C.DEFAULT_DELAY_DAYS_MAX
 DANGER_DAYS = FULL_PERIOD / 5
 
 DISPLAY_CURRENCY = 'MAD'
