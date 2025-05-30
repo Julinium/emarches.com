@@ -8,13 +8,17 @@ from django.http import HttpResponse
 from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator
 from django.utils.translation import gettext as _
-from django.db.models import Count, Max, Sum
+from django.db.models import Q, Count, Max, Sum
 from django.views.generic import ListView, DetailView
 
 from .models import Contacting, Favorisation, Unfavorisation, SearchQuery
 from portal.models import UserDownloadFile, ProfileFavCon, Consultation
 from emarches import constants as C
 
+from django.contrib.auth import get_user_model # To get the User model
+
+
+User = get_user_model() # Get the currently active User model
 
 
 def is_crm_user(user):
@@ -298,11 +302,38 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
     context_object_name = 'search_queries'
     ordering = ['-date_submitted', 'user', 'ip_address']
     paginate_by = 20
-    
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        user_id = self.request.GET.get('user')
+        country = self.request.GET.get('country')
+        # search_term = self.request.GET.get('q') # For a general search
+
+        # Apply filters if parameters are present
+        if user_id:
+            try: queryset = queryset.filter(user__id=int(user_id))
+            except ValueError: pass # Handle invalid user ID gracefully
+
+        if country: queryset = queryset.filter(ip_country__icontains=country) # __icontains for case-insensitive partial match
+
+        return queryset
+
+
     def get_context_data(self, **kwargs):
-        """Pass additional context variables to the template."""
         context = super().get_context_data(**kwargs)
+
+        # Get all unique users who have made search queries
+        # This gets User objects that are linked to at least one SearchQuery
+
         context['total_count'] = padit(SearchQuery.objects.count(), 10)
+        context['unique_users'] = User.objects.distinct().order_by('username')
+
+        # Get all distinct country values from SearchQuery model
+        # .exclude(country__isnull=True).exclude(country__exact='') ensures no None or empty string values
+        context['unique_countries'] = SearchQuery.objects.values_list('ip_country', flat=True).distinct().exclude(
+            Q(ip_country__isnull=True) | Q(ip_country__exact='')
+        ).order_by('ip_country')
+
         return context
 
 

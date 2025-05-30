@@ -9,8 +9,48 @@
     <h1 class="text-center mb-4">{% trans "Search Queries List" %}</h1>
 
     {% if request.user|in_group:'CRM' %}
+
+
+        <form method="GET" action="{% url 'search_query_list' %}">
+        <fieldset>
+            <legend>Filter Search Queries</legend>
+
+            <div>
+                <label for="user_filter">User:</label>
+                <select id="user_filter" name="user">
+                    <option value="">-- Select User --</option> {# Option to clear user filter #}
+                    {% for user_obj in unique_users %}
+                        <option value="{{ user_obj.id }}" {% if request.GET.user|add:"0" == user_obj.id|add:"0" %}selected{% endif %}>
+                            {{ user_obj.username }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="country_filter">Country:</label>
+                <select id="country_filter" name="country">
+                    <option value="">-- Select Country --</option> {# Option to clear country filter #}
+                    {% for country_name in unique_countries %}
+                        <option value="{{ country_name }}" {% if request.GET.country == country_name %}selected{% endif %}>
+                            {{ country_name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit">Apply Filters</button>
+            {% if request.GET %}
+                <a href="{% url 'search_query_list' %}">Clear Filters</a>
+            {% endif %}
+        </fieldset>
+    </form>
+
+    <hr>
+
+        {% include 'crm/includes/counter.html' with total_count=total_count %}        
+
         <div class="list-group">
-            {% include 'crm/includes/counter.html' with total_count=total_count %}        
             <h3 class="my-3 fw-light mt-5"></h3>
             {% for suery in search_queries %}
                 <a href="{% url 'search_queries_detail' suery.id %}" class="list-group-item list-group-item-action">
