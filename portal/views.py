@@ -26,7 +26,6 @@ from crm.models import Favorisation, Unfavorisation, SearchQuery
 
 
 
-
 @login_required(login_url="account_login")
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def cons_favs(request):
@@ -73,7 +72,7 @@ def cons_list(request):
     # profile = None
     # try : profile = Profile.objects.get(user = request.user)
     # except : pass
-    # TODO: Read C.PAST_GRACEFUL_HOURS from user profile, if any
+    # TODO: Read PAST_GRACEFUL_HOURS and other attributes from user profile, if any
 
     qd = {}
     ct = mn = mx = o = r = c = l = None #, None, None, None, None, None
