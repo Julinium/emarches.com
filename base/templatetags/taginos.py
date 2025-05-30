@@ -125,7 +125,7 @@ def gettify(dictionary, key):
 
 @register.simple_tag(takes_context=True)
 def switch_language_url(context, target_lang):
-    LANG_PREFIXES = '|'.join(re.escape(lang_code) for lang_code, _ in settings.LANGUAGES)
+    LANG_PREFIXES = '|'.join(re.escape(lang_code) for lang_code, _ in C.LANGUAGES)
     LANG_PATTERN = re.compile(rf'^/({LANG_PREFIXES})(/|$)')
     request = context["request"]
     path = request.path
