@@ -617,6 +617,8 @@ def cons2csv(request, cons, filename):
 
 
 def logSerachQuery(request, querydict, results_count):
+    
+    import geoip2.database
 
     user_agent = request.META.get('HTTP_USER_AGENT', '')
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -625,7 +627,22 @@ def logSerachQuery(request, querydict, results_count):
 
     user = None
     if request.user.is_authenticated : user = request.user
+    
+    geoip_db = f"{C.BASE_DIR}/geoip/GeoLite2-City.mmdb"
+    reader = geoip2.database.Reader(geoip_db)
 
+    ip_country, ip_city, ip_latitude, ip_longitude = None, None, None, None
+    
+    try:
+        response = reader.city(ip_address)
+        ip_country   = response.country.name
+        ip_city      = response.city.name
+        ip_latitude  = response.location.latitude
+        ip_longitude = response.location.longitude
+    except geoip2.errors.AddressNotFoundError:
+        print(f"No entry for {ip_address} in the database.")
+    finally:
+        reader.close()
 
     search_query = SearchQuery(
 
@@ -654,7 +671,11 @@ def logSerachQuery(request, querydict, results_count):
 
         results_count = results_count,
         user = user,
-        ip_address = ip_address,
         user_agent = user_agent,
+        ip_address   = ip_address,
+        ip_country   = response.country.name,
+        ip_city      = response.city.name,
+        ip_latitude  = response.location.latitude,
+        ip_longitude = response.location.longitude,
     )
     search_query.save()

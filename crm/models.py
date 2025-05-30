@@ -120,8 +120,12 @@ class SearchQuery(models.Model):
     results_count = models.IntegerField(blank=True, null=True, default=0)
     updated_since = models.DateTimeField(blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user', related_name='search_query', blank=True, null=True)
-    ip_address = models.CharField(max_length=48, blank=True, null=True)
     user_agent = models.CharField(max_length=512, blank=True, null=True)
+    ip_address   = models.CharField(max_length=48, blank=True, null=True)
+    ip_country   = models.CharField(max_length=24, blank=True, null=True)
+    ip_city      = models.CharField(max_length=24, blank=True, null=True)
+    ip_latitude  = models.CharField(max_length=16, blank=True, null=True)
+    ip_longitude = models.CharField(max_length=16, blank=True, null=True)
 
     class Meta:
         db_table = 'crm_search_query'
