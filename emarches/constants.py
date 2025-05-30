@@ -1,6 +1,4 @@
-# TODO: Remove this file after copying any needed setting.
-# TODO: Uninstall bs4 and anything related to scraping.
-import os, sys 
+# import os, sys 
 
 # DEBUG_MODE = False          # Display more output
 # HEADLESS_MODE = True        # Don't show web browser.
