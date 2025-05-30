@@ -11,7 +11,7 @@
     {% if request.user|in_group:'CRM' %}
 
 
-        <form method="GET" action="{% url 'search_query_list' %}">
+        <form method="GET" action="{% url 'search_queries_list' %}">
         <fieldset>
             <legend>Filter Search Queries</legend>
 
@@ -41,7 +41,7 @@
 
             <button type="submit">Apply Filters</button>
             {% if request.GET %}
-                <a href="{% url 'search_query_list' %}">Clear Filters</a>
+                <a href="{% url 'search_queries_list' %}">Clear Filters</a>
             {% endif %}
         </fieldset>
     </form>
