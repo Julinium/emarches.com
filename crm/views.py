@@ -126,40 +126,40 @@ def unfavs(request):
     raise PermissionDenied
 
 
-@login_required(login_url="account_login")
-def downloads(request):
-    if is_crm_user(request.user):
-        last_days = 30
-        wassa = datetime.now()
-        top_downloads = (
-            UserDownloadFile.objects.values("consultation")  # Group by 'category' field
-            .annotate(
-                download_count=Count("id"),
-                last_download_date=Max("date_started"),
-            )
-            .filter(last_download_date__gte=wassa - timedelta(days=last_days), download_count__gt=0)
-            .order_by("-download_count")[:10]
-        )
+# @login_required(login_url="account_login")
+# def downloads(request):
+#     if is_crm_user(request.user):
+#         last_days = 30
+#         wassa = datetime.now()
+#         top_downloads = (
+#             UserDownloadFile.objects.values("consultation")  # Group by 'category' field
+#             .annotate(
+#                 download_count=Count("id"),
+#                 last_download_date=Max("date_started"),
+#             )
+#             .filter(last_download_date__gte=wassa - timedelta(days=last_days), download_count__gt=0)
+#             .order_by("-download_count")[:10]
+#         )
 
-        cons_portal_ids = [con["consultation"] for con in top_downloads]
-        cons = Consultation.objects.filter(portal_id__in=cons_portal_ids)
-        cons_dict = {con.portal_id: con for con in cons}
+#         cons_portal_ids = [con["consultation"] for con in top_downloads]
+#         cons = Consultation.objects.filter(portal_id__in=cons_portal_ids)
+#         cons_dict = {con.portal_id: con for con in cons}
 
-        total_count = UserDownloadFile.objects.count()
-        total_download_size = UserDownloadFile.objects.aggregate(Sum('file_size'))['file_size__sum'] or 0
+#         total_count = UserDownloadFile.objects.count()
+#         total_download_size = UserDownloadFile.objects.aggregate(Sum('file_size'))['file_size__sum'] or 0
 
-        context = {
-            "total_count": padit(total_count, 10),
-            "top_downloads": top_downloads,
-            "last_days" : last_days,
-            "total_download_size": total_download_size,
-            "cons_dict": cons_dict,
-            }
+#         context = {
+#             "total_count": padit(total_count, 10),
+#             "top_downloads": top_downloads,
+#             "last_days" : last_days,
+#             "total_download_size": total_download_size,
+#             "cons_dict": cons_dict,
+#             }
 
-        return render(request, 'crm/downloads_list.html', context)
-    context = {}
+#         return render(request, 'crm/downloads_list.html', context)
+#     context = {}
 
-    raise PermissionDenied
+#     raise PermissionDenied
 
 
 @login_required(login_url="account_login")
@@ -331,5 +331,34 @@ class SearchQueryDetailView(LoginRequiredMixin, DetailView):
             (field.verbose_name, getattr(searchquery, field.name))
             for field in searchquery._meta.fields
         ]
+
+        return context
+
+
+
+class DceDownloadsListView(LoginRequiredMixin, ListView):
+    model = UserDownloadFile
+    template_name = 'crm/downloads_list.html'
+    context_object_name = 'dce_downloads'
+    ordering = ['-date_started', 'user', 'file_size']
+    paginate_by = 20
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        user_id = self.request.GET.get('user')
+
+        if user_id:
+            try: queryset = queryset.filter(user__id=int(user_id))
+            except ValueError: pass
+
+        return queryset
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        context["total_download_size"] = UserDownloadFile.objects.aggregate(Sum('file_size'))['file_size__sum'] or 0
+        context['total_count'] = padit(UserDownloadFile.objects.count(), 10)
+        context['unique_users'] = User.objects.distinct().order_by('username')
 
         return context
