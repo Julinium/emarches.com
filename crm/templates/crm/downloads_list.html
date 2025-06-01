@@ -61,8 +61,8 @@
             {% endfor %}
         </div>
 
-        {% if is_paginated %}            
-            {% include 'crm/includes/paginator.html' %}
+        {% if is_paginated %}
+            {% include 'crm/includes/paginator.html' with page_obj=page_obj %}
         {% endif %}
     {% else %}
         <p class="text-danger">{% trans 'Not allowed' %}</p>

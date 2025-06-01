@@ -102,7 +102,7 @@
 
 
         {% if is_paginated %}
-            {% include 'crm/includes/paginator.html' %}
+            {% include 'crm/includes/paginator.html' with page_obj=page_obj %}
         {% endif %}
 
         {% else %}
