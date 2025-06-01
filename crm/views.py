@@ -314,6 +314,10 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
         context['unique_users'] = User.objects.distinct().order_by('username')
         context['unique_countries'] = SearchQuery.objects.values_list('ip_country', flat=True).distinct().exclude(Q(ip_country__isnull=True) | Q(ip_country__exact='')).order_by('ip_country')
 
+        get_params = self.request.GET.copy()
+        if 'page' in get_params: del get_params['page']
+        context['filtered'] = bool(get_params)
+        
         return context
 
 
@@ -360,5 +364,10 @@ class DceDownloadsListView(LoginRequiredMixin, ListView):
         context["total_download_size"] = UserDownloadFile.objects.aggregate(Sum('file_size'))['file_size__sum'] or 0
         context['total_count'] = padit(UserDownloadFile.objects.count(), 10)
         context['unique_users'] = User.objects.distinct().order_by('username')
+        
+        get_params = self.request.GET.copy()
+        if 'page' in get_params: del get_params['page']
+
+        context['filtered'] = bool(get_params)
 
         return context
