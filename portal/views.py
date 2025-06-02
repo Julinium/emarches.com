@@ -34,7 +34,7 @@ def cons_favs(request):
 
     cons = Consultation.objects.filter(portal_id__in = ProfileFavCon.objects.filter(user=request.user).values("consultation"))
     cons = cons.order_by('date_limite_depot', 'id')
-    
+
     # In case csv dowload was requested, serve it.
     if len(cons) > 0 :
         if 'dld' in request.GET and request.GET['dld']:
@@ -51,14 +51,14 @@ def cons_favs(request):
     page_obj = paginator.page(page_number)
     page_range = list(paginator.get_elided_page_range(number=page_number, on_each_side=1, on_ends=1))
 
-   
+
 
     context = {
         "cons": cons,
         "page_obj": page_obj,
         "page_range": page_range,
         }
-    if not cons: 
+    if not cons:
         messages.add_message(request, messages.WARNING, _("Your Favourites list is empty"))
         return redirect('portal_cons_list')
     return render(request, "portal/cons-favs.html", context)
@@ -143,7 +143,7 @@ def cons_list(request):
     # TODO: Split if many words and search with OR
     if 'l' in request.GET and request.GET['l']:
         l = request.GET['l']
-        cons = cons.filter(lieu_execution__unaccent__icontains = str(l)) 
+        cons = cons.filter(lieu_execution__unaccent__icontains = str(l))
         qd['l'] = l
 
     if 're' in request.GET and request.GET['re']:
@@ -164,7 +164,7 @@ def cons_list(request):
         ob = request.GET['ob']
     qd['ob'] = ob
 
-    match ob : # dl dp e c 
+    match ob : # dl dp e c
         case 'DL': cons = cons.order_by('date_limite_depot', 'id')
         case '-DL': cons = cons.order_by('-date_limite_depot', 'id')
         case 'DP': cons = cons.order_by('date_publication', 'date_limite_depot', 'id')
@@ -188,14 +188,14 @@ def cons_list(request):
         pp = request.GET['pp']
         try: IPP = int(pp)
         except: pass
-    
+
     qd['pp'] = IPP
 
     cats = Categorie.objects.exclude(nom__in = ['', C.NA_PLACE_HOLDER]).order_by('nom')
     procs = Procedure.objects.exclude(nom__in = ['', C.NA_PLACE_HOLDER]).order_by('nom')
     repels = Consultation.objects.order_by('-reponse_electronique').values_list('reponse_electronique', flat=True).distinct('reponse_electronique')
     favs = None
-    if request.user.is_authenticated: 
+    if request.user.is_authenticated:
         favs = Consultation.objects.filter(portal_id__in = ProfileFavCon.objects.filter(user=request.user).values("consultation"))
 
     cons_age = None
@@ -215,16 +215,16 @@ def cons_list(request):
     except: pass
 
     context = {
-        'cons' : cons, 
-        "page_obj": page_obj, 
+        'cons' : cons,
+        "page_obj": page_obj,
         "page_range": page_range,
-        'qd': qd, 
-        'cats': cats, 
-        'procs': procs, 
-        'repels': repels, 
+        'qd': qd,
+        'cats': cats,
+        'procs': procs,
+        'repels': repels,
         'favs' : favs,
         'cons_age' : cons_age,
-        
+
         }
     return render(request, "portal/cons-list.html", context)
 
@@ -238,7 +238,7 @@ def con_details(request, pk=None):     # if request.user.is_authenticated:
     except ValueError: raise Http404("Invalid UUID")
 
     con = get_object_or_404(Consultation, id=pk)
-    
+
     faved = None
     if request.user.is_authenticated : faved = ProfileFavCon.objects.filter(user=request.user).filter(consultation=con.portal_id).first()
 
@@ -249,15 +249,15 @@ def con_details(request, pk=None):     # if request.user.is_authenticated:
     if len(files_list) > 0:
         for f in files_list: total_size += os.path.getsize(os.path.join(dce_dir, f))
 
-   
 
-    context = { 
-        "con": con, 
-        "dlink": con.portal_link, 
-        'faved': faved, 
-        'dsize': total_size, 
-        'flist' : files_list, 
-        'dce_dir': dce_dir,        
+
+    context = {
+        "con": con,
+        "dlink": con.portal_link,
+        'faved': faved,
+        'dsize': total_size,
+        'flist' : files_list,
+        'dce_dir': dce_dir,
         }
 
     return render(request, "portal/con-details.html", context)
@@ -272,7 +272,7 @@ def con_portal_details(request, pid=None):     # if request.user.is_authenticate
     # except ValueError: raise Http404("Invalid UUID")
 
     con = get_object_or_404(Consultation, portal_id=pid)
-    
+
     faved = None
     if request.user.is_authenticated : faved = ProfileFavCon.objects.filter(user=request.user).filter(consultation=con.portal_id).first()
 
@@ -283,15 +283,15 @@ def con_portal_details(request, pid=None):     # if request.user.is_authenticate
     if len(files_list) > 0:
         for f in files_list: total_size += os.path.getsize(os.path.join(dce_dir, f))
 
-   
 
-    context = { 
-        "con": con, 
-        "dlink": con.portal_link, 
-        'faved': faved, 
-        'dsize': total_size, 
-        'flist' : files_list, 
-        'dce_dir': dce_dir,        
+
+    context = {
+        "con": con,
+        "dlink": con.portal_link,
+        'faved': faved,
+        'dsize': total_size,
+        'flist' : files_list,
+        'dce_dir': dce_dir,
         }
 
     return render(request, "portal/con-details.html", context)
@@ -304,7 +304,7 @@ def con_fav(request, pk=None):
 
     con = Consultation.objects.get(id=pk)
     if con is None: return HttpResponse(status=410)
-    
+
 
     sc = 200
 
@@ -314,7 +314,7 @@ def con_fav(request, pk=None):
             profac.delete()
             favo = Unfavorisation(
                 consultation    = con.portal_id,
-                user            = request.user, 
+                user            = request.user,
             )
             favo.save()
     else:
@@ -327,7 +327,7 @@ def con_fav(request, pk=None):
         profac.save()
         unfa = Favorisation(
             consultation    = con.portal_id,
-            user            = request.user, 
+            user            = request.user,
         )
         unfa.save()
 
@@ -337,7 +337,7 @@ def con_fav(request, pk=None):
 
     # 200 - OK                      ===== Removed from Favs
     # 201 – Created                 ===== Added to Favs
-    # 304 – resource not modified   ===== 
+    # 304 – resource not modified   =====
     # 410 - Gone
 
 
@@ -353,11 +353,11 @@ def clear_favs(request):
             if sco == 'unfavourite-all':
                 try:
                     for profac in profacs:
-                        con = Consultation.objects.get(portal_id=profac.consultation) 
+                        con = Consultation.objects.get(portal_id=profac.consultation)
                         profac.delete()
                         unfa = Unfavorisation(
                             consultation    = con.portal_id,
-                            user            = request.user, 
+                            user            = request.user,
                         )
                         unfa.save()
                 except: rescode = 410
@@ -368,12 +368,12 @@ def clear_favs(request):
                     for profac in profacs:
                         con = Consultation.objects.get(portal_id=profac.consultation)
                         if con:
-                            if con.date_limite_depot < datetime.now(timezone.utc): 
+                            if con.date_limite_depot < datetime.now(timezone.utc):
                                 i += 1
                                 profac.delete()
                                 unfa = Unfavorisation(
                                     consultation    = con.portal_id,
-                                    user            = request.user, 
+                                    user            = request.user,
                                 )
                                 unfa.save()
                     if i > 0 : rescode = 200
@@ -387,7 +387,7 @@ def clear_favs(request):
 
 @login_required(login_url="account_login")
 def con_get_file(request, pk=None, fn=None):
-    
+
     if request.method != 'GET': return HttpResponse(status=403)
     if pk == None or fn == None: return HttpResponse(status=404)
 
@@ -405,12 +405,12 @@ def con_get_file(request, pk=None, fn=None):
         else: user_ip = request.META.get('REMOTE_ADDR', '')
 
         udf = UserDownloadFile(
-            consultation = con.portal_id, 
-            user = request.user, 
-            user_agent = user_agent, 
+            consultation = con.portal_id,
+            user = request.user,
+            user_agent = user_agent,
             user_ip = user_ip,
-            file_name = os.path.basename(file_fp), 
-            file_size = os.path.getsize(file_fp), 
+            file_name = os.path.basename(file_fp),
+            file_size = os.path.getsize(file_fp),
             )
         udf.save()
 
@@ -485,7 +485,7 @@ def cons_insights(request):
             date_limite_depot__gte=period['start_date'],
             date_limite_depot__lte=period['end_date']
         )
-        
+
         # Add a case statement for assigning labels to the periods
         case_statements.append(
             When(
@@ -494,7 +494,7 @@ def cons_insights(request):
                 then=Value(period['label'])
             )
         )
-        
+
         # Add a case statement for assigning the start_date to the periods
         start_date_statements.append(
             When(
@@ -538,8 +538,8 @@ def cons_insights(request):
         }
 
     ordered_data = [dict(doughnut_chart_data)]
-        
-    try: 
+
+    try:
         latest_record = Consultation.objects.latest('date_limite_depot')
         epoch_stop = latest_record.date_limite_depot.replace(tzinfo=None)
     except : pass
@@ -582,42 +582,42 @@ def bdc_landing(request):
 
 
 
-# Functions ... 
+# Functions ...
 
 def cons2csv(request, cons, filename):
 
     if not request.user.is_authenticated :
-        response = HttpResponse(content_type='text/csv') 
-        response['Content-Disposition'] = 'attachment; filename="eMarches.com-unallowed.csv"'                
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="eMarches.com-unallowed.csv"'
         writer = csv.writer(response)
         writer.writerow([_('This file is only for authenticated users and you should not have accessed it.')])
         writer.writerow([_('Our servers security mechanism replaced the original content with this message.')])
         writer.writerow([_('If you got this file from our servers, we would like to know how you did.')])
         writer.writerow([_('We may hire you. Please contact us. Links on eMarches.com')])
-        return response 
+        return response
 
     from djqscsv import render_to_csv_response
     base_url = "https://www.emarches.com/en/cons/details/"
     return render_to_csv_response(cons.annotate(url=Concat( Value(base_url), 'id', Value("/"), output_field=CharField())).values(
-        'date_publication__date', 'date_limite_depot', 'reference', 'categorie__nom', 
-        'total_estimation', 'caution_provisoire', 'nombre_lots', 'objet', 'lieu_execution', 
+        'date_publication__date', 'date_limite_depot', 'reference', 'categorie__nom',
+        'total_estimation', 'caution_provisoire', 'nombre_lots', 'objet', 'lieu_execution',
         'acheteur_public__nom', 'procedure_annonce__nom', 'mode_passation__nom', 'reponse_electronique',
         'retrait_dossiers_adresse', 'depot_offres_adresse', 'ouverture_plis_adresse', 'url',),
         field_header_map={
             'categorie__nom' : 'categorie',
-            'date_publication__date' : 'date publication', 
-            'acheteur_public__nom': 'acheteur public', 
-            'procedure_annonce__nom': 'procedure', 
-            'mode_passation__nom': 'mode_passation', 
-            'url': 'lien eMArches', 
+            'date_publication__date' : 'date publication',
+            'acheteur_public__nom': 'acheteur public',
+            'procedure_annonce__nom': 'procedure',
+            'mode_passation__nom': 'mode_passation',
+            'url': 'lien eMArches',
             # 'portal_link' : 'lien PMMP',
-            }, 
-        filename=filename, 
+            },
+        filename=filename,
         )
 
 
-def logSerachQuery(request, querydict, results_count):
-    
+def logSerachQuery(request, querydict, results_count):    
+   
     import geoip2.database
 
     user_agent = request.META.get('HTTP_USER_AGENT', '')
@@ -627,16 +627,16 @@ def logSerachQuery(request, querydict, results_count):
 
     user = None
     if request.user.is_authenticated : user = request.user
-    
+
     geoip_db = f"{C.BASE_DIR}/geoip/GeoLite2-City.mmdb"
     reader = geoip2.database.Reader(geoip_db)
 
     ip_country, ip_cc_iso, ip_city, ip_latitude, ip_longitude = None, None, None, None, None
-    
+
     try:
         response = reader.city(ip_address)
         ip_country   = response.country.name
-        ip_cc_iso    = response.country.name
+        ip_cc_iso    = response.country.iso_code
         ip_city      = response.city.name
         ip_latitude  = response.location.latitude
         ip_longitude = response.location.longitude
