@@ -631,11 +631,12 @@ def logSerachQuery(request, querydict, results_count):
     geoip_db = f"{C.BASE_DIR}/geoip/GeoLite2-City.mmdb"
     reader = geoip2.database.Reader(geoip_db)
 
-    ip_country, ip_city, ip_latitude, ip_longitude = None, None, None, None
+    ip_country, ip_cc_iso, ip_city, ip_latitude, ip_longitude = None, None, None, None, None
     
     try:
         response = reader.city(ip_address)
         ip_country   = response.country.name
+        ip_cc_iso    = response.country.name
         ip_city      = response.city.name
         ip_latitude  = response.location.latitude
         ip_longitude = response.location.longitude
@@ -670,12 +671,13 @@ def logSerachQuery(request, querydict, results_count):
         query_order_by = querydict.get('ob', None),
 
         results_count = results_count,
-        user = user,
-        user_agent = user_agent,
+        user         = user,
+        user_agent   = user_agent,
         ip_address   = ip_address,
-        ip_country   = response.country.name,
-        ip_city      = response.city.name,
-        ip_latitude  = response.location.latitude,
-        ip_longitude = response.location.longitude,
+        ip_country   = ip_country,
+        ip_cc_iso    = ip_cc_iso,
+        ip_city      = ip_city,
+        ip_latitude  = ip_latitude,
+        ip_longitude = ip_longitude,
     )
     search_query.save()

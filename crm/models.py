@@ -123,6 +123,7 @@ class SearchQuery(models.Model):
     user_agent = models.CharField(max_length=512, blank=True, null=True)
     ip_address   = models.CharField(max_length=48, blank=True, null=True)
     ip_country   = models.CharField(max_length=24, blank=True, null=True)
+    ip_cc_iso    = models.CharField(max_length=3, blank=True, null=True)
     ip_city      = models.CharField(max_length=24, blank=True, null=True)
     ip_latitude  = models.CharField(max_length=16, blank=True, null=True)
     ip_longitude = models.CharField(max_length=16, blank=True, null=True)
