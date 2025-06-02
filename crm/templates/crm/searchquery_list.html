@@ -42,6 +42,7 @@
                     </select>
                 </div>
             </div>
+            
             <div class="col-auto">
                 <div class="input-group mt-2">
                     <label class="input-group-text small text-muted" for="user_filter">User</label>
@@ -55,11 +56,30 @@
                     </select>
                 </div>
             </div>
+            
+            <div class="col-auto">
+                <div class="input-group mt-2">
+                    <label class="input-group-text small text-muted" for="date_period_filter">Date Period</label>
+                    <select class="form-select" id="date_period_filter" name="date_period">
+                        <option value="">-- Select Period --</option> {# Option to clear date filter #}
+                        <option value="today" {% if request.GET.date_period == 'today' %}selected{% endif %}>Today</option>
+                        <option value="yesterday" {% if request.GET.date_period == 'yesterday' %}selected{% endif %}>Yesterday</option>
+                        <option value="this_week" {% if request.GET.date_period == 'this_week' %}selected{% endif %}>This Week</option>
+                        <option value="last_week" {% if request.GET.date_period == 'last_week' %}selected{% endif %}>Last Week</option>
+                        <option value="this_month" {% if request.GET.date_period == 'this_month' %}selected{% endif %}>This Month</option>
+                        <option value="last_month" {% if request.GET.date_period == 'last_month' %}selected{% endif %}>Last Month</option>
+                        <option value="last_30_days" {% if request.GET.date_period == 'last_30_days' %}selected{% endif %}>Last 30 Days</option>
+                        <option value="this_year" {% if request.GET.date_period == 'this_year' %}selected{% endif %}>This Year</option>
+                        <option value="last_year" {% if request.GET.date_period == 'last_year' %}selected{% endif %}>Last Year</option>
+                        <option value="last_365_days" {% if request.GET.date_period == 'last_365_days' %}selected{% endif %}>Last 365 Days</option>
+                    </select>
+                </div>
+            </div>
 
             <div class="col-auto">
                 <div class="text-end py-2">
                     <button class="btn btn-primary px-3" type="submit">Filter items</button>
-                    {% if filtered %}
+                    {% if applied_filters %}
                         <a class="btn btn-outline-secondary px-3" href="{% url 'search_queries_list' %}">Clear Filters</a>
                     {% endif %}
                 </div>
@@ -102,7 +122,7 @@
 
 
         {% if is_paginated %}
-            {% include 'crm/includes/paginator.html' with page_obj=page_obj %}
+            {% include 'crm/includes/paginator.html' %}
         {% endif %}
 
         {% else %}

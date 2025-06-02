@@ -10,12 +10,11 @@
 
     {% if request.user|in_group:'CRM' %}
         {% include 'crm/includes/counter.html' with total_count=total_count %}
-        <div class="text-center"><strong>{{ total_download_size|filesizeformat }}</strong><span class="text-muted"> = {{ total_download_size }} {% trans 'bytes' %}</span></div>
+        <div class="text-center my-3"><strong>{{ total_download_size|filesizeformat }}</strong><span class="text-muted"> = {{ total_download_size }} {% trans 'bytes' %}</span></div>
 
 
     	<hr>
         <form class="row g-3" method="GET" action="{% url 'crm_downloads' %}">
-
             <div class="col-auto">
                 <div class="input-group mt-2">
                     <label class="input-group-text small text-muted" for="user_filter">User</label>
@@ -31,9 +30,28 @@
             </div>
 
             <div class="col-auto">
+                <div class="input-group mt-2">
+                    <label class="input-group-text small text-muted" for="date_period_filter">Date Period</label>
+                    <select class="form-select" id="date_period_filter" name="date_period">
+                        <option value="">-- Select Period --</option> {# Option to clear date filter #}
+                        <option value="today" {% if request.GET.date_period == 'today' %}selected{% endif %}>Today</option>
+                        <option value="yesterday" {% if request.GET.date_period == 'yesterday' %}selected{% endif %}>Yesterday</option>
+                        <option value="this_week" {% if request.GET.date_period == 'this_week' %}selected{% endif %}>This Week</option>
+                        <option value="last_week" {% if request.GET.date_period == 'last_week' %}selected{% endif %}>Last Week</option>
+                        <option value="this_month" {% if request.GET.date_period == 'this_month' %}selected{% endif %}>This Month</option>
+                        <option value="last_month" {% if request.GET.date_period == 'last_month' %}selected{% endif %}>Last Month</option>
+                        <option value="last_30_days" {% if request.GET.date_period == 'last_30_days' %}selected{% endif %}>Last 30 Days</option>
+                        <option value="this_year" {% if request.GET.date_period == 'this_year' %}selected{% endif %}>This Year</option>
+                        <option value="last_year" {% if request.GET.date_period == 'last_year' %}selected{% endif %}>Last Year</option>
+                        <option value="last_365_days" {% if request.GET.date_period == 'last_365_days' %}selected{% endif %}>Last 365 Days</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-auto">
                 <div class="text-end py-2">
                     <button class="btn btn-primary px-3" type="submit">Filter items</button>
-                    {% if filtered %}
+                    {% if applied_filters %}
                         <a class="btn btn-outline-secondary px-3" href="{% url 'crm_downloads' %}">Clear Filters</a>
                     {% endif %}
                 </div>
@@ -50,8 +68,16 @@
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="me-auto">
                                 <div class="oneline" data-bs-toggle="tooltip" title="{{ con.objet }}"><strong>{{ download.file_name }}</strong></div>
-                                <span class="oneline text-muted">{% trans 'Started' %}: {{ download.date_started }}{% if download.user %} -{{ download.user }}{% endif %}</span>
+
+                                {% if download.user.profile.avatar %}
+                                    <img class="img-fluid border rounded-circle mx-1" src="{{ MEDIA_URL }}{{ download.user.profile.avatar }}" alt="X" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
+                                {% else %}
+                                    <img class="img-fluid border rounded-circle mx-1" src="{{ MEDIA_URL }}users/avatars/default.png" alt="X" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
+                                {% endif %}
                                 
+                                <span>{% if download.user %}{{ download.user }}{% else %}[{% trans 'Anonymous' %}]{% endif %}</span>
+                                <span class="mx-2"> - {{ download.date_started }}</span>
+
                             </div>
                             <span class="badge bg-primary text-white rounded-pill">{{ download.file_size|filesizeformat }}</span>
                         </li>
@@ -61,8 +87,8 @@
             {% endfor %}
         </div>
 
-        {% if is_paginated %}
-            {% include 'crm/includes/paginator.html' with page_obj=page_obj %}
+        {% if is_paginated %}        
+            {% include 'crm/includes/paginator.html' %}
         {% endif %}
     {% else %}
         <p class="text-danger">{% trans 'Not allowed' %}</p>

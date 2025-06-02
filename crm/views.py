@@ -1,4 +1,4 @@
-import random
+import random, calendar
 from django.shortcuts import render, redirect, get_object_or_404
 from datetime import datetime, timedelta
 from django.contrib.auth.decorators import login_required
@@ -283,6 +283,55 @@ def supervision(request):
     raise PermissionDenied
 
 
+
+def get_date_range_for_period(date_period):
+    """
+    Calculates the start and end date for a given date period string.
+    Returns a tuple (start_date, end_date) or (None, None) if the period is invalid.
+    """
+    today = datetime.today() # Get today's date in local timezone
+    start_date = None
+    end_date = None
+
+    if date_period == 'today':
+        start_date = today
+        end_date = today
+    elif date_period == 'yesterday':
+        yesterday = today - timedelta(days=1)
+        start_date = yesterday
+        end_date = yesterday
+    elif date_period == 'this_week':
+        # Assuming Monday is the first day of the week (ISO standard)
+        start_date = today - timedelta(days=today.weekday())
+        end_date = start_date + timedelta(days=6) # Sunday of this week
+    elif date_period == 'last_week':
+        start_date = today - timedelta(days=today.weekday() + 7) # Monday of last week
+        end_date = start_date + timedelta(days=6) # Sunday of last week
+    elif date_period == 'this_month':
+        start_date = today.replace(day=1) # First day of this month
+        end_date = today.replace(day=calendar.monthrange(today.year, today.month)[1]) # Last day of this month
+    elif date_period == 'last_month':
+        first_day_this_month = today.replace(day=1)
+        last_day_last_month = first_day_this_month - timedelta(days=1) # Last day of previous month
+        start_date = last_day_last_month.replace(day=1) # First day of previous month
+        end_date = last_day_last_month
+    elif date_period == 'last_30_days':
+        end_date = today
+        start_date = today - timedelta(days=29) # Includes today
+    elif date_period == 'this_year':
+        start_date = today.replace(month=1, day=1) # January 1st of this year
+        end_date = today.replace(month=12, day=31) # December 31st of this year
+    elif date_period == 'last_year':
+        start_date = today.replace(year=today.year - 1, month=1, day=1)
+        end_date = today.replace(year=today.year - 1, month=12, day=31)
+    elif date_period == 'last_365_days':
+        end_date = today
+        start_date = today - timedelta(days=364) # Includes today
+
+    return start_date, end_date
+
+
+
 class SearchQueryListView(LoginRequiredMixin, ListView):
     model = SearchQuery
     template_name = 'searchquery_list.html'
@@ -296,6 +345,7 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
         user_id = self.request.GET.get('user')
         country = self.request.GET.get('country')
         language = self.request.GET.get('language')
+        date_period = self.request.GET.get('date_period')
 
         if user_id:
             try: queryset = queryset.filter(user__id=int(user_id))
@@ -303,6 +353,12 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
 
         if country: queryset = queryset.filter(ip_country=country)
         if language: queryset = queryset.filter(query_language=language)
+
+        if date_period:
+            start_date, end_date = get_date_range_for_period(date_period)
+
+            if start_date and end_date:
+                queryset = queryset.filter(date_submitted__date__gte=start_date, date_submitted__date__lte=end_date)
 
         return queryset
 
@@ -314,10 +370,12 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
         context['unique_users'] = User.objects.distinct().order_by('username')
         context['unique_countries'] = SearchQuery.objects.values_list('ip_country', flat=True).distinct().exclude(Q(ip_country__isnull=True) | Q(ip_country__exact='')).order_by('ip_country')
 
-        get_params = self.request.GET.copy()
-        if 'page' in get_params: del get_params['page']
-        context['filtered'] = bool(get_params)
-        
+        query_params = self.request.GET.copy()
+        if 'page' in query_params: del query_params['page']
+        context['cleaned_query_params'] = query_params.urlencode()
+        applied_filters = bool(query_params) # After 'page' is removed
+        context['applied_filters'] = applied_filters
+
         return context
 
 
@@ -346,7 +404,8 @@ class DceDownloadsListView(LoginRequiredMixin, ListView):
     context_object_name = 'dce_downloads'
     ordering = ['-date_started', 'user', 'file_size']
     paginate_by = 20
-    
+
+
     def get_queryset(self):
         queryset = super().get_queryset()
         user_id = self.request.GET.get('user')
@@ -355,19 +414,28 @@ class DceDownloadsListView(LoginRequiredMixin, ListView):
             try: queryset = queryset.filter(user__id=int(user_id))
             except ValueError: pass
 
+        date_period = self.request.GET.get('date_period')
+        if date_period:
+            start_date, end_date = get_date_range_for_period(date_period)
+
+            if start_date and end_date:
+                queryset = queryset.filter(date_started__date__gte=start_date, date_started__date__lte=end_date)
+
+
         return queryset
 
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        
+
         context["total_download_size"] = UserDownloadFile.objects.aggregate(Sum('file_size'))['file_size__sum'] or 0
         context['total_count'] = padit(UserDownloadFile.objects.count(), 10)
         context['unique_users'] = User.objects.distinct().order_by('username')
-        
-        get_params = self.request.GET.copy()
-        if 'page' in get_params: del get_params['page']
 
-        context['filtered'] = bool(get_params)
+        query_params = self.request.GET.copy()
+        if 'page' in query_params: del query_params['page']
+        context['cleaned_query_params'] = query_params.urlencode()
+        applied_filters = bool(query_params) # After 'page' is removed
+        context['applied_filters'] = applied_filters
 
         return context
