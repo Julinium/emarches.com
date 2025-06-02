@@ -1,6 +1,6 @@
 # eMarches.com
 Visit emarches.com to see what it looks like.
-eMarches.com is a full stack web application to help businesses and individuals succeed in the public procurement market in Morocco.
+eMarches.com is a full stack web application to help businesses and individuals get the most out of the public procurement market in Morocco.
 
 # Steps
 01. Pull/download from github.
