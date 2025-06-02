@@ -109,9 +109,9 @@
                             {% endif %}
                         {% endif %}
                         <span>{% if suery.user %}{{ suery.user }}{% else %}[{% trans 'Anonymous' %}]{% endif %}</span>
-                        {% if suery.ip_country %}<span class="mx-2"> - {{ suery.ip_country }}</span>{% endif %}
-                        {% if suery.ip_city %}<span class="mx-2"> - {{ suery.ip_city }}</span>{% endif %}
-                        <span class="mx-2"> - {{ suery.date_submitted }}</span>
+                        {% if suery.ip_country %}<span class="mx-2"> -{{ suery.ip_country }}</span>{% endif %}
+                        {% if suery.ip_city %}<span class="mx-2"> -{{ suery.ip_city }}</span>{% endif %}
+                        <span class="mx-2"> -{{ suery.date_submitted }}</span>
                     </div>
                 </a>
 
