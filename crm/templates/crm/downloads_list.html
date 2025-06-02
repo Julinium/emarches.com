@@ -63,7 +63,6 @@
         <div class="list-group">
 
             {% for download in dce_downloads %}
-
                     <a href="{% url 'portal_con_portal_details' download.consultation %}" class="text-decoration-none">
                         <li class="list-group-item d-flex justify-content-between align-items-start">
                             <div class="me-auto">
@@ -74,7 +73,6 @@
                                 {% else %}
                                     <img class="img-fluid border rounded-circle mx-1" src="{{ MEDIA_URL }}users/avatars/default.png" alt="X" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
                                 {% endif %}
-                                
                                 <span>{% if download.user %}{{ download.user }}{% else %}[{% trans 'Anonymous' %}]{% endif %}</span>
                                 <span class="mx-2"> - {{ download.date_started }}</span>
 
