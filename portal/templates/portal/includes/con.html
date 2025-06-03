@@ -41,6 +41,12 @@
                 <div class="small text-muted oneline fw-light">
 
                     <div class="d-inline">
+                        {% if con.lot_set.first.qualifications.all %}<img class="d-inline" height="14" src="/static/img/qua.svg" alt="Qua">{% endif %}
+                        {% if con.lot_set.first.agrements.all %}<img class="d-inline" height="14" src="/static/img/agr.svg" alt="Agr">{% endif %}
+	                    {% if con.lot_set.first.echantillons %}<img class="d-inline" height="14" src="/static/img/ech.svg" alt="Ech">{% endif %}
+	                    {% if con.lot_set.first.reunions %}<img class="d-inline" height="14" src="/static/img/reu.svg" alt="Reu">{% endif %}
+	                    {% if con.lot_set.first.visites %}<img class="d-inline" height="14" src="/static/img/vis.svg" alt="Vis">{% endif %}
+
                         {% if con.lot_set.first.reserve_pme %}
                             <img class="d-inline" height="14" src="/static/img/pme/sucker.svg" alt="PME+">
                         {% endif %}
