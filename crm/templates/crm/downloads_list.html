@@ -59,8 +59,7 @@
         </form>
 
 
-        <h3 class="my-3 fw-light mt-5">{% trans 'Top last' %} {{ last_days }} {% trans 'days' %}</h3>
-        <div class="list-group">
+        <div class="list-group mt-3">
 
             {% for download in dce_downloads %}
                     <a href="{% url 'portal_con_portal_details' download.consultation %}" class="text-decoration-none">
