@@ -118,7 +118,7 @@
                             <img class="img-fluid ms-2" src="{% static 'iso-flags/' %}{{ suery.ip_cc_iso|lower }}.png" alt="{{ suery.ip_country }}" style="height: 1rem; object-fit: cover;">
                         {% endif %}
                         {% if suery.ip_country %}<span class="ms-1">{{ suery.ip_country }}</span>{% endif %}
-                        {% if suery.ip_city %}<span class="ms-1">/ {{ suery.ip_city }}</span>{% endif %}
+                        {% if suery.ip_city %}<span class="ms-0"> / {{ suery.ip_city }}</span>{% endif %}
                         <span class="mx-2"> -{{ suery.date_submitted }}</span>
                     </div>
                 </a>
