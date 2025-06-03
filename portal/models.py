@@ -85,7 +85,14 @@ class Consultation(models.Model):
     procedure_annonce = models.ForeignKey('Procedure', on_delete=models.DO_NOTHING, db_column='procedure_annonce', blank=True, null=True)
     type_annonce = models.ForeignKey('Type', on_delete=models.DO_NOTHING, db_column='type_annonce', blank=True, null=True)
     portal_size = models.CharField(max_length=31, blank=True, null=True)
-    update_me = models.BooleanField(blank=True, null=True, default=False)
+
+    requires_qua = models.BooleanField(blank=True, null=True)
+    requires_agr = models.BooleanField(blank=True, null=True)
+    requires_ech = models.BooleanField(blank=True, null=True)
+    has_reu = models.BooleanField(blank=True, null=True)
+    has_vis = models.BooleanField(blank=True, null=True)
+    
+    # update_me = models.BooleanField(blank=True, null=True, default=False)
     # update_my_files = models.BooleanField(blank=True, null=True, default=False)
 
     class Meta:
