@@ -18,7 +18,6 @@ from pathlib import Path
 
 
 from django.conf import settings as C
-# from emarches import constants
 
 from . import stats
 from . models import Consultation, Profile, ProfileFavCon, UserDownloadFile, Categorie, Procedure, Reglage
@@ -467,14 +466,6 @@ def cons_insights(request):
     grand_total = consultations.aggregate(total=Sum('total_estimation'))['total']
     if grand_total is None: grand_total = 0
 
-
-    # if period_length == 'months':
-    #     file_path = os.path.join(os.path.dirname(__file__), 'months.json')
-
-    #     # Read and parse the JSON data
-    #     with open(file_path, 'r') as json_file:
-    #         ordered_data = json.load(json_file)
-    # else:
     period_filters = Q()
     case_statements = []
     start_date_statements = []
@@ -579,7 +570,6 @@ def cons_insights(request):
 
 def bdc_landing(request):
     return render(request, 'portal/bdc-landing.html', {})
-
 
 
 # Functions ...
