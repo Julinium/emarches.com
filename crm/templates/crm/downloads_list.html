@@ -12,7 +12,6 @@
         {% include 'crm/includes/counter.html' with total_count=total_count %}
         <div class="text-center my-3"><strong>{{ total_download_size|filesizeformat }}</strong><span class="text-muted"> = {{ total_download_size }} {% trans 'bytes' %}</span></div>
 
-
     	<hr>
         <form class="row g-3" method="GET" action="{% url 'crm_downloads' %}">
             <div class="col-auto">
