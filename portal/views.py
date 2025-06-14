@@ -249,7 +249,6 @@ def con_details(request, pk=None):	 # if request.user.is_authenticated:
 		for f in files_list: total_size += os.path.getsize(os.path.join(dce_dir, f))
 
 
-
 	context = {
 		"con": con,
 		"dlink": con.portal_link,
