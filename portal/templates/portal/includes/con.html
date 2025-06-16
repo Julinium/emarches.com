@@ -3,84 +3,87 @@
 {% load static%}
 
 {% if con %}
-    {% get_current_language as LC %}
-    <div class="my-2 card shadow btn-preload {% now 'YmdHis' as wassa %}{% if con.date_limite_depot|date:'YmdHis' < wassa %}text-decoration-line-through{% endif %}{% if con.cancelled %}text-decoration-line-through text-danger{% endif %}">
-        <a href="{% url 'portal_con_details' con.id %}" 
-            class="card list-group-item border border-0 d-flex flex-row align-items-center px-0 pt-2 pb-2" 
-            {% if faved %}style="background-color:#D7F4EE; color: inherit; text-decoration: none;"{% else %}style="color: inherit; text-decoration: none;"{% endif %}>
-            <div 
-                id="svg-estimate" 
-                class="d-flex flex-column align-items-center px-2" 
-                style="border-inline-end: 1px solid #ddd;" 
-                data-bs-toggle="tooltip" 
-                title="{{ con.categorie }} | {{ con.total_estimation | localize0d:LC }} {% if con.nombre_lots > 1 %} ({{ con.nombre_lots }} {% translate 'Lots' %}){% endif %} | {{ con.date_limite_depot }}">
+	{% get_current_language as LC %}
+	<div class="my-2 card shadow btn-preload {% now 'YmdHis' as wassa %}{% if con.date_limite_depot|date:'YmdHis' < wassa %}text-decoration-line-through{% endif %}{% if con.cancelled %}text-decoration-line-through text-danger{% endif %}">
+		<a href="{% url 'portal_con_details' con.id %}" 
+			class="card list-group-item border border-0 d-flex flex-row align-items-center px-0 pt-2 pb-2" 
+			{% if faved %}style="background-color:#D7F4EE; color: inherit; text-decoration: none;"{% else %}style="color: inherit; text-decoration: none;"{% endif %}>
+			<div 
+				id="svg-estimate" 
+				class="d-flex flex-column align-items-center px-2" 
+				style="border-inline-end: 1px solid #ddd;" 
+				data-bs-toggle="tooltip" 
+				title="{{ con.categorie }} | {{ con.total_estimation | localize0d:LC }} {% if con.nombre_lots > 1 %} ({{ con.nombre_lots }} {% translate 'Lots' %}){% endif %} | {{ con.date_limite_depot }}">
 
-                <svg height="48" viewBox="-60 -60 120 120" xmlns="http://www.w3.org/2000/svg"><g>
-                    <!-- <circle r="50" stroke="#45A000" stroke-width="8" fill="none"/> -->
-                    <!-- <circle r="50" stroke="#FF4500" stroke-width="8" pathLength="{% fullpath %}" stroke-dasharray="{{ con.remaining_days | redpath }}" fill="none" transform="rotate(-90)"/> -->
-                    {% with 'icons/'|add:con.categorie.nom|add:'.svg' as cat %}<image x="-40" y="-40" width="80" height="80" href="{% static cat %}"/>{% endwith %}
-                </g></svg>
+				<svg height="48" viewBox="-60 -60 120 120" xmlns="http://www.w3.org/2000/svg"><g>
+					<!-- <circle r="50" stroke="#45A000" stroke-width="8" fill="none"/> -->
+					<!-- <circle r="50" stroke="#FF4500" stroke-width="8" pathLength="{% fullpath %}" stroke-dasharray="{{ con.remaining_days | redpath }}" fill="none" transform="rotate(-90)"/> -->
+					{% with 'icons/'|add:con.categorie.nom|add:'.svg' as cat %}<image x="-40" y="-40" width="80" height="80" href="{% static cat %}"/>{% endwith %}
+				</g></svg>
 
-                <div class="d-flex justify-content-center">
-                    <div>{{ con.total_estimation | shortify }}</div>
-                    {% if con.nombre_lots > 1 %}
-                        <img src="{% static 'icons/grid-2x2-gap.svg' %}" alt="Multi-lots">
-                    {% endif %}
-                </div>
+				<div class="d-flex justify-content-center">
+					<div>{{ con.total_estimation | shortify }}</div>
+					{% if con.nombre_lots > 1 %}
+						<img src="{% static 'icons/grid-2x2-gap.svg' %}" alt="Multi-lots">
+					{% endif %}
+				</div>
 
-            </div>
+			</div>
 
-            <div id="title-details" class="text-start px-2">
+			<div id="title-details" class="text-start px-2">
 
-                <div class="twolines {% now 'YmdHis' as wassa %}{% if con.date_limite_depot|date:'YmdHis' < wassa %}text-decoration-line-through{% endif %}" data-bs-toggle="tooltip" title="{{ con.objet }}" style="text-align: start;">
-                    {% if con.cancelled %}<span class="mb-1 fw-bold text-decoration-none"><img src="{% static 'img/cancelled.svg' %}" class="pb-1 mx-1" alt="{% translate 'Cancelled' %}">{% translate 'Cancelled' %}</span>{% endif %}
-                    {% if faved %}<span class="mb-1"><img src="{% static 'img/star-fill.svg' %}" class="pb-1 mx-1" alt="Fav"></span>{% endif %}
-                    {{ con.objet }}
-                </div>
+				<div class="twolines {% now 'YmdHis' as wassa %}{% if con.date_limite_depot|date:'YmdHis' < wassa %}text-decoration-line-through{% endif %}" data-bs-toggle="tooltip" title="{{ con.objet }}" style="text-align: start;">
+					{{ con.objet }}
+				</div>
 
-                <div class="small text-muted oneline fw-light">
+				<div class="small text-muted oneline fw-light">
 
-                    <div class="d-inline">
-                        {% if con.lot_set.first.reserve_pme %}
-                            <img class="d-inline" height="14" src="/static/img/pme/sucker.svg" alt="PME+">
-                        {% endif %}
-                        {% if con.procedure_annonce.ouvert %}
-                            <img class="d-inline" height="14" src="/static/img/proc/{{ con.procedure_annonce.ouvert }}.svg" alt="PME+">
-                        {% endif %}
-                        <img class="d-inline" height="14" src="/static/img/re/{{ con.reponse_electronique }}.svg" alt="{{ con.reponse_electronique }}"> |
-                    </div>
+					<div class="d-inline">
+						{% if con.cancelled %}<img class="d-inline" height="14" src="{% static 'img/cancelled.svg' %}" alt="Cnacelled">{% endif %}
+						{% if faved %}<img class="d-inline" height="14" src="{% static 'img/star-fill.svg' %}" alt="Fav">{% endif %}
+						
+						{% if con.requires_qua %}<img class="d-inline" height="14" src="/static/img/qua.svg" alt="Qua">{% endif %}
+						{% if con.requires_agr %}<img class="d-inline" height="14" src="/static/img/agr.svg" alt="Agr">{% endif %}
+						{% if con.requires_ech %}<img class="d-inline" height="14" src="/static/img/ech.svg" alt="Ech">{% endif %}
+						{% if con.has_reu %}<img class="d-inline" height="14" src="/static/img/reu.svg" alt="Reu">{% endif %}
+						{% if con.has_vis %}<img class="d-inline" height="14" src="/static/img/vis.svg" alt="Vis">{% endif %}
 
-                    <div class="d-inline" data-bs-toggle="tooltip" title="{{ con.lieu_execution }}">
-                        <img class="d-inline" height="12" src="{% static 'icons/geo-alt.svg' %}" alt="">
-                        {{ con.lieu_execution }}
-                    </div>
+						{% if con.lot_set.first.reserve_pme %}<img class="d-inline" height="14" src="/static/img/pme/sucker.svg" alt="PME+">{% endif %}
+						{% if con.procedure_annonce.ouvert %}<img class="d-inline" height="14" src="/static/img/proc/{{ con.procedure_annonce.ouvert }}.svg" alt="PME+">{% endif %}
+						<img class="d-inline" height="14" src="/static/img/re/{{ con.reponse_electronique }}.svg" alt="{{ con.reponse_electronique }}"> |
+					</div>
 
-                    <div class="d-inline ms-1" data-bs-toggle="tooltip" {% if request.user.is_authenticated %}title="{{ con.acheteur_public }}"{% else %}title="{% translate 'Only registered users can see this' %}!"{% endif %}>
-                        <img class="d-inline ms-1" height="12" src="{% static 'icons/buildings.svg' %}" alt="">
-                        {% if not request.user.is_authenticated %}
-                            <img class="d-inline ms-1" src="{% static 'img/lock.svg' %}" height="14">                            
-                        {% else %}
-                            {{ con.acheteur_public }}
-                        {% endif %}
-                    </div>
+					<div class="d-inline" data-bs-toggle="tooltip" title="{{ con.lieu_execution }}">
+						<img class="d-inline" height="12" src="{% static 'icons/geo-alt.svg' %}" alt="">
+						{{ con.lieu_execution }}
+					</div>
 
-                </div>
-            </div>
-        </a>
-        <span>
-            <div class="progress bg-danger" style="height: 0.3rem;">
-                <div 
-                    class="progress-bar bg-success"
-                    role="progressbar" 
-                    style="width: {{ con.remaining_days | progressino }}%;" 
-                    aria-valuenow="{{ con.remaining_days | progressino }}" 
-                    aria-valuemin="0" 
-                    aria-valuemax="100">
-                </div>
-            </div>
-        </span>
-    </div>
+					<div class="d-inline ms-1" data-bs-toggle="tooltip" {% if request.user.is_authenticated %}title="{{ con.acheteur_public }}"{% else %}title="{% translate 'Only registered users can see this' %}!"{% endif %}>
+						<img class="d-inline ms-1" height="12" src="{% static 'icons/buildings.svg' %}" alt="">
+						{% if not request.user.is_authenticated %}
+							<img class="d-inline ms-1" src="{% static 'img/lock.svg' %}" height="14">							
+						{% else %}
+							{{ con.acheteur_public }}
+						{% endif %}
+					</div>
+
+				</div>
+			</div>
+		</a>
+		<span>
+			<div class="progress bg-danger" style="height: 0.3rem;">
+				<div 
+					class="progress-bar bg-success"
+					role="progressbar" 
+					style="width: {{ con.remaining_days | progressino }}%;" 
+					aria-valuenow="{{ con.remaining_days | progressino }}" 
+					aria-valuemin="0" 
+					aria-valuemax="100">
+				</div>
+			</div>
+		</span>
+	</div>
 {% else %}
-    <p class="text-danger">{% translate 'Details not available' %} !</p>
+	<p class="text-danger">{% translate 'Details not available' %} !</p>
 {% endif %}
 
