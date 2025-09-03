@@ -121,6 +121,7 @@ class SearchQuery(models.Model):
     updated_since = models.DateTimeField(blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user', related_name='search_query', blank=True, null=True)
     user_agent = models.CharField(max_length=512, blank=True, null=True)
+    is_likely_bot = models.BooleanField(blank=True, null=True, default=False)
     ip_address   = models.CharField(max_length=48, blank=True, null=True)
     ip_country   = models.CharField(max_length=24, blank=True, null=True)
     ip_cc_iso    = models.CharField(max_length=3, blank=True, null=True)
@@ -132,6 +133,8 @@ class SearchQuery(models.Model):
         db_table = 'crm_search_query'
 
     def __str__(self):
+        if self.query_object: return self.query_object
+        if self.query_full_path: return self.query_full_path
         if self.query_full_url: return self.query_full_url
         return f'SearchQuery_{ self.date_submitted }'
 
@@ -157,6 +160,32 @@ class SearchQuery(models.Model):
         # if self.query_order_by: q += f' order_by={self.query_order_by}'
     
         return q
+
+
+    def is_bot_user_agent(user_agent):
+        if not user_agent:
+            return True  # Treat empty User-Agent as bot
+        user_agent = user_agent.lower()
+        bot_keywords = [
+            'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
+            'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot'
+        ]
+        # Check for bot keywords
+        if any(keyword in user_agent for keyword in bot_keywords):
+            return True
+        # Check for browser-like User-Agent (indicative of human)
+        if 'mozilla/5.0' in user_agent and any(browser in user_agent for browser in ['chrome', 'safari', 'firefox', 'edge']):
+            return False
+        # Default to bot for generic or unknown User-Agents
+        return True
+
+    def save(self, *args, **kwargs):
+        """Override save method to set is_likely_bot based on user_agent."""
+        if self.user_agent:
+            self.is_likely_bot = is_bot_user_agent(self.user_agent)
+        else:
+            self.is_likely_bot = True  # Treat missing User-Agent as bot
+        super().save(*args, **kwargs)
 
 
 
