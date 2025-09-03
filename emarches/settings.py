@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'axes',
     'django_countries',
     'bootstrap_admin',
+    
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

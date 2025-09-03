@@ -59,7 +59,7 @@ def cons_favs(request):
 		}
 	if not cons:
 		messages.add_message(request, messages.WARNING, _("Your Favourites list is empty"))
-		return redirect('portal_cons_list')
+		# return redirect('portal_cons_list')
 	return render(request, "portal/cons-favs.html", context)
 
 

@@ -47,12 +47,25 @@
                 <div class="input-group mt-2">
                     <label class="input-group-text small text-muted" for="user_filter">User</label>
                     <select class="form-select" id="user_filter" name="user">
-                        <option value="">-- Select User --</option> {# Option to clear user filter #}
+                        <option value="">-- Select User --</option>
+                        <option value="any" {% if request.GET.user == "any" %}selected{% endif %}>[Any User]</option>
+                        <option value="anonymous" {% if request.GET.user == "anonymous" %}selected{% endif %}>[Anonymous]</option>
                         {% for user_obj in unique_users %}
                             <option value="{{ user_obj.id }}" {% if request.GET.user|add:"0" == user_obj.id|add:"0" %}selected{% endif %}>
                                 {{ user_obj.username }}
                             </option>
                         {% endfor %}
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-auto">
+                <div class="input-group mt-2">
+                    <label class="input-group-text small text-muted" for="user_filter">User-Agent</label>
+                    <select class="form-select" id="user_agent_filter" name="user_agent">
+                        <option value="" {% if not request.GET.user_agent %}selected{% endif %}>-- Select User-Agent Type --</option>
+                        <option value="human" {% if request.GET.user_agent == "human" %}selected{% endif %}>Likely Human</option>
+                        <option value="bot" {% if request.GET.user_agent == "bot" %}selected{% endif %}>Likely Bot</option>
                     </select>
                 </div>
             </div>

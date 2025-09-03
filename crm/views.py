@@ -343,16 +343,30 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         user_id = self.request.GET.get('user')
+        user_agent = self.request.GET.get('user_agent')
         country = self.request.GET.get('country')
         language = self.request.GET.get('language')
         date_period = self.request.GET.get('date_period')
 
-        if user_id:
-            try: queryset = queryset.filter(user__id=int(user_id))
-            except ValueError: pass
+        if user_agent:
+            if user_agent == "bot":
+                queryset = queryset.filter(is_likely_bot=True)
+            else:
+                queryset = queryset.filter(is_likely_bot=False)
 
-        if country: queryset = queryset.filter(ip_country=country)
-        if language: queryset = queryset.filter(query_language=language)
+        if user_id:
+            if request.GET.get('user') == 'any':
+                queryset = queryset.filter(user__isnull=False, user__is_authenticated=True)
+            elif request.GET.get('user') == 'anonymous':
+                queryset = queryset.filter(user__isnull=True)
+            else:
+                try: queryset = queryset.filter(user__id=int(user_id))
+                except ValueError: pass
+
+        if country: 
+            queryset = queryset.filter(ip_country=country)
+        if language: 
+            queryset = queryset.filter(query_language=language)
 
         if date_period:
             start_date, end_date = get_date_range_for_period(date_period)
@@ -366,8 +380,10 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
+        unique_users = User.objects.distinct().order_by('username')
+
         context['total_count'] = padit(SearchQuery.objects.count(), 10)
-        context['unique_users'] = User.objects.distinct().order_by('username')
+        context['unique_users'] = unique_users # User.objects.distinct().order_by('username')
         context['unique_countries'] = SearchQuery.objects.values_list('ip_country', flat=True).distinct().exclude(Q(ip_country__isnull=True) | Q(ip_country__exact='')).order_by('ip_country')
 
         query_params = self.request.GET.copy()
