@@ -161,8 +161,7 @@ class SearchQuery(models.Model):
     
         return q
 
-
-    def is_bot_user_agent(user_agent):
+    def is_bot_user_agent(self, user_agent):
         if not user_agent:
             return True  # Treat empty User-Agent as bot
         user_agent = user_agent.lower()
@@ -182,7 +181,7 @@ class SearchQuery(models.Model):
     def save(self, *args, **kwargs):
         """Override save method to set is_likely_bot based on user_agent."""
         if self.user_agent:
-            self.is_likely_bot = is_bot_user_agent(self.user_agent)
+            self.is_likely_bot = self.is_bot_user_agent(self.user_agent)
         else:
             self.is_likely_bot = True  # Treat missing User-Agent as bot
         super().save(*args, **kwargs)
