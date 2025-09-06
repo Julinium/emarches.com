@@ -339,11 +339,11 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
     ordering = ['-date_submitted', 'user', 'ip_address']
     paginate_by = 20
 
-
     def get_queryset(self):
-        queryset = super().get_queryset()        
+        queryset = super().get_queryset()
+
         user_id = self.request.GET.get('user')
-        user_agent = self.request.GET.get('user_agent')
+        user_agent = self.request.GET.get('user_agent', "human")
         country = self.request.GET.get('country')
         language = self.request.GET.get('language')
         date_period = self.request.GET.get('date_period')
@@ -351,8 +351,10 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
         if user_agent:
             if user_agent == "bot":
                 queryset = queryset.filter(is_likely_bot=True)
-            else:
+            if user_agent == "human":
                 queryset = queryset.filter(is_likely_bot=False)
+        else:
+            queryset = queryset.filter(is_likely_bot=False)
 
         if user_id:
             if self.request.GET.get('user') == 'any':
