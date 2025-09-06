@@ -341,7 +341,7 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
 
 
     def get_queryset(self):
-        queryset = super().get_queryset()
+        queryset = super().get_queryset()        
         user_id = self.request.GET.get('user')
         user_agent = self.request.GET.get('user_agent')
         country = self.request.GET.get('country')
@@ -355,9 +355,9 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
                 queryset = queryset.filter(is_likely_bot=False)
 
         if user_id:
-            if request.GET.get('user') == 'any':
-                queryset = queryset.filter(user__isnull=False, user__is_authenticated=True)
-            elif request.GET.get('user') == 'anonymous':
+            if self.request.GET.get('user') == 'any':
+                queryset = queryset.filter(user__isnull=False)
+            elif self.request.GET.get('user') == 'anonymous':
                 queryset = queryset.filter(user__isnull=True)
             else:
                 try: queryset = queryset.filter(user__id=int(user_id))
