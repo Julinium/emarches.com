@@ -161,29 +161,44 @@ class SearchQuery(models.Model):
     
         return q
 
-    def is_bot_user_agent(self, user_agent):
-        if not user_agent:
-            return True  # Treat empty User-Agent as bot
-        user_agent = user_agent.lower()
-        bot_keywords = [
-            'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
-            'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot'
-        ]
-        # Check for bot keywords
-        if any(keyword in user_agent for keyword in bot_keywords):
-            return True
-        # Check for browser-like User-Agent (indicative of human)
-        if 'mozilla/5.0' in user_agent and any(browser in user_agent for browser in ['chrome', 'safari', 'firefox', 'edge']):
-            return False
-        # Default to bot for generic or unknown User-Agents
-        return True
+    # @property
+    # def is_likely_bot(self):
+    #     if not self.user_agent:
+    #         return True  # Treat empty User-Agent as bot
+    #     user_agent = self.user_agent.lower()
+    #     bot_keywords = [
+    #         'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
+    #         'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot' ]       
+    #     if any(keyword in user_agent for keyword in bot_keywords):
+    #         return True # Check for bot keywords        
+    #     if 'mozilla/5.0' in user_agent and any(browser in user_agent for browser in ['chrome', 'safari', 'firefox', 'edge']):
+    #         return False # Check for browser-like User-Agent (indicative of human)        
+    #     return True # Default to bot for generic or unknown User-Agents
+
+    # def save(self, *args, **kwargs):
+    #     """Override save method to set is_likely_bot based on user_agent."""
+    #     if self.user_agent:
+    #         self.is_likely_bot = self.is_bot_user_agent
+    #     else:
+    #         self.is_likely_bot = True  # Treat missing User-Agent as bot
+    #     super().save(*args, **kwargs)
 
     def save(self, *args, **kwargs):
-        """Override save method to set is_likely_bot based on user_agent."""
+        botness = True
         if self.user_agent:
-            self.is_likely_bot = self.is_bot_user_agent(self.user_agent)
-        else:
-            self.is_likely_bot = True  # Treat missing User-Agent as bot
+            user_agent = self.user_agent.lower()
+            bot_keywords = [
+                'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
+                'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot' ]       
+            if any(keyword in user_agent for keyword in bot_keywords):
+                botness = True # Check for bot keywords 
+            else:
+                if 'mozilla/5.0' in user_agent and any(browser in user_agent for browser in ['chrome', 'safari', 'firefox', 'edge']):
+                    botness = False # Check for browser-like User-Agent (indicative of human)        
+                else: 
+                    botness = True # Default to bot for generic or unknown User-Agents
+    
+        self.is_likely_bot = botness
         super().save(*args, **kwargs)
 
 
