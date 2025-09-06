@@ -81,9 +81,9 @@
         <div class="list-group mt-2 my-0">
             {% for con in page_obj %}
                 {% if con in favs %}
-                    {% include 'portal/includes/con.html' with con=con faved='Favourite' %}
+                    {% include 'portal/includes/con-circular.html' with con=con faved='Favourite' %}
                 {% else %}
-                    {% include 'portal/includes/con.html' with con=con %}
+                    {% include 'portal/includes/con-circular.html' with con=con %}
                 {% endif %}
             {% endfor %}
         </div>
