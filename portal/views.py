@@ -385,6 +385,7 @@ def clear_favs(request):
 
 @login_required(login_url="account_login")
 def con_get_file(request, pk=None, fn=None):
+	# print("ddddddddddddddddddddddddddddddddddddddddddddd")
 
 	if request.method != 'GET': return HttpResponse(status=403)
 	if pk == None or fn == None: return HttpResponse(status=404)
@@ -393,6 +394,7 @@ def con_get_file(request, pk=None, fn=None):
 	if not con : return HttpResponse(status=404)
 
 	dce_dir = os.path.join(os.path.join(C.MEDIA_ROOT, 'dce'), C.DL_PATH_PREFIX + con.portal_id)
+	file_path = os.path.join(os.path.join('dce', C.DL_PATH_PREFIX + con.portal_id), fn)
 	file_fp = os.path.join(dce_dir, fn)
 
 	if os.path.exists(file_fp):
@@ -412,11 +414,22 @@ def con_get_file(request, pk=None, fn=None):
 			)
 		udf.save()
 
-		with open(file_fp, 'rb') as fh:
-			response = HttpResponse(fh.read(), content_type="application/zip")
-			response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_fp)
-			return response
-	return HttpResponse(status=500)
+		# Deprecated: Seve using Python.
+		# with open(file_fp, 'rb') as fh:
+		# 	response = HttpResponse(fh.read(), content_type="application/zip")
+		# 	response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_fp)
+		# 	return response
+
+		# Set X-Accel-Redirect header to point to the internal Nginx location
+		response = HttpResponse()
+		response['Content-Type'] = 'application/octet-stream'
+		response['X-Accel-Redirect'] = f'/comedia/{file_path}'
+		response['Content-Disposition'] = f'attachment; filename="{ file_path }"'
+		response['Content-Length'] = os.path.getsize(file_fp)
+		return response
+
+	return HttpResponse(status=404)
+
 
 
 def cons_insights(request):
