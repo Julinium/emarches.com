@@ -28,15 +28,15 @@
                             <!-- <div>{% translate "Here is a list of files associated with the Tender." %}</div> -->
                             <div class="small text-muted">{% translate "Once you click on an item, your browser or device should handle the download process." %}</div>
                             <ul class="list-group my-3 p-0 shadow-sm">
-                                {% for filename in flist %}
                                     <li class="list-group-item p-0" style="direction: ltr;">
-                                        <a class="text-decoration-none w-100 btn btn-primary text-start" href="{% url 'portal_con_get_file' con.id filename %}"{% if flist|length == 1 %} data-bs-dismiss="modal"{% endif %}>
+                                    </li>
+                            </ul>
+                                {% for filename in flist %}
+                                        <a class="text-decoration-none w-100 btn btn-primary text-start mb-2" href="{% url 'portal_con_get_file' con.id filename %}"{% if flist|length == 1 %} data-bs-dismiss="modal"{% endif %}>
                                             <span class=""><i class="bi bi-arrow-down-square-fill"></i></span>
                                             <span class="ms-2">{{ filename }}</span>
                                         </a>
-                                    </li>
                                 {% endfor %}
-                            </ul>
                         {% else %}
                             <div class="text-danger">{% translate "Sorry. We could not get the files for this Tender." %}</div>
                             <div class="small text-muted">{% translate "Please try again later, or contact us if this problem persists." %}</div>
