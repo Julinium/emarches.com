@@ -102,8 +102,8 @@
                         <div class="pe-1 d-inline fw-bold">{{ con.objet }}</div>
                     </div> -->
                 </div>
-                <div class="row py-3">
-                    <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 py-3">
                         <div class="text-muted small">{% translate 'Bidding Deadline' %} ({% translate 'Morocco time' %})</div>
                         {% timezone "Africa/Casablanca" %}
                             <div class="d-block">
@@ -112,7 +112,7 @@
                             </div>
                         {% endtimezone %}
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 py-3">
                         <div class="text-muted small">{% translate 'Total Estimate' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.total_estimation | floatformat:'2g' }}</div>
@@ -121,8 +121,8 @@
                     </div>   
                 </div>
 
-                <div class="row py-3">
-                    <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 py-3">
                         <div class="text-muted small">{% translate 'Temporary Caution' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
@@ -136,14 +136,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3 py-3">
                         <div class="text-muted small">{% translate 'Main Category' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.categorie }}</div>
                         </div>
                     </div>
                     
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3 py-3">
                         {% if con.nombre_lots == 1 %}
                             <div class="text-muted small">{% translate 'Reserved to SMB+' %}</div>
                             <div class="d-block">
@@ -158,8 +158,8 @@
                     </div>
                 </div>
 
-                <div class="row py-3">
-                    <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 py-3">
                         <div class="text-muted small">{% translate 'Date published' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">                                
@@ -173,7 +173,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 py-3">
                         <div class="text-muted small">{% translate 'Reference' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline" style="direction: ltr;">
@@ -189,14 +189,14 @@
                     </div>
                 </div>
 
-                <div class="row py-3">
-                    <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 py-3">
                         <div class="text-muted small">{% translate 'Execution location' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.lieu_execution }}</div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 py-3">
                         <div class="text-muted small">{% translate 'Public client' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">
@@ -213,8 +213,8 @@
                 </div>
 
 
-                <div class="row py-3">
-                    <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 py-3">
                         <div class="text-muted small">{% translate 'Procedure' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">{{ con.procedure_annonce }}</div>
@@ -223,7 +223,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 py-3">
                         <div class="text-muted small">{% translate 'Electronic response and signature' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
