@@ -95,17 +95,18 @@
 
             {% get_current_language as LC %}
             <div id="con-destails" class="my-2">
-                <div>
+                <div class="row py-3">
                     <div class="text-muted small">{% translate 'Object' %}</div>
-                    <div class="card p-2 mb-3 shadow-sm d-block">
+                    <div class="fw-bold fs-5">{{ con.objet }}</div>
+                    <!-- <div class="d-block">
                         <div class="pe-1 d-inline fw-bold">{{ con.objet }}</div>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="row">
+                <div class="row py-3">
                     <div class="col-12 col-md-6">
                         <div class="text-muted small">{% translate 'Bidding Deadline' %} ({% translate 'Morocco time' %})</div>
                         {% timezone "Africa/Casablanca" %}
-                            <div class="card p-2 mb-3 shadow-sm d-block {{ con.remaining_days | bg_teint }}">
+                            <div class="d-block">
                                 <div class="pe-1 d-inline fw-bold">{{ con.date_limite_depot|localtime  }}</div> |
                                 <div class="user-select-all {% if con.remaining_days > 29 %} text-success {% else %} text-danger {% endif%} fw-bold d-inline"> {{ con.remaining_days }} {% translate 'days' %}</div>
                             </div>
@@ -113,17 +114,17 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="text-muted small">{% translate 'Total Estimate' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.total_estimation | floatformat:'2g' }}</div>
                             {% if con.nombre_lots > 1 %}<img src="{% static 'icons/grid-2x2-gap.svg' %}" height="16" alt="{% translate 'Multi-lots' %}">{% endif %}
                         </div>
                     </div>   
                 </div>
 
-                <div class="row">
+                <div class="row py-3">
                     <div class="col-12 col-md-6">
                         <div class="text-muted small">{% translate 'Temporary Caution' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline">
                                 {% if request.user.is_authenticated %}
                                     {{ con.caution_provisoire | floatformat:'2g' }}
@@ -137,7 +138,7 @@
                     </div>
                     <div class="col-6 col-md-3">
                         <div class="text-muted small">{% translate 'Main Category' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.categorie }}</div>
                         </div>
                     </div>
@@ -145,22 +146,22 @@
                     <div class="col-6 col-md-3">
                         {% if con.nombre_lots == 1 %}
                             <div class="text-muted small">{% translate 'Reserved to SMB+' %}</div>
-                            <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="d-block">
                                 <div class="pe-1 d-inline">{% if con.lot_set.first.reserve_pme %}{% translate 'Yes' %}{% else %}{% translate 'No' %}{% endif %}</div>
                             </div>
                         {% else %}
                             <div class="text-muted small">{% translate 'Lots count' %}</div>
-                            <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="d-block">
                                 <div class="pe-1 d-inline">{{ con.nombre_lots }}</div>
                             </div>
                         {% endif %}
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row py-3">
                     <div class="col-12 col-md-6">
                         <div class="text-muted small">{% translate 'Date published' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline">                                
                                 {% if request.user.is_authenticated %}
                                     {{ con.date_publication|date }}
@@ -174,7 +175,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="text-muted small">{% translate 'Reference' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline" style="direction: ltr;">
                                 {% if request.user.is_authenticated %}
                                     {{ con.reference }}
@@ -188,16 +189,16 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row py-3">
                     <div class="col-12 col-md-6">
                         <div class="text-muted small">{% translate 'Execution location' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.lieu_execution }}</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="text-muted small">{% translate 'Public client' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">
                                 {% if request.user.is_authenticated %}
                                     {{ con.acheteur_public }}
@@ -212,10 +213,10 @@
                 </div>
 
 
-                <div class="row">
+                <div class="row py-3">
                     <div class="col-12 col-md-6">
                         <div class="text-muted small">{% translate 'Procedure' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline">{{ con.procedure_annonce }}</div>
                             <div class="pe-1 d-inline">|</div>
                             <div class="pe-1 d-inline">{{ con.mode_passation }}</div>
@@ -224,7 +225,7 @@
 
                     <div class="col-12 col-md-6">
                         <div class="text-muted small">{% translate 'Electronic response and signature' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline">
                                 {% if con.reponse_electronique == 'RR' %}{% translate 'Required, e-Sign required' %}{% endif %}
                                 {% if con.reponse_electronique == 'RO' %}{% translate 'Required, e-Sign not required' %}{% endif %}
@@ -237,7 +238,7 @@
                 </div>
 
                 {% if con.domaines %}
-                    <div id="domains">
+                    <div class="py-3" id="domains">
                         <div class="text-muted small">{% translate 'Domains of activity' %}</div>
                         <ul class="list-group mb-3 p-0 shadow-sm">
                             {% for d in con.domaines.all %}
@@ -251,7 +252,7 @@
                 {% if con.nombre_lots == 1 %}
 
                     {% if con.lot_set.first.qualifications.all %}
-                        <div id="qualifs">
+                        <div class="py-3" id="qualifs">
                             <div class="text-muted small">{% translate 'Qualifications' %}</div>                              
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">  
@@ -260,7 +261,7 @@
                                     {% endfor %}
                                 </ul>
                             {% else %}
-                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                <div class="d-block">
                                     <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
                                         <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
                                     </a>
@@ -270,7 +271,7 @@
                     {% endif %}
 
                     {% if con.lot_set.first.agrements.all %}
-                        <div id="agrements">
+                        <div class="py-3" id="agrements">
                             <div class="text-muted small">{% translate 'Agrements' %}</div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
@@ -279,7 +280,7 @@
                                     {% endfor %}
                                 </ul>
                             {% else %}
-                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                <div class="d-block">
                                     <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
                                         <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
                                     </a>
@@ -289,7 +290,7 @@
                     {% endif %}
 
                     {% if con.lot_set.first.echantillons %}
-                        <div id="agrements">
+                        <div class="py-3" id="agrements">
                             <div class="text-muted small">{% translate 'Samples' %}</div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
@@ -298,7 +299,7 @@
                                     {% endfor %}
                                 </ul>
                             {% else %}
-                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                <div class="d-block">
                                     <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
                                         <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
                                     </a>
@@ -308,7 +309,7 @@
                     {% endif %}
 
                     {% if con.lot_set.first.reunions %}
-                        <div id="agrements">
+                        <div class="py-3" id="agrements">
                             <div class="text-muted small">{% translate 'Meetings' %}</div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
@@ -317,7 +318,7 @@
                                     {% endfor %}
                                 </ul>
                             {% else %}
-                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                <div class="d-block">
                                     <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
                                         <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
                                     </a>
@@ -327,7 +328,7 @@
                     {% endif %}
 
                     {% if con.lot_set.first.visites %}
-                        <div id="agrements">
+                        <div class="py-3" id="agrements">
                             <div class="text-muted small">{% translate 'In-Site Visits' %}</div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
@@ -336,7 +337,7 @@
                                     {% endfor %}
                                 </ul>
                             {% else %}
-                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                <div class="d-block">
                                     <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
                                         <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
                                     </a>
@@ -346,16 +347,16 @@
                     {% endif %}
 
                     {% if con.lot_set.first.variante != 'Non' or con.prix_acquisition_plans != 0 %}
-                        <div class="row">
+                        <div class="row py-3">
                             <div class="col-12 col-md-6">
                                 <div class="text-muted small">{% translate 'Price of Plans' %}</div>
-                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                <div class="d-block">
                                     <div class="pe-1 d-inline">{{ con.prix_acquisition_plans | floatformat:'2g' }}</div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="text-muted small">{% translate 'Variante' %}</div>
-                                <div class="card p-2 mb-3 shadow-sm d-block">
+                                <div class="d-block">
                                     <div class="pe-1 d-inline">{% if con.lot_set.first.variante == 'Non' %}{% translate 'No' %}{% else %}{% translate 'Yes' %}{% endif %}</div>
                                 </div>
                             </div>
@@ -364,7 +365,7 @@
                 {% endif %}
 
                 {% if con.nombre_lots > 1 %}
-                    <div>
+                    <div class="py-3">
                         <div class="text-muted small">{% translate 'Lots details' %}</div>
                         {% if request.user.is_authenticated %}
                             <ul class="list-group mb-3 p-0 shadow-sm">
@@ -407,7 +408,7 @@
                                 {% endfor %}
                             </ul>
                         {% else %}
-                            <div class="card p-2 mb-3 shadow-sm d-block">
+                            <div class="d-block">
                                 <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
                                     <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
                                 </a>
@@ -417,9 +418,9 @@
                 {% endif %}
                 
                 {% if con.retrait_dossiers_adresse %}
-                    <div>
+                    <div class="py-3">
                         <div class="text-muted small">{% translate 'Withdrawal address' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline">
                                 {% if request.user.is_authenticated %}
                                     {{ con.retrait_dossiers_adresse }}
@@ -433,9 +434,9 @@
                     </div>
                 {% endif %}
                 {% if con.depot_offres_adresse %}
-                    <div>
+                    <div class="py-3">
                         <div class="text-muted small">{% translate 'Bidding address' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline">
                                 {% if request.user.is_authenticated %}
                                     {{ con.depot_offres_adresse }}
@@ -449,9 +450,9 @@
                     </div>
                 {% endif %}
                 {% if con.ouverture_plis_adresse %}
-                    <div>
+                    <div class="py-3">
                         <div class="text-muted small">{% translate 'Opening address' %}</div>
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <div class="pe-1 d-inline">
                                 {% if request.user.is_authenticated %}
                                     {{ con.ouverture_plis_adresse }}
@@ -464,7 +465,7 @@
                         </div>
                     </div>
                 {% endif %}
-                <div>
+                <div class="py-3">
                     <div class="text-muted small">{% translate 'Contact' %}</div>
                     {% if request.user.is_authenticated %}
                     <ul class="list-group mb-3 p-0 shadow-sm">
@@ -482,7 +483,7 @@
                         </li>
                     </ul>
                     {% else %}
-                        <div class="card p-2 mb-3 shadow-sm d-block">
+                        <div class="d-block">
                             <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
                                 <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
                             </a>
