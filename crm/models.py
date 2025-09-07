@@ -1,4 +1,4 @@
-import uuid
+import uuid, re
 
 from django.db import models
 from django.contrib.auth.models import User
@@ -122,6 +122,8 @@ class SearchQuery(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user', related_name='search_query', blank=True, null=True)
     user_agent = models.CharField(max_length=512, blank=True, null=True)
     is_likely_bot = models.BooleanField(blank=True, null=True, default=False)
+    device_type = models.CharField(max_length=32, blank=True, null=True)
+    os_family = models.CharField(max_length=32, blank=True, null=True)
     ip_address   = models.CharField(max_length=48, blank=True, null=True)
     ip_country   = models.CharField(max_length=24, blank=True, null=True)
     ip_cc_iso    = models.CharField(max_length=3, blank=True, null=True)
@@ -161,43 +163,93 @@ class SearchQuery(models.Model):
     
         return q
 
-    # @property
-    # def is_likely_bot(self):
-    #     if not self.user_agent:
-    #         return True  # Treat empty User-Agent as bot
-    #     user_agent = self.user_agent.lower()
-    #     bot_keywords = [
-    #         'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
-    #         'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot' ]       
-    #     if any(keyword in user_agent for keyword in bot_keywords):
-    #         return True # Check for bot keywords        
-    #     if 'mozilla/5.0' in user_agent and any(browser in user_agent for browser in ['chrome', 'safari', 'firefox', 'edge']):
-    #         return False # Check for browser-like User-Agent (indicative of human)        
-    #     return True # Default to bot for generic or unknown User-Agents
+    def parse_user_agent(self, ua_string):
+        # Convert to lowercase for easier matching
+        ua_string = ua_string.lower()
+        # Initialize result dictionary
+        result = {
+            'device_type': 'Other',
+            'os': 'Unknown'
+        }
 
-    # def save(self, *args, **kwargs):
-    #     """Override save method to set is_likely_bot based on user_agent."""
-    #     if self.user_agent:
-    #         self.is_likely_bot = self.is_bot_user_agent
-    #     else:
-    #         self.is_likely_bot = True  # Treat missing User-Agent as bot
-    #     super().save(*args, **kwargs)
+        # Device type patterns
+        mobile_patterns = [
+            r'mobile', r'android', r'iphone', r'ipod', r'webos', 
+            r'blackberry', r'windows phone', r'symbian'
+        ]
+        tablet_patterns = [
+            r'tablet', r'ipad', r'kindle', r'playbook', 
+            r'surface', r'galaxy tab'
+        ]
+        desktop_patterns = [
+            r'windows nt', r'macintosh', r'x11', r'linux', 
+            r'crOS', r'ubuntu', r'fedora'
+        ]
+        
+        # OS patterns
+        os_patterns = [
+            (r'android', 'Android'),
+            (r'iphone|ipad|ipod', 'iOS'),
+            (r'windows nt', 'Windows'),
+            (r'macintosh|mac os x', 'macOS'),
+            (r'x11|linux|ubuntu|fedora', 'Linux'),
+            (r'windows phone', 'Windows Phone'),
+            (r'webos', 'WebOS'),
+            (r'blackberry', 'BlackBerry'),
+            (r'crOS', 'ChromeOS')
+        ]
+        
+        # Check device type
+        if any(re.search(pattern, ua_string) for pattern in mobile_patterns):
+            result['device_type'] = 'Mobile'
+        elif any(re.search(pattern, ua_string) for pattern in tablet_patterns):
+            result['device_type'] = 'Tablet'
+        elif any(re.search(pattern, ua_string) for pattern in desktop_patterns):
+            result['device_type'] = 'Desktop'
+        
+        # Check operating system
+        for pattern, os_name in os_patterns:
+            if re.search(pattern, ua_string):
+                result['os'] = os_name
+                break
+
+        return result
+
+    def check_botness(self, ua_string):
+        user_agent = ua_string.lower()
+        bot_keywords = [
+            'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
+            'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot' ]       
+        if any(keyword in user_agent for keyword in bot_keywords):
+            return True # Check for bot keywords 
+        else:
+            if 'mozilla/5.0' in user_agent and any(browser in user_agent for browser in ['chrome', 'safari', 'firefox', 'edge']):
+                return False # Check for browser-like User-Agent (indicative of human)        
+            else: 
+                return True # Default to bot for generic or unknown User-Agents
+        return True
+
 
     def save(self, *args, **kwargs):
         botness = True
+        parsed_ua = {'device_type': 'Other', 'os': 'Unknown'}
         if self.user_agent:
-            user_agent = self.user_agent.lower()
-            bot_keywords = [
-                'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
-                'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot' ]       
-            if any(keyword in user_agent for keyword in bot_keywords):
-                botness = True # Check for bot keywords 
-            else:
-                if 'mozilla/5.0' in user_agent and any(browser in user_agent for browser in ['chrome', 'safari', 'firefox', 'edge']):
-                    botness = False # Check for browser-like User-Agent (indicative of human)        
-                else: 
-                    botness = True # Default to bot for generic or unknown User-Agents
-    
+            parsed_ua = self.parse_user_agent(self.user_agent)
+            botness = self.check_botness(self.user_agent)
+            # user_agent = self.user_agent.lower()
+            # bot_keywords = [
+            #     'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
+            #     'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot' ]       
+            # if any(keyword in user_agent for keyword in bot_keywords):
+            #     botness = True # Check for bot keywords 
+            # else:
+            #     if 'mozilla/5.0' in user_agent and any(browser in user_agent for browser in ['chrome', 'safari', 'firefox', 'edge']):
+            #         botness = False # Check for browser-like User-Agent (indicative of human)        
+            #     else: 
+            #         botness = True # Default to bot for generic or unknown User-Agents
+
+        self.os_family = parsed_ua['os']
+        self.device_type = parsed_ua['device_type']
         self.is_likely_bot = botness
         super().save(*args, **kwargs)
 

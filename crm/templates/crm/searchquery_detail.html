@@ -11,10 +11,8 @@
     {% if request.user|in_group:'CRM' %}
         <div class="list-group">
             <h3 class="my-3 fw-light mt-5"></h3>
-            {% for field_name, value in searchquery_fields %}
-              {% if value %}
-                <li class="mt-2"><strong>{{ field_name|capfirst }}:</strong><span class="text-break"> {{ value }}</span></li>
-              {% endif %}        
+            {% for field_name, value in searchquery_fields %}                 
+                <li class="mt-2"><span>{{ field_name|capfirst }}:</span><strong class="text-break{% if not value %} small fw-light text-secondary{% endif %}"> {{ value }}</strong></li>     
             {% empty %}
                 <p class="text-center">{% trans "No records found." %}</p>
             {% endfor %}
