@@ -339,6 +339,9 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
     ordering = ['-date_submitted', 'user', 'ip_address']
     paginate_by = 20
 
+    # for qs in SearchQuery.objects.filter(is_likely_bot=False):
+        # qs.save() 
+
     def get_queryset(self):
         queryset = super().get_queryset()
 

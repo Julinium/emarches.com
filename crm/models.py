@@ -219,7 +219,7 @@ class SearchQuery(models.Model):
         user_agent = ua_string.lower()
         bot_keywords = [
             'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
-            'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot' ]       
+            'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot', 'nexus 5x build' ]       
         if any(keyword in user_agent for keyword in bot_keywords):
             return True # Check for bot keywords 
         else:
