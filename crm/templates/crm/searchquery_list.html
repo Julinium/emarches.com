@@ -19,7 +19,7 @@
                 <div class="input-group mt-2">
                     <label class="input-group-text small text-muted" for="country_filter">Country</label>
                     <select class="form-select" id="country_filter" name="country">
-                        <option value="">-- Select Country --</option> {# Option to clear country filter #}
+                        <option value="">--</option>
                         {% for country_name in unique_countries %}
                             <option value="{{ country_name }}" {% if request.GET.country == country_name %}selected{% endif %}>
                                 {{ country_name }}
@@ -33,7 +33,7 @@
                 <div class="input-group mt-2">
                     <label class="input-group-text small text-muted" for="language_filter">Language</label>
                     <select class="form-select" id="language_filter" name="language">
-                        <option value="">-- Select Language --</option>
+                        <option value="">--</option>
                         {% for lang in transes %}
                             <option value="{{ lang.code }}" {% if request.GET.language == lang.code %}selected{% endif %}>
                                 {{ lang.name }} ({{ lang.code }})
@@ -47,9 +47,9 @@
                 <div class="input-group mt-2">
                     <label class="input-group-text small text-muted" for="user_filter">User</label>
                     <select class="form-select" id="user_filter" name="user">
-                        <option value="">-- Select User --</option>
-                        <option value="any" {% if request.GET.user == "any" %}selected{% endif %}>[Any User]</option>
-                        <option value="anonymous" {% if request.GET.user == "anonymous" %}selected{% endif %}>[Anonymous]</option>
+                        <option value="">--</option>
+                        <option value="any" {% if request.GET.user == "any" %}selected{% endif %}>[Authenticated Users]</option>
+                        <option value="anonymous" {% if request.GET.user == "anonymous" %}selected{% endif %}>[Anonymous Visitors]</option>
                         {% for user_obj in unique_users %}
                             <option value="{{ user_obj.id }}" {% if request.GET.user|add:"0" == user_obj.id|add:"0" %}selected{% endif %}>
                                 {{ user_obj.username }}
@@ -63,7 +63,7 @@
                 <div class="input-group mt-2">
                     <label class="input-group-text small text-muted" for="user_filter">User-Agent</label>
                     <select class="form-select" id="user_agent_filter" name="user_agent">
-                        <option value="any" {% if not request.GET.user_agent %}selected{% endif %}>-- Select User-Agent Type --</option>
+                        <option value="any" {% if not request.GET.user_agent %}selected{% endif %}>--</option>
                         <option value="human" {% if request.GET.user_agent == "human" or not request.GET.user_agent %}selected{% endif %}>Likely Human</option>
                         <option value="bot" {% if request.GET.user_agent == "bot" %}selected{% endif %}>Likely Bot</option>
                     </select>
@@ -74,7 +74,7 @@
                 <div class="input-group mt-2">
                     <label class="input-group-text small text-muted" for="date_period_filter">Date Period</label>
                     <select class="form-select" id="date_period_filter" name="date_period">
-                        <option value="">-- Select Period --</option>
+                        <option value="">--</option>
                         <option value="today" {% if request.GET.date_period == 'today' %}selected{% endif %}>Today</option>
                         <option value="yesterday" {% if request.GET.date_period == 'yesterday' %}selected{% endif %}>Yesterday</option>
                         <option value="this_week" {% if request.GET.date_period == 'this_week' %}selected{% endif %}>This Week</option>
