@@ -1,0 +1,22 @@
+<script>
+function sharePage() {
+    // Get the current page URL
+    const url = window.location.href;
+    const title = document.title;
+
+    // Check if Web Share API is supported
+    if (navigator.share) {
+        navigator.share({
+            title: title,
+            url: url
+        })
+        .then(() => console.log('Shared successfully'))
+        .catch((error) => console.error('Error sharing:', error));
+    } else {
+        // Fallback: Copy URL to clipboard
+        navigator.clipboard.writeText(url)
+            .then(() => alert('URL copied to clipboard!'))
+            .catch((error) => console.error('Error copying URL:', error));
+    }
+}
+</script>

@@ -28,8 +28,8 @@
                             <!-- <div>{% translate "Here is a list of files associated with the Tender." %}</div> -->
                             <div class="small text-muted">{% translate "Once you click on an item, your browser or device should handle the download process." %}</div>
                             <ul class="list-group my-3 p-0 shadow-sm">
-                                    <li class="list-group-item p-0" style="direction: ltr;">
-                                    </li>
+                                <li class="list-group-item p-0" style="direction: ltr;">
+                                </li>
                             </ul>
                                 {% for filename in flist %}
                                         <a class="text-decoration-none w-100 btn btn-primary text-start mb-2" href="{% url 'portal_con_get_file' con.id filename %}"{% if flist|length == 1 %} data-bs-dismiss="modal"{% endif %}>
@@ -68,17 +68,30 @@
                         {% if not request.user.is_authenticated %}
                             <img class="mx-1" src="{% static 'img/lock.svg' %}" height="24">
                         {% endif %}
-                        <div class="mx-1"><i class="bi bi-arrow-down-square-fill"></i> {% translate 'Download' %}{% if flist %} |{% endif %}</div>
+                        <div class="mx-1">
+                            <i class="bi bi-arrow-down-square-fill"></i> 
+                            <!-- <span>{% translate 'Download' %}{% if flist %} |{% endif %}</span> -->
+                        </div>
                         {% if flist %}<span class="px-1">{{ dsize|filesizeformat }}</span>{% endif %}
                     </div>
                 </a>
+                <button class="btn btn-outline-primary mt-1 px-2" onclick="sharePage()">
+                    <div class="mx-1">
+                        <span><i class="bi bi-share"></i></span>
+                        <!-- <span> {% trans "Share" %}</span> -->
+                    </div>
+                    {% include "base/includes/share-button.html" %}
+                </button>
 
-                <a id="favbtn" type="button" class="btn btn-outline-primary mt-1 px-2 btn-outline-primary" {% if request.user.is_authenticated %} onclick="toggleFav('/cons/fav/{{ con.id }}')" {% else %} href="{% url 'account_login' %}?next={{ request.get_full_path }}"{% endif %}>
+                <a id="favbtn" type="button" class="btn btn-outline-primary mt-1 px-2" {% if request.user.is_authenticated %} onclick="toggleFav('/cons/fav/{{ con.id }}')" {% else %} href="{% url 'account_login' %}?next={{ request.get_full_path }}"{% endif %}>
                     <div class="d-flex justify-content-center">
                         {% if not request.user.is_authenticated %}
                             <img class="mx-1" src="{% static 'img/lock.svg' %}" height="24">
                         {% endif %}
-                        <div class="mx-1"><i class="bi bi-star-half"></i> {% translate 'Toggle Favourite' %}</div>                        
+                        <div class="mx-1">
+                            <i class="bi bi-star-half"></i> 
+                            <!-- <span>{% translate 'Toggle Favourite' %}</span> -->
+                        </div>                        
                     </div>
                 </a>
 
@@ -87,7 +100,10 @@
                         {% if not request.user.is_authenticated %}
                             <img class="mx-1" src="{% static 'img/lock.svg' %}" height="24">
                         {% endif %}
-                        <div class="mx-1"><i class="bi bi-box-arrow-up-right"></i> {% translate 'Bid' %}</div>
+                        <div class="mx-1">
+                            <i class="bi bi-box-arrow-up-right"></i>
+                            <!-- <span>{% translate 'Bid' %}</span> -->
+                        </div>
                     </div>
                 </a>
 
@@ -98,9 +114,6 @@
                 <div class="row py-3">
                     <div class="text-muted small">{% translate 'Object' %}</div>
                     <div class="fw-bold fs-5">{{ con.objet }}</div>
-                    <!-- <div class="d-block">
-                        <div class="pe-1 d-inline fw-bold">{{ con.objet }}</div>
-                    </div> -->
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 py-3">
