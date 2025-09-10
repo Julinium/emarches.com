@@ -70,15 +70,15 @@
                         {% endif %}
                         <div class="mx-1">
                             <i class="bi bi-arrow-down-square-fill"></i> 
-                            <!-- <span>{% translate 'Download' %}{% if flist %} |{% endif %}</span> -->
+                            <span class="d-none d-md-inline">{% translate 'Download' %}{% if flist %} |{% endif %}</span>
                         </div>
                         {% if flist %}<span class="px-1">{{ dsize|filesizeformat }}</span>{% endif %}
                     </div>
                 </a>
                 <button class="btn btn-outline-primary mt-1 px-2" onclick="sharePage()">
                     <div class="mx-1">
-                        <span><i class="bi bi-share"></i></span>
-                        <!-- <span> {% trans "Share" %}</span> -->
+                        <span><i class="bi bi-send-fill"></i></span>
+                        <span class="d-none d-md-inline"> {% trans "Share" %}</span>
                     </div>
                     {% include "base/includes/share-button.html" %}
                 </button>
@@ -90,7 +90,7 @@
                         {% endif %}
                         <div class="mx-1">
                             <i class="bi bi-star-half"></i> 
-                            <!-- <span>{% translate 'Toggle Favourite' %}</span> -->
+                            <span class="d-none d-md-inline">{% translate 'Toggle Favourite' %}</span>
                         </div>                        
                     </div>
                 </a>
@@ -101,8 +101,8 @@
                             <img class="mx-1" src="{% static 'img/lock.svg' %}" height="24">
                         {% endif %}
                         <div class="mx-1">
-                            <i class="bi bi-box-arrow-up-right"></i>
-                            <!-- <span>{% translate 'Bid' %}</span> -->
+                            <i class="bi bi-link-45deg"></i>
+                            <span class="d-none d-md-inline">{% translate 'Bid' %}</span>
                         </div>
                     </div>
                 </a>
