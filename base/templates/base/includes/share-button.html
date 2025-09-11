@@ -15,7 +15,12 @@ function sharePage() {
     } else {
         // Fallback: Copy URL to clipboard
         navigator.clipboard.writeText(url)
-            .then(() => alert('URL copied to clipboard!'))
+            // .then(() => alert('URL copied to clipboard!'))
+            .then(() => {
+                var toastElement = document.getElementById('copyToast');
+                    var toast = new bootstrap.Toast(toastElement);
+                    toast.show();
+            })
             .catch((error) => console.error('Error copying URL:', error));
     }
 }
