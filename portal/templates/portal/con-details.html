@@ -9,9 +9,7 @@
 
 {% block content %}
     {% if con %}
-        <div id="tosts-container" class="toast-container bottom-0 end-0 p-3" style="position: fixed; z-index: 99;">
-            {% include 'base/includes/message.html' with id="dlToast" teint='info' message=_('Download should start shortly... Please wait.') %}
-            {% include 'base/includes/message.html' with id="erToast" teint='danger' message=_('Sorry, we could not get your files. If this happens often, please let us know.') %}
+        <div id="tosts-container" class="toast-container shadow shadow-lg bottom-0 end-0 p-3" style="position: fixed; z-index: 99;">
             {% include 'base/includes/message.html' with id="favToast" teint='success' message=_('Item added to Favourites.') %}
             {% include 'base/includes/message.html' with id="defToast" teint='success' message=_('Item removed from Favourites.') %}
             {% include 'base/includes/message.html' with id="copyToast" teint='success' message=_('URL was copied to clipboard.') %}
@@ -507,23 +505,7 @@
         {% include empty.html %}
     {% endif %}
 
-    <script>
-        function generateDCE(url) {
-            try{
-                let dlToast = document.getElementById('dlToast');
-                let bsAlert = new bootstrap.Toast(dlToast);
-                bsAlert.show();
-                window.location=url;
-                if ( response.status != 200 ) {
-                    let erToast = document.getElementById('erToast');
-                    let erAlert = new bootstrap.Toast(erToast);
-                    erAlert.show();
-                }
-            } catch (error) {
-                console.error(error.message);
-            }
-        }
-        
+    <script> 
         async function toggleFav(url) {
             try {
                 let response = await fetch(url, {credentials: "same-origin",});
