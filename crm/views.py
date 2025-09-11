@@ -340,10 +340,12 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
     paginate_by = 20
 
     # for qs in SearchQuery.objects.filter(is_likely_bot=False):
-        # qs.save() 
+        # qs.save()
 
     def get_queryset(self):
         queryset = super().get_queryset()
+        queryset = queryset.exclude(user__is_staff=True)
+        queryset = queryset.exclude(user__is_superuser=True)
 
         user_id = self.request.GET.get('user')
         user_agent = self.request.GET.get('user_agent', "human")
