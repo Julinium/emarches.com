@@ -245,9 +245,22 @@ def con_details(request, pk=None):	 # if request.user.is_authenticated:
 	total_size = 0
 	dce_dir = os.path.join(os.path.join(C.MEDIA_ROOT, 'dce'), C.DL_PATH_PREFIX + con.portal_id)
 	if os.path.exists(dce_dir): files_list = os.listdir(dce_dir)
+	
+	files_info = []
 	if len(files_list) > 0:
-		for f in files_list: total_size += os.path.getsize(os.path.join(dce_dir, f))
+		for entry in files_list:
+			full_path = os.path.join(dce_dir, entry)
+			if os.path.exists(full_path):
+				if os.path.isfile(full_path):
+					sizens = os.path.getsize(full_path)
+					total_size += sizens
+					files_info.append({
+						"name": entry,
+						"size": sizens
+					})
 
+	# if len(files_list) > 0:
+		# for f in files_list: total_size += os.path.getsize(os.path.join(dce_dir, f))
 
 	context = {
 		"con": con,
@@ -255,6 +268,7 @@ def con_details(request, pk=None):	 # if request.user.is_authenticated:
 		'faved': faved,
 		'dsize': total_size,
 		'flist' : files_list,
+		'finfo': files_info,
 		'dce_dir': dce_dir,
 		}
 

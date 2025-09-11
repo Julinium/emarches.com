@@ -14,9 +14,9 @@
             {% include 'base/includes/message.html' with id="erToast" teint='danger' message=_('Sorry, we could not get your files. If this happens often, please let us know.') %}
             {% include 'base/includes/message.html' with id="favToast" teint='success' message=_('Item added to Favourites.') %}
             {% include 'base/includes/message.html' with id="defToast" teint='success' message=_('Item removed from Favourites.') %}
+            {% include 'base/includes/message.html' with id="copyToast" teint='success' message=_('URL was copied to clipboard.') %}
         </div>
-    
-
+        
         <div id="dldModal" class="modal fade" tabindex="-1" aria-labelledby="dldModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -24,23 +24,21 @@
                         <h1 class="modal-title fs-5" id="dldModalLabel">{% translate "Download Tender's files" %}</h1>
                     </div>
                     <div class="modal-body">
-                        {% if flist  %}
-                            <!-- <div>{% translate "Here is a list of files associated with the Tender." %}</div> -->
+
+                        {% if finfo  %}
                             <div class="small text-muted">{% translate "Once you click on an item, your browser or device should handle the download process." %}</div>
-                            <ul class="list-group my-3 p-0 shadow-sm">
-                                <li class="list-group-item p-0" style="direction: ltr;">
-                                </li>
-                            </ul>
-                                {% for filename in flist %}
-                                        <a class="text-decoration-none w-100 btn btn-primary text-start mb-2" href="{% url 'portal_con_get_file' con.id filename %}"{% if flist|length == 1 %} data-bs-dismiss="modal"{% endif %}>
-                                            <span class=""><i class="bi bi-arrow-down-square-fill"></i></span>
-                                            <span class="ms-2">{{ filename }}</span>
-                                        </a>
-                                {% endfor %}
+                            {% for f in finfo %}
+                                <a class="text-decoration-none w-100 btn btn-outline-primary text-start mt-2" href="{% url 'portal_con_get_file' con.id f.name %}"{% if finfo|length == 1 %} data-bs-dismiss="modal"{% endif %}>
+                                    <span class=""><i class="bi bi-arrow-down-square-fill"></i></span>
+                                    <span class="ms-1 badge text-bg-primary">{{ f.size|filesizeformat }}</span>
+                                    <span class="ms-1">{{ f.name }}</span>
+                                </a>
+                            {% endfor %}
                         {% else %}
                             <div class="text-danger">{% translate "Sorry. We could not get the files for this Tender." %}</div>
                             <div class="small text-muted">{% translate "Please try again later, or contact us if this problem persists." %}</div>
                         {% endif %}
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">{% translate 'Dismiss' %}</button>

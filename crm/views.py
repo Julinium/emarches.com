@@ -126,42 +126,6 @@ def unfavs(request):
     raise PermissionDenied
 
 
-# @login_required(login_url="account_login")
-# def downloads(request):
-#     if is_crm_user(request.user):
-#         last_days = 30
-#         wassa = datetime.now()
-#         top_downloads = (
-#             UserDownloadFile.objects.values("consultation")  # Group by 'category' field
-#             .annotate(
-#                 download_count=Count("id"),
-#                 last_download_date=Max("date_started"),
-#             )
-#             .filter(last_download_date__gte=wassa - timedelta(days=last_days), download_count__gt=0)
-#             .order_by("-download_count")[:10]
-#         )
-
-#         cons_portal_ids = [con["consultation"] for con in top_downloads]
-#         cons = Consultation.objects.filter(portal_id__in=cons_portal_ids)
-#         cons_dict = {con.portal_id: con for con in cons}
-
-#         total_count = UserDownloadFile.objects.count()
-#         total_download_size = UserDownloadFile.objects.aggregate(Sum('file_size'))['file_size__sum'] or 0
-
-#         context = {
-#             "total_count": padit(total_count, 10),
-#             "top_downloads": top_downloads,
-#             "last_days" : last_days,
-#             "total_download_size": total_download_size,
-#             "cons_dict": cons_dict,
-#             }
-
-#         return render(request, 'crm/downloads_list.html', context)
-#     context = {}
-
-#     raise PermissionDenied
-
-
 @login_required(login_url="account_login")
 def favourites(request):
     if is_crm_user(request.user):
@@ -283,7 +247,6 @@ def supervision(request):
     raise PermissionDenied
 
 
-
 def get_date_range_for_period(date_period):
     """
     Calculates the start and end date for a given date period string.
@@ -329,7 +292,6 @@ def get_date_range_for_period(date_period):
         start_date = today - timedelta(days=364) # Includes today
 
     return start_date, end_date
-
 
 
 class SearchQueryListView(LoginRequiredMixin, ListView):
