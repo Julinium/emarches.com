@@ -289,37 +289,12 @@ def con_details(request, pk=None):	 # if request.user.is_authenticated:
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
-def con_portal_details(request, pid=None):	 # if request.user.is_authenticated:
-
+def con_portal_details(request, pid=None):
 	if request.method != 'GET': return HttpResponse(status=403)
-
-	# try: valid_uuid = UUID(pk, version=4)
-	# except ValueError: raise Http404("Invalid UUID")
-
 	con = get_object_or_404(Consultation, portal_id=pid)
-
-	faved = None
-	if request.user.is_authenticated : faved = ProfileFavCon.objects.filter(user=request.user).filter(consultation=con.portal_id).first()
-
-	files_list = []
-	total_size = 0
-	dce_dir = os.path.join(os.path.join(C.MEDIA_ROOT, 'dce'), C.DL_PATH_PREFIX + con.portal_id)
-	if os.path.exists(dce_dir): files_list = os.listdir(dce_dir)
-	if len(files_list) > 0:
-		for f in files_list: total_size += os.path.getsize(os.path.join(dce_dir, f))
-
-
-
-	context = {
-		"con": con,
-		"dlink": con.portal_link,
-		'faved': faved,
-		'dsize': total_size,
-		'flist' : files_list,
-		'dce_dir': dce_dir,
-		}
-
-	return render(request, "portal/con-details.html", context)
+	if con:
+		return redirect("portal_con_details", pk=str(con.id))
+	return HttpResponse(status=404)
 
 
 @login_required(login_url="account_login")
