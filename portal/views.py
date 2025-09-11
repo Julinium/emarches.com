@@ -256,18 +256,31 @@ def con_details(request, pk=None):	 # if request.user.is_authenticated:
 					total_size += sizens
 					files_info.append({
 						"name": entry,
-						"size": sizens
+						"size": sizens,
+						"priv": 1
+					})
+	
+	readmedia = os.path.join(C.MEDIA_ROOT, 'readme')
+	if os.path.exists(readmedia):
+		readme_list = os.listdir(readmedia)
+		for entry in readme_list:
+			full_path = os.path.join(readmedia, entry)
+			if os.path.exists(full_path):
+				if os.path.isfile(full_path):
+					sizens = os.path.getsize(full_path)
+					files_info.append({
+						"name": entry,
+						"size": sizens,
+						"priv": 0
 					})
 
-	# if len(files_list) > 0:
-		# for f in files_list: total_size += os.path.getsize(os.path.join(dce_dir, f))
 
 	context = {
 		"con": con,
 		"dlink": con.portal_link,
 		'faved': faved,
 		'dsize': total_size,
-		'flist' : files_list,
+		# 'flist' : files_list,
 		'finfo': files_info,
 		'dce_dir': dce_dir,
 		}
@@ -398,17 +411,22 @@ def clear_favs(request):
 
 
 @login_required(login_url="account_login")
-def con_get_file(request, pk=None, fn=None):
+def con_get_file(request, pk=None, fn=None, fp=1):
 
 	if request.method != 'GET': return HttpResponse(status=403)
 	if pk == None or fn == None: return HttpResponse(status=404)
 
 	con = Consultation.objects.get(id=pk)
 	if not con : return HttpResponse(status=404)
-
-	dce_dir = os.path.join(os.path.join(C.MEDIA_ROOT, 'dce'), C.DL_PATH_PREFIX + con.portal_id)
-	file_path = os.path.join(os.path.join('dce', C.DL_PATH_PREFIX + con.portal_id), fn)
-	file_fp = os.path.join(dce_dir, fn)
+	
+	if fp == 0:
+		dce_dir = os.path.join(C.MEDIA_ROOT, 'readme')
+		file_path = os.path.join('readme', fn)
+		file_fp = os.path.join(dce_dir, fn)
+	else:
+		dce_dir = os.path.join(os.path.join(C.MEDIA_ROOT, 'dce'), C.DL_PATH_PREFIX + con.portal_id)
+		file_path = os.path.join(os.path.join('dce', C.DL_PATH_PREFIX + con.portal_id), fn)
+		file_fp = os.path.join(dce_dir, fn)
 
 	if os.path.exists(file_fp):
 
@@ -416,16 +434,16 @@ def con_get_file(request, pk=None, fn=None):
 		x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
 		if x_forwarded_for: user_ip = x_forwarded_for.split(',')[0]
 		else: user_ip = request.META.get('REMOTE_ADDR', '')
-
-		udf = UserDownloadFile(
-			consultation = con.portal_id,
-			user = request.user,
-			user_agent = user_agent,
-			user_ip = user_ip,
-			file_name = os.path.basename(file_fp),
-			file_size = os.path.getsize(file_fp),
-			)
-		udf.save()
+		if fp == 1:
+			udf = UserDownloadFile(
+				consultation = con.portal_id,
+				user = request.user,
+				user_agent = user_agent,
+				user_ip = user_ip,
+				file_name = os.path.basename(file_fp),
+				file_size = os.path.getsize(file_fp),
+				)
+			udf.save()
 
 		# Deprecated: Serve using Python.
 		# with open(file_fp, 'rb') as fh:

@@ -16,7 +16,7 @@
             {% include 'base/includes/message.html' with id="defToast" teint='success' message=_('Item removed from Favourites.') %}
             {% include 'base/includes/message.html' with id="copyToast" teint='success' message=_('URL was copied to clipboard.') %}
         </div>
-        
+
         <div id="dldModal" class="modal fade" tabindex="-1" aria-labelledby="dldModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -28,7 +28,7 @@
                         {% if finfo  %}
                             <div class="small text-muted">{% translate "Once you click on an item, your browser or device should handle the download process." %}</div>
                             {% for f in finfo %}
-                                <a class="text-decoration-none w-100 btn btn-outline-primary text-start mt-2" href="{% url 'portal_con_get_file' con.id f.name %}"{% if finfo|length == 1 %} data-bs-dismiss="modal"{% endif %}>
+                                <a class="text-decoration-none w-100 btn btn-outline-primary text-start mt-2" href="{% url 'portal_con_get_file' con.id f.name f.priv %}"{% if finfo|length == 1 %} data-bs-dismiss="modal"{% endif %}>
                                     <span class=""><i class="bi bi-arrow-down-square-fill"></i></span>
                                     <span class="ms-1 badge text-bg-primary">{{ f.size|filesizeformat }}</span>
                                     <span class="ms-1">{{ f.name }}</span>
@@ -68,9 +68,9 @@
                         {% endif %}
                         <div class="mx-1">
                             <i class="bi bi-arrow-down-square-fill"></i> 
-                            <span class="d-none d-md-inline">{% translate 'Download' %}{% if flist %} |{% endif %}</span>
+                            <span class="d-none d-md-inline">{% translate 'Download' %}{% if finfo %} |{% endif %}</span>
                         </div>
-                        {% if flist %}<span class="px-1">{{ dsize|filesizeformat }}</span>{% endif %}
+                        {% if finfo %}<span class="px-1">{{ dsize|filesizeformat }}</span>{% endif %}
                     </div>
                 </a>
                 <button class="btn btn-outline-primary mt-1 px-2" onclick="sharePage()">

@@ -141,7 +141,7 @@ LANGUAGES = [
     ("es", _("Spanish")),
     ("de", _("German")),
     ]
-    
+
 LOCALE_PATHS = [BASE_DIR / "locale", ]
 USE_THOUSAND_SEPARATOR = True
 
@@ -150,8 +150,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = os.getenv("MEDIA_ROOT")
+# MEDIA_README_DIR = os.getenv("MEDIA_README_DIR")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -185,9 +185,6 @@ AXES_LOGGING = True # Optional: Store logs for audit purposes
 # Coloring messages for UI styling
 MESSAGE_TAGS = {
         messages.DEBUG: 'secondary',
-        # messages.INFO: 'alert-info',
-        # messages.SUCCESS: 'alert-success',
-        # messages.WARNING: 'alert-warning',
         messages.ERROR: 'danger',
  }
 
@@ -205,31 +202,9 @@ DEFAULT_FROM_EMAIL  = os.getenv("DEFAULT_FROM_EMAIL")
 
 COUNTRIES_FIRST = ['MA', 'FR', 'US',]
 
-
-# DEBUG_MODE = False          # Display more output
-# HEADLESS_MODE = True        # Don't show web browser.
-# SITE_ROOT = "https://www.marchespublics.gov.ma/"
-# SITE_INDEX = "https://www.marchespublics.gov.ma/index.php"
-
-# WORKING_DIR = os.path.dirname(os.path.abspath(sys.argv[0]))
-# WORKING_DIR = '/var/opt/emarches.com'
-# MEDIA_ROOT = os.path.join(WORKING_DIR, "media")
-
-# Prefix for the downloaded DCE file. A unique integer id comes after this prefix.
-# DOWNLOAD_WAIT_TIME = 300
-
-# Credentials used to download the DCE's
-# DL_FIRST_NAME = 'Yassir'
-# DL_LAST_NAME = 'Benhammou'
-# DL_EMAIL = 'ybhammou@scilbup-sehcram.ma'
-
-
 DL_PATH_PREFIX = 'DCE-'
 ITEMS_PER_PAGE = 25
 NA_PLACE_HOLDER = '-'
 PAST_GRACEFUL_HOURS = 0
 DEFAULT_DELAY_DAYS_MIN = 0
 DEFAULT_DELAY_DAYS_MAX = 30
-
-
-# DEMO_LENGTH = 15
