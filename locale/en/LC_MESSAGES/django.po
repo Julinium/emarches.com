@@ -4,10 +4,9 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+msgstr "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-19 07:50+0000\n"
+"POT-Creation-Date: 2025-09-11 22:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,8 +34,7 @@ msgid ""
 "services in Morocco. Since our establishment in 2024, we have been dedicated "
 "to helping businesses and organizations unlock opportunities in the Moroccan "
 "public procurement market."
-msgstr ""
-"eMarches is a growing consultancy specializing in public procurement "
+msgstr "eMarches is a growing consultancy specializing in public procurement "
 "services in Morocco. Since our establishment in 2024, we have been dedicated "
 "to helping businesses and organizations unlock opportunities in the Moroccan "
 "public procurement market.        "
@@ -50,8 +48,7 @@ msgid ""
 "The hedgehog symbolizes intelligence, adaptability, and strategic thinking. "
 "It reflects our resourceful approach to overcoming challenges. Like the "
 "hedgehog, we achieve success through clever solutions and resilience."
-msgstr ""
-"The hedgehog symbolizes intelligence, adaptability, and strategic thinking. "
+msgstr "The hedgehog symbolizes intelligence, adaptability, and strategic thinking. "
 "It reflects our resourceful approach to overcoming challenges. Like the "
 "hedgehog, we achieve success through clever solutions and resilience."
 
@@ -65,8 +62,7 @@ msgid ""
 "businesses, providing them with the expertise and tools needed to achieve "
 "success. We aim to foster transparency, compliance, and efficiency, enabling "
 "our clients to thrive in this competitive sector."
-msgstr ""
-"Our mission is to simplify and streamline the public procurement process for "
+msgstr "Our mission is to simplify and streamline the public procurement process for "
 "businesses, providing them with the expertise and tools needed to achieve "
 "success. We aim to foster transparency, compliance, and efficiency, enabling "
 "our clients to thrive in this competitive sector."
@@ -81,8 +77,7 @@ msgid ""
 "recognized the growing need for expert guidance in Morocco’s public "
 "procurement landscape. What started as a small consultancy has evolved into "
 "a aspiring firm, serving clients across diverse industries."
-msgstr ""
-"eMarches was founded in 2024 by a team of young talented entrepreneurs, who "
+msgstr "eMarches was founded in 2024 by a team of young talented entrepreneurs, who "
 "recognized the growing need for expert guidance in Morocco’s public "
 "procurement landscape. What started as a small consultancy has evolved into "
 "an aspiring firm, serving clients across diverse industries.        "
@@ -106,8 +101,7 @@ msgstr "CEO"
 #: base/templates/base/about.html:59
 msgid ""
 "Strategic approach to leadership and integrate of cutting-edge technologies."
-msgstr ""
-"Strategic approach to leadership and integration of cutting-edge "
+msgstr "Strategic approach to leadership and integration of cutting-edge "
 "technologies."
 
 #: base/templates/base/about.html:66
@@ -146,8 +140,7 @@ msgstr "Ability to efficiently build scalable, secure, and innovative systems."
 msgid ""
 "And a large number of skilled people in several key roles that complement "
 "the leadership team and support the business's growth."
-msgstr ""
-"And a large number of skilled people in several key roles that complement "
+msgstr "And a large number of skilled people in several key roles that complement "
 "the leadership team and support the business's growth."
 
 #: base/templates/base/about.html:91
@@ -188,8 +181,7 @@ msgid ""
 "committed to staying at the forefront of this dynamic market. We aim to "
 "expand our services, embrace new technologies, and support even more "
 "businesses in achieving their goals."
-msgstr ""
-"As Morocco’s public procurement sector continues to grow, eMarches is "
+msgstr "As Morocco’s public procurement sector continues to grow, eMarches is "
 "committed to staying at the forefront of this dynamic market. We aim to "
 "expand our services, embrace new technologies, and support even more "
 "businesses in achieving their goals.        "
@@ -206,15 +198,13 @@ msgstr "Translations status not found!"
 msgid ""
 "You can help us improve translations or add your language if it's not "
 "already supported."
-msgstr ""
-"You can help us improve translations or add your language if it's not "
+msgstr "You can help us improve translations or add your language if it's not "
 "already supported."
 
 #: base/templates/base/about.html:140
 msgid ""
 "Feel free to contact us using contact details on our website. Thank you."
-msgstr ""
-"Feel free to contact us using contact details on our website. Thank you."
+msgstr "Feel free to contact us using contact details on our website. Thank you."
 
 #: base/templates/base/contact.html:5 base/templates/base/contact.html:9
 msgid "Send Us a Message"
@@ -224,8 +214,7 @@ msgstr "Send Us a Message"
 msgid ""
 "Feel free to reach out to us for any inquiries or assistance. Our team is "
 "here to help you!"
-msgstr ""
-"Feel free to reach out to us for any inquiries or assistance. Our team is "
+msgstr "Feel free to reach out to us for any inquiries or assistance. Our team is "
 "here to help you!"
 
 #: base/templates/base/contact.html:18
@@ -299,7 +288,7 @@ msgstr "Any"
 #: base/templates/base/profile.html:218
 #: base/templates/base/profile_update.html:91 base/views.py:124
 #: crm/templates/crm/lead_edit.html:52
-#: portal/templates/portal/con-details.html:475
+#: portal/templates/portal/con-details.html:490
 msgid "Email"
 msgstr "Email"
 
@@ -311,7 +300,7 @@ msgstr "Email"
 #: base/templates/base/profile.html:211
 #: base/templates/base/profile_update.html:85 base/views.py:125
 #: crm/templates/crm/lead_edit.html:64
-#: portal/templates/portal/con-details.html:472
+#: portal/templates/portal/con-details.html:487
 msgid "Phone"
 msgstr "Phone"
 
@@ -362,8 +351,7 @@ msgstr "Thank You!"
 msgid ""
 "Your message has been successfully submitted. We will get back to you "
 "shortly."
-msgstr ""
-"Your message has been successfully submitted. We will get back to you "
+msgstr "Your message has been successfully submitted. We will get back to you "
 "shortly."
 
 #: base/templates/base/contact_success.html:13
@@ -386,8 +374,7 @@ msgstr "FAQs"
 msgid ""
 "We sent you this message because your email was used on eMarches.com contact "
 "form."
-msgstr ""
-"We sent you this message because your email was used on eMarches.com contact "
+msgstr "We sent you this message because your email was used on eMarches.com contact "
 "form."
 
 #: base/templates/base/emails/submitted-bs.html:17
@@ -415,8 +402,7 @@ msgstr "IP address"
 #: base/templates/base/emails/submitted.html:27
 msgid ""
 "You can safely ignore this message if you do not recognize this activity."
-msgstr ""
-"You can safely ignore this message if you do not recognize this activity."
+msgstr "You can safely ignore this message if you do not recognize this activity."
 
 #: base/templates/base/emails/submitted-bs.html:29
 #: base/templates/base/emails/submitted.html:28
@@ -492,8 +478,7 @@ msgstr "This one is on us!"
 msgid ""
 "Our server run into an error and could not properly handle your request. You "
 "can help us understand what happened and correct it. Thank you"
-msgstr ""
-"Our server ran into an error and could not properly handle your request. You "
+msgstr "Our server ran into an error and could not properly handle your request. You "
 "can help us understand what happened and correct it. Thank you."
 
 #: base/templates/base/errors/unallowed.html:5
@@ -512,8 +497,7 @@ msgstr "This is not for you!"
 msgid ""
 "You are not permitted to access this page. Please make sure you login using "
 "the right account."
-msgstr ""
-"You are not permitted to access this page. Please make sure you log in using "
+msgstr "You are not permitted to access this page. Please make sure you log in using "
 "the right account."
 
 #: base/templates/base/errors/unallowed.html:14
@@ -537,8 +521,7 @@ msgstr "Frequently Asked Questions"
 #: base/templates/base/faqs.html:9
 msgid ""
 "Have a question? Chances are someone already asked it and we answered it."
-msgstr ""
-"Have a question? Chances are someone already asked it and we answered it."
+msgstr "Have a question? Chances are someone already asked it and we answered it."
 
 #: base/templates/base/faqs.html:19
 msgid "What is public procurement?"
@@ -550,8 +533,7 @@ msgid ""
 "public organizations acquire goods, services, or works from private sector "
 "businesses, individuals or organizations. This process is regulated to "
 "ensure transparency, fairness, and value for taxpayers."
-msgstr ""
-"Public procurement refers to the process by which government entities and "
+msgstr "Public procurement refers to the process by which government entities and "
 "public organizations acquire goods, services, or works from private sector "
 "businesses, individuals, or organizations. This process is regulated to "
 "ensure transparency, fairness, and value for taxpayers."
@@ -563,8 +545,7 @@ msgstr "Are you affiliated with a governmental entity?"
 #: base/templates/base/faqs.html:39
 msgid ""
 "No. We are not affiliated in any way to any public or governmental entity."
-msgstr ""
-"No. We are not affiliated in any way with any public or governmental entity."
+msgstr "No. We are not affiliated in any way with any public or governmental entity."
 
 #: base/templates/base/faqs.html:49
 msgid "Where do you get your data from?"
@@ -574,24 +555,21 @@ msgstr "Where do you get your data from?"
 msgid ""
 "We collect data from the portal dedicated to public tenders. We debloat, "
 "aggregate and reorganize data and store it in our database."
-msgstr ""
-"We collect data from the portal dedicated to public tenders. We clean, "
+msgstr "We collect data from the portal dedicated to public tenders. We clean, "
 "aggregate, reorganize the data, and store it in our database."
 
 #: base/templates/base/faqs.html:55
 msgid ""
 "Then we use tdata from our database to provide our services in a better, "
 "more ergonomic, and more meaningful way. "
-msgstr ""
-"Then we use data from our database to provide our services in a better, more "
+msgstr "Then we use data from our database to provide our services in a better, more "
 "ergonomic, and more meaningful way."
 
 #: base/templates/base/faqs.html:56
 msgid ""
 "To measure a bit of the difference that it makes, you can visit the official "
 "portal preferably using a mobile. Here is the link, good luck:"
-msgstr ""
-"To see the difference it makes, you can visit the official portal, "
+msgstr "To see the difference it makes, you can visit the official portal, "
 "preferably using a mobile device. Here is the link. Good luck:"
 
 #: base/templates/base/faqs.html:66
@@ -602,16 +580,14 @@ msgstr "How often do you update the data ?"
 msgid ""
 "We are trying to be as up-to-date as we can. Our teams work hard to bring "
 "any available data update as soon as it is published."
-msgstr ""
-"We strive to stay as up-to-date as possible. Our teams work hard to bring "
+msgstr "We strive to stay as up-to-date as possible. Our teams work hard to bring "
 "data updates as soon as they are published."
 
 #: base/templates/base/faqs.html:72
 msgid ""
 "For now, we update the list of available Tenders every 3 hours. If the need "
 "araises in the future, we may narrow down the gap to 1 hour or less."
-msgstr ""
-"Currently, we update the list of available tenders every 3 hours. If the "
+msgstr "Currently, we update the list of available tenders every 3 hours. If the "
 "need arises in the future, we may reduce the interval to 1 hour or less."
 
 #: base/templates/base/faqs.html:82
@@ -622,16 +598,14 @@ msgstr "How accurate is the information on your website about tenders?"
 msgid ""
 "We get information on Tenders from the official public website as fidelly as "
 "possible."
-msgstr ""
-"We source information on tenders from the official public website as "
+msgstr "We source information on tenders from the official public website as "
 "accurately as possible."
 
 #: base/templates/base/faqs.html:88
 msgid ""
 "If information on our website is wrong or inaccurate, it most probably comes "
 "from the public portal."
-msgstr ""
-"If the information on our website is wrong or inaccurate, it most likely "
+msgstr "If the information on our website is wrong or inaccurate, it most likely "
 "originates from the public portal."
 
 #: base/templates/base/faqs.html:98
@@ -644,8 +618,7 @@ msgid ""
 "of public procurement in Morocco. We provide services such as market "
 "research, bid preparation, compliance support, and training to ensure your "
 "success in this competitive sector."
-msgstr ""
-"Our consultancy specializes in guiding businesses through the complexities "
+msgstr "Our consultancy specializes in guiding businesses through the complexities "
 "of public procurement in Morocco. We provide services such as market "
 "research, bid preparation, compliance support, and training to ensure your "
 "success in this competitive sector."
@@ -659,8 +632,7 @@ msgid ""
 "We work with a wide range of industries, including construction, technology, "
 "healthcare, manufacturing, and more. Our tailored approach ensures that our "
 "services meet the unique needs of each industry."
-msgstr ""
-"We work with a wide range of industries, including construction, technology, "
+msgstr "We work with a wide range of industries, including construction, technology, "
 "healthcare, manufacturing, and more. Our tailored approach ensures that our "
 "services meet the unique needs of each industry."
 
@@ -673,8 +645,7 @@ msgid ""
 "Yes, we offer training and workshops designed to build your team’s expertise "
 "in public procurement processes, ensuring compliance and increasing your "
 "chances of success in bidding."
-msgstr ""
-"Yes, we offer training and workshops designed to build your team’s expertise "
+msgstr "Yes, we offer training and workshops designed to build your team’s expertise "
 "in public procurement processes, ensuring compliance and increasing your "
 "chances of success in bidding."
 
@@ -695,8 +666,7 @@ msgstr "Public"
 #: base/templates/base/faqs.html:149
 msgid ""
 "Access to search and limited tenders information without even an account."
-msgstr ""
-"Access to search and limited tenders information without even creating an "
+msgstr "Access to search and limited tenders information without even creating an "
 "account."
 
 #: base/templates/base/faqs.html:150
@@ -709,8 +679,7 @@ msgstr "Startup"
 msgid ""
 "Access to advanced search, unlimited tenders information, limited files "
 "downloads, favourites, ... with a free account."
-msgstr ""
-"Access to advanced search, unlimited tenders information, limited file "
+msgstr "Access to advanced search, unlimited tenders information, limited file "
 "downloads, favourites, etc., with a free account."
 
 #: base/templates/base/faqs.html:151
@@ -723,24 +692,21 @@ msgstr "Pro"
 msgid ""
 "Like Startup, with free unlimited files downloads, favourites, customized "
 "notifications, ... with a paid account."
-msgstr ""
-"Like Startup, with free unlimited file downloads, favourites, customized "
+msgstr "Like Startup, with free unlimited file downloads, favourites, customized "
 "notifications, etc., with a paid account."
 
 #: base/templates/base/faqs.html:152
 msgid ""
 "You can also purchase extra services like Technical and Regulatory support, "
 "Bidding preparation, ..."
-msgstr ""
-"You can also purchase extra services like technical and regulatory support, "
+msgstr "You can also purchase extra services like technical and regulatory support, "
 "bidding preparation, etc."
 
 #: base/templates/base/faqs.html:153
 msgid ""
 "As every business is unique, we calculate the price to charge for our "
 "services based on your business needs and goals."
-msgstr ""
-"As every business is unique, we calculate the price to charge for our "
+msgstr "As every business is unique, we calculate the price to charge for our "
 "services based on your business needs and goals."
 
 #: base/templates/base/faqs.html:163
@@ -752,8 +718,7 @@ msgid ""
 "Getting started is simple! Contact us through our website or give us a call. "
 "We’ll schedule an initial consultation to understand your needs and discuss "
 "how our services can help you achieve your goals."
-msgstr ""
-"Getting started is simple! Contact us through our website or give us a call. "
+msgstr "Getting started is simple! Contact us through our website or give us a call. "
 "We’ll schedule an initial consultation to understand your needs and discuss "
 "how our services can help you achieve your goals."
 
@@ -775,18 +740,16 @@ msgid "Site under construction. Some features may not work correctly."
 msgstr "Site under construction. Some features may not work correctly."
 
 #: base/templates/base/includes/carousel.html:36
-#: crm/templates/crm/favos_list.html:36 crm/templates/crm/leads_list.html:48
-#: crm/templates/crm/searchquery_detail.html:33
-#: crm/templates/crm/searchquery_list.html:53
-#: crm/templates/crm/unfavs_list.html:34
+#: crm/templates/crm/favos_list.html:36
+#: crm/templates/crm/includes/paginator.html:15
+#: crm/templates/crm/leads_list.html:48 crm/templates/crm/unfavs_list.html:34
 msgid "Previous"
 msgstr "Previous"
 
 #: base/templates/base/includes/carousel.html:40
-#: crm/templates/crm/favos_list.html:58 crm/templates/crm/leads_list.html:70
-#: crm/templates/crm/searchquery_detail.html:43
-#: crm/templates/crm/searchquery_list.html:63
-#: crm/templates/crm/unfavs_list.html:56
+#: crm/templates/crm/favos_list.html:58
+#: crm/templates/crm/includes/paginator.html:29
+#: crm/templates/crm/leads_list.html:70 crm/templates/crm/unfavs_list.html:56
 msgid "Next"
 msgstr "Next"
 
@@ -800,7 +763,7 @@ msgstr "About"
 
 #: base/templates/base/includes/footer.html:19
 #: base/templates/base/includes/navbar.html:51
-#: portal/templates/portal/con-details.html:465
+#: portal/templates/portal/con-details.html:480
 msgid "Contact"
 msgstr "Contact"
 
@@ -838,14 +801,13 @@ msgid ""
 "eMarches is your trusted partner in navigating the Moroccan public "
 "procurement market. With expertise and dedication, we help businesses "
 "succeed."
-msgstr ""
-"eMarches is your trusted partner in navigating the Moroccan public "
+msgstr "eMarches is your trusted partner in navigating the Moroccan public "
 "procurement market. With expertise and dedication, we help businesses "
 "succeed."
 
 #: base/templates/base/includes/hero.html:9
 #: base/templates/base/includes/navbar.html:34
-#: portal/templates/portal/bdc-landing.html:16
+#: portal/templates/portal/bdc-landing.html:15
 msgid "Tenders"
 msgstr "Tenders"
 
@@ -878,7 +840,7 @@ msgstr "Insights"
 
 #: base/templates/base/includes/navbar.html:47
 #: portal/templates/portal/bdc-landing.html:5
-#: portal/templates/portal/bdc-landing.html:9
+#: portal/templates/portal/bdc-landing.html:8
 msgid "Purchase Orders"
 msgstr "Purchase Orders"
 
@@ -948,8 +910,7 @@ msgid ""
 "We provide our services FREE of charges for individuals, startups and SMBs. "
 "For Entreprises, we added a paid plan with extra services all at a fraction "
 "of the price."
-msgstr ""
-"We provide our services FREE of charge for individuals, startups, and SMBs. "
+msgstr "We provide our services FREE of charge for individuals, startups, and SMBs. "
 "For enterprises, we offer a paid plan with extra services, all at a fraction "
 "of the price."
 
@@ -1089,8 +1050,7 @@ msgid ""
 "leveraging in-depth market analysis. We examine trends, competitor activity, "
 "and emerging sectors to provide insights that drive growth and enhance your "
 "strategic decision-making."
-msgstr ""
-"Identify opportunities that perfectly align with your business goals by "
+msgstr "Identify opportunities that perfectly align with your business goals by "
 "leveraging in-depth market analysis. We examine trends, competitor activity, "
 "and emerging sectors to provide insights that drive growth and enhance your "
 "strategic decision-making."
@@ -1109,8 +1069,7 @@ msgid ""
 "competitive proposals to ensuring timely submissions, we streamline the "
 "entire process to increase your chances of success in winning tenders and "
 "contracts."
-msgstr ""
-"Leave the complexities of bid preparation to us. From drafting compliant and "
+msgstr "Leave the complexities of bid preparation to us. From drafting compliant and "
 "competitive proposals to ensuring timely submissions, we streamline the "
 "entire process to increase your chances of success in winning tenders and "
 "contracts."
@@ -1133,8 +1092,7 @@ msgid ""
 "the process by offering tailored guidance to ensure your business remains "
 "compliant with all regulations, saving you time and avoiding unnecessary "
 "obstacles."
-msgstr ""
-"Navigating Morocco's complex legal framework can be daunting. We simplify "
+msgstr "Navigating Morocco's complex legal framework can be daunting. We simplify "
 "the process by offering tailored guidance to ensure your business remains "
 "compliant with all regulations, saving you time and avoiding unnecessary "
 "obstacles."
@@ -1149,8 +1107,7 @@ msgid ""
 "success. Whether you're implementing cutting-edge technology or fine-tuning "
 "existing systems, we ensure your operations are optimized for maximum "
 "efficiency."
-msgstr ""
-"Equipping your business with the right tools and expertise is essential for "
+msgstr "Equipping your business with the right tools and expertise is essential for "
 "success. Whether you're implementing cutting-edge technology or fine-tuning "
 "existing systems, we ensure your operations are optimized for maximum "
 "efficiency."
@@ -1165,8 +1122,7 @@ msgid ""
 "procurement. Through interactive and customized training sessions, we ensure "
 "your workforce is well-prepared to tackle procurement challenges with "
 "confidence."
-msgstr ""
-"Empower your team with the skills and knowledge needed to thrive in public "
+msgstr "Empower your team with the skills and knowledge needed to thrive in public "
 "procurement. Through interactive and customized training sessions, we ensure "
 "your workforce is well-prepared to tackle procurement challenges with "
 "confidence."
@@ -1181,8 +1137,7 @@ msgid ""
 "implementation by offering support in compliance, performance monitoring, "
 "and relationship management, enabling you to deliver excellence at every "
 "stage."
-msgstr ""
-"Winning a contract is just the beginning. We help ensure successful "
+msgstr "Winning a contract is just the beginning. We help ensure successful "
 "implementation by offering support in compliance, performance monitoring, "
 "and relationship management, enabling you to deliver excellence at every "
 "stage."
@@ -1194,16 +1149,14 @@ msgstr "What Our Clients Say"
 #: base/templates/base/includes/testimonials.html:4
 msgid ""
 "Stories from clients who trusted us to navigate the public market landscape."
-msgstr ""
-"Stories from clients who trusted us to navigate the public market landscape."
+msgstr "Stories from clients who trusted us to navigate the public market landscape."
 
 #: base/templates/base/includes/testimonials.html:12
 msgid ""
 "Working with eMarches revolutionized our approach to public market "
 "strategies. Their expertise in market dynamics and tailored guidance led to "
 "impressive growth in just six months. We couldn’t have done it without them!"
-msgstr ""
-"Working with eMarches revolutionized our approach to public market "
+msgstr "Working with eMarches revolutionized our approach to public market "
 "strategies. Their expertise in market dynamics and tailored guidance led to "
 "impressive growth in just six months. We couldn’t have done it without them!"
 
@@ -1221,8 +1174,7 @@ msgid ""
 "markets. Their expertise was invaluable, and their proactive communication "
 "made all the difference. We are now in a much stronger position to take on "
 "the competition."
-msgstr ""
-"The team at eMarches helped us navigate the complexities of entering new "
+msgstr "The team at eMarches helped us navigate the complexities of entering new "
 "markets. Their expertise was invaluable, and their proactive communication "
 "made all the difference. We are now in a much stronger position to take on "
 "the competition."
@@ -1240,8 +1192,7 @@ msgid ""
 "From consultation to market strategy, eMarches provided valuable insights "
 "and practical solutions. Their data-driven approach gave us the confidence "
 "to make bold decisions. Highly recommended!"
-msgstr ""
-"From consultation to market strategy, eMarches provided valuable insights "
+msgstr "From consultation to market strategy, eMarches provided valuable insights "
 "and practical solutions. Their data-driven approach gave us the confidence "
 "to make bold decisions. Highly recommended!"
 
@@ -1258,8 +1209,7 @@ msgid ""
 "eMarches stands out for their deep understanding of our industry challenges. "
 "They refined our messaging and created impactful strategies that resonated "
 "in the public market. Their support has been a game-changer."
-msgstr ""
-"eMarches stands out for their deep understanding of our industry challenges. "
+msgstr "eMarches stands out for their deep understanding of our industry challenges. "
 "They refined our messaging and created impactful strategies that resonated "
 "in the public market. Their support has been a game-changer."
 
@@ -1275,8 +1225,7 @@ msgstr "CKFG SA"
 msgid ""
 "Ready to see what we can do for you? Contact us today to start your journey "
 "to success in the public market!"
-msgstr ""
-"Ready to see what we can do for you? Contact us today to start your journey "
+msgstr "Ready to see what we can do for you? Contact us today to start your journey "
 "to success in the public market!"
 
 #: base/templates/base/includes/testimonials.html:57
@@ -1291,15 +1240,13 @@ msgstr "Watch our video"
 msgid ""
 "Discover the key features of our platform and learn how to make the most out "
 "of it to achieve your goals effortlessly."
-msgstr ""
-"Discover the key features of our platform and learn how to make the most out "
+msgstr "Discover the key features of our platform and learn how to make the most out "
 "of it to achieve your goals effortlessly."
 
 #: base/templates/base/includes/tutorial.html:5
 msgid ""
 "The right video will be available soon as this one is only a placeholder."
-msgstr ""
-"The right video will be available soon as this one is only a placeholder."
+msgstr "The right video will be available soon as this one is only a placeholder."
 
 #: base/templates/base/includes/tutorial.html:10
 msgid "Your browser does not support the video tag."
@@ -1322,8 +1269,7 @@ msgstr "Legal Information"
 msgid ""
 "This page provides our essential legal information. Please review it to "
 "understand your rights and our commitments."
-msgstr ""
-"This page provides our essential legal information. Please review it to "
+msgstr "This page provides our essential legal information. Please review it to "
 "understand your rights and our commitments."
 
 #: base/templates/base/legal.html:17 base/templates/base/legal.html:28
@@ -1344,8 +1290,7 @@ msgid ""
 "your personal information. This Privacy Policy outlines the types of "
 "information we collect, how we use it, and the measures we take to ensure "
 "your data is handled securely and responsibly."
-msgstr ""
-"At eMarches.com, we value your privacy and are committed to safeguarding "
+msgstr "At eMarches.com, we value your privacy and are committed to safeguarding "
 "your personal information. This Privacy Policy outlines the types of "
 "information we collect, how we use it, and the measures we take to ensure "
 "your data is handled securely and responsibly."
@@ -1359,8 +1304,7 @@ msgid ""
 "We only collect personal information explicitly provided by you. Examples "
 "include your name, email address, phone number, and any other details you "
 "submit through our contact forms or other interactions."
-msgstr ""
-"We only collect personal information explicitly provided by you. Examples "
+msgstr "We only collect personal information explicitly provided by you. Examples "
 "include your name, email address, phone number, and any other details you "
 "submit through our contact forms or other interactions."
 
@@ -1370,15 +1314,13 @@ msgstr "For security purposes, we may also collect:"
 
 #: base/templates/base/legal.html:38
 msgid "IP Address: Used to ensure safe access and prevent fraudulent activity."
-msgstr ""
-"IP Address: Used to ensure safe access and prevent fraudulent activity."
+msgstr "IP Address: Used to ensure safe access and prevent fraudulent activity."
 
 #: base/templates/base/legal.html:39
 msgid ""
 "User-Agent Information: A string sent by your browser or device that helps "
 "identify the type of device, operating system, and browser being used."
-msgstr ""
-"User-Agent Information: A string sent by your browser or device that helps "
+msgstr "User-Agent Information: A string sent by your browser or device that helps "
 "identify the type of device, operating system, and browser being used."
 
 #: base/templates/base/legal.html:44
@@ -1390,8 +1332,7 @@ msgid ""
 "The information you provide is used solely for the purposes for which it was "
 "submitted, such as responding to inquiries or providing requested services. "
 "In addition:"
-msgstr ""
-"The information you provide is used solely for the purposes for which it was "
+msgstr "The information you provide is used solely for the purposes for which it was "
 "submitted, such as responding to inquiries or providing requested services. "
 "In addition:"
 
@@ -1400,8 +1341,7 @@ msgid ""
 "We may send you commercial offers if, and only if, you have explicitly "
 "consented by checking the relevant box on our forms (this box is unchecked "
 "by default)."
-msgstr ""
-"We may send you commercial offers if, and only if, you have explicitly "
+msgstr "We may send you commercial offers if, and only if, you have explicitly "
 "consented by checking the relevant box on our forms (this box is unchecked "
 "by default)."
 
@@ -1409,8 +1349,7 @@ msgstr ""
 msgid ""
 "We do not sell, trade, or share your data with third parties for marketing "
 "purposes."
-msgstr ""
-"We do not sell, trade, or share your data with third parties for marketing "
+msgstr "We do not sell, trade, or share your data with third parties for marketing "
 "purposes."
 
 #: base/templates/base/legal.html:53
@@ -1422,8 +1361,7 @@ msgid ""
 "We take every reasonable measure to protect your personal information. This "
 "includes implementing technical and organizational safeguards to prevent "
 "unauthorized access, loss, or misuse of data."
-msgstr ""
-"We take every reasonable measure to protect your personal information. This "
+msgstr "We take every reasonable measure to protect your personal information. This "
 "includes implementing technical and organizational safeguards to prevent "
 "unauthorized access, loss, or misuse of data."
 
@@ -1434,8 +1372,7 @@ msgstr "User Rights"
 #: base/templates/base/legal.html:59
 msgid ""
 "You have the right to control how your data is used. Specifically, you may:"
-msgstr ""
-"You have the right to control how your data is used. Specifically, you may:"
+msgstr "You have the right to control how your data is used. Specifically, you may:"
 
 #: base/templates/base/legal.html:61
 msgid "Opt out of receiving promotional communications at any time."
@@ -1445,8 +1382,7 @@ msgstr "Opt out of receiving promotional communications at any time."
 msgid ""
 "Request access to, correction of, or deletion of your personal data, subject "
 "to applicable legal obligations."
-msgstr ""
-"Request access to, correction of, or deletion of your personal data, subject "
+msgstr "Request access to, correction of, or deletion of your personal data, subject "
 "to applicable legal obligations."
 
 #: base/templates/base/legal.html:67
@@ -1457,8 +1393,7 @@ msgstr "Compliance with Laws"
 msgid ""
 "We handle all user data in accordance with applicable laws and regulations "
 "in Morocco."
-msgstr ""
-"We handle all user data in accordance with applicable laws and regulations "
+msgstr "We handle all user data in accordance with applicable laws and regulations "
 "in Morocco."
 
 #: base/templates/base/legal.html:72
@@ -1470,8 +1405,7 @@ msgid ""
 "We reserve the right to update this Privacy Policy to reflect changes in our "
 "practices or legal requirements. Updates will be communicated clearly and "
 "will take effect immediately upon publication."
-msgstr ""
-"We reserve the right to update this Privacy Policy to reflect changes in our "
+msgstr "We reserve the right to update this Privacy Policy to reflect changes in our "
 "practices or legal requirements. Updates will be communicated clearly and "
 "will take effect immediately upon publication."
 
@@ -1479,8 +1413,7 @@ msgstr ""
 msgid ""
 "If you have any questions or concerns about this Privacy Policy or how we "
 "handle your data, please contact us at"
-msgstr ""
-"If you have any questions or concerns about this Privacy Policy or how we "
+msgstr "If you have any questions or concerns about this Privacy Policy or how we "
 "handle your data, please contact us at"
 
 #: base/templates/base/legal.html:81 base/templates/base/legal.html:139
@@ -1493,8 +1426,7 @@ msgid ""
 "These Terms of Service ('Terms') govern your use of our website and "
 "services. By accessing or using our website, you agree to these Terms. "
 "Please read them carefully."
-msgstr ""
-"These Terms of Service ('Terms') govern your use of our website and "
+msgstr "These Terms of Service ('Terms') govern your use of our website and "
 "services. By accessing or using our website, you agree to these Terms. "
 "Please read them carefully."
 
@@ -1507,8 +1439,7 @@ msgid ""
 "Our website and its content are provided for informational and personal use "
 "only. You agree to use the website in compliance with all applicable laws "
 "and regulations. You must not:"
-msgstr ""
-"Our website and its content are provided for informational and personal use "
+msgstr "Our website and its content are provided for informational and personal use "
 "only. You agree to use the website in compliance with all applicable laws "
 "and regulations. You must not:"
 
@@ -1519,14 +1450,12 @@ msgstr "Engage in any unlawful or fraudulent activity."
 #: base/templates/base/legal.html:94
 msgid ""
 "Disrupt or attempt to interfere with the website’s functionality or security."
-msgstr ""
-"Disrupt or attempt to interfere with the website’s functionality or security."
+msgstr "Disrupt or attempt to interfere with the website’s functionality or security."
 
 #: base/templates/base/legal.html:95
 msgid ""
 "Copy, reproduce, or distribute any content without our explicit consent."
-msgstr ""
-"Copy, reproduce, or distribute any content without our explicit consent."
+msgstr "Copy, reproduce, or distribute any content without our explicit consent."
 
 #: base/templates/base/legal.html:100
 msgid "Intellectual Property"
@@ -1537,8 +1466,7 @@ msgid ""
 "All content on this website, including text, images, graphics, logos, and "
 "code, is our property or licensed to us. Unauthorized use of this content is "
 "strictly prohibited."
-msgstr ""
-"All content on this website, including text, images, graphics, logos, and "
+msgstr "All content on this website, including text, images, graphics, logos, and "
 "code, is our property or licensed to us. Unauthorized use of this content is "
 "strictly prohibited."
 
@@ -1552,8 +1480,7 @@ msgid ""
 "provided for convenience only. We are not responsible for the content, "
 "policies, or practices of third-party websites, and your use of those "
 "websites is at your own risk."
-msgstr ""
-"Our website may contain links to third-party websites. These links are "
+msgstr "Our website may contain links to third-party websites. These links are "
 "provided for convenience only. We are not responsible for the content, "
 "policies, or practices of third-party websites, and your use of those "
 "websites is at your own risk."
@@ -1568,8 +1495,7 @@ msgid ""
 "guarantee that the website will be error-free, secure, or uninterrupted. To "
 "the fullest extent permitted by law, we disclaim all warranties, express or "
 "implied."
-msgstr ""
-"We provide this website on an 'as is' and 'as available' basis. We do not "
+msgstr "We provide this website on an 'as is' and 'as available' basis. We do not "
 "guarantee that the website will be error-free, secure, or uninterrupted. To "
 "the fullest extent permitted by law, we disclaim all warranties, express or "
 "implied."
@@ -1583,8 +1509,7 @@ msgid ""
 "We are not liable for any direct, indirect, incidental, or consequential "
 "damages arising from your use of our website or services, even if we have "
 "been advised of the possibility of such damages."
-msgstr ""
-"We are not liable for any direct, indirect, incidental, or consequential "
+msgstr "We are not liable for any direct, indirect, incidental, or consequential "
 "damages arising from your use of our website or services, even if we have "
 "been advised of the possibility of such damages."
 
@@ -1596,8 +1521,7 @@ msgstr "Termination"
 msgid ""
 "We reserve the right to terminate your access to our website at any time, "
 "without notice, for any reason, including breach of these Terms."
-msgstr ""
-"We reserve the right to terminate your access to our website at any time, "
+msgstr "We reserve the right to terminate your access to our website at any time, "
 "without notice, for any reason, including breach of these Terms."
 
 #: base/templates/base/legal.html:125
@@ -1608,8 +1532,7 @@ msgstr "Governing Law"
 msgid ""
 "These Terms are governed by the laws of Morocco. Any disputes related to "
 "these Terms will be resolved exclusively in the courts of Morocco."
-msgstr ""
-"These Terms are governed by the laws of Morocco. Any disputes related to "
+msgstr "These Terms are governed by the laws of Morocco. Any disputes related to "
 "these Terms will be resolved exclusively in the courts of Morocco."
 
 #: base/templates/base/legal.html:130
@@ -1622,8 +1545,7 @@ msgid ""
 "we will notify you by posting the updated Terms on this page. Continued use "
 "of the website after changes constitutes your acceptance of the revised "
 "Terms."
-msgstr ""
-"We may update these Terms from time to time. If we make significant changes, "
+msgstr "We may update these Terms from time to time. If we make significant changes, "
 "we will notify you by posting the updated Terms on this page. Continued use "
 "of the website after changes constitutes your acceptance of the revised "
 "Terms."
@@ -1631,16 +1553,14 @@ msgstr ""
 #: base/templates/base/legal.html:136
 msgid ""
 "If you have any questions or concerns about these Terms, please contact us at"
-msgstr ""
-"If you have any questions or concerns about these Terms, please contact us at"
+msgstr "If you have any questions or concerns about these Terms, please contact us at"
 
 #: base/templates/base/legal.html:144
 msgid ""
 "We are committed to providing high-quality services and ensuring customer "
 "satisfaction. Our guarantee policy outlines the terms under which we stand "
 "by our commitments."
-msgstr ""
-"We are committed to providing high-quality services and ensuring customer "
+msgstr "We are committed to providing high-quality services and ensuring customer "
 "satisfaction. Our guarantee policy outlines the terms under which we stand "
 "by our commitments."
 
@@ -1652,8 +1572,7 @@ msgstr "Service Quality"
 msgid ""
 "We guarantee that all services provided are delivered with professionalism, "
 "care, and accuracy to the best of our ability."
-msgstr ""
-"We guarantee that all services provided are delivered with professionalism, "
+msgstr "We guarantee that all services provided are delivered with professionalism, "
 "care, and accuracy to the best of our ability."
 
 #: base/templates/base/legal.html:152
@@ -1665,8 +1584,7 @@ msgid ""
 "If you are dissatisfied with any aspect of our services, please contact us "
 "promptly. We will make every reasonable effort to address your concerns and "
 "rectify any issues."
-msgstr ""
-"If you are dissatisfied with any aspect of our services, please contact us "
+msgstr "If you are dissatisfied with any aspect of our services, please contact us "
 "promptly. We will make every reasonable effort to address your concerns and "
 "rectify any issues."
 
@@ -1686,8 +1604,7 @@ msgstr "User-provided errors or misinformation."
 msgid ""
 "Technical issues beyond our control, such as internet outages or third-party "
 "service failures."
-msgstr ""
-"Technical issues beyond our control, such as internet outages or third-party "
+msgstr "Technical issues beyond our control, such as internet outages or third-party "
 "service failures."
 
 #: base/templates/base/legal.html:162
@@ -1703,8 +1620,7 @@ msgid ""
 "To report a problem or request support, please contact us through the "
 "provided channels. Include detailed information about the issue to help us "
 "resolve it efficiently."
-msgstr ""
-"To report a problem or request support, please contact us through the "
+msgstr "To report a problem or request support, please contact us through the "
 "provided channels. Include detailed information about the issue to help us "
 "resolve it efficiently."
 
@@ -1717,8 +1633,7 @@ msgid ""
 "Our guarantee is limited to addressing issues within the scope of our "
 "services. We are not liable for any indirect or consequential damages "
 "resulting from the use or unavailability of our services."
-msgstr ""
-"Our guarantee is limited to addressing issues within the scope of our "
+msgstr "Our guarantee is limited to addressing issues within the scope of our "
 "services. We are not liable for any indirect or consequential damages "
 "resulting from the use or unavailability of our services."
 
@@ -1839,7 +1754,7 @@ msgstr "Country"
 
 #: base/templates/base/profile.html:232
 #: base/templates/base/profile_update.html:103
-#: portal/templates/portal/con-details.html:478
+#: portal/templates/portal/con-details.html:493
 msgid "Fax"
 msgstr "Fax"
 
@@ -2029,56 +1944,34 @@ msgstr "There was an error updating your profile."
 msgid "DCE Downloads"
 msgstr "DCE Downloads"
 
-#: crm/templates/crm/downloads_list.html:12
-#: crm/templates/crm/favorisations_list.html:11
-#: crm/templates/crm/favourites_list.html:14
-#: crm/templates/crm/unfavorisations_list.html:11
-msgid "Total count"
-msgstr "Total count"
-
-#: crm/templates/crm/downloads_list.html:15
-msgid "Total downloaded size"
-msgstr "Total downloaded size"
-
-#: crm/templates/crm/downloads_list.html:16
+#: crm/templates/crm/downloads_list.html:13
 msgid "bytes"
 msgstr "bytes"
 
-#: crm/templates/crm/downloads_list.html:18
-msgid "Top last"
-msgstr "Top last"
+#: crm/templates/crm/downloads_list.html:74
+#: crm/templates/crm/searchquery_list.html:129
+msgid "Anonymous"
+msgstr "Anonymous"
 
-#: crm/templates/crm/downloads_list.html:18
-#: portal/templates/portal/con-details.html:107
-msgid "days"
-msgstr "days"
-
-#: crm/templates/crm/downloads_list.html:26
-#: crm/templates/crm/favorisations_list.html:22
-#: crm/templates/crm/favourites_list.html:24
-#: crm/templates/crm/unfavorisations_list.html:22
-msgid "Latest"
-msgstr "Latest"
-
-#: crm/templates/crm/downloads_list.html:33
+#: crm/templates/crm/downloads_list.html:82
 #: crm/templates/crm/favorisations_list.html:29
 #: crm/templates/crm/favos_list.html:27
 #: crm/templates/crm/favourites_list.html:31
 #: crm/templates/crm/leads_list.html:39
-#: crm/templates/crm/searchquery_detail.html:19
-#: crm/templates/crm/searchquery_list.html:37
+#: crm/templates/crm/searchquery_detail.html:17
+#: crm/templates/crm/searchquery_list.html:140
 #: crm/templates/crm/unfavorisations_list.html:29
 #: crm/templates/crm/unfavs_list.html:25
 msgid "No records found."
 msgstr "No records found."
 
-#: crm/templates/crm/downloads_list.html:37
+#: crm/templates/crm/downloads_list.html:90
 #: crm/templates/crm/favorisations_list.html:33
 #: crm/templates/crm/favos_list.html:72
 #: crm/templates/crm/favourites_list.html:35
 #: crm/templates/crm/lead_edit.html:176 crm/templates/crm/leads_list.html:84
-#: crm/templates/crm/searchquery_detail.html:58
-#: crm/templates/crm/searchquery_list.html:78
+#: crm/templates/crm/searchquery_detail.html:24
+#: crm/templates/crm/searchquery_list.html:150
 #: crm/templates/crm/supervision.html:90
 #: crm/templates/crm/unfavorisations_list.html:33
 #: crm/templates/crm/unfavs_list.html:70
@@ -2091,20 +1984,31 @@ msgstr "Not allowed"
 msgid "Favorisations"
 msgstr "Favorisations"
 
+#: crm/templates/crm/favorisations_list.html:11
+#: crm/templates/crm/favourites_list.html:14
+#: crm/templates/crm/unfavorisations_list.html:11
+msgid "Total count"
+msgstr "Total count"
+
 #: crm/templates/crm/favorisations_list.html:14
 #: crm/templates/crm/favourites_list.html:17
 #: crm/templates/crm/unfavorisations_list.html:14
 msgid "Top Tenders"
 msgstr "Top Tenders"
 
+#: crm/templates/crm/favorisations_list.html:22
+#: crm/templates/crm/favourites_list.html:24
+#: crm/templates/crm/unfavorisations_list.html:22
+msgid "Latest"
+msgstr "Latest"
+
 #: crm/templates/crm/favos_list.html:6 crm/templates/crm/favos_list.html:9
 msgid "Favorisations List"
 msgstr "Favorisations List"
 
-#: crm/templates/crm/favos_list.html:32 crm/templates/crm/leads_list.html:44
-#: crm/templates/crm/searchquery_detail.html:24
-#: crm/templates/crm/searchquery_list.html:44
-#: crm/templates/crm/unfavs_list.html:30
+#: crm/templates/crm/favos_list.html:32
+#: crm/templates/crm/includes/paginator.html:3
+#: crm/templates/crm/leads_list.html:44 crm/templates/crm/unfavs_list.html:30
 msgid "Page navigation"
 msgstr "Page navigation"
 
@@ -2113,6 +2017,18 @@ msgstr "Page navigation"
 #: crm/templates/crm/supervision.html:58
 msgid "Favourites"
 msgstr "Favourites"
+
+#: crm/templates/crm/includes/paginator.html:8
+msgid "First"
+msgstr "First"
+
+#: crm/templates/crm/includes/paginator.html:22
+msgid "Page"
+msgstr "Page"
+
+#: crm/templates/crm/includes/paginator.html:36
+msgid "Last"
+msgstr "Last"
 
 #: crm/templates/crm/lead_edit.html:6 crm/templates/crm/lead_edit.html:9
 msgid "Lead Details"
@@ -2128,17 +2044,17 @@ msgstr "Authenticated user"
 
 #: crm/templates/crm/lead_edit.html:79 crm/templates/crm/lead_edit.html:113
 #: crm/templates/crm/lead_edit.html:126 crm/templates/crm/lead_edit.html:139
-#: portal/templates/portal/con-details.html:146
-#: portal/templates/portal/con-details.html:356
-#: portal/templates/portal/con-details.html:379
+#: portal/templates/portal/con-details.html:161
+#: portal/templates/portal/con-details.html:371
+#: portal/templates/portal/con-details.html:394
 msgid "Yes"
 msgstr "Yes"
 
 #: crm/templates/crm/lead_edit.html:81 crm/templates/crm/lead_edit.html:115
 #: crm/templates/crm/lead_edit.html:128 crm/templates/crm/lead_edit.html:141
-#: portal/templates/portal/con-details.html:146
-#: portal/templates/portal/con-details.html:356
-#: portal/templates/portal/con-details.html:379
+#: portal/templates/portal/con-details.html:161
+#: portal/templates/portal/con-details.html:371
+#: portal/templates/portal/con-details.html:394
 msgid "No"
 msgstr "No"
 
@@ -2195,28 +2111,10 @@ msgstr "Newsletters List"
 msgid "Search Query Details"
 msgstr "Search Query Details"
 
-#: crm/templates/crm/searchquery_detail.html:28
-#: crm/templates/crm/searchquery_list.html:48
-msgid "First"
-msgstr "First"
-
-#: crm/templates/crm/searchquery_detail.html:48
-#: crm/templates/crm/searchquery_list.html:68
-msgid "Last"
-msgstr "Last"
-
 #: crm/templates/crm/searchquery_list.html:6
 #: crm/templates/crm/searchquery_list.html:9
 msgid "Search Queries List"
 msgstr "Search Queries List"
-
-#: crm/templates/crm/searchquery_list.html:31
-msgid "Anonymous"
-msgstr "Anonymous"
-
-#: crm/templates/crm/searchquery_list.html:59
-msgid "Page"
-msgstr "Page"
 
 #: crm/templates/crm/supervision.html:17
 msgid "Leads"
@@ -2234,8 +2132,7 @@ msgstr "Newsletters"
 msgid ""
 "This feature is still under devlopment and will be available in future "
 "versions"
-msgstr ""
-"This feature is still under devlopment and will be available in future "
+msgstr "This feature is still under devlopment and will be available in future "
 "versions"
 
 #: crm/templates/crm/supervision.html:38
@@ -2245,8 +2142,7 @@ msgstr "Search Queries"
 #: crm/templates/crm/supervision.html:42
 msgid ""
 "What are the visitors searching for and how they want the results to be shown"
-msgstr ""
-"What are the visitors searching for and how they want the results to be shown"
+msgstr "What are the visitors searching for and how they want the results to be shown"
 
 #: crm/templates/crm/supervision.html:52
 msgid "What files do registered users download"
@@ -2274,52 +2170,53 @@ msgstr "What Tenders have been removed from Favorites"
 msgid "Unfavorisations List"
 msgstr "Unfavorisations List"
 
-#: emarches/settings.py:176
+#: emarches/settings.py:137
 msgid "English"
 msgstr "English"
 
-#: emarches/settings.py:177
+#: emarches/settings.py:138
 msgid "Amazigh"
 msgstr "Amazigh"
 
-#: emarches/settings.py:178
+#: emarches/settings.py:139
 msgid "Arabic"
 msgstr "Arabic"
 
-#: emarches/settings.py:179
+#: emarches/settings.py:140
 msgid "French"
 msgstr "French"
 
-#: emarches/settings.py:180
+#: emarches/settings.py:141
 msgid "Spanish"
 msgstr "Spanish"
 
-#: emarches/settings.py:181
+#: emarches/settings.py:142
 msgid "German"
 msgstr "German"
 
-#: portal/models.py:343
+#: portal/models.py:351
 msgid "Download DCE"
 msgstr "Download DCE"
 
-#: portal/models.py:344
+#: portal/models.py:352
 msgid "Downloads DCE"
 msgstr "Downloads DCE"
 
-#: portal/templates/portal/bdc-landing.html:12
+#: portal/templates/portal/bdc-landing.html:11
 msgid ""
 "We think the Official portal did a decent work regarding the POs feature and "
 "there is no huge improvement we could bring to it. "
-msgstr ""
-"We think the Official portal did a decent work regarding the POs feature and "
+msgstr "We think the Official portal did a decent work regarding the POs feature and "
 "there is no huge improvement we could bring to it. "
 
-#: portal/templates/portal/bdc-landing.html:21
-msgid "Browse POs on Official Website"
+#: portal/templates/portal/bdc-landing.html:20
+#, fuzzy
+#| msgid "Browse POs on Official Website"
+msgid "Official Website"
 msgstr "Browse POs on Official Website"
 
 #: portal/templates/portal/con-details.html:7
-#: portal/templates/portal/con-details.html:58
+#: portal/templates/portal/con-details.html:59
 msgid "Tender details"
 msgstr "Tender details"
 
@@ -2331,8 +2228,7 @@ msgstr "Download should start shortly... Please wait."
 msgid ""
 "Sorry, we could not get your files. If this happens often, please let us "
 "know."
-msgstr ""
-"Sorry, we could not get your files. If this happens often, please let us "
+msgstr "Sorry, we could not get your files. If this happens often, please let us "
 "know."
 
 #: portal/templates/portal/con-details.html:15
@@ -2343,20 +2239,19 @@ msgstr "Item added to Favourites."
 msgid "Item removed from Favourites."
 msgstr "Item removed from Favourites."
 
+#: portal/templates/portal/con-details.html:17
+msgid "URL was copied to clipboard."
+msgstr "URL was copied to clipboard."
+
 #: portal/templates/portal/con-details.html:24
 msgid "Download Tender's files"
 msgstr "Download Tender's files"
-
-#: portal/templates/portal/con-details.html:28
-msgid "Here is a list of files associated with the Tender."
-msgstr "Here is a list of files associated with the Tender."
 
 #: portal/templates/portal/con-details.html:29
 msgid ""
 "Once you click on an item, your browser or device should handle the download "
 "process."
-msgstr ""
-"Once you click on an item, your browser or device should handle the download "
+msgstr "Once you click on an item, your browser or device should handle the download "
 "process."
 
 #: portal/templates/portal/con-details.html:38
@@ -2367,46 +2262,53 @@ msgstr "Sorry. We could not get the files for this Tender."
 msgid "Please try again later, or contact us if this problem persists."
 msgstr "Please try again later, or contact us if this problem persists."
 
-#: portal/templates/portal/con-details.html:43
+#: portal/templates/portal/con-details.html:44
 #: portal/templates/portal/cons-favs.html:25
 #: portal/templates/portal/cons-favs.html:45
 #: portal/templates/portal/cons-list.html:26
 msgid "Dismiss"
 msgstr "Dismiss"
 
-#: portal/templates/portal/con-details.html:53
-#: portal/templates/portal/includes/con.html:36
+#: portal/templates/portal/con-details.html:54
 msgid "Cancelled"
 msgstr "Cancelled"
 
-#: portal/templates/portal/con-details.html:68 templates/mfa/index.html:102
+#: portal/templates/portal/con-details.html:71 templates/mfa/index.html:102
 msgid "Download"
 msgstr "Download"
 
-#: portal/templates/portal/con-details.html:78
+#: portal/templates/portal/con-details.html:79
+msgid "Share"
+msgstr "Share"
+
+#: portal/templates/portal/con-details.html:91
 msgid "Toggle Favourite"
 msgstr "Toggle Favourite"
 
-#: portal/templates/portal/con-details.html:87
+#: portal/templates/portal/con-details.html:103
 msgid "Bid"
 msgstr "Bid"
 
-#: portal/templates/portal/con-details.html:96
-#: portal/templates/portal/con-details.html:372
+#: portal/templates/portal/con-details.html:113
+#: portal/templates/portal/con-details.html:387
 #: portal/templates/portal/cons-search-advanced-form.html:17
 #: portal/templates/portal/cons-search-basic-form.html:17
 msgid "Object"
 msgstr "Object"
 
-#: portal/templates/portal/con-details.html:103
+#: portal/templates/portal/con-details.html:118
 msgid "Bidding Deadline"
 msgstr "Bidding Deadline"
 
-#: portal/templates/portal/con-details.html:103
+#: portal/templates/portal/con-details.html:118
 msgid "Morocco time"
 msgstr "Morocco time"
 
-#: portal/templates/portal/con-details.html:112
+#: portal/templates/portal/con-details.html:122
+msgid "days"
+msgstr "days"
+
+#: portal/templates/portal/con-details.html:127
 #: portal/templates/portal/cons-search-advanced-form.html:169
 #: portal/templates/portal/cons-search-advanced-form.html:170
 #: portal/templates/portal/cons-search-basic-form.html:54
@@ -2414,11 +2316,11 @@ msgstr "Morocco time"
 msgid "Total Estimate"
 msgstr "Total Estimate"
 
-#: portal/templates/portal/con-details.html:115
+#: portal/templates/portal/con-details.html:130
 msgid "Multi-lots"
 msgstr "Multi-lots"
 
-#: portal/templates/portal/con-details.html:122
+#: portal/templates/portal/con-details.html:137
 #: portal/templates/portal/cons-search-advanced-form.html:171
 #: portal/templates/portal/cons-search-advanced-form.html:172
 #: portal/templates/portal/cons-search-basic-form.html:56
@@ -2426,164 +2328,164 @@ msgstr "Multi-lots"
 msgid "Temporary Caution"
 msgstr "Temporary Caution"
 
-#: portal/templates/portal/con-details.html:129
-#: portal/templates/portal/con-details.html:166
-#: portal/templates/portal/con-details.html:180
-#: portal/templates/portal/con-details.html:203
-#: portal/templates/portal/con-details.html:262
-#: portal/templates/portal/con-details.html:281
-#: portal/templates/portal/con-details.html:300
-#: portal/templates/portal/con-details.html:319
-#: portal/templates/portal/con-details.html:338
-#: portal/templates/portal/con-details.html:409
-#: portal/templates/portal/con-details.html:425
-#: portal/templates/portal/con-details.html:441
-#: portal/templates/portal/con-details.html:457
-#: portal/templates/portal/con-details.html:484
+#: portal/templates/portal/con-details.html:144
+#: portal/templates/portal/con-details.html:181
+#: portal/templates/portal/con-details.html:195
+#: portal/templates/portal/con-details.html:218
+#: portal/templates/portal/con-details.html:277
+#: portal/templates/portal/con-details.html:296
+#: portal/templates/portal/con-details.html:315
+#: portal/templates/portal/con-details.html:334
+#: portal/templates/portal/con-details.html:353
+#: portal/templates/portal/con-details.html:424
+#: portal/templates/portal/con-details.html:440
+#: portal/templates/portal/con-details.html:456
+#: portal/templates/portal/con-details.html:472
+#: portal/templates/portal/con-details.html:499
 msgid "Log In"
 msgstr "Log In"
 
-#: portal/templates/portal/con-details.html:136
+#: portal/templates/portal/con-details.html:151
 msgid "Main Category"
 msgstr "Main Category"
 
-#: portal/templates/portal/con-details.html:144
+#: portal/templates/portal/con-details.html:159
 msgid "Reserved to SMB+"
 msgstr "Reserved for SMB+"
 
-#: portal/templates/portal/con-details.html:149
+#: portal/templates/portal/con-details.html:164
 msgid "Lots count"
 msgstr "Lots Count"
 
-#: portal/templates/portal/con-details.html:159
+#: portal/templates/portal/con-details.html:174
 msgid "Date published"
 msgstr "Date Published"
 
-#: portal/templates/portal/con-details.html:173
+#: portal/templates/portal/con-details.html:188
 #: portal/templates/portal/cons-search-advanced-form.html:23
 #: portal/templates/portal/cons-search-basic-form.html:23
 msgid "Reference"
 msgstr "Reference"
 
-#: portal/templates/portal/con-details.html:190
+#: portal/templates/portal/con-details.html:205
 msgid "Execution location"
 msgstr "Execution Location"
 
-#: portal/templates/portal/con-details.html:196
+#: portal/templates/portal/con-details.html:211
 msgid "Public client"
 msgstr "Public Client"
 
-#: portal/templates/portal/con-details.html:214
+#: portal/templates/portal/con-details.html:229
 #: portal/templates/portal/cons-search-advanced-form.html:59
 msgid "Procedure"
 msgstr "Procedure"
 
-#: portal/templates/portal/con-details.html:223
+#: portal/templates/portal/con-details.html:238
 msgid "Electronic response and signature"
 msgstr "Electronic Response and Signature"
 
-#: portal/templates/portal/con-details.html:226
+#: portal/templates/portal/con-details.html:241
 #: portal/templates/portal/cons-search-advanced-form.html:120
 msgid "Required, e-Sign required"
 msgstr "Required, e-Signature Required"
 
-#: portal/templates/portal/con-details.html:227
+#: portal/templates/portal/con-details.html:242
 #: portal/templates/portal/cons-search-advanced-form.html:121
 msgid "Required, e-Sign not required"
 msgstr "Required, e-Signature Not Required"
 
-#: portal/templates/portal/con-details.html:228
+#: portal/templates/portal/con-details.html:243
 #: portal/templates/portal/cons-search-advanced-form.html:122
 msgid "Not required, e-Sign required"
 msgstr "Not Required, e-Signature Required"
 
-#: portal/templates/portal/con-details.html:229
+#: portal/templates/portal/con-details.html:244
 #: portal/templates/portal/cons-search-advanced-form.html:123
 msgid "Not required, e-Sign not required"
 msgstr "Not Required, e-Signature Not Required"
 
-#: portal/templates/portal/con-details.html:230
+#: portal/templates/portal/con-details.html:245
 #: portal/templates/portal/cons-search-advanced-form.html:124
 msgid "Not Applicable"
 msgstr "Not Applicable"
 
-#: portal/templates/portal/con-details.html:238
+#: portal/templates/portal/con-details.html:253
 msgid "Domains of activity"
 msgstr "Domains of Activity"
 
-#: portal/templates/portal/con-details.html:252
-#: portal/templates/portal/con-details.html:382
+#: portal/templates/portal/con-details.html:267
+#: portal/templates/portal/con-details.html:397
 msgid "Qualifications"
 msgstr "Qualifications"
 
-#: portal/templates/portal/con-details.html:271
-#: portal/templates/portal/con-details.html:385
+#: portal/templates/portal/con-details.html:286
+#: portal/templates/portal/con-details.html:400
 msgid "Agrements"
 msgstr "Agreements"
 
-#: portal/templates/portal/con-details.html:290
-#: portal/templates/portal/con-details.html:389
+#: portal/templates/portal/con-details.html:305
+#: portal/templates/portal/con-details.html:404
 msgid "Samples"
 msgstr "Samples"
 
-#: portal/templates/portal/con-details.html:309
-#: portal/templates/portal/con-details.html:393
+#: portal/templates/portal/con-details.html:324
+#: portal/templates/portal/con-details.html:408
 msgid "Meetings"
 msgstr "Meetings"
 
-#: portal/templates/portal/con-details.html:328
-#: portal/templates/portal/con-details.html:397
+#: portal/templates/portal/con-details.html:343
+#: portal/templates/portal/con-details.html:412
 msgid "In-Site Visits"
 msgstr "In-Site Visits"
 
-#: portal/templates/portal/con-details.html:348
+#: portal/templates/portal/con-details.html:363
 msgid "Price of Plans"
 msgstr "Price of Plans"
 
-#: portal/templates/portal/con-details.html:354
-#: portal/templates/portal/con-details.html:401
+#: portal/templates/portal/con-details.html:369
+#: portal/templates/portal/con-details.html:416
 msgid "Variante"
 msgstr "Variant"
 
-#: portal/templates/portal/con-details.html:365
+#: portal/templates/portal/con-details.html:380
 msgid "Lots details"
 msgstr "Lot Details"
 
-#: portal/templates/portal/con-details.html:371
+#: portal/templates/portal/con-details.html:386
 #: portal/templates/portal/cons-search-advanced-form.html:48
 msgid "Category"
 msgstr "Category"
 
-#: portal/templates/portal/con-details.html:374
+#: portal/templates/portal/con-details.html:389
 msgid "Description"
 msgstr "Description"
 
-#: portal/templates/portal/con-details.html:376
+#: portal/templates/portal/con-details.html:391
 msgid "Estimate"
 msgstr "Estimate"
 
-#: portal/templates/portal/con-details.html:377
+#: portal/templates/portal/con-details.html:392
 msgid "Caution"
 msgstr "Caution"
 
-#: portal/templates/portal/con-details.html:379
+#: portal/templates/portal/con-details.html:394
 #: portal/templates/portal/cons-search-advanced-form.html:136
 msgid "Reserved to SMB"
 msgstr "Reserved for SMB"
 
-#: portal/templates/portal/con-details.html:418
+#: portal/templates/portal/con-details.html:433
 msgid "Withdrawal address"
 msgstr "Withdrawal Address"
 
-#: portal/templates/portal/con-details.html:434
+#: portal/templates/portal/con-details.html:449
 msgid "Bidding address"
 msgstr "Bidding Address"
 
-#: portal/templates/portal/con-details.html:450
+#: portal/templates/portal/con-details.html:465
 msgid "Opening address"
 msgstr "Opening Address"
 
-#: portal/templates/portal/con-details.html:469
+#: portal/templates/portal/con-details.html:484
 msgid "Person"
 msgstr "Person"
 
@@ -2607,8 +2509,7 @@ msgstr "Save a list of shown tenders as a '.csv' file to your local device."
 msgid ""
 "These files can be opened in many spreadsheet processors like LibreOffice "
 "Calc and MS Excel, ..."
-msgstr ""
-"These files can be opened in many spreadsheet processors like LibreOffice "
+msgstr "These files can be opened in many spreadsheet processors like LibreOffice "
 "Calc and MS Excel, etc."
 
 #: portal/templates/portal/cons-favs.html:21
@@ -2634,8 +2535,7 @@ msgstr "Clear your list of favorite tenders."
 msgid ""
 "This only will remove your stars from the Tenders, not the Tenders "
 "themselves. "
-msgstr ""
-"This will only remove your stars from the tenders, not the tenders "
+msgstr "This will only remove your stars from the tenders, not the tenders "
 "themselves."
 
 #: portal/templates/portal/cons-favs.html:40
@@ -2788,8 +2688,7 @@ msgstr "from"
 msgid ""
 "Tremendous amounts of money are regularly awarded in public contracts and "
 "your chances are greater than you may think. Statistics do not lie."
-msgstr ""
-"Tremendous amounts of money are regularly awarded in public contracts, and "
+msgstr "Tremendous amounts of money are regularly awarded in public contracts, and "
 "your chances are greater than you may think. Statistics do not lie."
 
 #: portal/templates/portal/cons_insights.html:20
@@ -2860,8 +2759,7 @@ msgid ""
 "not know whether or not the Tenders were really awarded and whether or not "
 "the works were executed... Some figures, especially percentages, may have "
 "been rounded."
-msgstr ""
-"The dates we consider for Tenders are the bidding deadlines. The shown "
+msgstr "The dates we consider for Tenders are the bidding deadlines. The shown "
 "amounts are those of the Tenders as they are advertised on the public "
 "portal. We do not account for later modifications or cancellations and we do "
 "not know whether or not the Tenders were really awarded and whether or not "
@@ -2872,31 +2770,32 @@ msgstr ""
 msgid ""
 "The stats shown for future periods may change as Tenders may change and new "
 "Tenders may be posted."
-msgstr ""
-"The stats shown for future periods may change as Tenders may change and new "
+msgstr "The stats shown for future periods may change as Tenders may change and new "
 "Tenders may be posted."
 
 #: portal/templates/portal/cons_insights.html:107
 msgid ""
 "Depending on the availability of data, the data for first period may not be "
 "accurate at all."
-msgstr ""
-"Depending on the availability of data, the data for the first period may not "
+msgstr "Depending on the availability of data, the data for the first period may not "
 "be accurate at all."
 
 #: portal/templates/portal/cons_insights.html:108
 msgid "These statistics are given for reference only."
 msgstr "These statistics are given for reference only."
 
+#: portal/templates/portal/includes/con-circular.html:16
 #: portal/templates/portal/includes/con.html:16
 msgid "Lots"
 msgstr "Lots"
 
-#: portal/templates/portal/includes/con.html:58
+#: portal/templates/portal/includes/con-circular.html:61
+#: portal/templates/portal/includes/con.html:61
 msgid "Only registered users can see this"
 msgstr "Only registered users can see this"
 
-#: portal/templates/portal/includes/con.html:84
+#: portal/templates/portal/includes/con-circular.html:87
+#: portal/templates/portal/includes/con.html:87
 msgid "Details not available"
 msgstr "Details not available"
 
@@ -2921,54 +2820,75 @@ msgid "Consultation annulée"
 msgstr "Cancelled consultation"
 
 #: portal/templates/portal/includes/cons-legend.html:40
+msgid "Qualification ou Classe requise pour soumissionner"
+msgstr "Qualification or special Class required to bid"
+
+#: portal/templates/portal/includes/cons-legend.html:44
+msgid "Agrément requis pour soumissionner"
+msgstr "Agreement required to bid"
+
+#: portal/templates/portal/includes/cons-legend.html:48
+msgid "Présentation d'Echantillons requise"
+msgstr "Samples required"
+
+#: portal/templates/portal/includes/cons-legend.html:52
+msgid "Réunion programmée avec le maitre d'ouvrage"
+msgstr "Meeting scheduld with Public Client"
+
+#: portal/templates/portal/includes/cons-legend.html:56
+msgid "Visite des lieux programmée"
+msgstr "In-site visit scheduled"
+
+#: portal/templates/portal/includes/cons-legend.html:61
 msgid "Procédure de consultation ouverte"
 msgstr "Open consultation procedure"
 
-#: portal/templates/portal/includes/cons-legend.html:44
+#: portal/templates/portal/includes/cons-legend.html:65
 msgid "Procédure de consultation restreinte ou limitée"
 msgstr "Restricted or limited consultation procedure"
 
-#: portal/templates/portal/includes/cons-legend.html:49
+#: portal/templates/portal/includes/cons-legend.html:70
 msgid ""
 "Réservé à la TPE et PME installées au Maroc, jeunes entreprises innovantes, "
 "Coopératives et auto-entrepreneurs"
-msgstr ""
-"Reserved for very small businesses (TPE) and small and medium-sized enterprises (SMEs) established in Morocco, innovative young companies, cooperatives, and self-employed entrepreneurs."
+msgstr "Reserved for very small businesses (TPE) and small and medium-sized "
+"enterprises (SMEs) established in Morocco, innovative young companies, "
+"cooperatives, and self-employed entrepreneurs."
 
-#: portal/templates/portal/includes/cons-legend.html:54
+#: portal/templates/portal/includes/cons-legend.html:75
 msgid ""
 "Réponse éléctronique obligatoire, avec signature éléctronique obligatoire"
 msgstr "Electronic submission required, with mandatory electronic signature."
 
-#: portal/templates/portal/includes/cons-legend.html:58
+#: portal/templates/portal/includes/cons-legend.html:79
 msgid ""
 "Réponse éléctronique obligatoire, avec signature éléctronique non obligatoire"
 msgstr "Electronic submission is mandatory, electronic signature is not required"
 
-#: portal/templates/portal/includes/cons-legend.html:62
+#: portal/templates/portal/includes/cons-legend.html:83
 msgid ""
 "Réponse éléctronique non obligatoire, avec signature éléctronique obligatoire"
 msgstr "Electronic submission required, electronic signature not mandatory"
 
-#: portal/templates/portal/includes/cons-legend.html:66
+#: portal/templates/portal/includes/cons-legend.html:87
 msgid ""
 "Réponse éléctronique non obligatoire, avec signature éléctronique non "
 "obligatoire"
 msgstr "Electronic submission not required, electronic signature not mandatory"
 
-#: portal/templates/portal/includes/cons-legend.html:70
+#: portal/templates/portal/includes/cons-legend.html:91
 msgid "Réponse éléctronique non applicable"
 msgstr "Electronic submission not applicable"
 
-#: portal/templates/portal/includes/cons-legend.html:75
+#: portal/templates/portal/includes/cons-legend.html:96
 msgid "Lieu d'execution"
 msgstr "Execution location"
 
-#: portal/templates/portal/includes/cons-legend.html:79
+#: portal/templates/portal/includes/cons-legend.html:100
 msgid "Acheteur public"
 msgstr "Public Client"
 
-#: portal/templates/portal/includes/cons-legend.html:83
+#: portal/templates/portal/includes/cons-legend.html:104
 msgid "Certaines informations sont reservées aux utilisateurs enregistrés"
 msgstr "Certain information is reserved for registered users"
 
@@ -2980,37 +2900,34 @@ msgstr "Search ignores case and accents:"
 msgid "Search criterias are joined with"
 msgstr "Search criterias are joined with"
 
-#: portal/views.py:62
+#: portal/views.py:59
 msgid "Your Favourites list is empty"
 msgstr "Your Favourites list is empty!"
 
-#: portal/views.py:384
+#: portal/views.py:378
 msgid "Favourites cleared succcessfully"
 msgstr "Favorites cleared successfully."
 
-#: portal/views.py:593
+#: portal/views.py:591
 msgid ""
 "This file is only for authenticated users and you should not have accessed "
 "it."
-msgstr ""
-"This file is only for authenticated users and you should not have accessed "
+msgstr "This file is only for authenticated users and you should not have accessed "
 "it."
 
-#: portal/views.py:594
+#: portal/views.py:592
 msgid ""
 "Our servers security mechanism replaced the original content with this "
 "message."
-msgstr ""
-"Our servers' security mechanism replaced the original content with this "
+msgstr "Our servers' security mechanism replaced the original content with this "
 "message."
 
-#: portal/views.py:595
+#: portal/views.py:593
 msgid ""
 "If you got this file from our servers, we would like to know how you did."
-msgstr ""
-"If you got this file from our servers, we would like to know how you did."
+msgstr "If you got this file from our servers, we would like to know how you did."
 
-#: portal/views.py:596
+#: portal/views.py:594
 msgid "We may hire you. Please contact us. Links on eMarches.com"
 msgstr "We may hire you. Please contact us. Links on eMarches.com"
 
@@ -3051,8 +2968,7 @@ msgstr "Enter Email Verification Code"
 msgid ""
 "We’ve sent a code to %(email_link)s. The code expires shortly, so please "
 "enter it soon."
-msgstr ""
-"We’ve sent a code to %(email_link)s. The code expires shortly, so please "
+msgstr "We’ve sent a code to %(email_link)s. The code expires shortly, so please "
 "enter it soon."
 
 #: templates/account/confirm_email_verification_code.html:27
@@ -3125,8 +3041,7 @@ msgstr "Do you really want to remove the selected email address?"
 msgid ""
 "You are receiving this email because you or someone else tried to signup for "
 "an account using email address:"
-msgstr ""
-"You are receiving this email because you or someone else tried to sign up "
+msgstr "You are receiving this email because you or someone else tried to sign up "
 "for an account using the email address:"
 
 #: templates/account/email/account_already_exists_message.txt:8
@@ -3134,8 +3049,7 @@ msgid ""
 "However, an account using that email address already exists.  In case you "
 "have forgotten about this, please use the password forgotten procedure to "
 "recover your account:"
-msgstr ""
-"However, an account using that email address already exists. In case you "
+msgstr "However, an account using that email address already exists. In case you "
 "have forgotten about this, please use the password recovery procedure to "
 "recover your account:"
 
@@ -3157,16 +3071,14 @@ msgstr "Thank you for using %(site_name)s!"
 msgid ""
 "You are receiving this mail because the following change was made to your "
 "account:"
-msgstr ""
-"You are receiving this email because the following change was made to your "
+msgstr "You are receiving this email because the following change was made to your "
 "account:"
 
 #: templates/account/email/base_notification.txt:10
 msgid ""
 "If you do not recognize this change then please take proper security "
 "precautions immediately. The change to your account originates from:"
-msgstr ""
-"If you do not recognize this change, please take proper security precautions "
+msgstr "If you do not recognize this change, please take proper security precautions "
 "immediately. The change to your account originates from:"
 
 #: templates/account/email/base_notification.txt:12
@@ -3203,16 +3115,14 @@ msgstr "Email Confirmation"
 msgid ""
 "You're receiving this email because user %(user_display)s has given your "
 "email address to register an account on %(site_domain)s."
-msgstr ""
-"You're receiving this email because user %(user_display)s has given your "
+msgstr "You're receiving this email because user %(user_display)s has given your "
 "email address to register an account on %(site_domain)s."
 
 #: templates/account/email/email_confirmation_message.txt:7
 msgid ""
 "Your email verification code is listed below. Please enter it in your open "
 "browser window."
-msgstr ""
-"Your email verification code is listed below. Please enter it in your open "
+msgstr "Your email verification code is listed below. Please enter it in your open "
 "browser window."
 
 #: templates/account/email/email_confirmation_message.txt:9
@@ -3237,8 +3147,7 @@ msgstr "Email Removed"
 msgid ""
 "Your sign-in code is listed below. Please enter it in your open browser "
 "window."
-msgstr ""
-"Your sign-in code is listed below. Please enter it in your open browser "
+msgstr "Your sign-in code is listed below. Please enter it in your open browser "
 "window."
 
 #: templates/account/email/login_code_message.txt:9
@@ -3262,16 +3171,14 @@ msgstr "Password Changed"
 msgid ""
 "You're receiving this email because you or someone else has requested a "
 "password reset for your user account."
-msgstr ""
-"You're receiving this email because you or someone else has requested a "
+msgstr "You're receiving this email because you or someone else has requested a "
 "password reset for your user account."
 
 #: templates/account/email/password_reset_key_message.txt:5
 msgid ""
 "It can be safely ignored if you did not request a password reset. Click the "
 "link below to reset your password."
-msgstr ""
-"It can be safely ignored if you did not request a password reset. Click the "
+msgstr "It can be safely ignored if you did not request a password reset. Click the "
 "link below to reset your password."
 
 #: templates/account/email/password_reset_key_message.txt:9
@@ -3309,8 +3216,7 @@ msgid ""
 "You are receiving this email because you, or someone else, tried to access "
 "an account with email %(email)s. However, we do not have any record of such "
 "an account in our database."
-msgstr ""
-"You are receiving this email because you, or someone else, tried to access "
+msgstr "You are receiving this email because you, or someone else, tried to access "
 "an account with email %(email)s. However, we do not have any record of such "
 "an account in our database."
 
@@ -3361,8 +3267,7 @@ msgstr "Confirm Email Address"
 msgid ""
 "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an email "
 "address for user %(user_display)s."
-msgstr ""
-"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an email "
+msgstr "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an email "
 "address for user %(user_display)s."
 
 #: templates/account/email_confirm.html:30
@@ -3371,8 +3276,7 @@ msgstr ""
 msgid ""
 "Unable to confirm %(email)s because it is already confirmed by a different "
 "account."
-msgstr ""
-"Unable to confirm %(email)s because it is already confirmed by a different "
+msgstr "Unable to confirm %(email)s because it is already confirmed by a different "
 "account."
 
 #: templates/account/email_confirm.html:36
@@ -3380,8 +3284,7 @@ msgstr ""
 msgid ""
 "This email confirmation link expired or is invalid. Please <a "
 "href=\"%(email_url)s\">issue a new email confirmation request</a>."
-msgstr ""
-"This email confirmation link expired or is invalid. Please <a "
+msgstr "This email confirmation link expired or is invalid. Please <a "
 "href=\"%(email_url)s\">issue a new email confirmation request</a>."
 
 #: templates/account/login.html:21
@@ -3389,8 +3292,7 @@ msgstr ""
 msgid ""
 "If you have not created an account yet, then please %(link)ssign "
 "up%(end_link)s first."
-msgstr ""
-"If you have not created an account yet, then please %(link)ssign "
+msgstr "If you have not created an account yet, then please %(link)ssign "
 "up%(end_link)s first."
 
 #: templates/account/login.html:44
@@ -3463,8 +3365,7 @@ msgstr "Forgot Password?"
 msgid ""
 "Forgotten your password? Enter your email address below, and we'll send you "
 "an email allowing you to reset it."
-msgstr ""
-"Forgotten your password? Enter your email address below, and we'll send you "
+msgstr "Forgotten your password? Enter your email address below, and we'll send you "
 "an email allowing you to reset it."
 
 #: templates/account/password_reset.html:25
@@ -3479,8 +3380,7 @@ msgstr "Please contact us if you have any trouble resetting your password."
 msgid ""
 "We have sent you an email. If you have not received it please check your "
 "spam folder. Otherwise contact us if you do not receive it in a few minutes."
-msgstr ""
-"We have sent you an email. If you have not received it please check your "
+msgstr "We have sent you an email. If you have not received it please check your "
 "spam folder. Otherwise contact us if you do not receive it in a few minutes."
 
 #: templates/account/password_reset_from_key.html:10
@@ -3493,8 +3393,7 @@ msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
 "a>."
-msgstr ""
-"The password reset link was invalid, possibly because it has already been "
+msgstr "The password reset link was invalid, possibly because it has already been "
 "used. Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
 "a>."
 
@@ -3515,8 +3414,7 @@ msgstr "Enter your password:"
 msgid ""
 "You will receive an email containing a special code for a password-free sign-"
 "in."
-msgstr ""
-"You will receive an email containing a special code for a password-free sign-"
+msgstr "You will receive an email containing a special code for a password-free sign-"
 "in."
 
 #: templates/account/request_login_code.html:24
@@ -3585,8 +3483,7 @@ msgstr "Warning:"
 msgid ""
 "You currently do not have any email address set up. You should really add an "
 "email address so you can receive notifications, reset your password, etc."
-msgstr ""
-"You currently do not have any email address set up. You should really add an "
+msgstr "You currently do not have any email address set up. You should really add an "
 "email address so you can receive notifications, reset your password, etc."
 
 #: templates/account/verification_sent.html:5
@@ -3602,8 +3499,7 @@ msgid ""
 "finalize the signup process. If you do not see the verification email in "
 "your main inbox, check your spam folder. Please contact us if you do not "
 "receive the verification email within a few minutes."
-msgstr ""
-"We have sent an email to you for verification. Follow the link provided to "
+msgstr "We have sent an email to you for verification. Follow the link provided to "
 "finalize the signup process. If you do not see the verification email in "
 "your main inbox, check your spam folder. Please contact us if you do not "
 "receive the verification email within a few minutes."
@@ -3613,8 +3509,7 @@ msgid ""
 "This part of the site requires us to verify that\n"
 "you are who you claim to be. For this purpose, we require that you\n"
 "verify ownership of your email address. "
-msgstr ""
-"This part of the site requires us to verify that you are who you claim to "
+msgstr "This part of the site requires us to verify that you are who you claim to "
 "be. For this purpose, we require that you verify ownership of your email "
 "address."
 
@@ -3625,8 +3520,7 @@ msgid ""
 "the verification email in your main inbox, check your spam folder. "
 "Otherwise\n"
 "contact us if you do not receive it within a few minutes."
-msgstr ""
-"We have sent a verification email. Please click the link inside. If you "
+msgstr "We have sent a verification email. Please click the link inside. If you "
 "don't see it in your main inbox, check your spam folder. If you still "
 "haven't received it, contact us within a few minutes."
 
@@ -3635,8 +3529,7 @@ msgstr ""
 msgid ""
 "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
 "email address</a>."
-msgstr ""
-"<strong>Note:</strong> You can still <a href=\"%(email_url)s\">change your "
+msgstr "<strong>Note:</strong> You can still <a href=\"%(email_url)s\">change your "
 "email address</a>."
 
 #: templates/admin/base_site.html:7 templates/admin/login.html:7
@@ -3647,20 +3540,18 @@ msgstr "Django Administration"
 msgid "Show Password"
 msgstr "Show Password"
 
-#: templates/includes/head.html:13
+#: templates/includes/head.html:17
 msgid ""
 "eMarches portal. Morocco Public Procurement Market. Access to public Tenders "
 "and Puchase orders. Paperless dematerialized procedure"
-msgstr ""
-"eMarches portal. Morocco Public Procurement Market. Access to public Tenders "
+msgstr "eMarches portal. Morocco Public Procurement Market. Access to public Tenders "
 "and Puchase orders. Paperless dematerialized procedure"
 
-#: templates/includes/head.html:14
+#: templates/includes/head.html:18
 msgid ""
 "PMMP Morocco Public Procurement Market Purchase Order Tenders Offers Free "
 "Listing Files Download"
-msgstr ""
-"PMMP Morocco Public Procurement Market Purchase Order Tenders Offers Free "
+msgstr "PMMP Morocco Public Procurement Market Purchase Order Tenders Offers Free "
 "Listing Files Download"
 
 #: templates/mfa/authenticate.html:10 templates/mfa/index.html:5
@@ -3672,8 +3563,7 @@ msgstr "Two-Factor Authentication"
 msgid ""
 "Your account is protected by two-factor authentication. Please enter an "
 "authenticator code:"
-msgstr ""
-"Your account is protected by two-factor authentication. Please enter the "
+msgstr "Your account is protected by two-factor authentication. Please enter the "
 "code from your authenticator app."
 
 #: templates/mfa/authenticate.html:41
@@ -3684,8 +3574,7 @@ msgstr "Use a Security Key"
 #: templates/mfa/email/recovery_codes_generated_message.txt:4
 msgid ""
 "A new set of Two-Factor Authentication recovery codes has been generated."
-msgstr ""
-"A new set of Two-Factor Authentication recovery codes has been generated."
+msgstr "A new set of Two-Factor Authentication recovery codes has been generated."
 
 #: templates/mfa/email/recovery_codes_generated_subject.txt:3
 msgid "New Recovery Codes Generated"
@@ -3818,8 +3707,7 @@ msgstr "Enter an authenticator code:"
 
 #: templates/mfa/recovery_codes/generate.html:9
 msgid "You are about to generate a new set of recovery codes for your account."
-msgstr ""
-"You are about to generate a new set of recovery codes for your account."
+msgstr "You are about to generate a new set of recovery codes for your account."
 
 #: templates/mfa/recovery_codes/generate.html:11
 msgid "This action will invalidate your existing codes."
@@ -3851,8 +3739,7 @@ msgid ""
 "To protect your account with two-factor authentication, scan the QR code "
 "below with your authenticator app. Then, input the verification code "
 "generated by the app below."
-msgstr ""
-"To protect your account with two-factor authentication, scan the QR code "
+msgstr "To protect your account with two-factor authentication, scan the QR code "
 "below with your authenticator app. Then, input the verification code "
 "generated by the app."
 
@@ -3864,8 +3751,7 @@ msgstr "Authenticator Secret"
 msgid ""
 "You can store this secret and use it to reinstall your authenticator app at "
 "a later time."
-msgstr ""
-"You can store this secret and use it to reinstall your authenticator app "
+msgstr "You can store this secret and use it to reinstall your authenticator app "
 "later."
 
 #: templates/mfa/totp/deactivate_form.html:5
@@ -3877,8 +3763,7 @@ msgstr "Deactivate Authenticator App"
 msgid ""
 "You are about to deactivate authenticator app based authentication. Are you "
 "sure?"
-msgstr ""
-"You are about to deactivate authenticator app-based authentication. Are you "
+msgstr "You are about to deactivate authenticator app-based authentication. Are you "
 "sure?"
 
 #: templates/mfa/webauthn/add_form.html:7
@@ -3944,8 +3829,7 @@ msgid ""
 "You are about to create a passkey for your account. As you can add "
 "additional keys later on, you can use a descriptive name to tell the keys "
 "apart."
-msgstr ""
-"You are about to create a passkey for your account. You can add additional "
+msgstr "You are about to create a passkey for your account. You can add additional "
 "keys later, so use a descriptive name to differentiate them."
 
 #: templates/mfa/webauthn/signup_form.html:21
@@ -3964,8 +3848,7 @@ msgstr "Third-Party Login Failure"
 #: templates/socialaccount/authentication_error.html:12
 msgid ""
 "An error occurred while attempting to login via your third-party account."
-msgstr ""
-"An error occurred while attempting to log in via your third-party account."
+msgstr "An error occurred while attempting to log in via your third-party account."
 
 #: templates/socialaccount/connections.html:5
 #: templates/socialaccount/connections.html:9
@@ -3976,8 +3859,7 @@ msgstr "Account Connections"
 msgid ""
 "You can sign in to your account using any of the following third-party "
 "accounts:"
-msgstr ""
-"You can sign in to your account using any of the following third-party "
+msgstr "You can sign in to your account using any of the following third-party "
 "accounts."
 
 #: templates/socialaccount/connections.html:46
@@ -3992,8 +3874,7 @@ msgstr "Add a Third-Party Account"
 #, python-format
 msgid ""
 "A third-party account from %(provider)s has been connected to your account."
-msgstr ""
-"A third-party account from %(provider)s has been connected to your account."
+msgstr "A third-party account from %(provider)s has been connected to your account."
 
 #: templates/socialaccount/email/account_connected_subject.txt:3
 msgid "Third-Party Account Connected"
@@ -4004,8 +3885,7 @@ msgstr "Third-Party Account Connected"
 msgid ""
 "A third-party account from %(provider)s has been disconnected from your "
 "account."
-msgstr ""
-"A third-party account from %(provider)s has been disconnected from your "
+msgstr "A third-party account from %(provider)s has been disconnected from your "
 "account."
 
 #: templates/socialaccount/email/account_disconnected_subject.txt:3
@@ -4030,8 +3910,7 @@ msgstr "Sign In via %(provider)s"
 #: templates/socialaccount/login.html:20
 #, python-format
 msgid "You are about to sign in using a third-party account from %(provider)s."
-msgstr ""
-"You are about to sign in using a third-party account from %(provider)s."
+msgstr "You are about to sign in using a third-party account from %(provider)s."
 
 #: templates/socialaccount/login.html:27
 #: templates/socialaccount/login_redirect.html:10
@@ -4049,8 +3928,7 @@ msgid ""
 "You decided to cancel logging in to our site using one of your existing "
 "accounts. If this was a mistake, please proceed to <a "
 "href=\"%(login_url)s\">sign in</a>."
-msgstr ""
-"You decided to cancel logging into our site using one of your existing "
+msgstr "You decided to cancel logging into our site using one of your existing "
 "accounts. If this was a mistake, please proceed to <a "
 "href=\"%(login_url)s\">sign in</a>."
 
@@ -4071,8 +3949,7 @@ msgstr "The third-party account has been disconnected."
 msgid ""
 "You are about to use your %(provider_name)s account to login to\n"
 "%(site_name)s. As a final step, please complete the following form:"
-msgstr ""
-"You are about to use your %(provider_name)s account to log in to "
+msgstr "You are about to use your %(provider_name)s account to log in to "
 "%(site_name)s. As a final step, please complete the following form."
 
 #: templates/socialaccount/snippets/login.html:10
@@ -4112,29 +3989,38 @@ msgstr "Current"
 msgid "Sign Out Other Sessions"
 msgstr "Sign Out Other Sessions"
 
-msgid "Portfolio"
-msgstr "Portfolio"
+#~ msgid "Total downloaded size"
+#~ msgstr "Total downloaded size"
 
-msgid "Mobile"
-msgstr "Mobile"
+#~ msgid "Top last"
+#~ msgstr "Top last"
 
-msgid "Profile not set"
-msgstr "Profile not set"
+#~ msgid "Here is a list of files associated with the Tender."
+#~ msgstr "Here is a list of files associated with the Tender."
 
-msgid "Profile Stats"
-msgstr "Profile Stats"
+#~ msgid "Portfolio"
+#~ msgstr "Portfolio"
 
-msgid "Unlimited"
-msgstr "Unlimited"
+#~ msgid "Mobile"
+#~ msgstr "Mobile"
 
-msgid "Browse"
-msgstr "Browse"
+#~ msgid "Profile not set"
+#~ msgstr "Profile not set"
 
-msgid "Manage Addresses"
-msgstr "Manage Addresses"
+#~ msgid "Profile Stats"
+#~ msgstr "Profile Stats"
 
-msgid "Exit Favourites"
-msgstr "Exit Favorites"
+#~ msgid "Unlimited"
+#~ msgstr "Unlimited"
 
-msgid "Forgot your password?"
-msgstr "Forgot your password?"
+#~ msgid "Browse"
+#~ msgstr "Browse"
+
+#~ msgid "Manage Addresses"
+#~ msgstr "Manage Addresses"
+
+#~ msgid "Exit Favourites"
+#~ msgstr "Exit Favorites"
+
+#~ msgid "Forgot your password?"
+#~ msgstr "Forgot your password?"
