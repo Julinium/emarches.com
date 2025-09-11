@@ -409,16 +409,18 @@ def con_get_file(request, pk=None, fn=None, fp=1):
 		x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
 		if x_forwarded_for: user_ip = x_forwarded_for.split(',')[0]
 		else: user_ip = request.META.get('REMOTE_ADDR', '')
-		if fp == 1:
-			udf = UserDownloadFile(
-				consultation = con.portal_id,
-				user = request.user,
-				user_agent = user_agent,
-				user_ip = user_ip,
-				file_name = os.path.basename(file_fp),
-				file_size = os.path.getsize(file_fp),
-				)
-			udf.save()
+		if not request.user.is_superuser:
+			if not request.user.is_staff:
+				if fp == 1:
+					udf = UserDownloadFile(
+						consultation = con.portal_id,
+						user = request.user,
+						user_agent = user_agent,
+						user_ip = user_ip,
+						file_name = os.path.basename(file_fp),
+						file_size = os.path.getsize(file_fp),
+						)
+					udf.save()
 
 		# Deprecated: Serve using Python.
 		# with open(file_fp, 'rb') as fh:
