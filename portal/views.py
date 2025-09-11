@@ -29,8 +29,6 @@ from crm.models import Favorisation, Unfavorisation, SearchQuery
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def cons_favs(request):
 
-	if request.method != 'GET': return HttpResponse(status=403)
-
 	cons = Consultation.objects.filter(portal_id__in = ProfileFavCon.objects.filter(user=request.user).values("consultation"))
 	cons = cons.order_by('date_limite_depot', 'id')
 
@@ -66,7 +64,7 @@ def cons_favs(request):
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def cons_list(request):
 
-	if request.method != 'GET': return HttpResponse(status=403)
+	# if request.method != 'GET': return HttpResponse(status=403)
 	# Get matching profile
 	# profile = None
 	# try : profile = Profile.objects.get(user = request.user)
@@ -199,7 +197,7 @@ def cons_list(request):
 
 	cons_age = None
 	try: cons_age = Reglage.objects.all().last().cons_last_update.astimezone()
-	except : pass	# print(f'[{datetime.now().strftime("%y-%m-%d %H:%M")}] Exception raised while reading settings: { str(x) }')
+	except : pass
 
 	paginator = Paginator(cons, IPP)
 	page_number = request.GET.get("page", 1)
@@ -229,9 +227,7 @@ def cons_list(request):
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
-def con_details(request, pk=None):	 # if request.user.is_authenticated:
-
-	if request.method != 'GET': return HttpResponse(status=403)
+def con_details(request, pk=None):
 
 	try: valid_uuid = UUID(pk, version=4)
 	except ValueError: raise Http404("Invalid UUID")
@@ -280,7 +276,6 @@ def con_details(request, pk=None):	 # if request.user.is_authenticated:
 		"dlink": con.portal_link,
 		'faved': faved,
 		'dsize': total_size,
-		# 'flist' : files_list,
 		'finfo': files_info,
 		'dce_dir': dce_dir,
 		}
@@ -290,10 +285,9 @@ def con_details(request, pk=None):	 # if request.user.is_authenticated:
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def con_portal_details(request, pid=None):
-	if request.method != 'GET': return HttpResponse(status=403)
+	# if request.method != 'GET': return HttpResponse(status=403)
 	con = get_object_or_404(Consultation, portal_id=pid)
-	if con:
-		return redirect("portal_con_details", pk=str(con.id))
+	if con: return redirect("portal_con_details", pk=str(con.id))
 	return HttpResponse(status=404)
 
 
@@ -335,9 +329,9 @@ def con_fav(request, pk=None):
 
 	return HttpResponse(status=sc)
 
-	# 200 - OK					  ===== Removed from Favs
-	# 201 – Created				 ===== Added to Favs
-	# 304 – resource not modified   =====
+	# 200 - OK
+	# 201 – Created
+	# 304 – resource not modified
 	# 410 - Gone
 
 
@@ -393,7 +387,7 @@ def con_get_file(request, pk=None, fn=None, fp=1):
 
 	con = Consultation.objects.get(id=pk)
 	if not con : return HttpResponse(status=404)
-	
+
 	if fp == 0:
 		dce_dir = os.path.join(C.MEDIA_ROOT, 'readme')
 		file_path = os.path.join('readme', fn)
@@ -422,12 +416,6 @@ def con_get_file(request, pk=None, fn=None, fp=1):
 						)
 					udf.save()
 
-		# Deprecated: Serve using Python.
-		# with open(file_fp, 'rb') as fh:
-		# 	response = HttpResponse(fh.read(), content_type="application/zip")
-		# 	response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_fp)
-		# 	return response
-
 		# Set X-Accel-Redirect header to point to the internal Nginx location
 		response = HttpResponse()
 		response['Content-Type'] = 'application/octet-stream'
@@ -437,7 +425,6 @@ def con_get_file(request, pk=None, fn=None, fp=1):
 		return response
 
 	return HttpResponse(status=404)
-
 
 
 def cons_insights(request):
