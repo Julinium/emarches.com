@@ -256,6 +256,7 @@ def con_details(request, pk=None):
 						"priv": 1
 					})
 	
+	readme_info = []
 	readmedia = os.path.join(C.MEDIA_ROOT, 'readme')
 	if os.path.exists(readmedia):
 		readme_list = os.listdir(readmedia)
@@ -264,7 +265,7 @@ def con_details(request, pk=None):
 			if os.path.exists(full_path):
 				if os.path.isfile(full_path):
 					sizens = os.path.getsize(full_path)
-					files_info.append({
+					readme_info.append({
 						"name": entry,
 						"size": sizens,
 						"priv": 0
@@ -277,6 +278,7 @@ def con_details(request, pk=None):
 		'faved': faved,
 		'dsize': total_size,
 		'finfo': files_info,
+		'rinfo': readme_info,
 		'dce_dir': dce_dir,
 		}
 

@@ -32,6 +32,15 @@
                                     <span class="ms-1">{{ f.name }}</span>
                                 </a>
                             {% endfor %}
+                            {% if finfo  %}
+                                {% for r in rinfo %}
+                                    <a class="text-decoration-none w-100 btn btn-outline-primary text-start mt-2" href="{% url 'portal_con_get_file' con.id r.name f.priv %}"{% if finfo|length == 1 %} data-bs-dismiss="modal"{% endif %}>
+                                        <span class=""><i class="bi bi-arrow-down-square-fill"></i></span>
+                                        <span class="ms-1 badge text-bg-primary">{{ r.size|filesizeformat }}</span>
+                                        <span class="ms-1">{{ r.name }}</span>
+                                    </a>
+                                {% endfor %}
+                            {% endif %}
                         {% else %}
                             <div class="text-danger">{% translate "Sorry. We could not get the files for this Tender." %}</div>
                             <div class="small text-muted">{% translate "Please try again later, or contact us if this problem persists." %}</div>
