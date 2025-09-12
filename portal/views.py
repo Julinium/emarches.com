@@ -271,7 +271,7 @@ def con_details(request, pk=None):
 						"priv": 0
 					})
 
-
+	files_count = len(files_info) + len(readme_info)
 	context = {
 		"con": con,
 		"dlink": con.portal_link,
@@ -279,6 +279,7 @@ def con_details(request, pk=None):
 		'dsize': total_size,
 		'finfo': files_info,
 		'rinfo': readme_info,
+		'files_count': files_count,
 		'dce_dir': dce_dir,
 		}
 
