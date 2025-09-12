@@ -34,9 +34,9 @@
                             {% endfor %}
                             {% if finfo  %}
                                 {% for r in rinfo %}
-                                    <a class="text-decoration-none w-100 btn btn-outline-secondary text-start mt-2" href="{% url 'portal_con_get_file' con.id r.name r.priv %}">
+                                    <a class="text-decoration-none w-100 btn btn-outline-success text-start mt-2" href="{% url 'portal_con_get_file' con.id r.name r.priv %}">
                                         <span class=""><i class="bi bi-info-square"></i></span>
-                                        <span class="ms-1 badge text-secondary">{{ r.size|filesizeformat }}</span>
+                                        <span class="ms-1 badge text-bg-success">{{ r.size|filesizeformat }}</span>
                                         <span class="ms-1">{{ r.name }}</span>
                                     </a>
                                 {% endfor %}
