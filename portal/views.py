@@ -423,7 +423,7 @@ def con_get_file(request, pk=None, fn=None, fp=1):
 		response = HttpResponse()
 		response['Content-Type'] = 'application/octet-stream'
 		response['X-Accel-Redirect'] = f'/comedia/{file_path}'
-		response['Content-Disposition'] = f'attachment; filename="{ file_path }"'
+		response['Content-Disposition'] = f'attachment; filename="{ fn }"'
 		response['Content-Length'] = os.path.getsize(file_fp)
 		return response
 
