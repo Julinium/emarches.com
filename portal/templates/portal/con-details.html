@@ -64,7 +64,6 @@
 
         <div id="page-title" class="d-flex flex-wrap align-items-center mt-4 mb-2">
             <div id="cancelledStar" {% if con.cancelled %}style="display:block;"{% else %}style="display:none;"{% endif %}>
-                <!-- <img class="me-2" src="{% static 'img/cancelled.svg' %}" height="24" alt="Fav"> -->
                 <span class="mb-1 fw-bold fs-2 me-3 text-danger"><img src="{% static 'img/cancelled.svg' %}" class="pb-1 mx-1" alt="{% translate 'Cancelled' %}">{% translate 'Cancelled' %}</span>
             </div>
             <div id="favedStar" {% if faved %}style="display:block;"{% else %}style="display:none;"{% endif %}>
@@ -123,13 +122,19 @@
 
             {% get_current_language as LC %}
             <div id="con-destails" class="my-2">
-                <div class="row py-3">
-                    <div class="text-muted small">{% translate 'Object' %}</div>
+                <div class="row my-3">
+                    <div class="text-muted small">
+                        <span><i class="bi bi-book"></i></span>
+                        <span>{% translate 'Object' %}</span>
+                    </div>
                     <div class="fw-bold fs-5">{{ con.objet }}</div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 py-3">
-                        <div class="text-muted small">{% translate 'Bidding Deadline' %} ({% translate 'Morocco time' %})</div>
+                    <div class="col-12 col-md-6 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-calendar-check"></i></span>
+                            <span>{% translate 'Bidding Deadline' %} ({% translate 'Morocco time' %})</span>
+                        </div>
                         {% timezone "Africa/Casablanca" %}
                             <div class="d-block">
                                 <div class="pe-1 d-inline fw-bold">{{ con.date_limite_depot|localtime  }}</div> |
@@ -137,55 +142,11 @@
                             </div>
                         {% endtimezone %}
                     </div>
-                    <div class="col-12 col-md-6 py-3">
-                        <div class="text-muted small">{% translate 'Total Estimate' %}</div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline fw-bold">{{ con.total_estimation | floatformat:'2g' }}</div>
-                            {% if con.nombre_lots > 1 %}<img src="{% static 'icons/grid-2x2-gap.svg' %}" height="16" alt="{% translate 'Multi-lots' %}">{% endif %}
+                    <div class="col-12 col-md-6 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-clock"></i></span>
+                            <span>{% translate 'Date published' %}</span>
                         </div>
-                    </div>   
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-6 py-3">
-                        <div class="text-muted small">{% translate 'Temporary Caution' %}</div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline">
-                                {% if request.user.is_authenticated %}
-                                    {{ con.caution_provisoire | floatformat:'2g' }}
-                                {% else %}
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3 py-3">
-                        <div class="text-muted small">{% translate 'Main Category' %}</div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline fw-bold">{{ con.categorie }}</div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-6 col-md-3 py-3">
-                        {% if con.nombre_lots == 1 %}
-                            <div class="text-muted small">{% translate 'Reserved to SMB+' %}</div>
-                            <div class="d-block">
-                                <div class="pe-1 d-inline">{% if con.lot_set.first.reserve_pme %}{% translate 'Yes' %}{% else %}{% translate 'No' %}{% endif %}</div>
-                            </div>
-                        {% else %}
-                            <div class="text-muted small">{% translate 'Lots count' %}</div>
-                            <div class="d-block">
-                                <div class="pe-1 d-inline">{{ con.nombre_lots }}</div>
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-6 py-3">
-                        <div class="text-muted small">{% translate 'Date published' %}</div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">                                
                                 {% if request.user.is_authenticated %}
@@ -198,8 +159,44 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 py-3">
-                        <div class="text-muted small">{% translate 'Reference' %}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-cash-coin"></i></span>
+                            <span>{% translate 'Total Estimate' %}</span>
+                        </div>
+                        <div class="d-block">
+                            <div class="pe-1 d-inline fw-bold">{{ con.total_estimation | floatformat:'2g' }}</div>
+                            {% if con.nombre_lots > 1 %}<img src="{% static 'icons/grid-2x2-gap.svg' %}" height="16" alt="{% translate 'Multi-lots' %}">{% endif %}
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-database-lock"></i></span>
+                            <span>{% translate 'Temporary Caution' %}</span>
+                        </div>
+                        <div class="d-block">
+                            <div class="pe-1 d-inline">
+                                {% if request.user.is_authenticated %}
+                                    {{ con.caution_provisoire | floatformat:'2g' }}
+                                {% else %}
+                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">                    
+                    <div class="col-12 col-md-6 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-tag"></i></span>
+                            <span>{% translate 'Reference' %}</span>
+                        </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline" style="direction: ltr;">
                                 {% if request.user.is_authenticated %}
@@ -212,17 +209,52 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-6 col-md-3 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-grid"></i></span>
+                            <span>{% translate 'Main Category' %}</span>
+                        </div>
+                        <div class="d-block">
+                            <div class="pe-1 d-inline fw-bold">{{ con.categorie }}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-3 my-3">
+                        {% if con.nombre_lots == 1 %}
+                            <div class="text-muted small">
+                                <span><i class="bi bi-shield-lock"></i></span>
+                                <span>{% translate 'Reserved to SMB+' %}</span>
+                            </div>
+                            <div class="d-block">
+                                <div class="pe-1 d-inline">{% if con.lot_set.first.reserve_pme %}{% translate 'Yes' %}{% else %}{% translate 'No' %}{% endif %}</div>
+                            </div>
+                        {% else %}
+                            <div class="text-muted small">
+                                <span><i class="bi bi-grid-1x2"></i></span>
+                                <span>{% translate 'Lots count' %}</span>
+                            </div>
+                            <div class="d-block">
+                                <div class="pe-1 d-inline">{{ con.nombre_lots }}</div>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-md-6 py-3">
-                        <div class="text-muted small">{% translate 'Execution location' %}</div>
+                    <div class="col-12 col-md-6 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-geo-alt"></i></span>
+                            <span>{% translate 'Execution location' %}</span>
+                        </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.lieu_execution }}</div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 py-3">
-                        <div class="text-muted small">{% translate 'Public client' %}</div>
+                    <div class="col-12 col-md-6 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-briefcase"></i></span>
+                            <span>{% translate 'Public client' %}</span>
+                        </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">
                                 {% if request.user.is_authenticated %}
@@ -239,8 +271,11 @@
 
 
                 <div class="row">
-                    <div class="col-12 col-md-6 py-3">
-                        <div class="text-muted small">{% translate 'Procedure' %}</div>
+                    <div class="col-12 col-md-6 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-megaphone"></i></span>
+                            <span>{% translate 'Procedure' %}</span>
+                        </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">{{ con.procedure_annonce }}</div>
                             <div class="pe-1 d-inline">|</div>
@@ -248,8 +283,11 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6 py-3">
-                        <div class="text-muted small">{% translate 'Electronic response and signature' %}</div>
+                    <div class="col-12 col-md-6 my-3">
+                        <div class="text-muted small">
+                            <span><i class="bi bi-usb-drive"></i></span>
+                            <span>{% translate 'Electronic response and signature' %}</span>
+                        </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
                                 {% if con.reponse_electronique == 'RR' %}{% translate 'Required, e-Sign required' %}{% endif %}
@@ -264,7 +302,10 @@
 
                 {% if con.domaines %}
                     <div class="py-3" id="domains">
-                        <div class="text-muted small">{% translate 'Domains of activity' %}</div>
+                        <div class="text-muted small">
+                            <span><i class="bi bi-ui-radios-grid"></i></span>
+                            <span>{% translate 'Domains of activity' %}</span>
+                        </div>
                         <ul class="list-group mb-3 p-0 shadow-sm">
                             {% for d in con.domaines.all %}
                                 <li class="list-group-item">{{ d.domaine }}</li>
@@ -278,7 +319,10 @@
 
                     {% if con.lot_set.first.qualifications.all %}
                         <div class="py-3" id="qualifs">
-                            <div class="text-muted small">{% translate 'Qualifications' %}</div>                              
+                            <div class="text-muted small">                                
+                                <span><i class="bi bi-award"></i></span>
+                                <span>{% translate 'Qualifications' %}</span>
+                            </div>                              
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">  
                                     {% for q in con.lot_set.first.qualifications.all %}
