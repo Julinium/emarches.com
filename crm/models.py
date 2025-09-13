@@ -147,19 +147,14 @@ class SearchQuery(models.Model):
         if self.query_reference: q += f' reference={self.query_reference}'
         if self.query_estimate_min: q += f' estimate_min={self.query_estimate_min}'
         if self.query_estimate_max: q += f' estimate_max={self.query_estimate_max}'
-        # if self.query_category: q += f' category={self.query_category}'
-        # if self.query_procedure: q += f' procedure={self.query_procedure}'
         if self.query_deadline_min: q += f' deadline_min={self.query_deadline_min}'
         if self.query_deadline_max: q += f' deadline_max={self.query_deadline_max}'
         if self.query_published_min: q += f' published_min={self.query_published_min}'
         if self.query_published_max: q += f' published_max={self.query_published_max}'
         if self.query_client: q += f' client={self.query_client}'
         if self.query_execution_location: q += f' execution_location={self.query_execution_location}'
-        # if self.query_electronic_response: q += f' electronic_response={self.query_electronic_response}'
         if self.query_single_lot_only: q += f' single_lot_only={self.query_single_lot_only}'
         if self.query_reserved_to_smb: q += f' reserved_to_smb={self.query_reserved_to_smb}'
-        # if self.query_results_per_page: q += f' results_per_page={self.query_results_per_page}'
-        # if self.query_order_by: q += f' order_by={self.query_order_by}'
     
         return q
 
@@ -236,17 +231,6 @@ class SearchQuery(models.Model):
         if self.user_agent:
             parsed_ua = self.parse_user_agent(self.user_agent)
             botness = self.check_botness(self.user_agent)
-            # user_agent = self.user_agent.lower()
-            # bot_keywords = [
-            #     'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
-            #     'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot' ]       
-            # if any(keyword in user_agent for keyword in bot_keywords):
-            #     botness = True # Check for bot keywords 
-            # else:
-            #     if 'mozilla/5.0' in user_agent and any(browser in user_agent for browser in ['chrome', 'safari', 'firefox', 'edge']):
-            #         botness = False # Check for browser-like User-Agent (indicative of human)        
-            #     else: 
-            #         botness = True # Default to bot for generic or unknown User-Agents
 
         self.os_family = parsed_ua['os']
         self.device_type = parsed_ua['device_type']
@@ -254,5 +238,4 @@ class SearchQuery(models.Model):
         super().save(*args, **kwargs)
 
 
-
-# TODO: Login, Logout, Consultation Details, Lists Downloads, Pages Vues, Bidding Link clicks
+# TODO: Login, Logout, Consultation Details, Lists Downloads, Pages Vews, Bidding Link clicks
