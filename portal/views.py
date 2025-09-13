@@ -33,11 +33,11 @@ def cons_favs(request):
 	cons = cons.order_by('date_limite_depot', 'id')
 
 	# In case csv dowload was requested, serve it.
-	if len(cons) > 0 :
-		if 'dld' in request.GET and request.GET['dld']:
-			dld = request.GET['dld']
-			if dld == 'csv':
-				return cons2csv(request, cons, f'eMarches.com-favs-{str(datetime.now())[:16]}.csv')
+	# if len(cons) > 0 :
+	# 	if 'dld' in request.GET and request.GET['dld']:
+	# 		dld = request.GET['dld']
+	# 		if dld == 'csv':
+	# 			return cons2csv(request, cons, f'eMarches.com-favs-{str(datetime.now())[:16]}.csv')
 
 	paginator = Paginator(cons, C.ITEMS_PER_PAGE)
 	page_number = request.GET.get("page", 1)
@@ -174,11 +174,11 @@ def cons_list(request):
 		case _: cons = cons.order_by('date_limite_depot', 'id')
 
 	# In case csv dowload was requested, serve it.
-	if len(cons) > 0 :
-		if 'dld' in request.GET and request.GET['dld']:
-			dld = request.GET['dld']
-			if dld == 'csv':
-				return cons2csv(request, cons, f'eMarches.com-{str(datetime.now())[:16]}.csv')
+	# if len(cons) > 0 :
+	# 	if 'dld' in request.GET and request.GET['dld']:
+	# 		dld = request.GET['dld']
+	# 		if dld == 'csv':
+	# 			return cons2csv(request, cons, f'eMarches.com-{str(datetime.now())[:16]}.csv')
 
 	IPP = C.ITEMS_PER_PAGE
 	if 'pp' in request.GET and request.GET['pp']:
@@ -585,36 +585,36 @@ def bdc_landing(request):
 
 # Functions ...
 
-def cons2csv(request, cons, filename):
+# def cons2csv(request, cons, filename):
 
-	if not request.user.is_authenticated :
-		response = HttpResponse(content_type='text/csv')
-		response['Content-Disposition'] = 'attachment; filename="eMarches.com-unallowed.csv"'
-		writer = csv.writer(response)
-		writer.writerow([_('This file is only for authenticated users and you should not have accessed it.')])
-		writer.writerow([_('Our servers security mechanism replaced the original content with this message.')])
-		writer.writerow([_('If you got this file from our servers, we would like to know how you did.')])
-		writer.writerow([_('We may hire you. Please contact us. Links on eMarches.com')])
-		return response
+# 	if not request.user.is_authenticated :
+# 		response = HttpResponse(content_type='text/csv')
+# 		response['Content-Disposition'] = 'attachment; filename="eMarches.com-unallowed.csv"'
+# 		writer = csv.writer(response)
+# 		writer.writerow([_('This file is only for authenticated users and you should not have accessed it.')])
+# 		writer.writerow([_('Our servers security mechanism replaced the original content with this message.')])
+# 		writer.writerow([_('If you got this file from our servers, we would like to know how you did.')])
+# 		writer.writerow([_('We may hire you. Please contact us. Links on eMarches.com')])
+# 		return response
 
-	from djqscsv import render_to_csv_response
-	base_url = "https://www.emarches.com/en/cons/details/"
-	return render_to_csv_response(cons.annotate(url=Concat( Value(base_url), 'id', Value("/"), output_field=CharField())).values(
-		'date_publication__date', 'date_limite_depot', 'reference', 'categorie__nom',
-		'total_estimation', 'caution_provisoire', 'nombre_lots', 'objet', 'lieu_execution',
-		'acheteur_public__nom', 'procedure_annonce__nom', 'mode_passation__nom', 'reponse_electronique',
-		'retrait_dossiers_adresse', 'depot_offres_adresse', 'ouverture_plis_adresse', 'url',),
-		field_header_map={
-			'categorie__nom' : 'categorie',
-			'date_publication__date' : 'date publication',
-			'acheteur_public__nom': 'acheteur public',
-			'procedure_annonce__nom': 'procedure',
-			'mode_passation__nom': 'mode_passation',
-			'url': 'lien eMArches',
-			# 'portal_link' : 'lien PMMP',
-			},
-		filename=filename,
-		)
+# 	from djqscsv import render_to_csv_response
+# 	base_url = "https://www.emarches.com/en/cons/details/"
+# 	return render_to_csv_response(cons.annotate(url=Concat( Value(base_url), 'id', Value("/"), output_field=CharField())).values(
+# 		'date_publication__date', 'date_limite_depot', 'reference', 'categorie__nom',
+# 		'total_estimation', 'caution_provisoire', 'nombre_lots', 'objet', 'lieu_execution',
+# 		'acheteur_public__nom', 'procedure_annonce__nom', 'mode_passation__nom', 'reponse_electronique',
+# 		'retrait_dossiers_adresse', 'depot_offres_adresse', 'ouverture_plis_adresse', 'url',),
+# 		field_header_map={
+# 			'categorie__nom' : 'categorie',
+# 			'date_publication__date' : 'date publication',
+# 			'acheteur_public__nom': 'acheteur public',
+# 			'procedure_annonce__nom': 'procedure',
+# 			'mode_passation__nom': 'mode_passation',
+# 			'url': 'lien eMArches',
+# 			# 'portal_link' : 'lien PMMP',
+# 			},
+# 		filename=filename,
+# 		)
 
 
 def logSerachQuery(request, querydict, results_count):	
