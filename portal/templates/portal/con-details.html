@@ -124,16 +124,16 @@
             <div id="con-destails" class="my-2">
                 <div class="row my-3">
                     <div class="text-muted small">
-                        <span><i class="bi bi-book"></i></span>
-                        <span>{% translate 'Object' %}</span>
+                        <span><i class="fs-5 bi bi-book"></i></span>
+                        <span class="ms-1">{% translate 'Object' %}</span>
                     </div>
                     <div class="fw-bold fs-5">{{ con.objet }}</div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-calendar-check"></i></span>
-                            <span>{% translate 'Bidding Deadline' %} ({% translate 'Morocco time' %})</span>
+                            <span><i class="fs-5 bi bi-calendar-check"></i></span>
+                            <span class="ms-1">{% translate 'Bidding Deadline' %} ({% translate 'Morocco time' %})</span>
                         </div>
                         {% timezone "Africa/Casablanca" %}
                             <div class="d-block">
@@ -144,8 +144,8 @@
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-clock"></i></span>
-                            <span>{% translate 'Date published' %}</span>
+                            <span><i class="fs-5 bi bi-clock"></i></span>
+                            <span class="ms-1">{% translate 'Date published' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">                                
@@ -164,8 +164,8 @@
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-cash-coin"></i></span>
-                            <span>{% translate 'Total Estimate' %}</span>
+                            <span><i class="fs-5 bi bi-cash-coin"></i></span>
+                            <span class="ms-1">{% translate 'Total Estimate' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.total_estimation | floatformat:'2g' }}</div>
@@ -174,8 +174,8 @@
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-database-lock"></i></span>
-                            <span>{% translate 'Temporary Caution' %}</span>
+                            <span><i class="fs-5 bi bi-database-lock"></i></span>
+                            <span class="ms-1">{% translate 'Temporary Caution' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
@@ -194,8 +194,8 @@
                 <div class="row">                    
                     <div class="col-12 col-md-6 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-tag"></i></span>
-                            <span>{% translate 'Reference' %}</span>
+                            <span><i class="fs-5 bi bi-tag"></i></span>
+                            <span class="ms-1">{% translate 'Reference' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline" style="direction: ltr;">
@@ -211,8 +211,8 @@
                     </div>
                     <div class="col-6 col-md-3 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-grid"></i></span>
-                            <span>{% translate 'Main Category' %}</span>
+                            <span><i class="fs-5 bi bi-grid"></i></span>
+                            <span class="ms-1">{% translate 'Main Category' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.categorie }}</div>
@@ -222,16 +222,16 @@
                     <div class="col-6 col-md-3 my-3">
                         {% if con.nombre_lots == 1 %}
                             <div class="text-muted small">
-                                <span><i class="bi bi-shield-lock"></i></span>
-                                <span>{% translate 'Reserved to SMB+' %}</span>
+                                <span><i class="fs-5 bi bi-shield-lock"></i></span>
+                                <span class="ms-1">{% translate 'Reserved to SMB+' %}</span>
                             </div>
                             <div class="d-block">
                                 <div class="pe-1 d-inline">{% if con.lot_set.first.reserve_pme %}{% translate 'Yes' %}{% else %}{% translate 'No' %}{% endif %}</div>
                             </div>
                         {% else %}
                             <div class="text-muted small">
-                                <span><i class="bi bi-grid-1x2"></i></span>
-                                <span>{% translate 'Lots count' %}</span>
+                                <span><i class="fs-5 bi bi-grid-1x2"></i></span>
+                                <span class="ms-1">{% translate 'Lots count' %}</span>
                             </div>
                             <div class="d-block">
                                 <div class="pe-1 d-inline">{{ con.nombre_lots }}</div>
@@ -243,8 +243,8 @@
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-geo-alt"></i></span>
-                            <span>{% translate 'Execution location' %}</span>
+                            <span><i class="fs-5 bi bi-geo-alt"></i></span>
+                            <span class="ms-1">{% translate 'Execution location' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">{{ con.lieu_execution }}</div>
@@ -252,8 +252,8 @@
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-briefcase"></i></span>
-                            <span>{% translate 'Public client' %}</span>
+                            <span><i class="fs-5 bi bi-briefcase"></i></span>
+                            <span class="ms-1">{% translate 'Public client' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline fw-bold">
@@ -273,8 +273,8 @@
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-megaphone"></i></span>
-                            <span>{% translate 'Procedure' %}</span>
+                            <span><i class="fs-5 bi bi-megaphone"></i></span>
+                            <span class="ms-1">{% translate 'Procedure' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">{{ con.procedure_annonce }}</div>
@@ -285,8 +285,8 @@
 
                     <div class="col-12 col-md-6 my-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-usb-drive"></i></span>
-                            <span>{% translate 'Electronic response and signature' %}</span>
+                            <span><i class="fs-5 bi bi-usb-drive"></i></span>
+                            <span class="ms-1">{% translate 'Electronic response and signature' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
@@ -303,8 +303,8 @@
                 {% if con.domaines %}
                     <div class="py-3" id="domains">
                         <div class="text-muted small">
-                            <span><i class="bi bi-ui-radios-grid"></i></span>
-                            <span>{% translate 'Domains of activity' %}</span>
+                            <span><i class="fs-5 bi bi-ui-radios-grid"></i></span>
+                            <span class="ms-1">{% translate 'Domains of activity' %}</span>
                         </div>
                         <ul class="list-group mb-3 p-0 shadow-sm">
                             {% for d in con.domaines.all %}
@@ -320,8 +320,8 @@
                     {% if con.lot_set.first.qualifications.all %}
                         <div class="py-3" id="qualifs">
                             <div class="text-muted small">                                
-                                <span><i class="bi bi-award"></i></span>
-                                <span>{% translate 'Qualifications' %}</span>
+                                <span><i class="fs-5 bi bi-award"></i></span>
+                                <span class="ms-1">{% translate 'Qualifications' %}</span>
                             </div>                              
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">  
@@ -342,8 +342,8 @@
                     {% if con.lot_set.first.agrements.all %}
                         <div class="py-3" id="agrements">
                             <div class="text-muted small">
-                                <span><i class="bi bi-shield-check"></i></span>
-                                <span>{% translate 'Agrements' %}</span>
+                                <span><i class="fs-5 bi bi-shield-check"></i></span>
+                                <span class="ms-1">{% translate 'Agrements' %}</span>
                             </div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
@@ -364,8 +364,8 @@
                     {% if con.lot_set.first.echantillons %}
                         <div class="py-3" id="agrements">
                             <div class="text-muted small">
-                                <span><i class="bi bi-palette2"></i></span>
-                                <span>{% translate 'Samples' %}</span>
+                                <span><i class="fs-5 bi bi-palette2"></i></span>
+                                <span class="ms-1">{% translate 'Samples' %}</span>
                             </div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
@@ -386,8 +386,8 @@
                     {% if con.lot_set.first.reunions %}
                         <div class="py-3" id="agrements">
                             <div class="text-muted small">
-                                <span><i class="bi bi-easel"></i></span>
-                                <span>{% translate 'Meetings' %}</span>
+                                <span><i class="fs-5 bi bi-easel"></i></span>
+                                <span class="ms-1">{% translate 'Meetings' %}</span>
                             </div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
@@ -408,8 +408,8 @@
                     {% if con.lot_set.first.visites %}
                         <div class="py-3" id="agrements">
                             <div class="text-muted small">
-                                <span><i class="bi bi-eye"></i></span>
-                                <span>{% translate 'In-Site Visits' %}</span>
+                                <span><i class="fs-5 bi bi-eye"></i></span>
+                                <span class="ms-1">{% translate 'In-Site Visits' %}</span>
                             </div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
@@ -431,8 +431,8 @@
                         <div class="row py-3">
                             <div class="col-12 col-md-6">
                                 <div class="text-muted small">
-                                    <span><i class="bi bi-map"></i></span>
-                                    <span>{% translate 'Price of Plans' %}</span>
+                                    <span><i class="fs-5 bi bi-map"></i></span>
+                                    <span class="ms-1">{% translate 'Price of Plans' %}</span>
                                 </div>
                                 <div class="d-block">
                                     <div class="pe-1 d-inline">{{ con.prix_acquisition_plans | floatformat:'2g' }}</div>
@@ -440,8 +440,8 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="text-muted small">
-                                    <span><i class="bi bi-signpost2"></i></span>
-                                    <span>{% translate 'Variante' %}</span>
+                                    <span><i class="fs-5 bi bi-signpost2"></i></span>
+                                    <span class="ms-1">{% translate 'Variante' %}</span>
                                 </div>
                                 <div class="d-block">
                                     <div class="pe-1 d-inline">{% if con.lot_set.first.variante == 'Non' %}{% translate 'No' %}{% else %}{% translate 'Yes' %}{% endif %}</div>
@@ -454,8 +454,8 @@
                 {% if con.nombre_lots > 1 %}
                     <div class="py-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-ui-radios"></i></span>
-                            <span>{% translate 'Lots details' %}</span>
+                            <span><i class="fs-5 bi bi-ui-radios"></i></span>
+                            <span class="ms-1">{% translate 'Lots details' %}</span>
                         </div>
                         {% if request.user.is_authenticated %}
                             <ul class="list-group mb-3 p-0 shadow-sm">
@@ -510,8 +510,8 @@
                 {% if con.retrait_dossiers_adresse %}
                     <div class="py-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-arrow-down-circle"></i></span>
-                            <span>{% translate 'Withdrawal address' %}</span>
+                            <span><i class="fs-5 bi bi-arrow-down-circle"></i></span>
+                            <span class="ms-1">{% translate 'Withdrawal address' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
@@ -529,8 +529,8 @@
                 {% if con.depot_offres_adresse %}
                     <div class="py-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-arrow-up-circle"></i></span>
-                            <span>{% translate 'Bidding address' %}</span>
+                            <span><i class="fs-5 bi bi-arrow-up-circle"></i></span>
+                            <span class="ms-1">{% translate 'Bidding address' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
@@ -548,8 +548,8 @@
                 {% if con.ouverture_plis_adresse %}
                     <div class="py-3">
                         <div class="text-muted small">
-                            <span><i class="bi bi-check-circle"></i></span>
-                            <span>{% translate 'Opening address' %}</span>
+                            <span><i class="fs-5 bi bi-check-circle"></i></span>
+                            <span class="ms-1">{% translate 'Opening address' %}</span>
                         </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
@@ -566,8 +566,8 @@
                 {% endif %}
                 <div class="py-3">
                     <div class="text-muted small">
-                        <span><i class="bi bi-person"></i></span>
-                        <span>{% translate 'Contact' %}</span>
+                        <span><i class="fs-5 bi bi-person"></i></span>
+                        <span class="ms-1">{% translate 'Contact' %}</span>
                     </div>
                     {% if request.user.is_authenticated %}
                     <ul class="list-group mb-3 p-0 shadow-sm">
