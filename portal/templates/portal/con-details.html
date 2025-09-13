@@ -24,7 +24,7 @@
                     <div class="modal-body">
 
                         {% if finfo  %}
-                            <div class="small text-muted">{% translate "Once you click on an item, your browser or device should handle the download process." %}</div>
+                            <div class="small text-muted mb-2">{% translate "Once you click on an item, your browser or device should handle the download process." %}</div>
                             {% for f in finfo %}
                                 <a class="text-decoration-none w-100 btn btn-outline-primary text-start mt-2" href="{% url 'portal_con_get_file' con.id f.name f.priv %}"{% if files_count == 1 %} data-bs-dismiss="modal"{% endif %}>
                                     <span class=""><i class="bi bi-arrow-down-square-fill"></i></span>
@@ -48,7 +48,14 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">{% translate 'Dismiss' %}</button>
+                        <a href="{% url 'base_legal' %}" target="_blank" class="btn btn-outline-secondary">
+                            <span><i class="bi bi-shield-exclamation"></i></span>
+                            <span class="ms-1">{% translate 'Legal Information' %}</span>
+                        </a>
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">
+                            <span><i class="bi bi-x-lg"></i></span>
+                            <span class="ms-1">{% translate 'Close' %}</span>
+                        </button>
                     </div>
                 </div>
             </div>
