@@ -341,7 +341,10 @@
 
                     {% if con.lot_set.first.agrements.all %}
                         <div class="py-3" id="agrements">
-                            <div class="text-muted small">{% translate 'Agrements' %}</div>
+                            <div class="text-muted small">
+                                <span><i class="bi bi-shield-check"></i></span>
+                                <span>{% translate 'Agrements' %}</span>
+                            </div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
                                     {% for a in con.lot_set.first.agrements.all %}
@@ -360,7 +363,10 @@
 
                     {% if con.lot_set.first.echantillons %}
                         <div class="py-3" id="agrements">
-                            <div class="text-muted small">{% translate 'Samples' %}</div>
+                            <div class="text-muted small">
+                                <span><i class="bi bi-palette2"></i></span>
+                                <span>{% translate 'Samples' %}</span>
+                            </div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
                                     {% for ech in con.lot_set.first.echantillons %}
@@ -379,7 +385,10 @@
 
                     {% if con.lot_set.first.reunions %}
                         <div class="py-3" id="agrements">
-                            <div class="text-muted small">{% translate 'Meetings' %}</div>
+                            <div class="text-muted small">
+                                <span><i class="bi bi-easel"></i></span>
+                                <span>{% translate 'Meetings' %}</span>
+                            </div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
                                     {% for reu in con.lot_set.first.reunions %}
@@ -398,7 +407,10 @@
 
                     {% if con.lot_set.first.visites %}
                         <div class="py-3" id="agrements">
-                            <div class="text-muted small">{% translate 'In-Site Visits' %}</div>
+                            <div class="text-muted small">
+                                <span><i class="bi bi-eye"></i></span>
+                                <span>{% translate 'In-Site Visits' %}</span>
+                            </div>
                             {% if request.user.is_authenticated %}
                                 <ul class="list-group mb-3 p-0 shadow-sm">
                                     {% for vis in con.lot_set.first.visites %}
@@ -418,13 +430,19 @@
                     {% if con.lot_set.first.variante != 'Non' or con.prix_acquisition_plans != 0 %}
                         <div class="row py-3">
                             <div class="col-12 col-md-6">
-                                <div class="text-muted small">{% translate 'Price of Plans' %}</div>
+                                <div class="text-muted small">
+                                    <span><i class="bi bi-map"></i></span>
+                                    <span>{% translate 'Price of Plans' %}</span>
+                                </div>
                                 <div class="d-block">
                                     <div class="pe-1 d-inline">{{ con.prix_acquisition_plans | floatformat:'2g' }}</div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="text-muted small">{% translate 'Variante' %}</div>
+                                <div class="text-muted small">
+                                    <span><i class="bi bi-signpost2"></i></span>
+                                    <span>{% translate 'Variante' %}</span>
+                                </div>
                                 <div class="d-block">
                                     <div class="pe-1 d-inline">{% if con.lot_set.first.variante == 'Non' %}{% translate 'No' %}{% else %}{% translate 'Yes' %}{% endif %}</div>
                                 </div>
@@ -435,7 +453,10 @@
 
                 {% if con.nombre_lots > 1 %}
                     <div class="py-3">
-                        <div class="text-muted small">{% translate 'Lots details' %}</div>
+                        <div class="text-muted small">
+                            <span><i class="bi bi-ui-radios"></i></span>
+                            <span>{% translate 'Lots details' %}</span>
+                        </div>
                         {% if request.user.is_authenticated %}
                             <ul class="list-group mb-3 p-0 shadow-sm">
                                 {% for l in con.lot_set.all %}
@@ -488,7 +509,10 @@
                 
                 {% if con.retrait_dossiers_adresse %}
                     <div class="py-3">
-                        <div class="text-muted small">{% translate 'Withdrawal address' %}</div>
+                        <div class="text-muted small">
+                            <span><i class="bi bi-arrow-down-circle"></i></span>
+                            <span>{% translate 'Withdrawal address' %}</span>
+                        </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
                                 {% if request.user.is_authenticated %}
@@ -504,7 +528,10 @@
                 {% endif %}
                 {% if con.depot_offres_adresse %}
                     <div class="py-3">
-                        <div class="text-muted small">{% translate 'Bidding address' %}</div>
+                        <div class="text-muted small">
+                            <span><i class="bi bi-arrow-up-circle"></i></span>
+                            <span>{% translate 'Bidding address' %}</span>
+                        </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
                                 {% if request.user.is_authenticated %}
@@ -520,7 +547,10 @@
                 {% endif %}
                 {% if con.ouverture_plis_adresse %}
                     <div class="py-3">
-                        <div class="text-muted small">{% translate 'Opening address' %}</div>
+                        <div class="text-muted small">
+                            <span><i class="bi bi-check-circle"></i></span>
+                            <span>{% translate 'Opening address' %}</span>
+                        </div>
                         <div class="d-block">
                             <div class="pe-1 d-inline">
                                 {% if request.user.is_authenticated %}
@@ -535,7 +565,10 @@
                     </div>
                 {% endif %}
                 <div class="py-3">
-                    <div class="text-muted small">{% translate 'Contact' %}</div>
+                    <div class="text-muted small">
+                        <span><i class="bi bi-person"></i></span>
+                        <span>{% translate 'Contact' %}</span>
+                    </div>
                     {% if request.user.is_authenticated %}
                     <ul class="list-group mb-3 p-0 shadow-sm">
                         <li class="list-group-item">
