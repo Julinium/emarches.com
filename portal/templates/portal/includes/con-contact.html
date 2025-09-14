@@ -2,7 +2,7 @@
 
 
 {% if request.user.is_authenticated %}
-    <ul class="list-unstyled mb-3 p-0">
+    <!-- <ul class="list-unstyled mb-3 p-0">
         <li class="">
             <div class="small text-muted">{% trans 'Person' %}: <strong class="user-select-all">{{ con.contact_nom }}</strong></div>
         </li>
@@ -15,7 +15,13 @@
         <li class="">
             <div class="small text-muted">{% trans 'Fax' %}: <strong class="user-select-all">{{ con.contact_fax }}</strong></div>
         </li>
-    </ul>
+    </ul> -->
+    <div class="mt-1"><strong>{{ con.contact_nom }}</strong></div>
+    <div>
+        <span><a href="tel:{{ con.contact_tel }}" class="me-1 mt-1 btn btn-outline-secondary"><i class="bi bi-telephone"></i> {{ con.contact_tel }}</a></span>
+        <span><a href="tel:{{ con.contact_fax }}" class="me-1 mt-1 btn btn-outline-secondary"><i class="bi bi-printer"></i> {{ con.contact_fax }}</a></span>
+        <span><a href="mailto:{{ con.contact_email }}" class="me-1 mt-1 btn btn-outline-secondary"><i class="bi bi-envelope"></i> {{ con.contact_email }}</a></span>
+    </div>
 {% else %}
     <div class="d-block">
         {% include 'portal/includes/login-button.html' %}

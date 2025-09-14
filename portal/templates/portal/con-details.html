@@ -66,10 +66,12 @@
             <div id="cancelledStar" {% if con.cancelled %}style="display:block;"{% else %}style="display:none;"{% endif %}>
                 <span class="mb-1 fw-bold fs-2 me-3 text-danger"><img src="{% static 'img/cancelled.svg' %}" class="pb-1 mx-1" alt="{% translate 'Cancelled' %}">{% translate 'Cancelled' %}</span>
             </div>
-            <div id="favedStar" {% if faved %}style="display:block;"{% else %}style="display:none;"{% endif %}>
-                <img class="me-2" src="{% static 'img/star-fill.svg' %}" height="24" alt="Fav">
+            <div class="">
+                <span id="favedStar" {% if faved %}style="display:d-inline;"{% else %}style="display:none;"{% endif %}>
+                    <img class="me-1 mb-2" src="{% static 'img/star-fill.svg' %}" height="24" alt="Fav">
+                </span>
+                <span class="h2">{% translate 'Tender details' %}</span>
             </div>
-            <h1 class="mb-0">{% translate 'Tender details' %}</h1>
         </div>
         
         <div id="con-details">
@@ -123,29 +125,36 @@
             {% get_current_language as LC %}
             <div id="con-destails" class="my-2">
                 <div class="row my-3">
-                    {% include 'portal/includes/ico-val-key.html' with ico='book' key='Object' val=con.objet iac='' kac='text-muted small' vac='fw-bold fs-5' %}
+                    {% trans 'Object' as objet %}
+                    {% include 'portal/includes/ico-val-key.html' with ico='book' key=objet val=con.objet iac='' kac='text-muted small' vac='fw-bold' %}
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
                         {% timezone "Africa/Casablanca" %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='calendar-check' key='Bidding Deadline' val=con.date_limite_depot|localtime vex='Morocco Time' iac='' kac='text-muted small' vac='fw-bold' %}
+                            {% trans 'Bidding Deadline' as deadline %}
+                            <!-- {% trans 'Morocco Time' as mtime %} -->
+                            {% include 'portal/includes/ico-val-key.html' with ico='calendar-check' key=deadline val=con.date_limite_depot|localtime vex='' iac='' kac='text-muted small' vac='fw-bold' %}
                         {% endtimezone %}
                     </div>
                     <div class="col-12 col-md-6 my-3 {% if con.remaining_days < 30 %} text-danger{% else %} text-success{% endif %}">
-                        {% include 'portal/includes/ico-val-key.html' with ico='hourglass-top' key='Remaining days' val=con.remaining_days vex='days' iac='' kac='text-muted small' vac='fw-bold' %}
+                        {% trans 'Remaining days' as remdays %}
+                        {% trans 'days' as days_litteral %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='hourglass-top' key=remdays val=con.remaining_days vex=days_litteral iac='' kac='text-muted small' vac='fw-bold' %}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        {% include 'portal/includes/ico-val-key.html' with ico='cash-coin' key='Total Estimate' val=con.total_estimation|floatformat:'2g' iac='' kac='text-muted small' vac='fw-bold' %}
+                        {% trans 'Total Estimate' as estimate %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='cash-coin' key=estimate val=con.total_estimation|floatformat:'2g' iac='' kac='text-muted small' vac='fw-bold' %}
                     </div>
                     <div class="col-12 col-md-6 my-3">
+                        {% trans 'Temporary Caution' as caution %}
                         {% if request.user.is_authenticated %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='database-lock' key='Temporary Caution' val=con.caution_provisoire|floatformat:'2g' iac='' kac='text-muted small' vac='' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='database-lock' key=caution val=con.caution_provisoire|floatformat:'2g' iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='database-lock' key='Temporary Caution' scope='auth' iac='' kac='text-muted small' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='database-lock' key=caution scope='auth' iac='' kac='text-muted small' %}
                         {% endif %}
                     </div>
                 </div>
@@ -153,17 +162,19 @@
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
+                        {% trans 'Reference' as reference %}
                         {% if request.user.is_authenticated %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='tag' key='Reference' val=con.reference iac='' kac='text-muted small' vac='' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='tag' key=reference val=con.reference iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='tag' key='Reference' scope='auth' iac='' kac='text-muted small' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='tag' key=reference scope='auth' iac='' kac='text-muted small' %}
                         {% endif %}
                     </div>
                     <div class="col-12 col-md-6 my-3">
+                        {% trans 'Date published' as published %}
                         {% if request.user.is_authenticated %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='clock' key='Date published' val=con.date_publication|date iac='' kac='text-muted small' vac='' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='clock' key=published val=con.date_publication|date iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with scope='auth' ico='clock' key='Date published' kac='text-muted small' %}
+                            {% include 'portal/includes/ico-val-key.html' with scope='auth' ico='clock' key=published kac='text-muted small' %}
                         {% endif %}
                     </div>
                 </div>
@@ -172,32 +183,37 @@
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        {% include 'portal/includes/ico-val-key.html' with ico='grid' key='Main Category' val=con.categorie iac='' kac='text-muted small' vac='' %}
+                        {% trans 'Main Category' as categorie %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='grid' key=categorie val=con.categorie iac='' kac='text-muted small' vac='' %}
                     </div>
                     
-                    <div class="col-12 col-md-6 my-3">
+                    <div class="col-12 col-md-6 my-3">                        
                         {% if con.nombre_lots == 1 %}
+                            {% trans 'Reserved to SMB+' as reserved_key %}
                             {% if con.lot_set.first.reserve_pme %}
                                 {% trans "Yes" as reserved %}
                             {% else %}
                                 {% translate 'No' as reserved %}
                             {% endif %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='shield-lock' key='Reserved to SMB+' val=reserved iac='' kac='text-muted small' vac='' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='shield-lock' key=reserved_key val=reserved iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='ui-radios' key='Lots count' val=con.nombre_lots iac='' kac='text-muted small' vac='' %}
+                            {% trans 'Lots count' as lots_count %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='ui-radios' key=lots_count val=con.nombre_lots iac='' kac='text-muted small' vac='' %}
                         {% endif %}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        {% include 'portal/includes/ico-val-key.html' with ico='geo-alt' key='Execution location' val=con.lieu_execution iac='' kac='text-muted small' vac='' %}
+                        {% trans 'Execution location' as location %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='geo-alt' key=location val=con.lieu_execution iac='' kac='text-muted small' vac='' %}
                     </div>
                     <div class="col-12 col-md-6 my-3">
+                        {% trans 'Public client' as client %}
                         {% if request.user.is_authenticated %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='bank' key='Public client' val=con.acheteur_public iac='' kac='text-muted small' vac='' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='bank' key=client val=con.acheteur_public iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='bank' key='Public client' scope='auth' kac='text-muted small' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='bank' key=client scope='auth' kac='text-muted small' %}
                         {% endif %}
                     </div>
                 </div>
@@ -205,10 +221,12 @@
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        {% include 'portal/includes/ico-val-key.html' with ico='megaphone' key='Procedure' val=con.procedure_annonce iac='' kac='text-muted small' vac='' %}
+                        {% trans 'Procedure' as procedure %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='megaphone' key=procedure val=con.procedure_annonce iac='' kac='text-muted small' vac='' %}
                     </div>
 
                     <div class="col-12 col-md-6 my-3">
+                        {% trans 'Online bidding' as ebidding %}
                         {% if con.reponse_electronique == 'RR' %}
                             {% trans 'Required, e-Sign required' as relec %}
                         {% elif con.reponse_electronique == 'RO' %}
@@ -220,13 +238,14 @@
                         {% elif con.reponse_electronique == 'I' or con.reponse_electronique == '' %}
                             {% trans 'Not Applicable' as relec %}
                         {% endif %}
-                        {% include 'portal/includes/ico-val-key.html' with ico='display' key='Online bidding' val=relec iac='' kac='text-muted small' vac='' %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='display' key=ebidding val=relec iac='' kac='text-muted small' vac='' %}
                     </div>
                 </div>
 
                 {% if con.domaines %}
                     <div class="py-3" id="domains">
-                        {% include 'portal/includes/ico-val-key.html' with ico='ui-radios-grid' key='Domains of activity' kac='text-muted small' template='portal/includes/con-domains.html' %}
+                        {% trans 'Domains of activity' as domains %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='ui-radios-grid' key=domains kac='text-muted small' template='portal/includes/con-domains.html' %}
                     </div>
                 {% endif %}
 
@@ -235,46 +254,53 @@
 
                     {% if con.lot_set.first.qualifications.all %}
                         <div class="py-3" id="qualifs">
-                            {% include 'portal/includes/ico-val-key.html' with ico='award' key='Qualifications' kac='text-muted small' template='portal/includes/con-qualifs.html' %}
+                            {% trans 'Qualifications' as qualifs %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='award' key=qualifs kac='text-muted small' template='portal/includes/con-qualifs.html' %}
                         </div>
                     {% endif %}
 
                     {% if con.lot_set.first.agrements.all %}
                         <div class="py-3" id="agrements">
-                            {% include 'portal/includes/ico-val-key.html' with ico='shield-check' key='Agrements' kac='text-muted small' template='portal/includes/con-agrements.html' %}
+                            {% trans 'Agrements' as agrements %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='shield-check' key=agrements kac='text-muted small' template='portal/includes/con-agrements.html' %}
                         </div>
                     {% endif %}
 
                     {% if con.lot_set.first.echantillons %}
                         <div class="py-3" id="echantillons">
-                            {% include 'portal/includes/ico-val-key.html' with ico='palette2' key='Samples' kac='text-muted small' template='portal/includes/con-echantillons.html' %}
+                            {% trans 'Samples' as samples %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='palette2' key=samples kac='text-muted small' template='portal/includes/con-echantillons.html' %}
                         </div>
                     {% endif %}
 
                     {% if con.lot_set.first.reunions %}
                         <div class="py-3" id="reunions">
-                            {% include 'portal/includes/ico-val-key.html' with ico='easel' key='Meetings' kac='text-muted small' template='portal/includes/con-reunions.html' %}
+                            {% trans 'Meetings' as meetings %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='easel' key=meetings kac='text-muted small' template='portal/includes/con-reunions.html' %}
                         </div>
                     {% endif %}
 
                     {% if con.lot_set.first.visites %}
                         <div class="py-3" id="visites">
-                            {% include 'portal/includes/ico-val-key.html' with ico='eye' key='In-Site Visits' kac='text-muted small' template='portal/includes/con-visites.html' %}
+                            {% trans 'In-Site Visits' as visites %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='eye' key=visites kac='text-muted small' template='portal/includes/con-visites.html' %}
                         </div>
                     {% endif %}
 
                     {% if con.lot_set.first.variante != 'Non' or con.prix_acquisition_plans != 0 %}
                         <div class="row py-3">
                             <div class="col-12 col-md-6">
-                                {% include 'portal/includes/ico-val-key.html' with ico='map' key='Price of Plans' val=con.prix_acquisition_plans|floatformat:'2g' iac='' kac='text-muted small' vac='' %}
+                                {% trans 'Price of Plans' as plans %}
+                                {% include 'portal/includes/ico-val-key.html' with ico='map' key=plans val=con.prix_acquisition_plans|floatformat:'2g' iac='' kac='text-muted small' vac='' %}
                             </div>
                             <div class="col-12 col-md-6">
+                                {% trans 'Variante' as variable %}
                                 {% if con.lot_set.first.variante == 'Non' %}
                                     {% trans "No" as variante %}
                                 {% else %}
                                     {% translate 'Yes' as variante %}
                                 {% endif %}
-                                {% include 'portal/includes/ico-val-key.html' with ico='signpost2' key='Variante' val=variante iac='' kac='text-muted small' vac='' %}
+                                {% include 'portal/includes/ico-val-key.html' with ico='signpost2' key=variable val=variante iac='' kac='text-muted small' vac='' %}
                             </div>
                         </div>
                     {% endif %}
@@ -282,41 +308,47 @@
 
                 {% if con.nombre_lots > 1 %}
                     <div class="py-3">
-                        {% include 'portal/includes/ico-val-key.html' with ico='ui-radios' key='Lots details' kac='text-muted small' template='portal/includes/con-lots-details.html' %}
+                        {% trans 'Lots details' as lots %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='ui-radios' key=lots kac='text-muted small' template='portal/includes/con-lots-details.html' %}
                     </div>
                 {% endif %}
                 
                 {% if con.retrait_dossiers_adresse %}
                     <div class="py-3">
+                        {% trans 'Withdrawal address' as withdrawal %}
                         {% if request.user.is_authenticated %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-down-circle' key='Withdrawal address' val=con.retrait_dossiers_adresse iac='' kac='text-muted small' vac='' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-down-circle' key=withdrawal val=con.retrait_dossiers_adresse iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-down-circle' key='Withdrawal address' scope='auth' kac='text-muted small' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-down-circle' key=withdrawal scope='auth' kac='text-muted small' %}
                         {% endif %}
                     </div>
                 {% endif %}
 
                 {% if con.depot_offres_adresse %}
                     <div class="py-3">
+                        {% trans 'Bidding address' as bidding_address %}
                         {% if request.user.is_authenticated %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-up-circle' key='Bidding address' val=con.depot_offres_adresse iac='' kac='text-muted small' vac='' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-up-circle' key=bidding_address val=con.depot_offres_adresse iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-up-circle' key='Bidding address' scope='auth' kac='text-muted small' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-up-circle' key=bidding_address scope='auth' kac='text-muted small' %}
                         {% endif %}
                     </div>
                 {% endif %}
 
                 {% if con.ouverture_plis_adresse %}
-                    <div class="py-3">{% if request.user.is_authenticated %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='check-circle' key='Opening address' val=con.ouverture_plis_adresse iac='' kac='text-muted small' vac='' %}
+                    <div class="py-3">
+                        {% trans 'Opening address' as opening_address %}
+                        {% if request.user.is_authenticated %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='check-circle' key=opening_address val=con.ouverture_plis_adresse iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='check-circle' key='Opening address' scope='auth' kac='text-muted small' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='check-circle' key=opening_address scope='auth' kac='text-muted small' %}
                         {% endif %}
                     </div>
                 {% endif %}
 
                 <div class="py-3">
-                    {% include 'portal/includes/ico-val-key.html' with ico='person' key='Contact' kac='text-muted small' template='portal/includes/con-contact.html' %}
+                    {% trans 'Contact' as contact %}
+                    {% include 'portal/includes/ico-val-key.html' with ico='person' key=contact kac='text-muted small' template='portal/includes/con-contact.html' %}
                 </div>
             </div>
         </div>

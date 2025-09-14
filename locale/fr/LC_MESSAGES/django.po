@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-14 20:22+0000\n"
+"POT-Creation-Date: 2025-09-14 21:08+0000\n"
 "PO-Revision-Date: 2025-01-16 12:25+0100\n"
 "Last-Translator: Amina Bouhou <a.bouhou@emarches.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -825,6 +825,7 @@ msgstr "Infos"
 
 #: base/templates/base/includes/footer.html:19
 #: base/templates/base/includes/navbar.html:51
+#: portal/templates/portal/con-details.html:348
 msgid "Contact"
 msgstr "Contact"
 
@@ -1811,6 +1812,7 @@ msgid "Free"
 msgstr "Gratuit"
 
 #: base/templates/base/profile.html:58
+#: portal/templates/portal/con-details.html:139
 msgid "Remaining days"
 msgstr "Jours restants"
 
@@ -2191,16 +2193,16 @@ msgstr "Utilisateur authentifié"
 
 #: crm/templates/crm/lead_edit.html:79 crm/templates/crm/lead_edit.html:113
 #: crm/templates/crm/lead_edit.html:126 crm/templates/crm/lead_edit.html:139
-#: portal/templates/portal/con-details.html:181
-#: portal/templates/portal/con-details.html:275
+#: portal/templates/portal/con-details.html:192
+#: portal/templates/portal/con-details.html:299
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "Yes"
 msgstr "Oui"
 
 #: crm/templates/crm/lead_edit.html:81 crm/templates/crm/lead_edit.html:115
 #: crm/templates/crm/lead_edit.html:128 crm/templates/crm/lead_edit.html:141
-#: portal/templates/portal/con-details.html:183
-#: portal/templates/portal/con-details.html:273
+#: portal/templates/portal/con-details.html:194
+#: portal/templates/portal/con-details.html:297
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "No"
 msgstr "Non"
@@ -2357,10 +2359,8 @@ msgstr ""
 "Bons de Commande et qu'il n'y a pas grand chose à y améliorer."
 
 #: portal/templates/portal/bdc-landing.html:20
-#, fuzzy
-#| msgid "Browse POs on Official Website"
 msgid "Official Website"
-msgstr "Parcourir le site Officiel"
+msgstr "Site Officiel"
 
 #: portal/templates/portal/con-details.html:7
 #: portal/templates/portal/con-details.html:72
@@ -2425,30 +2425,158 @@ msgstr "Ajouter/Enlever des Favoris"
 msgid "Bid"
 msgstr "Soumission"
 
-#: portal/templates/portal/con-details.html:213
+#: portal/templates/portal/con-details.html:126
+#: portal/templates/portal/cons-search-advanced-form.html:17
+#: portal/templates/portal/cons-search-basic-form.html:17
+#: portal/templates/portal/includes/con-lots-details.html:10
+msgid "Object"
+msgstr "Objet"
+
+#: portal/templates/portal/con-details.html:133
+msgid "Bidding Deadline"
+msgstr "Date limite de soumission"
+
+#: portal/templates/portal/con-details.html:134
+msgid "Morocco Time"
+msgstr "Heure du Maroc"
+
+#: portal/templates/portal/con-details.html:140
+msgid "days"
+msgstr "jours"
+
+#: portal/templates/portal/con-details.html:147
+#: portal/templates/portal/cons-search-advanced-form.html:169
+#: portal/templates/portal/cons-search-advanced-form.html:170
+#: portal/templates/portal/cons-search-basic-form.html:54
+#: portal/templates/portal/cons-search-basic-form.html:55
+msgid "Total Estimate"
+msgstr "Estimation totale"
+
+#: portal/templates/portal/con-details.html:151
+#: portal/templates/portal/cons-search-advanced-form.html:171
+#: portal/templates/portal/cons-search-advanced-form.html:172
+#: portal/templates/portal/cons-search-basic-form.html:56
+#: portal/templates/portal/cons-search-basic-form.html:57
+msgid "Temporary Caution"
+msgstr "Caution provisoire"
+
+#: portal/templates/portal/con-details.html:163
+#: portal/templates/portal/cons-search-advanced-form.html:23
+#: portal/templates/portal/cons-search-basic-form.html:23
+msgid "Reference"
+msgstr "Référence"
+
+#: portal/templates/portal/con-details.html:171
+msgid "Date published"
+msgstr "Date de publication"
+
+#: portal/templates/portal/con-details.html:184
+msgid "Main Category"
+msgstr "Catégorie principale"
+
+#: portal/templates/portal/con-details.html:190
+msgid "Reserved to SMB+"
+msgstr "Réservé aux PME+"
+
+#: portal/templates/portal/con-details.html:198
+msgid "Lots count"
+msgstr "Nombre de lots"
+
+#: portal/templates/portal/con-details.html:206
+msgid "Execution location"
+msgstr "Lieu d'exécution"
+
+#: portal/templates/portal/con-details.html:210
+msgid "Public client"
+msgstr "Acheteur public"
+
+#: portal/templates/portal/con-details.html:222
+#: portal/templates/portal/cons-search-advanced-form.html:59
+msgid "Procedure"
+msgstr "Procédure"
+
+#: portal/templates/portal/con-details.html:227
+msgid "Online bidding"
+msgstr "Réponse électronique"
+
+#: portal/templates/portal/con-details.html:229
 #: portal/templates/portal/cons-search-advanced-form.html:120
 msgid "Required, e-Sign required"
 msgstr "Requise, signature électronique requise"
 
-#: portal/templates/portal/con-details.html:215
+#: portal/templates/portal/con-details.html:231
 #: portal/templates/portal/cons-search-advanced-form.html:121
 msgid "Required, e-Sign not required"
 msgstr "Requise, signature électronique non requise"
 
-#: portal/templates/portal/con-details.html:217
+#: portal/templates/portal/con-details.html:233
 #: portal/templates/portal/cons-search-advanced-form.html:122
 msgid "Not required, e-Sign required"
 msgstr "Non requise, signature électronique requise"
 
-#: portal/templates/portal/con-details.html:219
+#: portal/templates/portal/con-details.html:235
 #: portal/templates/portal/cons-search-advanced-form.html:123
 msgid "Not required, e-Sign not required"
 msgstr "Non requise, signature électronique non requise"
 
-#: portal/templates/portal/con-details.html:221
+#: portal/templates/portal/con-details.html:237
 #: portal/templates/portal/cons-search-advanced-form.html:124
 msgid "Not Applicable"
 msgstr "Non Applicable"
+
+#: portal/templates/portal/con-details.html:245
+msgid "Domains of activity"
+msgstr "Domaines d'activité"
+
+#: portal/templates/portal/con-details.html:255
+#: portal/templates/portal/includes/con-lots-details.html:20
+msgid "Qualifications"
+msgstr "Qualifications"
+
+#: portal/templates/portal/con-details.html:262
+#: portal/templates/portal/includes/con-lots-details.html:23
+msgid "Agrements"
+msgstr "Agréments"
+
+#: portal/templates/portal/con-details.html:269
+#: portal/templates/portal/includes/con-lots-details.html:27
+msgid "Samples"
+msgstr "Échantillons"
+
+#: portal/templates/portal/con-details.html:276
+#: portal/templates/portal/includes/con-lots-details.html:31
+msgid "Meetings"
+msgstr "Réunions"
+
+#: portal/templates/portal/con-details.html:283
+#: portal/templates/portal/includes/con-lots-details.html:35
+msgid "In-Site Visits"
+msgstr "Visites des lieux"
+
+#: portal/templates/portal/con-details.html:291
+msgid "Price of Plans"
+msgstr "Prix des plans"
+
+#: portal/templates/portal/con-details.html:295
+#: portal/templates/portal/includes/con-lots-details.html:39
+msgid "Variante"
+msgstr "Variante"
+
+#: portal/templates/portal/con-details.html:309
+msgid "Lots details"
+msgstr "Détails des lots"
+
+#: portal/templates/portal/con-details.html:316
+msgid "Withdrawal address"
+msgstr "Adresse de retrait des dossiers"
+
+#: portal/templates/portal/con-details.html:327
+msgid "Bidding address"
+msgstr "Adresse de remise des offres"
+
+#: portal/templates/portal/con-details.html:338
+msgid "Opening address"
+msgstr "Adresse d'ouverture des plis"
 
 #: portal/templates/portal/cons-favs.html:6
 #: portal/templates/portal/cons-favs.html:58
@@ -2561,17 +2689,6 @@ msgstr "Mis à jour depuis"
 msgid "Tenders Search"
 msgstr "Recherche des Consultations"
 
-#: portal/templates/portal/cons-search-advanced-form.html:17
-#: portal/templates/portal/cons-search-basic-form.html:17
-#: portal/templates/portal/includes/con-lots-details.html:10
-msgid "Object"
-msgstr "Objet"
-
-#: portal/templates/portal/cons-search-advanced-form.html:23
-#: portal/templates/portal/cons-search-basic-form.html:23
-msgid "Reference"
-msgstr "Référence"
-
 #: portal/templates/portal/cons-search-advanced-form.html:33
 msgid "Estimate Min"
 msgstr "Estimation Min"
@@ -2590,10 +2707,6 @@ msgstr "Catégorie"
 #: portal/templates/portal/cons-search-advanced-form.html:119
 msgid "All"
 msgstr "Tout"
-
-#: portal/templates/portal/cons-search-advanced-form.html:59
-msgid "Procedure"
-msgstr "Procédure"
 
 #: portal/templates/portal/cons-search-advanced-form.html:73
 msgid "Deadline Min"
@@ -2655,20 +2768,6 @@ msgstr "Date limite"
 #: portal/templates/portal/cons-search-basic-form.html:53
 msgid "Published Date"
 msgstr "Date de publication"
-
-#: portal/templates/portal/cons-search-advanced-form.html:169
-#: portal/templates/portal/cons-search-advanced-form.html:170
-#: portal/templates/portal/cons-search-basic-form.html:54
-#: portal/templates/portal/cons-search-basic-form.html:55
-msgid "Total Estimate"
-msgstr "Estimation totale"
-
-#: portal/templates/portal/cons-search-advanced-form.html:171
-#: portal/templates/portal/cons-search-advanced-form.html:172
-#: portal/templates/portal/cons-search-basic-form.html:56
-#: portal/templates/portal/cons-search-basic-form.html:57
-msgid "Temporary Caution"
-msgstr "Caution provisoire"
 
 #: portal/templates/portal/cons-search-advanced-form.html:182
 #: portal/templates/portal/cons-search-basic-form.html:67
@@ -2825,30 +2924,6 @@ msgstr "Estimation"
 #: portal/templates/portal/includes/con-lots-details.html:15
 msgid "Caution"
 msgstr "Caution provisoire"
-
-#: portal/templates/portal/includes/con-lots-details.html:20
-msgid "Qualifications"
-msgstr "Qualifications"
-
-#: portal/templates/portal/includes/con-lots-details.html:23
-msgid "Agrements"
-msgstr "Agréments"
-
-#: portal/templates/portal/includes/con-lots-details.html:27
-msgid "Samples"
-msgstr "Échantillons"
-
-#: portal/templates/portal/includes/con-lots-details.html:31
-msgid "Meetings"
-msgstr "Réunions"
-
-#: portal/templates/portal/includes/con-lots-details.html:35
-msgid "In-Site Visits"
-msgstr "Visites des lieux"
-
-#: portal/templates/portal/includes/con-lots-details.html:39
-msgid "Variante"
-msgstr "Variante"
 
 #: portal/templates/portal/includes/cons-legend.html:8
 msgid "Legend"
@@ -4089,127 +4164,82 @@ msgstr "Actuel"
 msgid "Sign Out Other Sessions"
 msgstr "Se déconnecter des autres sessions"
 
-msgid "Download should start shortly... Please wait."
-msgstr "Le téléchargement va bientôt commencer... Veuillez patienter."
+ msgid "Download should start shortly... Please wait."
+ msgstr "Le téléchargement va bientôt commencer... Veuillez patienter."
 
-msgid ""
-"Sorry, we could not get your files. If this happens often, please let us "
-"know."
-msgstr ""
-"Désolés, nous n'avons pas pu obtenir vos fichiers. Si cela se reproduit "
-"souvent, merci de nous le faire savoir."
+ msgid ""
+ "Sorry, we could not get your files. If this happens often, please let us "
+ "know."
+ msgstr ""
+ "Désolés, nous n'avons pas pu obtenir vos fichiers. Si cela se reproduit "
+ "souvent, merci de nous le faire savoir."
 
-msgid "Bidding Deadline"
-msgstr "Date limite de soumission"
+ msgid "Multi-lots"
+ msgstr "Multi-lots"
 
-msgid "Morocco time"
-msgstr "Heure du Maroc"
+ msgid "Electronic response and signature"
+ msgstr "Réponse électronique et signature"
 
-msgid "days"
-msgstr "jours"
+ msgid "Download List"
+ msgstr "Télécharger la liste"
 
-msgid "Multi-lots"
-msgstr "Multi-lots"
+ msgid ""
+ "This file is only for authenticated users and you should not have "
+ "accessed it."
+ msgstr ""
+ "Ce fichier est réservé aux utilisateurs authentifiés et vous n'auriez pas "
+ "dû y accéder."
 
-msgid "Main Category"
-msgstr "Catégorie principale"
+ msgid ""
+ "Our servers security mechanism replaced the original content with this "
+ "message."
+ msgstr ""
+ "Le mécanisme de sécurité de nos serveurs a remplacé le contenu original "
+ "par ce message."
 
-msgid "Reserved to SMB+"
-msgstr "Réservé aux PME+"
+ msgid ""
+ "If you got this file from our servers, we would like to know how you did."
+ msgstr ""
+ "Si vous avez obtenu ce fichier depuis nos serveurs, nous aimerions savoir "
+ "comment vous avez fait."
 
-msgid "Lots count"
-msgstr "Nombre de lots"
+ msgid "We may hire you. Please contact us. Links on eMarches.com"
+ msgstr ""
+ "Nous pourrions vous embaucher. Veuillez nous contacter. Liens sur "
+ "eMarches.com"
 
-msgid "Date published"
-msgstr "Date de publication"
+ msgid "Total downloaded size"
+ msgstr "Taille totale des téléchargements"
 
-msgid "Execution location"
-msgstr "Lieu d'exécution"
+ msgid "Top last"
+ msgstr "Top derniers"
 
-msgid "Public client"
-msgstr "Acheteur public"
+ msgid "Here is a list of files associated with the Tender."
+ msgstr "Voici une liste des fichiers associés à la Consultation."
 
-msgid "Electronic response and signature"
-msgstr "Réponse électronique et signature"
+ msgid "Portfolio"
+ msgstr "Portfolio"
 
-msgid "Domains of activity"
-msgstr "Domaines d'activité"
+ msgid "Mobile"
+ msgstr "Mobile"
 
-msgid "Price of Plans"
-msgstr "Prix des plans"
+ msgid "Profile not set"
+ msgstr "Profil non défini"
 
-msgid "Lots details"
-msgstr "Détails des lots"
+ msgid "Profile Stats"
+ msgstr "Statistiques utilisateur"
 
-msgid "Withdrawal address"
-msgstr "Adresse de retrait des dossiers"
+ msgid "Unlimited"
+ msgstr "Illimité"
 
-msgid "Bidding address"
-msgstr "Adresse de remise des offres"
+ msgid "Browse"
+ msgstr "Parcourir"
 
-msgid "Opening address"
-msgstr "Adresse d'ouverture des plis"
+ msgid "Manage Addresses"
+ msgstr "Gérer les adresses"
 
-msgid "Download List"
-msgstr "Télécharger la liste"
+ msgid "Exit Favourites"
+ msgstr "Quitter les favoris"
 
-msgid ""
-"This file is only for authenticated users and you should not have "
-"accessed it."
-msgstr ""
-"Ce fichier est réservé aux utilisateurs authentifiés et vous n'auriez pas "
-"dû y accéder."
-
-msgid ""
-"Our servers security mechanism replaced the original content with this "
-"message."
-msgstr ""
-"Le mécanisme de sécurité de nos serveurs a remplacé le contenu original "
-"par ce message."
-
-msgid ""
-"If you got this file from our servers, we would like to know how you did."
-msgstr ""
-"Si vous avez obtenu ce fichier depuis nos serveurs, nous aimerions savoir "
-"comment vous avez fait."
-
-msgid "We may hire you. Please contact us. Links on eMarches.com"
-msgstr ""
-"Nous pourrions vous embaucher. Veuillez nous contacter. Liens sur "
-"eMarches.com"
-
-msgid "Total downloaded size"
-msgstr "Taille totale des téléchargements"
-
-msgid "Top last"
-msgstr "Top derniers"
-
-msgid "Here is a list of files associated with the Tender."
-msgstr "Voici une liste des fichiers associés à la Consultation."
-
-msgid "Portfolio"
-msgstr "Portfolio"
-
-msgid "Mobile"
-msgstr "Mobile"
-
-msgid "Profile not set"
-msgstr "Profil non défini"
-
-msgid "Profile Stats"
-msgstr "Statistiques utilisateur"
-
-msgid "Unlimited"
-msgstr "Illimité"
-
-msgid "Browse"
-msgstr "Parcourir"
-
-msgid "Manage Addresses"
-msgstr "Gérer les adresses"
-
-msgid "Exit Favourites"
-msgstr "Quitter les favoris"
-
-msgid "Forgot your password?"
-msgstr "Mot de passe oublié ?"
+ msgid "Forgot your password?"
+ msgstr "Mot de passe oublié ?"

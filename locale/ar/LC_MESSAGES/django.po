@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-14 20:22+0000\n"
+"POT-Creation-Date: 2025-09-14 21:08+0000\n"
 "PO-Revision-Date: 2025-01-29 12:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -780,6 +780,7 @@ msgstr "معلومات"
 
 #: base/templates/base/includes/footer.html:19
 #: base/templates/base/includes/navbar.html:51
+#: portal/templates/portal/con-details.html:348
 msgid "Contact"
 msgstr "اتصال"
 
@@ -1707,6 +1708,7 @@ msgid "Free"
 msgstr "مجاني"
 
 #: base/templates/base/profile.html:58
+#: portal/templates/portal/con-details.html:139
 msgid "Remaining days"
 msgstr "الأيام المتبقية"
 
@@ -2077,16 +2079,16 @@ msgstr "مستخدم مسجل"
 
 #: crm/templates/crm/lead_edit.html:79 crm/templates/crm/lead_edit.html:113
 #: crm/templates/crm/lead_edit.html:126 crm/templates/crm/lead_edit.html:139
-#: portal/templates/portal/con-details.html:181
-#: portal/templates/portal/con-details.html:275
+#: portal/templates/portal/con-details.html:192
+#: portal/templates/portal/con-details.html:299
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "Yes"
 msgstr "نعم"
 
 #: crm/templates/crm/lead_edit.html:81 crm/templates/crm/lead_edit.html:115
 #: crm/templates/crm/lead_edit.html:128 crm/templates/crm/lead_edit.html:141
-#: portal/templates/portal/con-details.html:183
-#: portal/templates/portal/con-details.html:273
+#: portal/templates/portal/con-details.html:194
+#: portal/templates/portal/con-details.html:297
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "No"
 msgstr "لا"
@@ -2243,10 +2245,8 @@ msgstr ""
 "تحسينات كبرى يمكن إضافتها."
 
 #: portal/templates/portal/bdc-landing.html:20
-#, fuzzy
-#| msgid "Browse POs on Official Website"
 msgid "Official Website"
-msgstr "فتح الموقع الرسمي"
+msgstr "الموقع الرسمي"
 
 #: portal/templates/portal/con-details.html:7
 #: portal/templates/portal/con-details.html:72
@@ -2285,7 +2285,7 @@ msgstr "يرجى المحاولة لاحقًا، أو الاتصال بنا إذ
 
 #: portal/templates/portal/con-details.html:57
 msgid "Close"
-msgstr ""
+msgstr "اغلاق"
 
 #: portal/templates/portal/con-details.html:67
 msgid "Cancelled"
@@ -2307,30 +2307,158 @@ msgstr "تبديل المفضلة"
 msgid "Bid"
 msgstr "مشاركة"
 
-#: portal/templates/portal/con-details.html:213
+#: portal/templates/portal/con-details.html:126
+#: portal/templates/portal/cons-search-advanced-form.html:17
+#: portal/templates/portal/cons-search-basic-form.html:17
+#: portal/templates/portal/includes/con-lots-details.html:10
+msgid "Object"
+msgstr "الموضوع"
+
+#: portal/templates/portal/con-details.html:133
+msgid "Bidding Deadline"
+msgstr "آخر موعد المشاركة"
+
+#: portal/templates/portal/con-details.html:134
+msgid "Morocco Time"
+msgstr "توقيت المغرب"
+
+#: portal/templates/portal/con-details.html:140
+msgid "days"
+msgstr "أيام"
+
+#: portal/templates/portal/con-details.html:147
+#: portal/templates/portal/cons-search-advanced-form.html:169
+#: portal/templates/portal/cons-search-advanced-form.html:170
+#: portal/templates/portal/cons-search-basic-form.html:54
+#: portal/templates/portal/cons-search-basic-form.html:55
+msgid "Total Estimate"
+msgstr "إجمالي التقدير"
+
+#: portal/templates/portal/con-details.html:151
+#: portal/templates/portal/cons-search-advanced-form.html:171
+#: portal/templates/portal/cons-search-advanced-form.html:172
+#: portal/templates/portal/cons-search-basic-form.html:56
+#: portal/templates/portal/cons-search-basic-form.html:57
+msgid "Temporary Caution"
+msgstr "الضمان المؤقت"
+
+#: portal/templates/portal/con-details.html:163
+#: portal/templates/portal/cons-search-advanced-form.html:23
+#: portal/templates/portal/cons-search-basic-form.html:23
+msgid "Reference"
+msgstr "المرجع"
+
+#: portal/templates/portal/con-details.html:171
+msgid "Date published"
+msgstr "تاريخ النشر"
+
+#: portal/templates/portal/con-details.html:184
+msgid "Main Category"
+msgstr "الفئة الرئيسية"
+
+#: portal/templates/portal/con-details.html:190
+msgid "Reserved to SMB+"
+msgstr "مخصص للصغار+"
+
+#: portal/templates/portal/con-details.html:198
+msgid "Lots count"
+msgstr "عدد الحزم"
+
+#: portal/templates/portal/con-details.html:206
+msgid "Execution location"
+msgstr "مكان الإنجاز"
+
+#: portal/templates/portal/con-details.html:210
+msgid "Public client"
+msgstr "الزبون العام"
+
+#: portal/templates/portal/con-details.html:222
+#: portal/templates/portal/cons-search-advanced-form.html:59
+msgid "Procedure"
+msgstr "نوع الإجراء"
+
+#: portal/templates/portal/con-details.html:227
+msgid "Online bidding"
+msgstr "المشاركة الإلكترونية"
+
+#: portal/templates/portal/con-details.html:229
 #: portal/templates/portal/cons-search-advanced-form.html:120
 msgid "Required, e-Sign required"
 msgstr "إلزامية، التوقيع الإلكتروني إلزامي"
 
-#: portal/templates/portal/con-details.html:215
+#: portal/templates/portal/con-details.html:231
 #: portal/templates/portal/cons-search-advanced-form.html:121
 msgid "Required, e-Sign not required"
 msgstr "إلزامية، التوقيع الإلكتروني غير إلزامي"
 
-#: portal/templates/portal/con-details.html:217
+#: portal/templates/portal/con-details.html:233
 #: portal/templates/portal/cons-search-advanced-form.html:122
 msgid "Not required, e-Sign required"
 msgstr "غير إلزامية، التوقيع الإلكتروني إلزامي"
 
-#: portal/templates/portal/con-details.html:219
+#: portal/templates/portal/con-details.html:235
 #: portal/templates/portal/cons-search-advanced-form.html:123
 msgid "Not required, e-Sign not required"
 msgstr "غير إلزامية، التوقيع الإلكتروني غير إلزامي"
 
-#: portal/templates/portal/con-details.html:221
+#: portal/templates/portal/con-details.html:237
 #: portal/templates/portal/cons-search-advanced-form.html:124
 msgid "Not Applicable"
 msgstr "غير قابل للتطبيق"
+
+#: portal/templates/portal/con-details.html:245
+msgid "Domains of activity"
+msgstr "مجالات النشاط"
+
+#: portal/templates/portal/con-details.html:255
+#: portal/templates/portal/includes/con-lots-details.html:20
+msgid "Qualifications"
+msgstr "المؤهلات"
+
+#: portal/templates/portal/con-details.html:262
+#: portal/templates/portal/includes/con-lots-details.html:23
+msgid "Agrements"
+msgstr "الاعتمادات"
+
+#: portal/templates/portal/con-details.html:269
+#: portal/templates/portal/includes/con-lots-details.html:27
+msgid "Samples"
+msgstr "العينات"
+
+#: portal/templates/portal/con-details.html:276
+#: portal/templates/portal/includes/con-lots-details.html:31
+msgid "Meetings"
+msgstr "الاجتماعات"
+
+#: portal/templates/portal/con-details.html:283
+#: portal/templates/portal/includes/con-lots-details.html:35
+msgid "In-Site Visits"
+msgstr "الزيارات الميدانية"
+
+#: portal/templates/portal/con-details.html:291
+msgid "Price of Plans"
+msgstr "سعر التصاميم"
+
+#: portal/templates/portal/con-details.html:295
+#: portal/templates/portal/includes/con-lots-details.html:39
+msgid "Variante"
+msgstr "البديل"
+
+#: portal/templates/portal/con-details.html:309
+msgid "Lots details"
+msgstr "تفاصيل الحزم"
+
+#: portal/templates/portal/con-details.html:316
+msgid "Withdrawal address"
+msgstr "عنوان السحب"
+
+#: portal/templates/portal/con-details.html:327
+msgid "Bidding address"
+msgstr "عنوان المشاركة"
+
+#: portal/templates/portal/con-details.html:338
+msgid "Opening address"
+msgstr "عنوان فتح العروض"
 
 #: portal/templates/portal/cons-favs.html:6
 #: portal/templates/portal/cons-favs.html:58
@@ -2439,17 +2567,6 @@ msgstr "تم التحديث منذ"
 msgid "Tenders Search"
 msgstr "البحث عن المناقصات"
 
-#: portal/templates/portal/cons-search-advanced-form.html:17
-#: portal/templates/portal/cons-search-basic-form.html:17
-#: portal/templates/portal/includes/con-lots-details.html:10
-msgid "Object"
-msgstr "الموضوع"
-
-#: portal/templates/portal/cons-search-advanced-form.html:23
-#: portal/templates/portal/cons-search-basic-form.html:23
-msgid "Reference"
-msgstr "المرجع"
-
 #: portal/templates/portal/cons-search-advanced-form.html:33
 msgid "Estimate Min"
 msgstr "أقل تقدير"
@@ -2468,10 +2585,6 @@ msgstr "الفئة"
 #: portal/templates/portal/cons-search-advanced-form.html:119
 msgid "All"
 msgstr "الكل"
-
-#: portal/templates/portal/cons-search-advanced-form.html:59
-msgid "Procedure"
-msgstr "نوع الإجراء"
 
 #: portal/templates/portal/cons-search-advanced-form.html:73
 msgid "Deadline Min"
@@ -2533,20 +2646,6 @@ msgstr "الموعد النهائي"
 #: portal/templates/portal/cons-search-basic-form.html:53
 msgid "Published Date"
 msgstr "تاريخ النشر"
-
-#: portal/templates/portal/cons-search-advanced-form.html:169
-#: portal/templates/portal/cons-search-advanced-form.html:170
-#: portal/templates/portal/cons-search-basic-form.html:54
-#: portal/templates/portal/cons-search-basic-form.html:55
-msgid "Total Estimate"
-msgstr "إجمالي التقدير"
-
-#: portal/templates/portal/cons-search-advanced-form.html:171
-#: portal/templates/portal/cons-search-advanced-form.html:172
-#: portal/templates/portal/cons-search-basic-form.html:56
-#: portal/templates/portal/cons-search-basic-form.html:57
-msgid "Temporary Caution"
-msgstr "الضمان المؤقت"
 
 #: portal/templates/portal/cons-search-advanced-form.html:182
 #: portal/templates/portal/cons-search-basic-form.html:67
@@ -2699,30 +2798,6 @@ msgstr "التقدير"
 #: portal/templates/portal/includes/con-lots-details.html:15
 msgid "Caution"
 msgstr "الضمان"
-
-#: portal/templates/portal/includes/con-lots-details.html:20
-msgid "Qualifications"
-msgstr "المؤهلات"
-
-#: portal/templates/portal/includes/con-lots-details.html:23
-msgid "Agrements"
-msgstr "الاعتمادات"
-
-#: portal/templates/portal/includes/con-lots-details.html:27
-msgid "Samples"
-msgstr "العينات"
-
-#: portal/templates/portal/includes/con-lots-details.html:31
-msgid "Meetings"
-msgstr "الاجتماعات"
-
-#: portal/templates/portal/includes/con-lots-details.html:35
-msgid "In-Site Visits"
-msgstr "الزيارات الميدانية"
-
-#: portal/templates/portal/includes/con-lots-details.html:39
-msgid "Variante"
-msgstr "البديل"
 
 #: portal/templates/portal/includes/cons-legend.html:8
 msgid "Legend"
@@ -3932,56 +4007,11 @@ msgid ""
 "know."
 msgstr "عذرًا، لم نتمكن من الحصول على ملفاتك. إذا تكرر هذا، يرجى إعلامنا."
 
-msgid "Bidding Deadline"
-msgstr "آخر موعد المشاركة"
-
-msgid "Morocco time"
-msgstr "توقيت المغرب"
-
-msgid "days"
-msgstr "أيام"
-
 msgid "Multi-lots"
 msgstr "عدة حزم"
 
-msgid "Main Category"
-msgstr "الفئة الرئيسية"
-
-msgid "Reserved to SMB+"
-msgstr "مخصص للصغار+"
-
-msgid "Lots count"
-msgstr "عدد الحزم"
-
-msgid "Date published"
-msgstr "تاريخ النشر"
-
-msgid "Execution location"
-msgstr "مكان الإنجاز"
-
-msgid "Public client"
-msgstr "الزبون العام"
-
 msgid "Electronic response and signature"
 msgstr "المشاركة الإلكترونية والتوقيع"
-
-msgid "Domains of activity"
-msgstr "مجالات النشاط"
-
-msgid "Price of Plans"
-msgstr "سعر التصاميم"
-
-msgid "Lots details"
-msgstr "تفاصيل الحزم"
-
-msgid "Withdrawal address"
-msgstr "عنوان السحب"
-
-msgid "Bidding address"
-msgstr "عنوان المشاركة"
-
-msgid "Opening address"
-msgstr "عنوان فتح العروض"
 
 msgid "Download List"
 msgstr "تنزيل اللائحة"

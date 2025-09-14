@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-14 20:22+0000\n"
+"POT-Creation-Date: 2025-09-14 21:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -798,6 +798,7 @@ msgstr "About"
 
 #: base/templates/base/includes/footer.html:19
 #: base/templates/base/includes/navbar.html:51
+#: portal/templates/portal/con-details.html:348
 msgid "Contact"
 msgstr "Contact"
 
@@ -1757,6 +1758,7 @@ msgid "Free"
 msgstr "Free"
 
 #: base/templates/base/profile.html:58
+#: portal/templates/portal/con-details.html:139
 msgid "Remaining days"
 msgstr "Remaining days"
 
@@ -2127,16 +2129,16 @@ msgstr "Authenticated user"
 
 #: crm/templates/crm/lead_edit.html:79 crm/templates/crm/lead_edit.html:113
 #: crm/templates/crm/lead_edit.html:126 crm/templates/crm/lead_edit.html:139
-#: portal/templates/portal/con-details.html:181
-#: portal/templates/portal/con-details.html:275
+#: portal/templates/portal/con-details.html:192
+#: portal/templates/portal/con-details.html:299
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "Yes"
 msgstr "Yes"
 
 #: crm/templates/crm/lead_edit.html:81 crm/templates/crm/lead_edit.html:115
 #: crm/templates/crm/lead_edit.html:128 crm/templates/crm/lead_edit.html:141
-#: portal/templates/portal/con-details.html:183
-#: portal/templates/portal/con-details.html:273
+#: portal/templates/portal/con-details.html:194
+#: portal/templates/portal/con-details.html:297
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "No"
 msgstr "No"
@@ -2362,30 +2364,158 @@ msgstr "Toggle Favourite"
 msgid "Bid"
 msgstr "Bid"
 
-#: portal/templates/portal/con-details.html:213
+#: portal/templates/portal/con-details.html:126
+#: portal/templates/portal/cons-search-advanced-form.html:17
+#: portal/templates/portal/cons-search-basic-form.html:17
+#: portal/templates/portal/includes/con-lots-details.html:10
+msgid "Object"
+msgstr "Object"
+
+#: portal/templates/portal/con-details.html:133
+msgid "Bidding Deadline"
+msgstr "Bidding Deadline"
+
+#: portal/templates/portal/con-details.html:134
+msgid "Morocco Time"
+msgstr "Morocco time"
+
+#: portal/templates/portal/con-details.html:140
+msgid "days"
+msgstr "days"
+
+#: portal/templates/portal/con-details.html:147
+#: portal/templates/portal/cons-search-advanced-form.html:169
+#: portal/templates/portal/cons-search-advanced-form.html:170
+#: portal/templates/portal/cons-search-basic-form.html:54
+#: portal/templates/portal/cons-search-basic-form.html:55
+msgid "Total Estimate"
+msgstr "Total Estimate"
+
+#: portal/templates/portal/con-details.html:151
+#: portal/templates/portal/cons-search-advanced-form.html:171
+#: portal/templates/portal/cons-search-advanced-form.html:172
+#: portal/templates/portal/cons-search-basic-form.html:56
+#: portal/templates/portal/cons-search-basic-form.html:57
+msgid "Temporary Caution"
+msgstr "Temporary Caution"
+
+#: portal/templates/portal/con-details.html:163
+#: portal/templates/portal/cons-search-advanced-form.html:23
+#: portal/templates/portal/cons-search-basic-form.html:23
+msgid "Reference"
+msgstr "Reference"
+
+#: portal/templates/portal/con-details.html:171
+msgid "Date published"
+msgstr "Date Published"
+
+#: portal/templates/portal/con-details.html:184
+msgid "Main Category"
+msgstr "Main Category"
+
+#: portal/templates/portal/con-details.html:190
+msgid "Reserved to SMB+"
+msgstr "Reserved for SMB+"
+
+#: portal/templates/portal/con-details.html:198
+msgid "Lots count"
+msgstr "Lots Count"
+
+#: portal/templates/portal/con-details.html:206
+msgid "Execution location"
+msgstr "Execution Location"
+
+#: portal/templates/portal/con-details.html:210
+msgid "Public client"
+msgstr "Public Client"
+
+#: portal/templates/portal/con-details.html:222
+#: portal/templates/portal/cons-search-advanced-form.html:59
+msgid "Procedure"
+msgstr "Procedure"
+
+#: portal/templates/portal/con-details.html:227
+msgid "Online bidding"
+msgstr "Online bidding"
+
+#: portal/templates/portal/con-details.html:229
 #: portal/templates/portal/cons-search-advanced-form.html:120
 msgid "Required, e-Sign required"
 msgstr "Required, e-Signature Required"
 
-#: portal/templates/portal/con-details.html:215
+#: portal/templates/portal/con-details.html:231
 #: portal/templates/portal/cons-search-advanced-form.html:121
 msgid "Required, e-Sign not required"
 msgstr "Required, e-Signature Not Required"
 
-#: portal/templates/portal/con-details.html:217
+#: portal/templates/portal/con-details.html:233
 #: portal/templates/portal/cons-search-advanced-form.html:122
 msgid "Not required, e-Sign required"
 msgstr "Not Required, e-Signature Required"
 
-#: portal/templates/portal/con-details.html:219
+#: portal/templates/portal/con-details.html:235
 #: portal/templates/portal/cons-search-advanced-form.html:123
 msgid "Not required, e-Sign not required"
 msgstr "Not Required, e-Signature Not Required"
 
-#: portal/templates/portal/con-details.html:221
+#: portal/templates/portal/con-details.html:237
 #: portal/templates/portal/cons-search-advanced-form.html:124
 msgid "Not Applicable"
 msgstr "Not Applicable"
+
+#: portal/templates/portal/con-details.html:245
+msgid "Domains of activity"
+msgstr "Domains of Activity"
+
+#: portal/templates/portal/con-details.html:255
+#: portal/templates/portal/includes/con-lots-details.html:20
+msgid "Qualifications"
+msgstr "Qualifications"
+
+#: portal/templates/portal/con-details.html:262
+#: portal/templates/portal/includes/con-lots-details.html:23
+msgid "Agrements"
+msgstr "Agreements"
+
+#: portal/templates/portal/con-details.html:269
+#: portal/templates/portal/includes/con-lots-details.html:27
+msgid "Samples"
+msgstr "Samples"
+
+#: portal/templates/portal/con-details.html:276
+#: portal/templates/portal/includes/con-lots-details.html:31
+msgid "Meetings"
+msgstr "Meetings"
+
+#: portal/templates/portal/con-details.html:283
+#: portal/templates/portal/includes/con-lots-details.html:35
+msgid "In-Site Visits"
+msgstr "In-Site Visits"
+
+#: portal/templates/portal/con-details.html:291
+msgid "Price of Plans"
+msgstr "Price of Plans"
+
+#: portal/templates/portal/con-details.html:295
+#: portal/templates/portal/includes/con-lots-details.html:39
+msgid "Variante"
+msgstr "Variant"
+
+#: portal/templates/portal/con-details.html:309
+msgid "Lots details"
+msgstr "Lot Details"
+
+#: portal/templates/portal/con-details.html:316
+msgid "Withdrawal address"
+msgstr "Withdrawal Address"
+
+#: portal/templates/portal/con-details.html:327
+msgid "Bidding address"
+msgstr "Bidding Address"
+
+#: portal/templates/portal/con-details.html:338
+msgid "Opening address"
+msgstr "Opening Address"
 
 #: portal/templates/portal/cons-favs.html:6
 #: portal/templates/portal/cons-favs.html:58
@@ -2496,17 +2626,6 @@ msgstr "Updated Since"
 msgid "Tenders Search"
 msgstr "Tenders Search"
 
-#: portal/templates/portal/cons-search-advanced-form.html:17
-#: portal/templates/portal/cons-search-basic-form.html:17
-#: portal/templates/portal/includes/con-lots-details.html:10
-msgid "Object"
-msgstr "Object"
-
-#: portal/templates/portal/cons-search-advanced-form.html:23
-#: portal/templates/portal/cons-search-basic-form.html:23
-msgid "Reference"
-msgstr "Reference"
-
 #: portal/templates/portal/cons-search-advanced-form.html:33
 msgid "Estimate Min"
 msgstr "Estimate Min"
@@ -2525,10 +2644,6 @@ msgstr "Category"
 #: portal/templates/portal/cons-search-advanced-form.html:119
 msgid "All"
 msgstr "All"
-
-#: portal/templates/portal/cons-search-advanced-form.html:59
-msgid "Procedure"
-msgstr "Procedure"
 
 #: portal/templates/portal/cons-search-advanced-form.html:73
 msgid "Deadline Min"
@@ -2590,20 +2705,6 @@ msgstr "Deadline"
 #: portal/templates/portal/cons-search-basic-form.html:53
 msgid "Published Date"
 msgstr "Published Date"
-
-#: portal/templates/portal/cons-search-advanced-form.html:169
-#: portal/templates/portal/cons-search-advanced-form.html:170
-#: portal/templates/portal/cons-search-basic-form.html:54
-#: portal/templates/portal/cons-search-basic-form.html:55
-msgid "Total Estimate"
-msgstr "Total Estimate"
-
-#: portal/templates/portal/cons-search-advanced-form.html:171
-#: portal/templates/portal/cons-search-advanced-form.html:172
-#: portal/templates/portal/cons-search-basic-form.html:56
-#: portal/templates/portal/cons-search-basic-form.html:57
-msgid "Temporary Caution"
-msgstr "Temporary Caution"
 
 #: portal/templates/portal/cons-search-advanced-form.html:182
 #: portal/templates/portal/cons-search-basic-form.html:67
@@ -2757,30 +2858,6 @@ msgstr "Estimate"
 #: portal/templates/portal/includes/con-lots-details.html:15
 msgid "Caution"
 msgstr "Caution"
-
-#: portal/templates/portal/includes/con-lots-details.html:20
-msgid "Qualifications"
-msgstr "Qualifications"
-
-#: portal/templates/portal/includes/con-lots-details.html:23
-msgid "Agrements"
-msgstr "Agreements"
-
-#: portal/templates/portal/includes/con-lots-details.html:27
-msgid "Samples"
-msgstr "Samples"
-
-#: portal/templates/portal/includes/con-lots-details.html:31
-msgid "Meetings"
-msgstr "Meetings"
-
-#: portal/templates/portal/includes/con-lots-details.html:35
-msgid "In-Site Visits"
-msgstr "In-Site Visits"
-
-#: portal/templates/portal/includes/con-lots-details.html:39
-msgid "Variante"
-msgstr "Variant"
 
 #: portal/templates/portal/includes/cons-legend.html:8
 msgid "Legend"
@@ -3995,124 +4072,79 @@ msgstr "Current"
 msgid "Sign Out Other Sessions"
 msgstr "Sign Out Other Sessions"
 
-msgid "Download should start shortly... Please wait."
-msgstr "Download should start shortly... Please wait."
+ msgid "Download should start shortly... Please wait."
+ msgstr "Download should start shortly... Please wait."
 
-msgid ""
-"Sorry, we could not get your files. If this happens often, please let us "
-"know."
-msgstr ""
-"Sorry, we could not get your files. If this happens often, please let us "
-"know."
+ msgid ""
+ "Sorry, we could not get your files. If this happens often, please let us "
+ "know."
+ msgstr ""
+ "Sorry, we could not get your files. If this happens often, please let us "
+ "know."
 
-msgid "Bidding Deadline"
-msgstr "Bidding Deadline"
+ msgid "Multi-lots"
+ msgstr "Multi-lots"
 
-msgid "Morocco time"
-msgstr "Morocco time"
+ msgid "Electronic response and signature"
+ msgstr "Electronic Response and Signature"
 
-msgid "days"
-msgstr "days"
+ msgid "Download List"
+ msgstr "Download List"
 
-msgid "Multi-lots"
-msgstr "Multi-lots"
+ msgid ""
+ "This file is only for authenticated users and you should not have "
+ "accessed it."
+ msgstr ""
+ "This file is only for authenticated users and you should not have "
+ "accessed it."
 
-msgid "Main Category"
-msgstr "Main Category"
+ msgid ""
+ "Our servers security mechanism replaced the original content with this "
+ "message."
+ msgstr ""
+ "Our servers' security mechanism replaced the original content with this "
+ "message."
 
-msgid "Reserved to SMB+"
-msgstr "Reserved for SMB+"
+ msgid ""
+ "If you got this file from our servers, we would like to know how you did."
+ msgstr ""
+ "If you got this file from our servers, we would like to know how you did."
 
-msgid "Lots count"
-msgstr "Lots Count"
+ msgid "We may hire you. Please contact us. Links on eMarches.com"
+ msgstr "We may hire you. Please contact us. Links on eMarches.com"
 
-msgid "Date published"
-msgstr "Date Published"
+ msgid "Total downloaded size"
+ msgstr "Total downloaded size"
 
-msgid "Execution location"
-msgstr "Execution Location"
+ msgid "Top last"
+ msgstr "Top last"
 
-msgid "Public client"
-msgstr "Public Client"
+ msgid "Here is a list of files associated with the Tender."
+ msgstr "Here is a list of files associated with the Tender."
 
-msgid "Electronic response and signature"
-msgstr "Electronic Response and Signature"
+ msgid "Portfolio"
+ msgstr "Portfolio"
 
-msgid "Domains of activity"
-msgstr "Domains of Activity"
+ msgid "Mobile"
+ msgstr "Mobile"
 
-msgid "Price of Plans"
-msgstr "Price of Plans"
+ msgid "Profile not set"
+ msgstr "Profile not set"
 
-msgid "Lots details"
-msgstr "Lot Details"
+ msgid "Profile Stats"
+ msgstr "Profile Stats"
 
-msgid "Withdrawal address"
-msgstr "Withdrawal Address"
+ msgid "Unlimited"
+ msgstr "Unlimited"
 
-msgid "Bidding address"
-msgstr "Bidding Address"
+ msgid "Browse"
+ msgstr "Browse"
 
-msgid "Opening address"
-msgstr "Opening Address"
+ msgid "Manage Addresses"
+ msgstr "Manage Addresses"
 
-msgid "Download List"
-msgstr "Download List"
+ msgid "Exit Favourites"
+ msgstr "Exit Favorites"
 
-msgid ""
-"This file is only for authenticated users and you should not have "
-"accessed it."
-msgstr ""
-"This file is only for authenticated users and you should not have "
-"accessed it."
-
-msgid ""
-"Our servers security mechanism replaced the original content with this "
-"message."
-msgstr ""
-"Our servers' security mechanism replaced the original content with this "
-"message."
-
-msgid ""
-"If you got this file from our servers, we would like to know how you did."
-msgstr ""
-"If you got this file from our servers, we would like to know how you did."
-
-msgid "We may hire you. Please contact us. Links on eMarches.com"
-msgstr "We may hire you. Please contact us. Links on eMarches.com"
-
-msgid "Total downloaded size"
-msgstr "Total downloaded size"
-
-msgid "Top last"
-msgstr "Top last"
-
-msgid "Here is a list of files associated with the Tender."
-msgstr "Here is a list of files associated with the Tender."
-
-msgid "Portfolio"
-msgstr "Portfolio"
-
-msgid "Mobile"
-msgstr "Mobile"
-
-msgid "Profile not set"
-msgstr "Profile not set"
-
-msgid "Profile Stats"
-msgstr "Profile Stats"
-
-msgid "Unlimited"
-msgstr "Unlimited"
-
-msgid "Browse"
-msgstr "Browse"
-
-msgid "Manage Addresses"
-msgstr "Manage Addresses"
-
-msgid "Exit Favourites"
-msgstr "Exit Favorites"
-
-msgid "Forgot your password?"
-msgstr "Forgot your password?"
+ msgid "Forgot your password?"
+ msgstr "Forgot your password?"

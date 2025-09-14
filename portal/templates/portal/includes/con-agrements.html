@@ -1,7 +1,7 @@
 {% if request.user.is_authenticated %}
     <ul class="list-unstyled mb-3">  
         {% for q in con.lot_set.first.agrements.all %}
-            <li class="">{{ q.agrement }}</li>
+            <li class="mt-1">— {{ q.agrement }}</li>
         {% endfor %}
     </ul>
 {% else %}

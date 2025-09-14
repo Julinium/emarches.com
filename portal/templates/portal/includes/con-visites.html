@@ -3,7 +3,7 @@
 {% if request.user.is_authenticated %}
     <ul class="list-unstyled mb-3 p-0">  
         {% for vis in con.lot_set.first.visites %}
-            <li class=""><span class="fw-bold">{{ vis.Date|parse_iso_date }}</span> - {{ vis.Lieu }}</li>
+            <li class="mt-1">— <span class="fw-bold">{{ vis.Date|parse_iso_date }}</span> - {{ vis.Lieu }}</li>
         {% endfor %}
     </ul>
 {% else %}
