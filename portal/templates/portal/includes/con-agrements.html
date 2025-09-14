@@ -1,7 +1,7 @@
 {% if request.user.is_authenticated %}
-    <ul class="list-group mb-3 shadow-sm">  
+    <ul class="list-unstyled mb-3">  
         {% for q in con.lot_set.first.agrements.all %}
-            <li class="px-2 list-group-item">{{ q.agrement }}</li>
+            <li class="">{{ q.agrement }}</li>
         {% endfor %}
     </ul>
 {% else %}

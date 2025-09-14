@@ -2,17 +2,17 @@
 
 
 {% if request.user.is_authenticated %}
-    <ul class="list-group mb-3 p-0 shadow-sm">
-        <li class="list-group-item px-2">
+    <ul class="list-unstyled mb-3 p-0">
+        <li class="">
             <div class="small text-muted">{% trans 'Person' %}: <strong class="user-select-all">{{ con.contact_nom }}</strong></div>
         </li>
-        <li class="list-group-item px-2">
+        <li class="">
             <div class="small text-muted">{% trans 'Phone' %}: <strong class="user-select-all">{{ con.contact_tel }}</strong></div>
         </li>
-        <li class="list-group-item px-2">
+        <li class="">
             <div class="small text-muted">{% trans 'Email' %}: <strong class="user-select-all">{{ con.contact_email }}</strong></div>
         </li>
-        <li class="list-group-item px-2">
+        <li class="">
             <div class="small text-muted">{% trans 'Fax' %}: <strong class="user-select-all">{{ con.contact_fax }}</strong></div>
         </li>
     </ul>

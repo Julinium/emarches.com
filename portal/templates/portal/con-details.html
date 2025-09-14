@@ -184,7 +184,7 @@
                             {% endif %}
                             {% include 'portal/includes/ico-val-key.html' with ico='shield-lock' key='Reserved to SMB+' val=reserved iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='pie-chart' key='Lots count' val=con.nombre_lots iac='' kac='text-muted small' vac='' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='ui-radios' key='Lots count' val=con.nombre_lots iac='' kac='text-muted small' vac='' %}
                         {% endif %}
                     </div>
                 </div>
@@ -195,9 +195,9 @@
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         {% if request.user.is_authenticated %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='briefcase' key='Public client' val=con.acheteur_public iac='' kac='text-muted small' vac='' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='bank' key='Public client' val=con.acheteur_public iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='briefcase' key='Public client' scope='auth' kac='text-muted small' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='bank' key='Public client' scope='auth' kac='text-muted small' %}
                         {% endif %}
                     </div>
                 </div>
@@ -205,7 +205,7 @@
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        {% include 'portal/includes/ico-val-key.html' with ico='geo-alt' key='Procedure' val=con.procedure_annonce iac='' kac='text-muted small' vac='' %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='megaphone' key='Procedure' val=con.procedure_annonce iac='' kac='text-muted small' vac='' %}
                     </div>
 
                     <div class="col-12 col-md-6 my-3">
@@ -220,7 +220,7 @@
                         {% elif con.reponse_electronique == 'I' or con.reponse_electronique == '' %}
                             {% trans 'Not Applicable' as relec %}
                         {% endif %}
-                        {% include 'portal/includes/ico-val-key.html' with ico='usb-drive' key='Online bidding' val=relec iac='' kac='text-muted small' vac='' %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='display' key='Online bidding' val=relec iac='' kac='text-muted small' vac='' %}
                     </div>
                 </div>
 
@@ -253,41 +253,13 @@
 
                     {% if con.lot_set.first.reunions %}
                         <div class="py-3" id="reunions">
-                            <div class="text-muted small">
-                                <span><i class="fs-5 bi bi-easel"></i></span>
-                                <span class="ms-1">{% translate 'Meetings' %}</span>
-                            </div>
-                            {% if request.user.is_authenticated %}
-                                <ul class="list-group mb-3 p-0 shadow-sm">
-                                    {% for reu in con.lot_set.first.reunions %}
-                                        <li class="list-group-item"><span class="fw-bold">{{ reu.Date|parse_iso_date }}</span> - {{ reu.Lieu }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                <div class="d-block">
-                                    {% include 'portal/includes/login-button.html' %}
-                                </div>
-                            {% endif %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='easel' key='Meetings' kac='text-muted small' template='portal/includes/con-reunions.html' %}
                         </div>
                     {% endif %}
 
                     {% if con.lot_set.first.visites %}
                         <div class="py-3" id="visites">
-                            <div class="text-muted small">
-                                <span><i class="fs-5 bi bi-eye"></i></span>
-                                <span class="ms-1">{% translate 'In-Site Visits' %}</span>
-                            </div>
-                            {% if request.user.is_authenticated %}
-                                <ul class="list-group mb-3 p-0 shadow-sm">
-                                    {% for vis in con.lot_set.first.visites %}
-                                        <li class="list-group-item"><span class="fw-bold">{{ vis.Date|parse_iso_date }}</span> - {{ vis.Lieu }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                <div class="d-block">
-                                    {% include 'portal/includes/login-button.html' %}
-                                </div>
-                            {% endif %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='eye' key='In-Site Visits' kac='text-muted small' template='portal/includes/con-visites.html' %}
                         </div>
                     {% endif %}
 

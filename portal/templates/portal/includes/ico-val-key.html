@@ -6,20 +6,20 @@
         <i class="fs-6 bi bi-{{ ico }}"></i>
     </div>
     <div class="ms-2 w-100">
-        <div class="{{ kac }}">
+        <div class="{{ kac }} pb-1 border-bottom">
             <span>{% trans key %}</span>
         </div>
-        {% if template %}
-            {% include template %}        
-        {% else %}
-            {% if scope %}
-                {% include 'portal/includes/login-button.html' %}
+        <div class="pt-1">
+            {% if template %}
+                {% include template %}
             {% else %}
-                <div>
+                {% if scope == 'auth' and not request.user.is_authenticated %}                    
+                    {% include 'portal/includes/login-button.html' %}
+                {% else %}
                     <span class="{{ vac }}">{{ val }}</span>
-                    {% if vex %}<span class="ms-1 {{ kac }}">{% trans vex %}</span>{% endif %}
-                </div>
+                    {% if vex %}<span class="ms-1">{% trans vex %}</span>{% endif %}
+                {% endif %}
             {% endif %}
-        {% endif %}
+        </div>
     </div>
 </div>

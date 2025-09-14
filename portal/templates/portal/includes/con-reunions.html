@@ -2,8 +2,8 @@
 
 {% if request.user.is_authenticated %}
     <ul class="list-unstyled mb-3 p-0">  
-        {% for ech in con.lot_set.first.echantillons %}
-            <li class=""><span class="fw-bold">{{ ech.Date|parse_iso_date }}</span> - {{ ech.Lieu }}</li>
+        {% for reu in con.lot_set.first.reunions %}
+            <li class=""><span class="fw-bold">{{ reu.Date|parse_iso_date }}</span> - {{ reu.Lieu }}</li>
         {% endfor %}
     </ul>
 {% else %}

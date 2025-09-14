@@ -2,9 +2,9 @@
 {% load taginos %}
 
 {% if request.user.is_authenticated %}
-    <ul class="list-group mb-3 p-0 shadow-sm">
+    <ul class="list-unstyled mb-3 p-0">
         {% for l in con.lot_set.all %}
-            <li class="px-2 list-group-item">
+            <li class="">
                 <strong">Lot {{ l.lot_number }} :</strong>
                 <div class="small px-2"><span class="text-muted">— {% translate 'Category' %}: </span><span>{{ l.categorie }}</span></div>
                 <div class="small px-2"><span class="text-muted">— {% translate 'Object' %}: </span><span>{{ l.objet }}</span></div>
