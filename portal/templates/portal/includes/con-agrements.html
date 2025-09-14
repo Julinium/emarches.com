@@ -1,0 +1,11 @@
+{% if request.user.is_authenticated %}
+    <ul class="list-group mb-3 shadow-sm">  
+        {% for q in con.lot_set.first.agrements.all %}
+            <li class="px-2 list-group-item">{{ q.agrement }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <div class="d-block">
+        {% include 'portal/includes/login-button.html' %}
+    </div>
+{% endif %}

@@ -5,13 +5,21 @@
     <div class="{{ kac }}">
         <i class="fs-6 bi bi-{{ ico }}"></i>
     </div>
-    <div class="ms-2">
+    <div class="ms-2 w-100">
         <div class="{{ kac }}">
             <span>{% trans key %}</span>
         </div>
-        <div>
-            <span class="{{ vac }}">{{ val }}</span>
-            {% if vex %}<span class="ms-1 {{ kac }}">{% trans vex %}</span>{% endif %}
-        </div>
+        {% if template %}
+            {% include template %}        
+        {% else %}
+            {% if scope %}
+                {% include 'portal/includes/login-button.html' %}
+            {% else %}
+                <div>
+                    <span class="{{ vac }}">{{ val }}</span>
+                    {% if vex %}<span class="ms-1 {{ kac }}">{% trans vex %}</span>{% endif %}
+                </div>
+            {% endif %}
+        {% endif %}
     </div>
 </div>

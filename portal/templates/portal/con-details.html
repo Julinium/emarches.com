@@ -123,7 +123,7 @@
             {% get_current_language as LC %}
             <div id="con-destails" class="my-2">
                 <div class="row my-3">
-                    {% include 'portal/includes/ico-val-key.html' with ico='book' key='Object' val=con.objet iac='' kac='text-muted small' vac='fw-bold fs-6' %}
+                    {% include 'portal/includes/ico-val-key.html' with ico='book' key='Object' val=con.objet iac='' kac='text-muted small' vac='fw-bold fs-5' %}
                 </div>
 
                 <div class="row">
@@ -145,8 +145,7 @@
                         {% if request.user.is_authenticated %}
                             {% include 'portal/includes/ico-val-key.html' with ico='database-lock' key='Temporary Caution' val=con.caution_provisoire|floatformat:'2g' iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='database-lock' key='Temporary Caution' iac='' kac='text-muted small' %}
-                            {% include 'portal/includes/login-button.html' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='database-lock' key='Temporary Caution' scope='auth' iac='' kac='text-muted small' %}
                         {% endif %}
                     </div>
                 </div>
@@ -157,16 +156,14 @@
                         {% if request.user.is_authenticated %}
                             {% include 'portal/includes/ico-val-key.html' with ico='tag' key='Reference' val=con.reference iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='tag' key='Reference' iac='' kac='text-muted small' %}
-                            {% include 'portal/includes/login-button.html' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='tag' key='Reference' scope='auth' iac='' kac='text-muted small' %}
                         {% endif %}
                     </div>
                     <div class="col-12 col-md-6 my-3">
                         {% if request.user.is_authenticated %}
                             {% include 'portal/includes/ico-val-key.html' with ico='clock' key='Date published' val=con.date_publication|date iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='clock' key='Date published' kac='text-muted small' %}
-                            {% include 'portal/includes/login-button.html' %}
+                            {% include 'portal/includes/ico-val-key.html' with scope='auth' ico='clock' key='Date published' kac='text-muted small' %}
                         {% endif %}
                     </div>
                 </div>
@@ -184,7 +181,7 @@
                                 {% trans "Yes" as reserved %}
                             {% else %}
                                 {% translate 'No' as reserved %}
-                            {% endif %}                            
+                            {% endif %}
                             {% include 'portal/includes/ico-val-key.html' with ico='shield-lock' key='Reserved to SMB+' val=reserved iac='' kac='text-muted small' vac='' %}
                         {% else %}
                             {% include 'portal/includes/ico-val-key.html' with ico='pie-chart' key='Lots count' val=con.nombre_lots iac='' kac='text-muted small' vac='' %}
@@ -200,10 +197,9 @@
                         {% if request.user.is_authenticated %}
                             {% include 'portal/includes/ico-val-key.html' with ico='briefcase' key='Public client' val=con.acheteur_public iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            {% include 'portal/includes/ico-val-key.html' with ico='briefcase' key='Public client' kac='text-muted small' %}
-                            {% include 'portal/includes/login-button.html' %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='briefcase' key='Public client' scope='auth' kac='text-muted small' %}
                         {% endif %}
-                    </div>   
+                    </div>
                 </div>
 
 
@@ -230,15 +226,7 @@
 
                 {% if con.domaines %}
                     <div class="py-3" id="domains">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-ui-radios-grid"></i></span>
-                            <span class="ms-1">{% translate 'Domains of activity' %}</span>
-                        </div>
-                        <ul class="list-group mb-3 p-0 shadow-sm">
-                            {% for d in con.domaines.all %}
-                                <li class="list-group-item">{{ d.domaine }}</li>
-                            {% endfor %}
-                        </ul>
+                        {% include 'portal/includes/ico-val-key.html' with ico='ui-radios-grid' key='Domains of activity' kac='text-muted small' template='portal/includes/con-domains.html' %}
                     </div>
                 {% endif %}
 
@@ -247,66 +235,24 @@
 
                     {% if con.lot_set.first.qualifications.all %}
                         <div class="py-3" id="qualifs">
-                            <div class="text-muted small">                                
-                                <span><i class="fs-5 bi bi-award"></i></span>
-                                <span class="ms-1">{% translate 'Qualifications' %}</span>
-                            </div>                              
-                            {% if request.user.is_authenticated %}
-                                <ul class="list-group mb-3 p-0 shadow-sm">  
-                                    {% for q in con.lot_set.first.qualifications.all %}
-                                        <li class="list-group-item">{{ q.qualification }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                <div class="d-block">
-                                    {% include 'portal/includes/login-button.html' %}
-                                </div>
-                            {% endif %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='award' key='Qualifications' kac='text-muted small' template='portal/includes/con-qualifs.html' %}
                         </div>
                     {% endif %}
 
                     {% if con.lot_set.first.agrements.all %}
                         <div class="py-3" id="agrements">
-                            <div class="text-muted small">
-                                <span><i class="fs-5 bi bi-shield-check"></i></span>
-                                <span class="ms-1">{% translate 'Agrements' %}</span>
-                            </div>
-                            {% if request.user.is_authenticated %}
-                                <ul class="list-group mb-3 p-0 shadow-sm">
-                                    {% for a in con.lot_set.first.agrements.all %}
-                                        <li class="list-group-item">{{ a.agrement }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                <div class="d-block">
-                                    {% include 'portal/includes/login-button.html' %}
-                                </div>
-                            {% endif %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='shield-check' key='Agrements' kac='text-muted small' template='portal/includes/con-agrements.html' %}
                         </div>
                     {% endif %}
 
                     {% if con.lot_set.first.echantillons %}
-                        <div class="py-3" id="agrements">
-                            <div class="text-muted small">
-                                <span><i class="fs-5 bi bi-palette2"></i></span>
-                                <span class="ms-1">{% translate 'Samples' %}</span>
-                            </div>
-                            {% if request.user.is_authenticated %}
-                                <ul class="list-group mb-3 p-0 shadow-sm">
-                                    {% for ech in con.lot_set.first.echantillons %}
-                                        <li class="list-group-item"><span class="fw-bold">{{ ech.Date|parse_iso_date }}</span> - {{ ech.Lieu }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                <div class="d-block">
-                                    {% include 'portal/includes/login-button.html' %}
-                                </div>
-                            {% endif %}
+                        <div class="py-3" id="echantillons">
+                            {% include 'portal/includes/ico-val-key.html' with ico='palette2' key='Samples' kac='text-muted small' template='portal/includes/con-echantillons.html' %}
                         </div>
                     {% endif %}
 
                     {% if con.lot_set.first.reunions %}
-                        <div class="py-3" id="agrements">
+                        <div class="py-3" id="reunions">
                             <div class="text-muted small">
                                 <span><i class="fs-5 bi bi-easel"></i></span>
                                 <span class="ms-1">{% translate 'Meetings' %}</span>
@@ -326,7 +272,7 @@
                     {% endif %}
 
                     {% if con.lot_set.first.visites %}
-                        <div class="py-3" id="agrements">
+                        <div class="py-3" id="visites">
                             <div class="text-muted small">
                                 <span><i class="fs-5 bi bi-eye"></i></span>
                                 <span class="ms-1">{% translate 'In-Site Visits' %}</span>
@@ -348,22 +294,15 @@
                     {% if con.lot_set.first.variante != 'Non' or con.prix_acquisition_plans != 0 %}
                         <div class="row py-3">
                             <div class="col-12 col-md-6">
-                                <div class="text-muted small">
-                                    <span><i class="fs-5 bi bi-map"></i></span>
-                                    <span class="ms-1">{% translate 'Price of Plans' %}</span>
-                                </div>
-                                <div class="d-block">
-                                    <div class="pe-1 d-inline">{{ con.prix_acquisition_plans | floatformat:'2g' }}</div>
-                                </div>
+                                {% include 'portal/includes/ico-val-key.html' with ico='map' key='Price of Plans' val=con.prix_acquisition_plans|floatformat:'2g' iac='' kac='text-muted small' vac='' %}
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="text-muted small">
-                                    <span><i class="fs-5 bi bi-signpost2"></i></span>
-                                    <span class="ms-1">{% translate 'Variante' %}</span>
-                                </div>
-                                <div class="d-block">
-                                    <div class="pe-1 d-inline">{% if con.lot_set.first.variante == 'Non' %}{% translate 'No' %}{% else %}{% translate 'Yes' %}{% endif %}</div>
-                                </div>
+                                {% if con.lot_set.first.variante == 'Non' %}
+                                    {% trans "No" as variante %}
+                                {% else %}
+                                    {% translate 'Yes' as variante %}
+                                {% endif %}
+                                {% include 'portal/includes/ico-val-key.html' with ico='signpost2' key='Variante' val=variante iac='' kac='text-muted small' vac='' %}
                             </div>
                         </div>
                     {% endif %}
@@ -371,134 +310,41 @@
 
                 {% if con.nombre_lots > 1 %}
                     <div class="py-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-ui-radios"></i></span>
-                            <span class="ms-1">{% translate 'Lots details' %}</span>
-                        </div>
-                        {% if request.user.is_authenticated %}
-                            <ul class="list-group mb-3 p-0 shadow-sm">
-                                {% for l in con.lot_set.all %}
-                                    <li class="list-group-item">
-                                        <strong">Lot {{ l.lot_number }} :</strong>
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Category' %}: </span><span>{{ l.categorie }}</span></div>
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Object' %}: </span><span>{{ l.objet }}</span></div>
-                                        {% if l.description %}
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Description' %}: </span><span>{{ l.description }}</span></div>
-                                        {% endif %}
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Estimate' %}: </span><span>{{ l.estimation | floatformat:'2g' }}</span></div>
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Caution' %}: </span><span>{{ l.caution_provisoire | floatformat:'2g' }}</span></div>
-                                        {% if l.reserve_pme %}
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Reserved to SMB' %}: </span><span>{% if l.reserve_pme %}{% translate 'Yes' %}{% else %}{% translate 'No' %}{% endif %}</span></div>
-                                        {% endif %}
-                                        {% if l.qualifications.all %}
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Qualifications' %}: </span><span><ul>{% for q in l.qualifications.all %}<li>{{ q.qualification }}</li>{% endfor %}</ul></span></div>
-                                        {% endif %}
-                                        {% if l.agrements.all %}
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Agrements' %}: </span><span><ul>{% for a in l.agrements.all %}<li>{{ a.agrement }}</li>{% endfor %}</ul></span></div>
-                                        {% endif %}
-
-                                        {% if l.echantillons %}
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Samples' %}: </span><span><ul>{% for e in l.echantillons %}<li>{{ e.Date|parse_iso_date }} - {{ e.Lieu }}</li>{% endfor %}</ul></span></div>
-                                        {% endif %}
-
-                                        {% if l.reunions %}
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Meetings' %}: </span><span><ul>{% for m in l.reunions %}<li>{{ m.Date|parse_iso_date }} - {{ m.Lieu }}</li>{% endfor %}</ul></span></div>
-                                        {% endif %}
-
-                                        {% if l.visites %}
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'In-Site Visits' %}: </span><span><ul>{% for v in l.visites %}<li>{{ v.Date|parse_iso_date }} - {{ v.Lieu }}</li>{% endfor %}</ul></span></div>
-                                        {% endif %}
-
-                                        {% if l.variante != 'Non' %}
-                                        <div class="small px-2"><span class="text-muted">— {% translate 'Variante' %}: </span><span>{{ l.variante }}</span></div>
-                                        {% endif %}
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        {% else %}
-                            <div class="d-block">
-                                {% include 'portal/includes/login-button.html' %}
-                            </div>
-                        {% endif %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='ui-radios' key='Lots details' kac='text-muted small' template='portal/includes/con-lots-details.html' %}
                     </div>
                 {% endif %}
                 
                 {% if con.retrait_dossiers_adresse %}
                     <div class="py-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-arrow-down-circle"></i></span>
-                            <span class="ms-1">{% translate 'Withdrawal address' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline">
-                                {% if request.user.is_authenticated %}
-                                    {{ con.retrait_dossiers_adresse }}
-                                {% else %}
-                                    {% include 'portal/includes/login-button.html' %}
-                                {% endif %}
-                            </div>
-                        </div>
+                        {% if request.user.is_authenticated %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-down-circle' key='Withdrawal address' val=con.retrait_dossiers_adresse iac='' kac='text-muted small' vac='' %}
+                        {% else %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-down-circle' key='Withdrawal address' scope='auth' kac='text-muted small' %}
+                        {% endif %}
                     </div>
                 {% endif %}
+
                 {% if con.depot_offres_adresse %}
                     <div class="py-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-arrow-up-circle"></i></span>
-                            <span class="ms-1">{% translate 'Bidding address' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline">
-                                {% if request.user.is_authenticated %}
-                                    {{ con.depot_offres_adresse }}
-                                {% else %}
-                                    {% include 'portal/includes/login-button.html' %}
-                                {% endif %}
-                            </div>
-                        </div>
+                        {% if request.user.is_authenticated %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-up-circle' key='Bidding address' val=con.depot_offres_adresse iac='' kac='text-muted small' vac='' %}
+                        {% else %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='arrow-up-circle' key='Bidding address' scope='auth' kac='text-muted small' %}
+                        {% endif %}
                     </div>
                 {% endif %}
+
                 {% if con.ouverture_plis_adresse %}
-                    <div class="py-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-check-circle"></i></span>
-                            <span class="ms-1">{% translate 'Opening address' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline">
-                                {% if request.user.is_authenticated %}
-                                    {{ con.ouverture_plis_adresse }}
-                                {% else %}
-                                    {% include 'portal/includes/login-button.html' %}
-                                {% endif %}
-                            </div>
-                        </div>
+                    <div class="py-3">{% if request.user.is_authenticated %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='check-circle' key='Opening address' val=con.ouverture_plis_adresse iac='' kac='text-muted small' vac='' %}
+                        {% else %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='check-circle' key='Opening address' scope='auth' kac='text-muted small' %}
+                        {% endif %}
                     </div>
                 {% endif %}
+
                 <div class="py-3">
-                    <div class="text-muted small">
-                        <span><i class="fs-5 bi bi-person"></i></span>
-                        <span class="ms-1">{% translate 'Contact' %}</span>
-                    </div>
-                    {% if request.user.is_authenticated %}
-                    <ul class="list-group mb-3 p-0 shadow-sm">
-                        <li class="list-group-item">
-                            <div class="small text-muted">{% translate 'Person' %}: <strong class="user-select-all">{{ con.contact_nom }}</strong></div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="small text-muted">{% translate 'Phone' %}: <strong class="user-select-all">{{ con.contact_tel }}</strong></div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="small text-muted">{% translate 'Email' %}: <strong class="user-select-all">{{ con.contact_email }}</strong></div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="small text-muted">{% translate 'Fax' %}: <strong class="user-select-all">{{ con.contact_fax }}</strong></div>
-                        </li>
-                    </ul>
-                    {% else %}
-                        <div class="d-block">
-                            {% include 'portal/includes/login-button.html' %}
-                        </div>
-                    {% endif %}
+                    {% include 'portal/includes/ico-val-key.html' with ico='person' key='Contact' kac='text-muted small' template='portal/includes/con-contact.html' %}
                 </div>
             </div>
         </div>

@@ -1,0 +1,5 @@
+<ul class="list-group mb-3 p-0 shadow-sm">
+    {% for d in con.domaines.all %}
+        <li class="px-2 list-group-item">{{ d.domaine }}</li>
+    {% endfor %}
+</ul>

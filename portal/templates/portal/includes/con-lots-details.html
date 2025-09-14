@@ -1,0 +1,48 @@
+{% load i18n %}
+{% load taginos %}
+
+{% if request.user.is_authenticated %}
+    <ul class="list-group mb-3 p-0 shadow-sm">
+        {% for l in con.lot_set.all %}
+            <li class="px-2 list-group-item">
+                <strong">Lot {{ l.lot_number }} :</strong>
+                <div class="small px-2"><span class="text-muted">— {% translate 'Category' %}: </span><span>{{ l.categorie }}</span></div>
+                <div class="small px-2"><span class="text-muted">— {% translate 'Object' %}: </span><span>{{ l.objet }}</span></div>
+                {% if l.description %}
+                <div class="small px-2"><span class="text-muted">— {% translate 'Description' %}: </span><span>{{ l.description }}</span></div>
+                {% endif %}
+                <div class="small px-2"><span class="text-muted">— {% translate 'Estimate' %}: </span><span>{{ l.estimation | floatformat:'2g' }}</span></div>
+                <div class="small px-2"><span class="text-muted">— {% translate 'Caution' %}: </span><span>{{ l.caution_provisoire | floatformat:'2g' }}</span></div>
+                {% if l.reserve_pme %}
+                <div class="small px-2"><span class="text-muted">— {% translate 'Reserved to SMB' %}: </span><span>{% if l.reserve_pme %}{% translate 'Yes' %}{% else %}{% translate 'No' %}{% endif %}</span></div>
+                {% endif %}
+                {% if l.qualifications.all %}
+                <div class="small px-2"><span class="text-muted">— {% translate 'Qualifications' %}: </span><span><ul>{% for q in l.qualifications.all %}<li>{{ q.qualification }}</li>{% endfor %}</ul></span></div>
+                {% endif %}
+                {% if l.agrements.all %}
+                <div class="small px-2"><span class="text-muted">— {% translate 'Agrements' %}: </span><span><ul>{% for a in l.agrements.all %}<li>{{ a.agrement }}</li>{% endfor %}</ul></span></div>
+                {% endif %}
+
+                {% if l.echantillons %}
+                <div class="small px-2"><span class="text-muted">— {% translate 'Samples' %}: </span><span><ul>{% for e in l.echantillons %}<li>{{ e.Date|parse_iso_date }} - {{ e.Lieu }}</li>{% endfor %}</ul></span></div>
+                {% endif %}
+
+                {% if l.reunions %}
+                <div class="small px-2"><span class="text-muted">— {% translate 'Meetings' %}: </span><span><ul>{% for m in l.reunions %}<li>{{ m.Date|parse_iso_date }} - {{ m.Lieu }}</li>{% endfor %}</ul></span></div>
+                {% endif %}
+
+                {% if l.visites %}
+                <div class="small px-2"><span class="text-muted">— {% translate 'In-Site Visits' %}: </span><span><ul>{% for v in l.visites %}<li>{{ v.Date|parse_iso_date }} - {{ v.Lieu }}</li>{% endfor %}</ul></span></div>
+                {% endif %}
+
+                {% if l.variante != 'Non' %}
+                <div class="small px-2"><span class="text-muted">— {% translate 'Variante' %}: </span><span>{{ l.variante }}</span></div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <div class="d-block">
+        {% include 'portal/includes/login-button.html' %}
+    </div>
+{% endif %}
