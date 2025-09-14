@@ -123,180 +123,108 @@
             {% get_current_language as LC %}
             <div id="con-destails" class="my-2">
                 <div class="row my-3">
-                    <div class="text-muted small">
-                        <span><i class="fs-5 bi bi-book"></i></span>
-                        <span class="ms-1">{% translate 'Object' %}</span>
-                    </div>
-                    <div class="fw-bold fs-5">{{ con.objet }}</div>
+                    {% include 'portal/includes/ico-val-key.html' with ico='book' key='Object' val=con.objet iac='' kac='text-muted small' vac='fw-bold fs-6' %}
                 </div>
+
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-calendar-check"></i></span>
-                            <span class="ms-1">{% translate 'Bidding Deadline' %} ({% translate 'Morocco time' %})</span>
-                        </div>
                         {% timezone "Africa/Casablanca" %}
-                            <div class="d-block">
-                                <div class="pe-1 d-inline fw-bold">{{ con.date_limite_depot|localtime  }}</div> |
-                                <div class="user-select-all {% if con.remaining_days > 29 %} text-success {% else %} text-danger {% endif%} fw-bold d-inline"> {{ con.remaining_days }} {% translate 'days' %}</div>
-                            </div>
+                            {% include 'portal/includes/ico-val-key.html' with ico='calendar-check' key='Bidding Deadline' val=con.date_limite_depot|localtime vex='Morocco Time' iac='' kac='text-muted small' vac='fw-bold' %}
                         {% endtimezone %}
                     </div>
-                    <div class="col-12 col-md-6 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-clock"></i></span>
-                            <span class="ms-1">{% translate 'Date published' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline">                                
-                                {% if request.user.is_authenticated %}
-                                    {{ con.date_publication|date }}
-                                {% else %}
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
-                                {% endif %}
-                            </div>
-                        </div>
+                    <div class="col-12 col-md-6 my-3 {% if con.remaining_days < 30 %} text-danger{% else %} text-success{% endif %}">
+                        {% include 'portal/includes/ico-val-key.html' with ico='hourglass-top' key='Remaning days' val=con.remaining_days vex='days' iac='' kac='text-muted small' vac='fw-bold' %}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-cash-coin"></i></span>
-                            <span class="ms-1">{% translate 'Total Estimate' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline fw-bold">{{ con.total_estimation | floatformat:'2g' }}</div>
-                            {% if con.nombre_lots > 1 %}<img src="{% static 'icons/grid-2x2-gap.svg' %}" height="16" alt="{% translate 'Multi-lots' %}">{% endif %}
-                        </div>
+                        {% include 'portal/includes/ico-val-key.html' with ico='cash-coin' key='Total Estimate' val=con.total_estimation|floatformat:'2g' iac='' kac='text-muted small' vac='fw-bold' %}
                     </div>
                     <div class="col-12 col-md-6 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-database-lock"></i></span>
-                            <span class="ms-1">{% translate 'Temporary Caution' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline">
-                                {% if request.user.is_authenticated %}
-                                    {{ con.caution_provisoire | floatformat:'2g' }}
-                                {% else %}
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
-                                {% endif %}
-                            </div>
-                        </div>
+                        {% if request.user.is_authenticated %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='database-lock' key='Temporary Caution' val=con.caution_provisoire|floatformat:'2g' iac='' kac='text-muted small' vac='' %}
+                        {% else %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='database-lock' key='Temporary Caution' iac='' kac='text-muted small' %}
+                            {% include 'portal/includes/login-button.html' %}
+                        {% endif %}
                     </div>
                 </div>
 
-                <div class="row">                    
+
+                <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-tag"></i></span>
-                            <span class="ms-1">{% translate 'Reference' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline" style="direction: ltr;">
-                                {% if request.user.is_authenticated %}
-                                    {{ con.reference }}
-                                {% else %}
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
-                                {% endif %}
-                            </div>
-                        </div>
+                        {% if request.user.is_authenticated %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='tag' key='Reference' val=con.reference iac='' kac='text-muted small' vac='' %}
+                        {% else %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='tag' key='Reference' iac='' kac='text-muted small' %}
+                            {% include 'portal/includes/login-button.html' %}
+                        {% endif %}
                     </div>
-                    <div class="col-6 col-md-3 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-grid"></i></span>
-                            <span class="ms-1">{% translate 'Main Category' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline fw-bold">{{ con.categorie }}</div>
-                        </div>
+                    <div class="col-12 col-md-6 my-3">
+                        {% if request.user.is_authenticated %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='clock' key='Date published' val=con.date_publication|date iac='' kac='text-muted small' vac='' %}
+                        {% else %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='clock' key='Date published' kac='text-muted small' %}
+                            {% include 'portal/includes/login-button.html' %}
+                        {% endif %}
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-12 col-md-6 my-3">
+                        {% include 'portal/includes/ico-val-key.html' with ico='grid' key='Main Category' val=con.categorie iac='' kac='text-muted small' vac='' %}
                     </div>
                     
-                    <div class="col-6 col-md-3 my-3">
+                    <div class="col-12 col-md-6 my-3">
                         {% if con.nombre_lots == 1 %}
-                            <div class="text-muted small">
-                                <span><i class="fs-5 bi bi-shield-lock"></i></span>
-                                <span class="ms-1">{% translate 'Reserved to SMB+' %}</span>
-                            </div>
-                            <div class="d-block">
-                                <div class="pe-1 d-inline">{% if con.lot_set.first.reserve_pme %}{% translate 'Yes' %}{% else %}{% translate 'No' %}{% endif %}</div>
-                            </div>
+                            {% if con.lot_set.first.reserve_pme %}
+                                {% trans "Yes" as reserved %}
+                            {% else %}
+                                {% translate 'No' as reserved %}
+                            {% endif %}                            
+                            {% include 'portal/includes/ico-val-key.html' with ico='shield-lock' key='Reserved to SMB+' val=reserved iac='' kac='text-muted small' vac='' %}
                         {% else %}
-                            <div class="text-muted small">
-                                <span><i class="fs-5 bi bi-grid-1x2"></i></span>
-                                <span class="ms-1">{% translate 'Lots count' %}</span>
-                            </div>
-                            <div class="d-block">
-                                <div class="pe-1 d-inline">{{ con.nombre_lots }}</div>
-                            </div>
+                            {% include 'portal/includes/ico-val-key.html' with ico='pie-chart' key='Lots count' val=con.nombre_lots iac='' kac='text-muted small' vac='' %}
                         {% endif %}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-geo-alt"></i></span>
-                            <span class="ms-1">{% translate 'Execution location' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline fw-bold">{{ con.lieu_execution }}</div>
-                        </div>
+                        {% include 'portal/includes/ico-val-key.html' with ico='geo-alt' key='Execution location' val=con.lieu_execution iac='' kac='text-muted small' vac='' %}
                     </div>
                     <div class="col-12 col-md-6 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-briefcase"></i></span>
-                            <span class="ms-1">{% translate 'Public client' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline fw-bold">
-                                {% if request.user.is_authenticated %}
-                                    {{ con.acheteur_public }}
-                                {% else %}
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
-                                {% endif %}
-                            </div>
-                        </div>
+                        {% if request.user.is_authenticated %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='briefcase' key='Public client' val=con.acheteur_public iac='' kac='text-muted small' vac='' %}
+                        {% else %}
+                            {% include 'portal/includes/ico-val-key.html' with ico='briefcase' key='Public client' kac='text-muted small' %}
+                            {% include 'portal/includes/login-button.html' %}
+                        {% endif %}
                     </div>   
                 </div>
 
 
                 <div class="row">
                     <div class="col-12 col-md-6 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-megaphone"></i></span>
-                            <span class="ms-1">{% translate 'Procedure' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline">{{ con.procedure_annonce }}</div>
-                            <div class="pe-1 d-inline">|</div>
-                            <div class="pe-1 d-inline">{{ con.mode_passation }}</div>
-                        </div>
+                        {% include 'portal/includes/ico-val-key.html' with ico='geo-alt' key='Procedure' val=con.procedure_annonce iac='' kac='text-muted small' vac='' %}
                     </div>
 
                     <div class="col-12 col-md-6 my-3">
-                        <div class="text-muted small">
-                            <span><i class="fs-5 bi bi-usb-drive"></i></span>
-                            <span class="ms-1">{% translate 'Electronic response and signature' %}</span>
-                        </div>
-                        <div class="d-block">
-                            <div class="pe-1 d-inline">
-                                {% if con.reponse_electronique == 'RR' %}{% translate 'Required, e-Sign required' %}{% endif %}
-                                {% if con.reponse_electronique == 'RO' %}{% translate 'Required, e-Sign not required' %}{% endif %}
-                                {% if con.reponse_electronique == 'OR' %}{% translate 'Not required, e-Sign required' %}{% endif %}
-                                {% if con.reponse_electronique == 'OO' %}{% translate 'Not required, e-Sign not required' %}{% endif %}
-                                {% if con.reponse_electronique == 'I' or con.reponse_electronique == '' %}{% translate 'Not Applicable' %}{% endif %}
-                            </div>
-                        </div>
+                        {% if con.reponse_electronique == 'RR' %}
+                            {% trans 'Required, e-Sign required' as relec %}
+                        {% elif con.reponse_electronique == 'RO' %}
+                            {% trans 'Required, e-Sign not required' as relec %}
+                        {% elif con.reponse_electronique == 'OR' %}
+                            {% trans 'Not required, e-Sign required' as relec %}
+                        {% elif con.reponse_electronique == 'OO' %}
+                            {% trans 'Not required, e-Sign not required' as relec %}
+                        {% elif con.reponse_electronique == 'I' or con.reponse_electronique == '' %}
+                            {% trans 'Not Applicable' as relec %}
+                        {% endif %}
+                        {% include 'portal/includes/ico-val-key.html' with ico='usb-drive' key='Online bidding' val=relec iac='' kac='text-muted small' vac='' %}
                     </div>
                 </div>
 
@@ -314,7 +242,7 @@
                     </div>
                 {% endif %}
 
-                
+
                 {% if con.nombre_lots == 1 %}
 
                     {% if con.lot_set.first.qualifications.all %}
@@ -331,9 +259,7 @@
                                 </ul>
                             {% else %}
                                 <div class="d-block">
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
+                                    {% include 'portal/includes/login-button.html' %}
                                 </div>
                             {% endif %}
                         </div>
@@ -353,9 +279,7 @@
                                 </ul>
                             {% else %}
                                 <div class="d-block">
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
+                                    {% include 'portal/includes/login-button.html' %}
                                 </div>
                             {% endif %}
                         </div>
@@ -375,9 +299,7 @@
                                 </ul>
                             {% else %}
                                 <div class="d-block">
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
+                                    {% include 'portal/includes/login-button.html' %}
                                 </div>
                             {% endif %}
                         </div>
@@ -397,9 +319,7 @@
                                 </ul>
                             {% else %}
                                 <div class="d-block">
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
+                                    {% include 'portal/includes/login-button.html' %}
                                 </div>
                             {% endif %}
                         </div>
@@ -419,9 +339,7 @@
                                 </ul>
                             {% else %}
                                 <div class="d-block">
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
+                                    {% include 'portal/includes/login-button.html' %}
                                 </div>
                             {% endif %}
                         </div>
@@ -499,9 +417,7 @@
                             </ul>
                         {% else %}
                             <div class="d-block">
-                                <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                    <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                </a>
+                                {% include 'portal/includes/login-button.html' %}
                             </div>
                         {% endif %}
                     </div>
@@ -518,9 +434,7 @@
                                 {% if request.user.is_authenticated %}
                                     {{ con.retrait_dossiers_adresse }}
                                 {% else %}
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
+                                    {% include 'portal/includes/login-button.html' %}
                                 {% endif %}
                             </div>
                         </div>
@@ -537,9 +451,7 @@
                                 {% if request.user.is_authenticated %}
                                     {{ con.depot_offres_adresse }}
                                 {% else %}
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
+                                    {% include 'portal/includes/login-button.html' %}
                                 {% endif %}
                             </div>
                         </div>
@@ -556,9 +468,7 @@
                                 {% if request.user.is_authenticated %}
                                     {{ con.ouverture_plis_adresse }}
                                 {% else %}
-                                    <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                        <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                                    </a>
+                                    {% include 'portal/includes/login-button.html' %}
                                 {% endif %}
                             </div>
                         </div>
@@ -586,9 +496,7 @@
                     </ul>
                     {% else %}
                         <div class="d-block">
-                            <a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
-                                <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
-                            </a>
+                            {% include 'portal/includes/login-button.html' %}
                         </div>
                     {% endif %}
                 </div>

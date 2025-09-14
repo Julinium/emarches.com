@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load tz %}
+
+<div class="d-flex">
+    <div class="{{ kac }}">
+        <i class="fs-6 bi bi-{{ ico }}"></i>
+    </div>
+    <div class="ms-2">
+        <div class="{{ kac }}">
+            <span>{% trans key %}</span>
+        </div>
+        <div>
+            <span class="{{ vac }}">{{ val }}</span>
+            {% if vex %}<span class="ms-1 {{ kac }}">{% trans vex %}</span>{% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+{% load i18n %}
+{% load static %}
+
+<a type="button" class="btn btn-sm btn-outline-primary px-2" href="{% url 'account_login' %}?next={{ request.get_full_path }}">
+    <img class="mx-1" src="{% static 'img/lock.svg' %}" height="16"> {% translate 'Log In' %}
+</a>
