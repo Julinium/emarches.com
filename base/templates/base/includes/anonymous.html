@@ -1,8 +1,8 @@
 {% load i18n %}
 <div class="container">
-    <div class="mx-2 py-2 rounded shadow text-center text-bg-warning">
+    <div class="py-2 rounded shadow text-center text-bg-warning">
         <span class="">{% translate "eMarches is better with an account." %}</span>
-        <span><a class="ms-1" href="{% url 'account_login' %}">{% trans "Sign In" %}</a></span>
+        <span><a class="ms-1 text-success" href="{% url 'account_login' %}">{% trans "Sign In" %}</a></span>
         <span class="ms-1 fw-bold">{% translate '100% FREE' %}</span>
     </div>
 </div>
