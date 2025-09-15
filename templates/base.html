@@ -14,6 +14,10 @@
 
 		{% include 'includes/preloader.html' %}	
 		{% include 'base/includes/navbar.html' %}
+		
+		{% if not request.user.is_authenticated %}
+			{% include 'base/includes/anonymous.html' %}
+		{% endif %}
 
 		<div id="main-content" style="display: none;">
 			<div class="container mt-4">
