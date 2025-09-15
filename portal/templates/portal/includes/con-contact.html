@@ -2,9 +2,9 @@
 {% if request.user.is_authenticated %}
     <div class="mt-1"><span>{{ con.contact_nom }}</span></div>
     <div>
-        <span><a href="tel:{{ con.contact_tel }}" class="me-1 mt-1 btn btn-outline-secondary"><i class="bi bi-telephone"></i> {{ con.contact_tel }}</a></span>
-        <span><a href="tel:{{ con.contact_fax }}" class="me-1 mt-1 btn btn-outline-secondary"><i class="bi bi-printer"></i> {{ con.contact_fax }}</a></span>
-        <span><a href="mailto:{{ con.contact_email }}" class="me-1 mt-1 btn btn-outline-secondary"><i class="bi bi-envelope"></i> {{ con.contact_email }}</a></span>
+        <span><a href="tel:{{ con.contact_tel }}" class="me-1 mt-1 btn btn-sm btn-outline-secondary"><i class="bi bi-telephone"></i> {{ con.contact_tel }}</a></span>
+        <span><a href="tel:{{ con.contact_fax }}" class="me-1 mt-1 btn btn-sm btn-outline-secondary"><i class="bi bi-printer"></i> {{ con.contact_fax }}</a></span>
+        <span><a href="mailto:{{ con.contact_email }}" class="me-1 mt-1 btn btn-sm btn-outline-secondary"><i class="bi bi-envelope"></i> {{ con.contact_email }}</a></span>
     </div>
 {% else %}
     <div class="d-block">
