@@ -85,15 +85,13 @@ class Consultation(models.Model):
     procedure_annonce = models.ForeignKey('Procedure', on_delete=models.DO_NOTHING, db_column='procedure_annonce', blank=True, null=True)
     type_annonce = models.ForeignKey('Type', on_delete=models.DO_NOTHING, db_column='type_annonce', blank=True, null=True)
     portal_size = models.CharField(max_length=31, blank=True, null=True)
+    size_bytes = models.IntegerField(blank=True, null=True, default=0)
 
     requires_qua = models.BooleanField(blank=True, null=True)
     requires_agr = models.BooleanField(blank=True, null=True)
     requires_ech = models.BooleanField(blank=True, null=True)
     has_reu = models.BooleanField(blank=True, null=True)
     has_vis = models.BooleanField(blank=True, null=True)
-    
-    # update_me = models.BooleanField(blank=True, null=True, default=False)
-    # update_my_files = models.BooleanField(blank=True, null=True, default=False)
 
     class Meta:
         db_table = 'base_consultation'
@@ -277,7 +275,7 @@ class ProfileDomains(models.Model):
 
 class ProfileFavCon(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    consultation = models.CharField(max_length=512, blank=True, null=True)
+    consultation = models.CharField(max_length=16, blank=True, null=True)
     date_faved = models.DateTimeField(blank=True, null=True, auto_now_add=True)
     note_faved = models.CharField(max_length=512, blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user', related_name='favs', blank=True, null=True)
@@ -338,7 +336,7 @@ class Type(models.Model):
 
 class UserDownloadFile(models.Model):
     id              = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    consultation    = models.CharField(max_length=512, blank=True, null=True)
+    consultation    = models.CharField(max_length=16, blank=True, null=True)
     user_agent      = models.CharField(max_length=512, blank=True, null=True)
     user_ip         = models.CharField(max_length=32, blank=True, null=True)
     file_name       = models.CharField(max_length=512, blank=True, null=True)
@@ -455,4 +453,14 @@ class Preferences(models.Model):
     # def __str__(self):
     #     return f'{self.plan}:{self.payment}:{self.start_date}-{self.end_date}'
 
+
+class ConUpdate(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    consultation  = models.CharField(max_length=16, blank=True, null=True)
+    date_updated  = models.DateTimeField(blank=True, null=True, auto_now_add=True)
+    updated_field = models.CharField(max_length=64, blank=True, null=True)
+    update_digest = models.CharField(max_length=512, blank=True, null=True)
+
+    class Meta:
+        db_table = 'base_con_update'
 
