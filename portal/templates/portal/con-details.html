@@ -9,7 +9,7 @@
 
 {% block content %}
     {% if con %}
-        <div id="tosts-container" class="toast-container shadow shadow-lg bottom-0 end-0 p-3" style="position: fixed; z-index: 99;">
+        <div id="tosts-container" class="toast-container bottom-0 end-0 p-3" style="position: fixed; z-index: 99;">
             {% include 'base/includes/message.html' with id="favToast" teint='success' message=_('Item added to Favourites.') %}
             {% include 'base/includes/message.html' with id="defToast" teint='success' message=_('Item removed from Favourites.') %}
             {% include 'base/includes/message.html' with id="copyToast" teint='success' message=_('URL was copied to clipboard.') %}
@@ -67,17 +67,22 @@
         </div>
 
 
-        <div id="page-title" class="d-flex flex-wrap align-items-center mt-4 mb-2">
-            <div id="cancelledStar" {% if con.cancelled %}style="display:block;"{% else %}style="display:none;"{% endif %}>
-                <span class="mb-1 fw-bold fs-2 me-3 text-danger"><img src="{% static 'img/cancelled.svg' %}" class="pb-1 mx-1" alt="{% translate 'Cancelled' %}">{% translate 'Cancelled' %}</span>
-            </div>
-            <div class="">
-                <span id="favedStar" {% if faved %}style="display:d-inline;"{% else %}style="display:none;"{% endif %}>
-                    <img class="me-1 mb-2" src="{% static 'img/star-fill.svg' %}" height="24" alt="Fav">
-                </span>
-                <span class="h2">{% translate 'Tender details' %}</span>
-            </div>
+        <div id="page-title" class="align-items-center mt-4 mb-2">
+            <!-- <span id="favedStarx" {% if faved %}style="display:d-inline;"{% else %}style="display:none;"{% endif %}>
+                <img class="mx-1 mb-2" src="{% static 'img/star-fill.svg' %}" height="24" alt="Fav">
+            </span> -->
+            <span id="favedStar" class="{% if faved %} d-inline{% else %} d-none{% endif %}">
+                <img class="mx-1 mb-2" src="{% static 'img/star-fill.svg' %}" height="24" alt="Fav">
+            </span>
+            <span class="h2">{% translate 'Tender details' %}</span>
         </div>
+        {% if con.cancelled %}
+            <div class="my-2">
+                <span id="cancelledStar">
+                    <span class="mb-1 fw-bold fs-2 me-3 text-danger"><img src="{% static 'img/cancelled.svg' %}" class="pb-1 mx-1" alt="{% translate 'Cancelled' %}">{% translate 'Cancelled' %}</span>
+                </span>
+            </div>
+        {% endif %}
         
         <div id="con-details">
             <div id="top-actions" class="py-2">
@@ -126,6 +131,8 @@
                 </a>
 
             </div>
+
+            
 
             {% get_current_language as LC %}
             <div id="con-destails" class="my-2">
@@ -367,19 +374,24 @@
                 let response = await fetch(url, {credentials: "same-origin",});
                 
                 let favStar = document.getElementById('favedStar');
-
+                
                 if ( response.status == 200 ) {
-                    favStar.style.display = "none";
+                    // favStar.style.display = "none";
+                    favStar.classList.toggle('d-none');
+                    favStar.classList.toggle('d-inline');
                     const defToast = document.getElementById('defToast');
                     const defAlert = new bootstrap.Toast(defToast);
                     defAlert.show();
                 }
                 if ( response.status == 201 ) {
-                    favStar.style.display = "block";
+                    // favStar.style.display = "block";
+                    favStar.classList.toggle('d-none');
+                    favStar.classList.toggle('d-inline');
                     let favToast = document.getElementById('favToast');
                     let favAlert = new bootstrap.Toast(favToast);
                     favAlert.show();
                 }
+                
 
             } catch (error) {
                 console.error(error.message);

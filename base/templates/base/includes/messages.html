@@ -1,5 +1,5 @@
 
-<div id="tosts-msg-container" class="toast-container bottom-0 end-0 p-3" style="position: fixed; z-index: 99;">  
+<div id="tosts-msg-container" class="toast-container shadow bottom-0 end-0 p-3" style="position: fixed; z-index: 99;">  
 	{% for message in messages %}
 		{% include 'base/includes/message.html' with message=message teint=message.tags extra='msg-toast' %}
 	{% endfor %}
