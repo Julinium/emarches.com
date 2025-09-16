@@ -8,15 +8,16 @@ from django.http import HttpResponse
 from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator
 from django.utils.translation import gettext as _
-from django.db.models import Q, Count, Max, Sum
+from django.db.models import F, Q, Count, Max, Sum
 from django.views.generic import ListView, DetailView
+
+from allauth.account.models import EmailAddress
 
 from .models import Contacting, Favorisation, Unfavorisation, SearchQuery
 from portal.models import UserDownloadFile, ProfileFavCon, Consultation
 from emarches import constants as C
 
 from django.contrib.auth import get_user_model # To get the User model
-
 
 User = get_user_model() # Get the currently active User model
 
@@ -227,12 +228,77 @@ def unfavorisations(request):
 
 @login_required(login_url="account_login")
 def newsletters(request):
-    context = {}
+
     if is_crm_user(request.user):
         context = {}
         return render(request, 'crm/newsletters_list.html', context)
     context = {}
 
+    raise PermissionDenied
+
+
+@login_required(login_url="account_login")
+def utilisateurs(request):
+    context = {}
+    if is_crm_user(request.user):       
+        utilisateurs = User.objects.select_related('emailaddress').values(
+            'id',
+            'username',
+            'email',
+            'date_joined',
+            'last_login',
+            verified=F('emailaddress__verified')
+        ).order_by('-date_joined')
+
+        total_count = len(utilisateurs)
+
+        context['total_count'] = padit(total_count, 10),
+        context['utilisateurs'] = utilisateurs
+        
+        return render(request, 'crm/utilisateurs_list.html', context)
+    
+    context = {}
+    raise PermissionDenied
+
+
+@login_required(login_url="account_login")
+def utilisateur(request, pk):
+    context = {}
+    if is_crm_user(request.user):
+        utilisateur = get_object_or_404(User, id=pk)
+        email_address = get_object_or_404(EmailAddress, email=utilisateur.email)
+
+    # Prepare the data
+    # utilisateur = {
+    #     'id': instance.id,
+    #     'username': instance.username,
+    #     'email': instance.email,
+    #     'date_joined': instance.date_joined,
+    #     'last_login': instance.last_login,
+    #     'verified': utilisateur.emailaddress.verified
+    # }
+
+
+
+
+        # utilisateur = get_object_or_404(User, id=pk)
+        # verified = utilisateur.emailaddress__verified
+        # email_address = utilisateur.email_address
+        # utilisateurs = User.objects.select_related('emailaddress').values(
+        #     'id',
+        #     'username',
+        #     'email',
+        #     'date_joined',
+        #     'last_login',
+        #     verified=F('emailaddress__verified')
+        # ).order_by('-date_joined')
+
+        context['verified'] = email_address.verified
+        context['utilisateur'] = utilisateur
+        
+        return render(request, 'crm/utilisateur_details.html', context)
+    
+    context = {}
     raise PermissionDenied
 
 

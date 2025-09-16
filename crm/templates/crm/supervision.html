@@ -11,10 +11,20 @@
     {% if request.user|in_group:'CRM' %}
 
     <div class="list-group">
+        <a href="{% url 'crm_utilisateurs' %}" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-start align-items-center">                    
+                    <strong><i class="bi bi-person-fill"></i> {% translate 'Users' %}</strong>
+                </div>              
+            </div>
+            <div class="d-flex justify-content-start text-muted">
+                <span>{% translate 'Users, email addresses and sessions details.' %}.</span>
+            </div>
+        </a>
         <a href="{% url 'crm_leads' %}" class="list-group-item list-group-item-action">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex justify-content-start align-items-center">                    
-                    <strong><i class="bi bi-person-plus-fill"></i> {% translate 'Leads' %}</strong>
+                    <strong><i class="bi bi-envelope-fill"></i> {% translate 'Contacts' %}</strong>
                 </div>
                 {% if new_contactings %}<span class="badge bg-danger text-white mx-1">{{ new_contactings.count }}</span>{% endif %}                
             </div>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static%}
+{% load taginos %}
+
+{% block title %} {% translate 'Utilisateurs' %} {% endblock title %}
+
+{% block content %}
+    <h1 class="text-center mb-4">{% trans "Utilisateurs" %}</h1>
+    {% if request.user|in_group:'CRM' %}
+        <h3 class="my-3 fw-light mt-5">{% trans 'Total count' %}</h3>
+        {% include 'crm/includes/counter.html' with total_count=total_count %}
+
+        <h3 class="my-3 fw-light mt-5">{% trans 'Utilisateurs' %}</h3>
+        <div class="list-group">
+            {% for utilisateur in utilisateurs %}
+                    <a href="{% url 'crm_utilisateur_details' utilisateur.id %}" class="text-decoration-none">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="mx-0 my-2">
+                                <div class="oneline" data-bs-toggle="tooltip" title="{{ utilisateur }}"><strong>{{ utilisateur.username }}</strong>: {{ utilisateur.email }}</div>
+
+                                <span class="oneline text-muted">{% trans 'Joined' %}: {{ utilisateur.date_joined|date }}</span>
+                                <span class="oneline text-muted">{% trans 'Latest login' %}: {{ utilisateur.last_login|date }}</span>
+                            </div>
+                            {% if utilisateur.verified %}
+                                <span class="badge text-white bg-success rounded-pill">Verified</span>
+                            {% else %}
+                                <span class="badge text-white bg-danger rounded-pill">Unverified</span>
+                            {% endif %}
+                        </li>
+                    </a>
+            {% empty %}
+                <p class="text-center">{% trans "No records found." %}</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-danger">{% trans 'Not allowed' %}</p>
+    {% endif %}
+{% endblock %}
