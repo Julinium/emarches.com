@@ -30,6 +30,53 @@ def padit(reading, pad=12):
     return f"{reading:0{pad}d}"
 
 
+def get_date_range_for_period(date_period):
+    """
+    Calculates the start and end date for a given date period string.
+    Returns a tuple (start_date, end_date) or (None, None) if the period is invalid.
+    """
+    today = datetime.today() # Get today's date in local timezone
+    start_date = None
+    end_date = None
+
+    if date_period == 'today':
+        start_date = today
+        end_date = today
+    elif date_period == 'yesterday':
+        yesterday = today - timedelta(days=1)
+        start_date = yesterday
+        end_date = yesterday
+    elif date_period == 'this_week':
+        # Assuming Monday is the first day of the week (ISO standard)
+        start_date = today - timedelta(days=today.weekday())
+        end_date = start_date + timedelta(days=6) # Sunday of this week
+    elif date_period == 'last_week':
+        start_date = today - timedelta(days=today.weekday() + 7) # Monday of last week
+        end_date = start_date + timedelta(days=6) # Sunday of last week
+    elif date_period == 'this_month':
+        start_date = today.replace(day=1) # First day of this month
+        end_date = today.replace(day=calendar.monthrange(today.year, today.month)[1]) # Last day of this month
+    elif date_period == 'last_month':
+        first_day_this_month = today.replace(day=1)
+        last_day_last_month = first_day_this_month - timedelta(days=1) # Last day of previous month
+        start_date = last_day_last_month.replace(day=1) # First day of previous month
+        end_date = last_day_last_month
+    elif date_period == 'last_30_days':
+        end_date = today
+        start_date = today - timedelta(days=29) # Includes today
+    elif date_period == 'this_year':
+        start_date = today.replace(month=1, day=1) # January 1st of this year
+        end_date = today.replace(month=12, day=31) # December 31st of this year
+    elif date_period == 'last_year':
+        start_date = today.replace(year=today.year - 1, month=1, day=1)
+        end_date = today.replace(year=today.year - 1, month=12, day=31)
+    elif date_period == 'last_365_days':
+        end_date = today
+        start_date = today - timedelta(days=364) # Includes today
+
+    return start_date, end_date
+
+
 @login_required(login_url="account_login")
 def leads(request):
     if is_crm_user(request.user):
@@ -267,32 +314,6 @@ def utilisateur(request, pk):
     if is_crm_user(request.user):
         utilisateur = get_object_or_404(User, id=pk)
         email_address = get_object_or_404(EmailAddress, email=utilisateur.email)
-
-    # Prepare the data
-    # utilisateur = {
-    #     'id': instance.id,
-    #     'username': instance.username,
-    #     'email': instance.email,
-    #     'date_joined': instance.date_joined,
-    #     'last_login': instance.last_login,
-    #     'verified': utilisateur.emailaddress.verified
-    # }
-
-
-
-
-        # utilisateur = get_object_or_404(User, id=pk)
-        # verified = utilisateur.emailaddress__verified
-        # email_address = utilisateur.email_address
-        # utilisateurs = User.objects.select_related('emailaddress').values(
-        #     'id',
-        #     'username',
-        #     'email',
-        #     'date_joined',
-        #     'last_login',
-        #     verified=F('emailaddress__verified')
-        # ).order_by('-date_joined')
-
         context['verified'] = email_address.verified
         context['utilisateur'] = utilisateur
         
@@ -301,6 +322,63 @@ def utilisateur(request, pk):
     context = {}
     raise PermissionDenied
 
+
+class UserListView(LoginRequiredMixin, ListView):
+    model = User
+    template_name = 'crm/utilisateurs_list.html'
+    # ordering = ['verified', '-date_joined', 'last_login']
+    context_object_name = 'utilisateurs'
+    paginate_by = 20
+
+    def get_queryset(self):
+        verification = self.request.GET.get('verification')
+        date_joined_period = self.request.GET.get('date_joined')
+        last_login_period = self.request.GET.get('last_login')
+
+        utilisateurs = User.objects.select_related('emailaddress').values(
+            'id',
+            'username',
+            'email',
+            'date_joined',
+            'last_login',
+            verified=F('emailaddress__verified')
+        ).order_by('-date_joined', '-last_login', 'verified', 'username')
+
+        if verification == 'verified':
+            utilisateurs = utilisateurs.filter(verified=True)
+
+        if verification == 'unverified':
+            utilisateurs = utilisateurs.filter(verified=False)
+        
+        if date_joined_period:
+            start_date, end_date = get_date_range_for_period(date_joined_period)
+
+            if start_date and end_date:
+                utilisateurs = utilisateurs.filter(date_joined__date__gte=start_date, date_joined__date__lte=end_date)
+        
+        if last_login_period:
+            if last_login_period == 'never':
+                utilisateurs = utilisateurs.filter(last_login=None)
+            else:
+                start_date, end_date = get_date_range_for_period(last_login_period)
+
+                if start_date and end_date:
+                    utilisateurs = utilisateurs.filter(last_login__date__gte=start_date, last_login__date__lte=end_date)
+
+        return utilisateurs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        context ['total_count'] = padit(len(self.get_queryset()), 10)
+
+        query_params = self.request.GET.copy()
+        if 'page' in query_params: del query_params['page']
+        context['cleaned_query_params'] = query_params.urlencode()
+        applied_filters = bool(query_params)
+        context['applied_filters'] = applied_filters
+
+        return context
 
 @login_required(login_url="account_login")
 def supervision(request):
@@ -311,53 +389,6 @@ def supervision(request):
     context = {}
 
     raise PermissionDenied
-
-
-def get_date_range_for_period(date_period):
-    """
-    Calculates the start and end date for a given date period string.
-    Returns a tuple (start_date, end_date) or (None, None) if the period is invalid.
-    """
-    today = datetime.today() # Get today's date in local timezone
-    start_date = None
-    end_date = None
-
-    if date_period == 'today':
-        start_date = today
-        end_date = today
-    elif date_period == 'yesterday':
-        yesterday = today - timedelta(days=1)
-        start_date = yesterday
-        end_date = yesterday
-    elif date_period == 'this_week':
-        # Assuming Monday is the first day of the week (ISO standard)
-        start_date = today - timedelta(days=today.weekday())
-        end_date = start_date + timedelta(days=6) # Sunday of this week
-    elif date_period == 'last_week':
-        start_date = today - timedelta(days=today.weekday() + 7) # Monday of last week
-        end_date = start_date + timedelta(days=6) # Sunday of last week
-    elif date_period == 'this_month':
-        start_date = today.replace(day=1) # First day of this month
-        end_date = today.replace(day=calendar.monthrange(today.year, today.month)[1]) # Last day of this month
-    elif date_period == 'last_month':
-        first_day_this_month = today.replace(day=1)
-        last_day_last_month = first_day_this_month - timedelta(days=1) # Last day of previous month
-        start_date = last_day_last_month.replace(day=1) # First day of previous month
-        end_date = last_day_last_month
-    elif date_period == 'last_30_days':
-        end_date = today
-        start_date = today - timedelta(days=29) # Includes today
-    elif date_period == 'this_year':
-        start_date = today.replace(month=1, day=1) # January 1st of this year
-        end_date = today.replace(month=12, day=31) # December 31st of this year
-    elif date_period == 'last_year':
-        start_date = today.replace(year=today.year - 1, month=1, day=1)
-        end_date = today.replace(year=today.year - 1, month=12, day=31)
-    elif date_period == 'last_365_days':
-        end_date = today
-        start_date = today - timedelta(days=364) # Includes today
-
-    return start_date, end_date
 
 
 class SearchQueryListView(LoginRequiredMixin, ListView):
@@ -424,7 +455,7 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
         query_params = self.request.GET.copy()
         if 'page' in query_params: del query_params['page']
         context['cleaned_query_params'] = query_params.urlencode()
-        applied_filters = bool(query_params) # After 'page' is removed
+        applied_filters = bool(query_params)
         context['applied_filters'] = applied_filters
 
         return context

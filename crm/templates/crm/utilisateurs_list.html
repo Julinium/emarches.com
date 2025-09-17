@@ -7,33 +7,110 @@
 
 {% block content %}
     <h1 class="text-center mb-4">{% trans "Utilisateurs" %}</h1>
+
     {% if request.user|in_group:'CRM' %}
-        <h3 class="my-3 fw-light mt-5">{% trans 'Total count' %}</h3>
+
         {% include 'crm/includes/counter.html' with total_count=total_count %}
 
-        <h3 class="my-3 fw-light mt-5">{% trans 'Utilisateurs' %}</h3>
-        <div class="list-group">
-            {% for utilisateur in utilisateurs %}
-                    <a href="{% url 'crm_utilisateur_details' utilisateur.id %}" class="text-decoration-none">
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
-                            <div class="mx-0 my-2">
-                                <div class="oneline" data-bs-toggle="tooltip" title="{{ utilisateur }}"><strong>{{ utilisateur.username }}</strong>: {{ utilisateur.email }}</div>
+    	<hr>
+        <form class="row g-3" method="GET" action="{% url 'crm_utilisateurs' %}">
 
-                                <span class="oneline text-muted">{% trans 'Joined' %}: {{ utilisateur.date_joined|date }}</span>
-                                <span class="oneline text-muted">{% trans 'Latest login' %}: {{ utilisateur.last_login|date }}</span>
+            <div class="col-auto">
+                <div class="input-group mt-2">
+                    <label class="input-group-text small text-muted" for="date_joined_filter">Date Joined</label>
+                    <select class="form-select" id="date_joined_filter" name="date_joined">
+                        <option value="">--</option>
+                        <option value="today" {% if request.GET.date_joined == 'today' %}selected{% endif %}>Today</option>
+                        <option value="yesterday" {% if request.GET.date_joined == 'yesterday' %}selected{% endif %}>Yesterday</option>
+                        <option value="this_week" {% if request.GET.date_joined == 'this_week' %}selected{% endif %}>This Week</option>
+                        <option value="last_week" {% if request.GET.date_joined == 'last_week' %}selected{% endif %}>Last Week</option>
+                        <option value="this_month" {% if request.GET.date_joined == 'this_month' %}selected{% endif %}>This Month</option>
+                        <option value="last_month" {% if request.GET.date_joined == 'last_month' %}selected{% endif %}>Last Month</option>
+                        <option value="last_30_days" {% if request.GET.date_joined == 'last_30_days' %}selected{% endif %}>Last 30 Days</option>
+                        <option value="this_year" {% if request.GET.date_joined == 'this_year' %}selected{% endif %}>This Year</option>
+                        <option value="last_year" {% if request.GET.date_joined == 'last_year' %}selected{% endif %}>Last Year</option>
+                        <option value="last_365_days" {% if request.GET.date_joined == 'last_365_days' %}selected{% endif %}>Last 365 Days</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="input-group mt-2">
+                    <label class="input-group-text small text-muted" for="last_login_filter">Latest Login</label>
+                    <select class="form-select" id="last_login_filter" name="last_login">
+                        <option value="">--</option>
+                        <option value="never" {% if request.GET.last_login == 'never' %}selected{% endif %}>Never logged in</option>
+                        <option value="today" {% if request.GET.last_login == 'today' %}selected{% endif %}>Today</option>
+                        <option value="yesterday" {% if request.GET.last_login == 'yesterday' %}selected{% endif %}>Yesterday</option>
+                        <option value="this_week" {% if request.GET.last_login == 'this_week' %}selected{% endif %}>This Week</option>
+                        <option value="last_week" {% if request.GET.last_login == 'last_week' %}selected{% endif %}>Last Week</option>
+                        <option value="this_month" {% if request.GET.last_login == 'this_month' %}selected{% endif %}>This Month</option>
+                        <option value="last_month" {% if request.GET.last_login == 'last_month' %}selected{% endif %}>Last Month</option>
+                        <option value="last_30_days" {% if request.GET.last_login == 'last_30_days' %}selected{% endif %}>Last 30 Days</option>
+                        <option value="this_year" {% if request.GET.last_login == 'this_year' %}selected{% endif %}>This Year</option>
+                        <option value="last_year" {% if request.GET.last_login == 'last_year' %}selected{% endif %}>Last Year</option>
+                        <option value="last_365_days" {% if request.GET.last_login == 'last_365_days' %}selected{% endif %}>Last 365 Days</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-auto">
+                <div class="input-group mt-2">
+                    <label class="input-group-text small text-muted" for="verification_filter">Verification</label>
+                    <select class="form-select" id="verification_filter" name="verification">
+                        <option value="">--</option>
+                        <option value="verified" {% if request.GET.verification == "verified" %}selected{% endif %}>Verified</option>
+                        <option value="unverified" {% if request.GET.verification == "unverified" %}selected{% endif %}>Unverified</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-auto">
+                <div class="text-end py-2">
+                    <button class="btn btn-primary px-3" type="submit">Filter items</button>
+                    {% if applied_filters %}
+                        <a class="btn btn-outline-secondary px-3" href="{% url 'crm_utilisateurs' %}">Clear Filters</a>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+
+        <div class="list-group mt-3">
+            {% for utilisateur in utilisateurs %}
+                <a href="{% url 'crm_utilisateur_details' utilisateur.id %}" class="list-group-item list-group-item-action">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="d-flex align-items-start my-2 w-100">
+                            <img class="img-fluid border rounded-circle mx-1" src="{{ MEDIA_URL }}{% if utilisateur.profile.avatar %}{{ utilisateur.profile.avatar }}{% else %}users/avatars/default.png{% endif %}" alt="X" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
+                            <div class="d-flex justify-content-between align-items-start w-100">
+                                <div>
+                                    <div>
+                                        <span><strong>{{ utilisateur.username }}</strong></span>
+                                        <span class="ms-2"><i class="me-1 bi bi-envelope"></i>{{ utilisateur.email }}</span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <span class=""><i class="me-1 bi bi-cake2"></i>{{ utilisateur.date_joined|date }}</span>
+                                        <span class="ms-2"><i class="me-1 bi bi-key"></i>{{ utilisateur.last_login }}</span>
+                                    </div>
+                                </div>
+                                {% if not utilisateur.verified %}
+                                    <span class="badge text-white bg-danger rounded-pill">Unverified</span>
+                                {% else %}
+                                    <span class="badge text-white bg-success rounded-pill">Verified</span>
+                                {% endif %}
                             </div>
-                            {% if utilisateur.verified %}
-                                <span class="badge text-white bg-success rounded-pill">Verified</span>
-                            {% else %}
-                                <span class="badge text-white bg-danger rounded-pill">Unverified</span>
-                            {% endif %}
-                        </li>
-                    </a>
+                        </div>
+                    </div>
+                </a>
             {% empty %}
                 <p class="text-center">{% trans "No records found." %}</p>
             {% endfor %}
         </div>
-    {% else %}
+
+
+        {% if is_paginated %}
+            {% include 'crm/includes/paginator.html' %}
+        {% endif %}
+
+        {% else %}
         <p class="text-danger">{% trans 'Not allowed' %}</p>
     {% endif %}
 {% endblock %}

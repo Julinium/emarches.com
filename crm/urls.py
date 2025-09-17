@@ -14,9 +14,9 @@ urlpatterns = [
     path('favorisations/', views.favorisations, name='crm_favorisations'),
     path('unfavorisations/', views.unfavorisations, name='crm_unfavorisations'),
     path('newsletters/', views.newsletters, name='crm_newsletters'),
-    path('users/', views.utilisateurs, name='crm_utilisateurs'),
     path('users/<int:pk>/', views.utilisateur, name='crm_utilisateur_details'),
 
+    path('users/', views.UserListView.as_view(), name='crm_utilisateurs'),
     path('downloads/', views.DceDownloadsListView.as_view(), name='crm_downloads'),
     path('search_queries/', views.SearchQueryListView.as_view(), name='search_queries_list'),
     path('search_queries/<uuid:pk>/', views.SearchQueryDetailView.as_view(), name='search_queries_detail')
