@@ -6,6 +6,8 @@
 {% endblock head_title %}
 
 {% block content %}
+{% load i18n %}
+
 
     {% element h1 %}
         {% trans "Sign Up" %}
@@ -23,11 +25,13 @@
                     {% element fields form=form unlabeled=True %}
                     {% endelement %}
                 {{ redirect_field }}
-            	<p class='text-muted small'>{% translate 'Terms and conditions apply' %}. <a href="{% url 'base_legal' %}">{% translate 'Read more' %}</a></p>
+            	<p class='text-muted small'>{% translate 'Terms and conditions apply' %}. <a target="_blank" href="{% url 'base_legal' %}">{% translate 'Read more' %}</a></p>
             {% endslot %}
             
 
             {% slot actions %}
+                {% include 'base/includes/signup-junk.html' %}
+
                 {% element button tags="prominent,signup" class="btn btn-primary" type="submit" %}
                     {% trans "Sign Up" %}
                 {% endelement %}

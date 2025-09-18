@@ -1,0 +1,66 @@
+{% load i18n %}
+
+<div class="accordion my-3" id="accordionJunk">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button bg-warning-subtle p-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDetails" aria-expanded="false" aria-controls="collapseDetails">
+                <span class=""><i class="bi bi-exclamation-triangle"></i></span>
+                <span class="ms-1 small">{% trans "Confirmation message" %}</span>
+            </button>
+        </h2>
+        <div id="collapseDetails" class="accordion-collapse collapse hide" data-bs-parent="#accordionJunk">
+            <div class="accordion-body p-2">
+                <div class="my-3">
+                    <div class="d-flex">
+                        <span class="fw-bold"><i class="bi bi-envelope"></i></span>
+                        <div class="ms-2 w-100">
+                            <span class="fw-bold">{% trans "Valid email equired" %}.</span><br>
+                            <span class="small">{% trans "For security reason, we send a confirmation email to your email address" %}.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="d-flex">
+                        <span class="fw-bold text-success"><i class="bi bi-shield-check"></i></span>
+                        <div class="ms-2 w-100">
+                            <span class="fw-bold text-success">{% trans "It's 100% safe" %}.</span><br>
+                            <span class="small">{% trans "We are running our own private email server and we are using the highest standards of security and privacy" %}.</span>
+                            <span class="small">{% trans "The giant email providers, especially Google, do not like us and systematically flag our emails as spam for no valid reason" %}.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="d-flex">
+                        <span class="fw-bold"><i class="bi bi-exclamation-diamond"></i></span>
+                        <div class="ms-2 w-100">
+                            <span class="fw-bold">{% trans "It may go to Spam/Junk" %}.</span><br>
+                            <span class="small">{% trans "If you do not get your confirmation email in 2 minutes after signup, please check your Spam/Junk folder" %}.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="d-flex">
+                        <span class="fw-bold"><i class="bi bi-heart"></i></span>
+                        <div class="ms-2 w-100">
+                            <span class="fw-bold">{% trans "You can help us" %}.</span><br>
+                            <span class="small">{% trans "If you wish, you can help us by flagging our emails as Safe/Not spam" %}.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="d-flex w-100">
+                        <span class="fw-bold"><i class="bi bi-send"></i></span>
+                        <div class="ms-2 w-100">
+                            <span class="fw-bold">{% trans "Support or information" %}?</span><br>
+                            <span class="small">{% trans "For support or further information, please feel free to contact us." %}.</span><br>
+                            <div class=" mt-2">
+                                <a class="btn btn-outline-secondary" target="_blank" href="{% url 'base_contact' %}">{% trans "Contact us" %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
