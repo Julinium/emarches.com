@@ -1,10 +1,66 @@
 {% load i18n %}
 
-<div class="container">
-    <div class="py-2 rounded shadow text-center text-bg-warning">
-        <span class="">{% translate "Better with an account." %}</span>
-        <span><a class="ms-1 text-success" href="{% url 'account_login' %}">{% trans "Sign In" %}</a></span>
-        <span class="ms-1 fw-bold">{% translate '100% FREE' %}</span>
-        <span><a class="ms-1 text-secondary small" target="_blank" href="{% url 'base_contact' %}">{% trans "More" %}</a></span>
+<div class="container justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-11 col-lg-10 col-xl-8">
+            <div class="accordion my-3" id="accordionSignup">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button bg-success-subtle fw-bold p-2 collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseDetails" aria-expanded="false"
+                            aria-controls="collapseDetails">
+                            <span class=""><i class="bi bi-exclamation-circle-fill"></i></span>
+                            <span class="ms-1">{% translate "Better with an account. 100% FREE" %}.</span>
+                        </button>
+                    </h2>
+                    <div id="collapseDetails" class="accordion-collapse collapse hide" data-bs-parent="#accordionSignup">
+                        <div class="accordion-body p-2">
+                            <div class="my-3">
+                                <div class="d-flex">
+                                    <span class="fw-bold"><i class="bi bi-arrow-right-circle"></i></span>
+                                    <div class="ms-2 w-100">
+                                        <span class="fw-bold">{% trans "Easy and secure" %}.</span><br>
+                                        <span class="small">{% trans "All it takes is a valid email address" %}.</span>
+                                        <div class="mt-2">
+                                            <a class="btn btn-success" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="my-3">
+                                <div class="d-flex">
+                                    <span class="fw-bold"><i class="bi bi-hand-thumbs-up"></i></span>
+                                    <div class="ms-2 w-100">
+                                        <span class="fw-bold">{% trans "Better experience" %}.</span><br>
+                                        <span class="small">{% trans "Registered users get access to advanced features" %}.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="my-3">
+                                <div class="d-flex">
+                                    <span class="fw-bold text-success"><i class="bi bi-cup-straw"></i></span>
+                                    <div class="ms-2 w-100">
+                                        <span class="fw-bold text-success">{% trans "It's 100% free" %}.</span><br>
+                                        <span class="small">{% trans "Our accounts are 100% FREE. FREE like in FREE BEER" %}.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="my-3">
+                                <div class="d-flex w-100">
+                                    <span class="fw-bold"><i class="bi bi-send"></i></span>
+                                    <div class="ms-2 w-100">
+                                        <span class="fw-bold">{% trans "Support or information" %}?</span><br>
+                                        <span class="small">{% trans "For support or further information, please feel free to contact us." %}.</span><br>
+                                        <div class=" mt-2">
+                                            <a class="btn btn-outline-secondary" target="_blank" href="{% url 'base_contact' %}">{% trans "Contact us" %}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
