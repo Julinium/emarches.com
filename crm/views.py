@@ -312,11 +312,14 @@ def utilisateurs(request):
 def utilisateur(request, pk):
     context = {}
     if is_crm_user(request.user):
-        utilisateur = get_object_or_404(User, id=pk)
+        utilisateur = get_object_or_404(User, id=pk)        
         email_address = get_object_or_404(EmailAddress, email=utilisateur.email)
         context['verified'] = email_address.verified
         context['utilisateur'] = utilisateur
         
+        profile = Profile.objects.filter(user=utilisateur).first()
+        downloads = utilisateur.downloads
+
         return render(request, 'crm/utilisateur_details.html', context)
     
     context = {}
@@ -326,7 +329,6 @@ def utilisateur(request, pk):
 class UserListView(LoginRequiredMixin, ListView):
     model = User
     template_name = 'crm/utilisateurs_list.html'
-    # ordering = ['verified', '-date_joined', 'last_login']
     context_object_name = 'utilisateurs'
     paginate_by = 20
 
@@ -379,6 +381,16 @@ class UserListView(LoginRequiredMixin, ListView):
         context['applied_filters'] = applied_filters
 
         return context
+    
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return super().dispatch(request, *args, **kwargs)
+
+        if not is_crm_user(request.user):
+            raise PermissionDenied
+        
+        return super().dispatch(request, *args, **kwargs)
+
 
 @login_required(login_url="account_login")
 def supervision(request):
@@ -441,6 +453,15 @@ class SearchQueryListView(LoginRequiredMixin, ListView):
                 queryset = queryset.filter(date_submitted__date__gte=start_date, date_submitted__date__lte=end_date)
 
         return queryset
+    
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return super().dispatch(request, *args, **kwargs)
+            
+        if not is_crm_user(request.user):
+            raise PermissionDenied
+        
+        return super().dispatch(request, *args, **kwargs)
 
 
     def get_context_data(self, **kwargs):
@@ -477,6 +498,15 @@ class SearchQueryDetailView(LoginRequiredMixin, DetailView):
         ]
 
         return context
+    
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return super().dispatch(request, *args, **kwargs)
+            
+        if not is_crm_user(request.user):
+            raise PermissionDenied
+        
+        return super().dispatch(request, *args, **kwargs)
 
 
 
@@ -521,3 +551,12 @@ class DceDownloadsListView(LoginRequiredMixin, ListView):
         context['applied_filters'] = applied_filters
 
         return context
+    
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return super().dispatch(request, *args, **kwargs)
+            
+        if not is_crm_user(request.user):
+            raise PermissionDenied
+        
+        return super().dispatch(request, *args, **kwargs)
