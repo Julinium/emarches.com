@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# eMarches.com Arabic Translation.
+# Copyright (C) 2024 W. Tahiri
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR <w.tahiri@mode-777.com>, 2024.
 #
 msgid ""
 msgstr ""

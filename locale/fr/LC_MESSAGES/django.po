@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# eMarches.com translations.
+# Copyright (C) 2024 W. Tahiri
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR <w.tahiri@mode-777.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -2519,7 +2519,7 @@ msgstr ""
 
 #: portal/templates/portal/con-details.html:64
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: portal/templates/portal/con-details.html:84
 msgid "Cancelled"
