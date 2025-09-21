@@ -777,20 +777,16 @@ msgid "Better with an account. 100%% FREE"
 msgstr ""
 
 #: base/templates/base/includes/anonymous.html:22
-#, fuzzy
-#| msgid "Use a security key"
 msgid "Easy and secure"
-msgstr "Use a Security Key"
+msgstr "Easy and secure"
 
 #: base/templates/base/includes/anonymous.html:23
 msgid "All it takes is a valid email address"
 msgstr ""
 
 #: base/templates/base/includes/anonymous.html:25
-#, fuzzy
-#| msgid "Enter your country"
 msgid "Create your FREE account"
-msgstr "Enter your country"
+msgstr "Create your FREE account"
 
 #: base/templates/base/includes/anonymous.html:26
 #: base/templates/base/includes/navbar.html:139
@@ -808,21 +804,21 @@ msgstr "Sign In"
 
 #: base/templates/base/includes/anonymous.html:35
 msgid "Better experience"
-msgstr ""
+msgstr "Better experience"
 
 #: base/templates/base/includes/anonymous.html:36
 msgid "Registered users get access to advanced features"
-msgstr ""
+msgstr "Registered users get access to advanced features"
 
 #: base/templates/base/includes/anonymous.html:44
 #, python-format
 msgid "It's 100%% free"
-msgstr ""
+msgstr "It's 100%% free"
 
 #: base/templates/base/includes/anonymous.html:45
 #, python-format
 msgid "Our accounts are 100%% FREE. FREE like in FREE BEER"
-msgstr ""
+msgstr "Our accounts are 100%% FREE. FREE like in FREE BEER"
 
 #: base/templates/base/includes/anonymous.html:53
 #: base/templates/base/includes/signup-junk.html:54
@@ -2427,10 +2423,8 @@ msgstr ""
 "there is no huge improvement we could bring to it. "
 
 #: portal/templates/portal/bdc-landing.html:20
-#, fuzzy
-#| msgid "Browse POs on Official Website"
 msgid "Official Website"
-msgstr "Browse POs on Official Website"
+msgstr "Official Website"
 
 #: portal/templates/portal/con-details.html:7
 #: portal/templates/portal/con-details.html:79
@@ -4197,88 +4191,88 @@ msgstr "Current"
 msgid "Sign Out Other Sessions"
 msgstr "Sign Out Other Sessions"
 
-#~ msgid "Site under construction. Some features may not work correctly."
-#~ msgstr "Site under construction. Some features may not work correctly."
+msgid "Site under construction. Some features may not work correctly."
+msgstr "Site under construction. Some features may not work correctly."
 
-#~ msgid "Leads"
-#~ msgstr "Leads"
+msgid "Leads"
+msgstr "Leads"
 
-#~ msgid "Person"
-#~ msgstr "Person"
+msgid "Person"
+msgstr "Person"
 
-#~ msgid "Download should start shortly... Please wait."
-#~ msgstr "Download should start shortly... Please wait."
+msgid "Download should start shortly... Please wait."
+msgstr "Download should start shortly... Please wait."
 
-#~ msgid ""
-#~ "Sorry, we could not get your files. If this happens often, please let us "
-#~ "know."
-#~ msgstr ""
-#~ "Sorry, we could not get your files. If this happens often, please let us "
-#~ "know."
+msgid ""
+"Sorry, we could not get your files. If this happens often, please let us "
+"know."
+msgstr ""
+"Sorry, we could not get your files. If this happens often, please let us "
+"know."
 
-#~ msgid "Multi-lots"
-#~ msgstr "Multi-lots"
+msgid "Multi-lots"
+msgstr "Multi-lots"
 
-#~ msgid "Electronic response and signature"
-#~ msgstr "Electronic Response and Signature"
+msgid "Electronic response and signature"
+msgstr "Electronic Response and Signature"
 
-#~ msgid "Download List"
-#~ msgstr "Download List"
+msgid "Download List"
+msgstr "Download List"
 
-#~ msgid ""
-#~ "This file is only for authenticated users and you should not have "
-#~ "accessed it."
-#~ msgstr ""
-#~ "This file is only for authenticated users and you should not have "
-#~ "accessed it."
+msgid ""
+"This file is only for authenticated users and you should not have "
+"accessed it."
+msgstr ""
+"This file is only for authenticated users and you should not have "
+"accessed it."
 
-#~ msgid ""
-#~ "Our servers security mechanism replaced the original content with this "
-#~ "message."
-#~ msgstr ""
-#~ "Our servers' security mechanism replaced the original content with this "
-#~ "message."
+msgid ""
+"Our servers security mechanism replaced the original content with this "
+"message."
+msgstr ""
+"Our servers' security mechanism replaced the original content with this "
+"message."
 
-#~ msgid ""
-#~ "If you got this file from our servers, we would like to know how you did."
-#~ msgstr ""
-#~ "If you got this file from our servers, we would like to know how you did."
+msgid ""
+"If you got this file from our servers, we would like to know how you did."
+msgstr ""
+"If you got this file from our servers, we would like to know how you did."
 
-#~ msgid "We may hire you. Please contact us. Links on eMarches.com"
-#~ msgstr "We may hire you. Please contact us. Links on eMarches.com"
+msgid "We may hire you. Please contact us. Links on eMarches.com"
+msgstr "We may hire you. Please contact us. Links on eMarches.com"
 
-#~ msgid "Total downloaded size"
-#~ msgstr "Total downloaded size"
+msgid "Total downloaded size"
+msgstr "Total downloaded size"
 
-#~ msgid "Top last"
-#~ msgstr "Top last"
+msgid "Top last"
+msgstr "Top last"
 
-#~ msgid "Here is a list of files associated with the Tender."
-#~ msgstr "Here is a list of files associated with the Tender."
+msgid "Here is a list of files associated with the Tender."
+msgstr "Here is a list of files associated with the Tender."
 
-#~ msgid "Portfolio"
-#~ msgstr "Portfolio"
+msgid "Portfolio"
+msgstr "Portfolio"
 
-#~ msgid "Mobile"
-#~ msgstr "Mobile"
+msgid "Mobile"
+msgstr "Mobile"
 
-#~ msgid "Profile not set"
-#~ msgstr "Profile not set"
+msgid "Profile not set"
+msgstr "Profile not set"
 
-#~ msgid "Profile Stats"
-#~ msgstr "Profile Stats"
+msgid "Profile Stats"
+msgstr "Profile Stats"
 
-#~ msgid "Unlimited"
-#~ msgstr "Unlimited"
+msgid "Unlimited"
+msgstr "Unlimited"
 
-#~ msgid "Browse"
-#~ msgstr "Browse"
+msgid "Browse"
+msgstr "Browse"
 
-#~ msgid "Manage Addresses"
-#~ msgstr "Manage Addresses"
+msgid "Manage Addresses"
+msgstr "Manage Addresses"
 
-#~ msgid "Exit Favourites"
-#~ msgstr "Exit Favorites"
+msgid "Exit Favourites"
+msgstr "Exit Favorites"
 
-#~ msgid "Forgot your password?"
-#~ msgstr "Forgot your password?"
+msgid "Forgot your password?"
+msgstr "Forgot your password?"
