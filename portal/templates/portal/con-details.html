@@ -70,9 +70,6 @@
 
 
         <div id="page-title" class="align-items-center mt-4 mb-2">
-            <!-- <span id="favedStarx" {% if faved %}style="display:d-inline;"{% else %}style="display:none;"{% endif %}>
-                <img class="mx-1 mb-2" src="{% static 'img/star-fill.svg' %}" height="24" alt="Fav">
-            </span> -->
             <span id="favedStar" class="{% if faved %} d-inline{% else %} d-none{% endif %}">
                 <img class="mx-1 mb-2" src="{% static 'img/star-fill.svg' %}" height="24" alt="Fav">
             </span>
@@ -134,7 +131,6 @@
 
             </div>
 
-            
 
             {% get_current_language as LC %}
             <div id="con-destails" class="my-2">
@@ -147,7 +143,6 @@
                     <div class="col-12 col-md-6 my-3">
                         {% timezone "Africa/Casablanca" %}
                             {% trans 'Bidding Deadline' as deadline %}
-                            <!-- {% trans 'Morocco Time' as mtime %} -->
                             {% include 'portal/includes/ico-val-key.html' with ico='calendar-check' key=deadline val=con.date_limite_depot|localtime vex='' iac='' kac='text-muted small' vac='fw-bold' %}
                         {% endtimezone %}
                     </div>
@@ -378,7 +373,6 @@
                 let favStar = document.getElementById('favedStar');
                 
                 if ( response.status == 200 ) {
-                    // favStar.style.display = "none";
                     favStar.classList.toggle('d-none');
                     favStar.classList.toggle('d-inline');
                     const defToast = document.getElementById('defToast');
@@ -386,14 +380,12 @@
                     defAlert.show();
                 }
                 if ( response.status == 201 ) {
-                    // favStar.style.display = "block";
                     favStar.classList.toggle('d-none');
                     favStar.classList.toggle('d-inline');
                     let favToast = document.getElementById('favToast');
                     let favAlert = new bootstrap.Toast(favToast);
                     favAlert.show();
                 }
-                
 
             } catch (error) {
                 console.error(error.message);
