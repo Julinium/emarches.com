@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-14 21:08+0000\n"
+"POT-Creation-Date: 2025-09-21 20:07+0000\n"
 "PO-Revision-Date: 2025-01-16 12:25+0100\n"
 "Last-Translator: Amina Bouhou <a.bouhou@emarches.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -311,7 +311,6 @@ msgstr "Peu importe"
 #: base/templates/base/profile.html:218
 #: base/templates/base/profile_update.html:91 base/views.py:124
 #: crm/templates/crm/lead_edit.html:52
-#: portal/templates/portal/includes/con-contact.html:13
 msgid "Email"
 msgstr "Email"
 
@@ -323,7 +322,6 @@ msgstr "Email"
 #: base/templates/base/profile.html:211
 #: base/templates/base/profile_update.html:85 base/views.py:125
 #: crm/templates/crm/lead_edit.html:64
-#: portal/templates/portal/includes/con-contact.html:10
 msgid "Phone"
 msgstr "Téléphone"
 
@@ -533,7 +531,9 @@ msgid "Go home"
 msgstr "Retour à l'accueil"
 
 #: base/templates/base/errors/unallowed.html:15
+#: base/templates/base/includes/anonymous.html:56
 #: base/templates/base/includes/pricing.html:70
+#: base/templates/base/includes/signup-junk.html:57
 #: base/templates/base/lockout.html:16
 msgid "Contact us"
 msgstr "Contactez-nous"
@@ -788,6 +788,7 @@ msgstr "Question toujours sans réponse ?"
 
 #: base/templates/base/faqs.html:175 base/templates/base/includes/hero.html:10
 #: base/templates/base/legal.html:77 base/templates/base/legal.html:135
+#: portal/templates/portal/con-details.html:51
 msgid "Contact Us"
 msgstr "Contactez-nous"
 
@@ -795,11 +796,64 @@ msgstr "Contactez-nous"
 msgid "Home of Public Procurement Market"
 msgstr "Le Foyer de la Commande Publique"
 
-#: base/templates/base/includes/banner.html:4
-msgid "Site under construction. Some features may not work correctly."
-msgstr ""
-"Site en construction. Certaines fonctionnalités peuvent ne pas fonctionner "
-"correctement."
+#: base/templates/base/includes/anonymous.html:13
+#, python-format
+msgid "Better with an account. 100%% FREE"
+msgstr "C'est mieux avec un compte. 100%% GRATUIT"
+
+#: base/templates/base/includes/anonymous.html:22
+msgid "Easy and secure"
+msgstr "Facile et sécurisé"
+
+#: base/templates/base/includes/anonymous.html:23
+msgid "All it takes is a valid email address"
+msgstr "Une adresse email valide, c'est tout"
+
+#: base/templates/base/includes/anonymous.html:25
+msgid "Create your FREE account"
+msgstr "Créer votre compte GRATUIT"
+
+#: base/templates/base/includes/anonymous.html:26
+#: base/templates/base/includes/navbar.html:139
+#: base/templates/base/includes/pricing.html:50
+#: templates/account/confirm_login_code.html:5
+#: templates/account/confirm_login_code.html:27 templates/account/login.html:7
+#: templates/account/login.html:11 templates/account/login.html:33
+#: templates/account/request_login_code.html:5
+#: templates/mfa/authenticate.html:6 templates/mfa/authenticate.html:24
+#: templates/openid/login.html:5 templates/openid/login.html:9
+#: templates/openid/login.html:20 templates/socialaccount/login.html:5
+#: templates/socialaccount/login_redirect.html:5
+msgid "Sign In"
+msgstr "Se connecter"
+
+#: base/templates/base/includes/anonymous.html:35
+msgid "Better experience"
+msgstr "Meilleure expérience"
+
+#: base/templates/base/includes/anonymous.html:36
+msgid "Registered users get access to advanced features"
+msgstr "Les utilisateurs enregistrés ont accès à des fonctionnalités avancées"
+
+#: base/templates/base/includes/anonymous.html:44
+#, python-format
+msgid "It's 100%% free"
+msgstr "C'est 100%% gratuit"
+
+#: base/templates/base/includes/anonymous.html:45
+#, python-format
+msgid "Our accounts are 100%% FREE. FREE like in FREE BEER"
+msgstr "Nos comptes sont 100%% GRATUIT. GRATUIT au vrai sens du terme"
+
+#: base/templates/base/includes/anonymous.html:53
+#: base/templates/base/includes/signup-junk.html:54
+msgid "Support or information"
+msgstr "Support ou information"
+
+#: base/templates/base/includes/anonymous.html:54
+#: base/templates/base/includes/signup-junk.html:55
+msgid "For support or further information, please feel free to contact us."
+msgstr "Pour le support ou plus d'informations,merci de nous contacter."
 
 #: base/templates/base/includes/carousel.html:36
 #: crm/templates/crm/favos_list.html:36
@@ -825,7 +879,7 @@ msgstr "Infos"
 
 #: base/templates/base/includes/footer.html:19
 #: base/templates/base/includes/navbar.html:51
-#: portal/templates/portal/con-details.html:348
+#: portal/templates/portal/con-details.html:364
 msgid "Contact"
 msgstr "Contact"
 
@@ -949,19 +1003,6 @@ msgstr "Administration"
 #: base/templates/base/includes/navbar.html:133
 msgid "Database"
 msgstr "Base de données"
-
-#: base/templates/base/includes/navbar.html:139
-#: base/templates/base/includes/pricing.html:50
-#: templates/account/confirm_login_code.html:5
-#: templates/account/confirm_login_code.html:27 templates/account/login.html:7
-#: templates/account/login.html:11 templates/account/login.html:33
-#: templates/account/request_login_code.html:5
-#: templates/mfa/authenticate.html:6 templates/mfa/authenticate.html:24
-#: templates/openid/login.html:5 templates/openid/login.html:9
-#: templates/openid/login.html:20 templates/socialaccount/login.html:5
-#: templates/socialaccount/login_redirect.html:5
-msgid "Sign In"
-msgstr "Se connecter"
 
 #: base/templates/base/includes/pricing.html:3
 msgid "Pricing"
@@ -1087,7 +1128,7 @@ msgid "Shown data"
 msgstr "Données affichées"
 
 #: base/templates/base/includes/pricing.html:102
-#: crm/templates/crm/supervision.html:48
+#: crm/templates/crm/supervision.html:58
 msgid "Downloads"
 msgstr "Téléchargements"
 
@@ -1215,6 +1256,53 @@ msgstr ""
 "œuvre réussie en offrant un soutien dans la conformité, le suivi des "
 "performances et la gestion des relations, vous permettant de livrer "
 "l'excellence à chaque étape."
+
+#: base/templates/base/includes/signup-junk.html:8
+msgid "Confirmation message"
+msgstr "Message de confirmation"
+
+#: base/templates/base/includes/signup-junk.html:17
+msgid "Valid email equired"
+msgstr "Adresse email vailde requise"
+
+#: base/templates/base/includes/signup-junk.html:18
+msgid "For security reason, we send a confirmation email to your email address"
+msgstr "Pour des raisons de sécurité, nous vous envoyons un message de confiramtion sur votre email"
+
+#: base/templates/base/includes/signup-junk.html:26
+#, python-format
+msgid "It's 100%% safe"
+msgstr "C'est 100%% sécurisé"
+
+#: base/templates/base/includes/signup-junk.html:27
+msgid ""
+"We are running our own private email server and we are using the highest "
+"standards of security and privacy"
+msgstr "Nous gérons nous-même notre serveur email privé et nous utilisons les derniers standards de sécurité et de confidentialité"
+
+#: base/templates/base/includes/signup-junk.html:28
+msgid ""
+"The giant email providers, especially Google, do not like us and "
+"systematically flag our emails as spam for no valid reason"
+msgstr "Les géants fournisseurs d'email ne nous aiment pas et marquent systématiquement nos emails comme indésirables sans raison valide"
+
+#: base/templates/base/includes/signup-junk.html:36
+msgid "It may go to Spam/Junk"
+msgstr "Ça peut attérrir dans Spam/Indésirable"
+
+#: base/templates/base/includes/signup-junk.html:37
+msgid ""
+"If you do not get your confirmation email in 2 minutes after signup, please "
+"check your Spam/Junk folder"
+msgstr "Si votre email de confirmation n'arrive pas dans les 2 minutes qui suivent l'enregistrement, merci de chercher dans Spam/Indésirable"
+
+#: base/templates/base/includes/signup-junk.html:45
+msgid "You can help us"
+msgstr "Vous pouvez nous aider"
+
+#: base/templates/base/includes/signup-junk.html:46
+msgid "If you wish, you can help us by flagging our emails as Safe/Not spam"
+msgstr "Si vous le souhaitez, vous pouvez nous aider en signalant nos emails comme Légitime/Non spam"
 
 #: base/templates/base/includes/testimonials.html:3
 msgid "What Our Clients Say"
@@ -1349,7 +1437,7 @@ msgstr "Cette page est en construction. Elle sera bientôt disponible."
 
 #: base/templates/base/legal.html:5 base/templates/base/legal.html:9
 #: base/templates/base/legal.html:11
-#: portal/templates/portal/con-details.html:53
+#: portal/templates/portal/con-details.html:60
 msgid "Legal Information"
 msgstr "Mentions légales"
 
@@ -1812,7 +1900,7 @@ msgid "Free"
 msgstr "Gratuit"
 
 #: base/templates/base/profile.html:58
-#: portal/templates/portal/con-details.html:139
+#: portal/templates/portal/con-details.html:155
 msgid "Remaining days"
 msgstr "Jours restants"
 
@@ -1893,7 +1981,6 @@ msgstr "Pays"
 
 #: base/templates/base/profile.html:232
 #: base/templates/base/profile_update.html:103
-#: portal/templates/portal/includes/con-contact.html:16
 msgid "Fax"
 msgstr "Fax"
 
@@ -2111,6 +2198,7 @@ msgstr "Anonyme"
 #: crm/templates/crm/searchquery_list.html:140
 #: crm/templates/crm/unfavorisations_list.html:29
 #: crm/templates/crm/unfavs_list.html:25
+#: crm/templates/crm/utilisateurs_list.html:104
 msgid "No records found."
 msgstr "Aucun enregistrement trouvé."
 
@@ -2121,15 +2209,17 @@ msgstr "Aucun enregistrement trouvé."
 #: crm/templates/crm/lead_edit.html:176 crm/templates/crm/leads_list.html:84
 #: crm/templates/crm/searchquery_detail.html:24
 #: crm/templates/crm/searchquery_list.html:150
-#: crm/templates/crm/supervision.html:90
+#: crm/templates/crm/supervision.html:100
 #: crm/templates/crm/unfavorisations_list.html:33
 #: crm/templates/crm/unfavs_list.html:70
+#: crm/templates/crm/utilisateur_details.html:26
+#: crm/templates/crm/utilisateurs_list.html:114
 msgid "Not allowed"
 msgstr "Non autorisé"
 
 #: crm/templates/crm/favorisations_list.html:6
 #: crm/templates/crm/favorisations_list.html:9
-#: crm/templates/crm/supervision.html:68
+#: crm/templates/crm/supervision.html:78
 msgid "Favorisations"
 msgstr "Favorisations"
 
@@ -2163,7 +2253,7 @@ msgstr "Navigation de la page"
 
 #: crm/templates/crm/favourites_list.html:6
 #: crm/templates/crm/favourites_list.html:9
-#: crm/templates/crm/supervision.html:58
+#: crm/templates/crm/supervision.html:68
 msgid "Favourites"
 msgstr "Favoris"
 
@@ -2193,16 +2283,16 @@ msgstr "Utilisateur authentifié"
 
 #: crm/templates/crm/lead_edit.html:79 crm/templates/crm/lead_edit.html:113
 #: crm/templates/crm/lead_edit.html:126 crm/templates/crm/lead_edit.html:139
-#: portal/templates/portal/con-details.html:192
-#: portal/templates/portal/con-details.html:299
+#: portal/templates/portal/con-details.html:208
+#: portal/templates/portal/con-details.html:315
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "Yes"
 msgstr "Oui"
 
 #: crm/templates/crm/lead_edit.html:81 crm/templates/crm/lead_edit.html:115
 #: crm/templates/crm/lead_edit.html:128 crm/templates/crm/lead_edit.html:141
-#: portal/templates/portal/con-details.html:194
-#: portal/templates/portal/con-details.html:297
+#: portal/templates/portal/con-details.html:210
+#: portal/templates/portal/con-details.html:313
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "No"
 msgstr "Non"
@@ -2266,57 +2356,83 @@ msgid "Search Queries List"
 msgstr "Liste des recherches"
 
 #: crm/templates/crm/supervision.html:17
-msgid "Leads"
-msgstr "Prospects"
+msgid "Users"
+msgstr "Utilisateurs"
 
-#: crm/templates/crm/supervision.html:22
+#: crm/templates/crm/supervision.html:21
+msgid "Users, email addresses and sessions details."
+msgstr "Details des utilisateurs, adresses email et sessions"
+
+#: crm/templates/crm/supervision.html:27
+msgid "Contacts"
+msgstr "Contacts"
+
+#: crm/templates/crm/supervision.html:32
 msgid "Contacts and messages sent from the website form"
 msgstr "Contacts et messages envoyés depuis le formulaire du site web"
 
-#: crm/templates/crm/supervision.html:28
+#: crm/templates/crm/supervision.html:38
 msgid "Newsletters"
 msgstr "Newsletters"
 
-#: crm/templates/crm/supervision.html:32
+#: crm/templates/crm/supervision.html:42
 msgid ""
 "This feature is still under devlopment and will be available in future "
 "versions"
 msgstr "Cette page est en construction. Elle sera bientôt disponible."
 
-#: crm/templates/crm/supervision.html:38
+#: crm/templates/crm/supervision.html:48
 msgid "Search Queries"
 msgstr "Recherches"
 
-#: crm/templates/crm/supervision.html:42
+#: crm/templates/crm/supervision.html:52
 msgid ""
 "What are the visitors searching for and how they want the results to be shown"
 msgstr "Ce que cherchent les visiteurs et comment ils affichent les résultats"
 
-#: crm/templates/crm/supervision.html:52
+#: crm/templates/crm/supervision.html:62
 msgid "What files do registered users download"
 msgstr "Quelles fichiers téléchargent les utilisateurs enregistrés"
 
-#: crm/templates/crm/supervision.html:62
+#: crm/templates/crm/supervision.html:72
 msgid "Tenders that are in users Favourites"
 msgstr "Consultations ajoutées aux Favoris des utilisateurs"
 
-#: crm/templates/crm/supervision.html:72
+#: crm/templates/crm/supervision.html:82
 msgid "What Tenders have been added to Favorites"
 msgstr "Quelles consultations ont été ajoutées aux Favoris."
 
-#: crm/templates/crm/supervision.html:78
+#: crm/templates/crm/supervision.html:88
 #: crm/templates/crm/unfavorisations_list.html:6
 #: crm/templates/crm/unfavorisations_list.html:9
 msgid "Unfavorisations"
 msgstr "Défavorisations"
 
-#: crm/templates/crm/supervision.html:82
+#: crm/templates/crm/supervision.html:92
 msgid "What Tenders have been removed from Favorites"
 msgstr "Quelles consultations ont été retirées des Favoris."
 
 #: crm/templates/crm/unfavs_list.html:6 crm/templates/crm/unfavs_list.html:9
 msgid "Unfavorisations List"
 msgstr "Liste des défavorisations"
+
+#: crm/templates/crm/utilisateur_details.html:6
+#: crm/templates/crm/utilisateur_details.html:9
+msgid "Utilisateur details"
+msgstr "Détails Utilisateur"
+
+#: crm/templates/crm/utilisateur_details.html:15
+msgid "Joined"
+msgstr "Inscrit"
+
+#: crm/templates/crm/utilisateur_details.html:16
+msgid "Latest login"
+msgstr "Dernière connexion"
+
+#: crm/templates/crm/utilisateurs_list.html:6
+#: crm/templates/crm/utilisateurs_list.html:9
+msgid "Utilisateurs"
+msgstr "Utilisateurs"
 
 #: emarches/settings.py:137
 msgid "English"
@@ -2342,11 +2458,11 @@ msgstr "Espagnol"
 msgid "German"
 msgstr "Allemand"
 
-#: portal/models.py:351
+#: portal/models.py:349
 msgid "Download DCE"
 msgstr "Télécharger DCE"
 
-#: portal/models.py:352
+#: portal/models.py:350
 msgid "Downloads DCE"
 msgstr "Téléchargements DCE"
 
@@ -2363,7 +2479,7 @@ msgid "Official Website"
 msgstr "Site Officiel"
 
 #: portal/templates/portal/con-details.html:7
-#: portal/templates/portal/con-details.html:72
+#: portal/templates/portal/con-details.html:79
 msgid "Tender details"
 msgstr "Détails de la Consultation"
 
@@ -2391,60 +2507,60 @@ msgstr ""
 "Une fois que vous cliquez sur un fichier, votre navigateur ou appareil "
 "gérera le processus de téléchargement."
 
-#: portal/templates/portal/con-details.html:45
+#: portal/templates/portal/con-details.html:46
 msgid "Sorry. We could not get the files for this Tender."
 msgstr ""
 "Désolé. Nous n'avons pas pu obtenir les fichiers pour cette Consultation."
 
-#: portal/templates/portal/con-details.html:46
+#: portal/templates/portal/con-details.html:47
 msgid "Please try again later, or contact us if this problem persists."
 msgstr ""
 "Merci de réessayer plus tard ou de nous contacter si le problème persiste."
 
-#: portal/templates/portal/con-details.html:57
+#: portal/templates/portal/con-details.html:64
 msgid "Close"
 msgstr ""
 
-#: portal/templates/portal/con-details.html:67
+#: portal/templates/portal/con-details.html:84
 msgid "Cancelled"
 msgstr "Annulée"
 
-#: portal/templates/portal/con-details.html:84 templates/mfa/index.html:102
+#: portal/templates/portal/con-details.html:98 templates/mfa/index.html:102
 msgid "Download"
 msgstr "Télécharger"
 
-#: portal/templates/portal/con-details.html:92
+#: portal/templates/portal/con-details.html:106
 msgid "Share"
 msgstr "Partager"
 
-#: portal/templates/portal/con-details.html:104
+#: portal/templates/portal/con-details.html:118
 msgid "Toggle Favourite"
 msgstr "Ajouter/Enlever des Favoris"
 
-#: portal/templates/portal/con-details.html:116
+#: portal/templates/portal/con-details.html:130
 msgid "Bid"
 msgstr "Soumission"
 
-#: portal/templates/portal/con-details.html:126
+#: portal/templates/portal/con-details.html:142
 #: portal/templates/portal/cons-search-advanced-form.html:17
 #: portal/templates/portal/cons-search-basic-form.html:17
 #: portal/templates/portal/includes/con-lots-details.html:10
 msgid "Object"
 msgstr "Objet"
 
-#: portal/templates/portal/con-details.html:133
+#: portal/templates/portal/con-details.html:149
 msgid "Bidding Deadline"
 msgstr "Date limite de soumission"
 
-#: portal/templates/portal/con-details.html:134
+#: portal/templates/portal/con-details.html:150
 msgid "Morocco Time"
 msgstr "Heure du Maroc"
 
-#: portal/templates/portal/con-details.html:140
+#: portal/templates/portal/con-details.html:156
 msgid "days"
 msgstr "jours"
 
-#: portal/templates/portal/con-details.html:147
+#: portal/templates/portal/con-details.html:163
 #: portal/templates/portal/cons-search-advanced-form.html:169
 #: portal/templates/portal/cons-search-advanced-form.html:170
 #: portal/templates/portal/cons-search-basic-form.html:54
@@ -2452,7 +2568,7 @@ msgstr "jours"
 msgid "Total Estimate"
 msgstr "Estimation totale"
 
-#: portal/templates/portal/con-details.html:151
+#: portal/templates/portal/con-details.html:167
 #: portal/templates/portal/cons-search-advanced-form.html:171
 #: portal/templates/portal/cons-search-advanced-form.html:172
 #: portal/templates/portal/cons-search-basic-form.html:56
@@ -2460,121 +2576,121 @@ msgstr "Estimation totale"
 msgid "Temporary Caution"
 msgstr "Caution provisoire"
 
-#: portal/templates/portal/con-details.html:163
+#: portal/templates/portal/con-details.html:179
 #: portal/templates/portal/cons-search-advanced-form.html:23
 #: portal/templates/portal/cons-search-basic-form.html:23
 msgid "Reference"
 msgstr "Référence"
 
-#: portal/templates/portal/con-details.html:171
+#: portal/templates/portal/con-details.html:187
 msgid "Date published"
 msgstr "Date de publication"
 
-#: portal/templates/portal/con-details.html:184
+#: portal/templates/portal/con-details.html:200
 msgid "Main Category"
 msgstr "Catégorie principale"
 
-#: portal/templates/portal/con-details.html:190
+#: portal/templates/portal/con-details.html:206
 msgid "Reserved to SMB+"
 msgstr "Réservé aux PME+"
 
-#: portal/templates/portal/con-details.html:198
+#: portal/templates/portal/con-details.html:214
 msgid "Lots count"
 msgstr "Nombre de lots"
 
-#: portal/templates/portal/con-details.html:206
+#: portal/templates/portal/con-details.html:222
 msgid "Execution location"
 msgstr "Lieu d'exécution"
 
-#: portal/templates/portal/con-details.html:210
+#: portal/templates/portal/con-details.html:226
 msgid "Public client"
 msgstr "Acheteur public"
 
-#: portal/templates/portal/con-details.html:222
+#: portal/templates/portal/con-details.html:238
 #: portal/templates/portal/cons-search-advanced-form.html:59
 msgid "Procedure"
 msgstr "Procédure"
 
-#: portal/templates/portal/con-details.html:227
+#: portal/templates/portal/con-details.html:243
 msgid "Online bidding"
 msgstr "Réponse électronique"
 
-#: portal/templates/portal/con-details.html:229
+#: portal/templates/portal/con-details.html:245
 #: portal/templates/portal/cons-search-advanced-form.html:120
 msgid "Required, e-Sign required"
 msgstr "Requise, signature électronique requise"
 
-#: portal/templates/portal/con-details.html:231
+#: portal/templates/portal/con-details.html:247
 #: portal/templates/portal/cons-search-advanced-form.html:121
 msgid "Required, e-Sign not required"
 msgstr "Requise, signature électronique non requise"
 
-#: portal/templates/portal/con-details.html:233
+#: portal/templates/portal/con-details.html:249
 #: portal/templates/portal/cons-search-advanced-form.html:122
 msgid "Not required, e-Sign required"
 msgstr "Non requise, signature électronique requise"
 
-#: portal/templates/portal/con-details.html:235
+#: portal/templates/portal/con-details.html:251
 #: portal/templates/portal/cons-search-advanced-form.html:123
 msgid "Not required, e-Sign not required"
 msgstr "Non requise, signature électronique non requise"
 
-#: portal/templates/portal/con-details.html:237
+#: portal/templates/portal/con-details.html:253
 #: portal/templates/portal/cons-search-advanced-form.html:124
 msgid "Not Applicable"
 msgstr "Non Applicable"
 
-#: portal/templates/portal/con-details.html:245
+#: portal/templates/portal/con-details.html:261
 msgid "Domains of activity"
 msgstr "Domaines d'activité"
 
-#: portal/templates/portal/con-details.html:255
+#: portal/templates/portal/con-details.html:271
 #: portal/templates/portal/includes/con-lots-details.html:20
 msgid "Qualifications"
 msgstr "Qualifications"
 
-#: portal/templates/portal/con-details.html:262
+#: portal/templates/portal/con-details.html:278
 #: portal/templates/portal/includes/con-lots-details.html:23
 msgid "Agrements"
 msgstr "Agréments"
 
-#: portal/templates/portal/con-details.html:269
+#: portal/templates/portal/con-details.html:285
 #: portal/templates/portal/includes/con-lots-details.html:27
 msgid "Samples"
 msgstr "Échantillons"
 
-#: portal/templates/portal/con-details.html:276
+#: portal/templates/portal/con-details.html:292
 #: portal/templates/portal/includes/con-lots-details.html:31
 msgid "Meetings"
 msgstr "Réunions"
 
-#: portal/templates/portal/con-details.html:283
+#: portal/templates/portal/con-details.html:299
 #: portal/templates/portal/includes/con-lots-details.html:35
 msgid "In-Site Visits"
 msgstr "Visites des lieux"
 
-#: portal/templates/portal/con-details.html:291
+#: portal/templates/portal/con-details.html:307
 msgid "Price of Plans"
 msgstr "Prix des plans"
 
-#: portal/templates/portal/con-details.html:295
+#: portal/templates/portal/con-details.html:311
 #: portal/templates/portal/includes/con-lots-details.html:39
 msgid "Variante"
 msgstr "Variante"
 
-#: portal/templates/portal/con-details.html:309
+#: portal/templates/portal/con-details.html:325
 msgid "Lots details"
 msgstr "Détails des lots"
 
-#: portal/templates/portal/con-details.html:316
+#: portal/templates/portal/con-details.html:332
 msgid "Withdrawal address"
 msgstr "Adresse de retrait des dossiers"
 
-#: portal/templates/portal/con-details.html:327
+#: portal/templates/portal/con-details.html:343
 msgid "Bidding address"
 msgstr "Adresse de remise des offres"
 
-#: portal/templates/portal/con-details.html:338
+#: portal/templates/portal/con-details.html:354
 msgid "Opening address"
 msgstr "Adresse d'ouverture des plis"
 
@@ -2908,10 +3024,6 @@ msgstr "Seuls les utilisateurs enregistrés peuvent voir cela"
 #: portal/templates/portal/includes/con.html:87
 msgid "Details not available"
 msgstr "Détails indisponibles"
-
-#: portal/templates/portal/includes/con-contact.html:7
-msgid "Person"
-msgstr "Personne"
 
 #: portal/templates/portal/includes/con-lots-details.html:12
 msgid "Description"
@@ -3572,27 +3684,27 @@ msgstr "Autres options de connexion"
 msgid "Signup"
 msgstr "Inscription"
 
-#: templates/account/signup.html:11 templates/account/signup.html:32
+#: templates/account/signup.html:13 templates/account/signup.html:36
 #: templates/account/signup_by_passkey.html:29
 #: templates/socialaccount/signup.html:9 templates/socialaccount/signup.html:25
 msgid "Sign Up"
 msgstr "S'inscrire"
 
-#: templates/account/signup.html:16 templates/account/signup_by_passkey.html:17
+#: templates/account/signup.html:18 templates/account/signup_by_passkey.html:17
 #, python-format
 msgid "Already have an account? Then please %(link)ssign in%(end_link)s."
 msgstr ""
 "Vous avez déjà un compte ? Connectez-vous alors %(link)sici%(end_link)s."
 
-#: templates/account/signup.html:26
+#: templates/account/signup.html:28
 msgid "Terms and conditions apply"
 msgstr "Nos Termes et Conditions s'appliquent"
 
-#: templates/account/signup.html:26
+#: templates/account/signup.html:28
 msgid "Read more"
 msgstr "Lire plus"
 
-#: templates/account/signup.html:43
+#: templates/account/signup.html:47
 msgid "Sign up using a passkey"
 msgstr "Inscrivez-vous en utilisant une clé d'accès"
 
@@ -4164,82 +4276,93 @@ msgstr "Actuel"
 msgid "Sign Out Other Sessions"
 msgstr "Se déconnecter des autres sessions"
 
- msgid "Download should start shortly... Please wait."
- msgstr "Le téléchargement va bientôt commencer... Veuillez patienter."
+msgid "Site under construction. Some features may not work correctly."
+msgstr ""
+"Site en construction. Certaines fonctionnalités peuvent ne pas "
+"fonctionner correctement."
 
- msgid ""
- "Sorry, we could not get your files. If this happens often, please let us "
- "know."
- msgstr ""
- "Désolés, nous n'avons pas pu obtenir vos fichiers. Si cela se reproduit "
- "souvent, merci de nous le faire savoir."
+msgid "Leads"
+msgstr "Prospects"
 
- msgid "Multi-lots"
- msgstr "Multi-lots"
+msgid "Person"
+msgstr "Personne"
 
- msgid "Electronic response and signature"
- msgstr "Réponse électronique et signature"
+msgid "Download should start shortly... Please wait."
+msgstr "Le téléchargement va bientôt commencer... Veuillez patienter."
 
- msgid "Download List"
- msgstr "Télécharger la liste"
+msgid ""
+"Sorry, we could not get your files. If this happens often, please let us "
+"know."
+msgstr ""
+"Désolés, nous n'avons pas pu obtenir vos fichiers. Si cela se reproduit "
+"souvent, merci de nous le faire savoir."
 
- msgid ""
- "This file is only for authenticated users and you should not have "
- "accessed it."
- msgstr ""
- "Ce fichier est réservé aux utilisateurs authentifiés et vous n'auriez pas "
- "dû y accéder."
+msgid "Multi-lots"
+msgstr "Multi-lots"
 
- msgid ""
- "Our servers security mechanism replaced the original content with this "
- "message."
- msgstr ""
- "Le mécanisme de sécurité de nos serveurs a remplacé le contenu original "
- "par ce message."
+msgid "Electronic response and signature"
+msgstr "Réponse électronique et signature"
 
- msgid ""
- "If you got this file from our servers, we would like to know how you did."
- msgstr ""
- "Si vous avez obtenu ce fichier depuis nos serveurs, nous aimerions savoir "
- "comment vous avez fait."
+msgid "Download List"
+msgstr "Télécharger la liste"
 
- msgid "We may hire you. Please contact us. Links on eMarches.com"
- msgstr ""
- "Nous pourrions vous embaucher. Veuillez nous contacter. Liens sur "
- "eMarches.com"
+msgid ""
+"This file is only for authenticated users and you should not have "
+"accessed it."
+msgstr ""
+"Ce fichier est réservé aux utilisateurs authentifiés et vous n'auriez pas "
+"dû y accéder."
 
- msgid "Total downloaded size"
- msgstr "Taille totale des téléchargements"
+msgid ""
+"Our servers security mechanism replaced the original content with this "
+"message."
+msgstr ""
+"Le mécanisme de sécurité de nos serveurs a remplacé le contenu original "
+"par ce message."
 
- msgid "Top last"
- msgstr "Top derniers"
+msgid ""
+"If you got this file from our servers, we would like to know how you did."
+msgstr ""
+"Si vous avez obtenu ce fichier depuis nos serveurs, nous aimerions savoir "
+"comment vous avez fait."
 
- msgid "Here is a list of files associated with the Tender."
- msgstr "Voici une liste des fichiers associés à la Consultation."
+msgid "We may hire you. Please contact us. Links on eMarches.com"
+msgstr ""
+"Nous pourrions vous embaucher. Veuillez nous contacter. Liens sur "
+"eMarches.com"
 
- msgid "Portfolio"
- msgstr "Portfolio"
+msgid "Total downloaded size"
+msgstr "Taille totale des téléchargements"
 
- msgid "Mobile"
- msgstr "Mobile"
+msgid "Top last"
+msgstr "Top derniers"
 
- msgid "Profile not set"
- msgstr "Profil non défini"
+msgid "Here is a list of files associated with the Tender."
+msgstr "Voici une liste des fichiers associés à la Consultation."
 
- msgid "Profile Stats"
- msgstr "Statistiques utilisateur"
+msgid "Portfolio"
+msgstr "Portfolio"
 
- msgid "Unlimited"
- msgstr "Illimité"
+msgid "Mobile"
+msgstr "Mobile"
 
- msgid "Browse"
- msgstr "Parcourir"
+msgid "Profile not set"
+msgstr "Profil non défini"
 
- msgid "Manage Addresses"
- msgstr "Gérer les adresses"
+msgid "Profile Stats"
+msgstr "Statistiques utilisateur"
 
- msgid "Exit Favourites"
- msgstr "Quitter les favoris"
+msgid "Unlimited"
+msgstr "Illimité"
 
- msgid "Forgot your password?"
- msgstr "Mot de passe oublié ?"
+msgid "Browse"
+msgstr "Parcourir"
+
+msgid "Manage Addresses"
+msgstr "Gérer les adresses"
+
+msgid "Exit Favourites"
+msgstr "Quitter les favoris"
+
+msgid "Forgot your password?"
+msgstr "Mot de passe oublié ?"

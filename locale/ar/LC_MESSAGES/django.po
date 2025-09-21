@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-14 21:08+0000\n"
+"POT-Creation-Date: 2025-09-21 20:08+0000\n"
 "PO-Revision-Date: 2025-01-29 12:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -293,7 +293,6 @@ msgstr "لا يهم"
 #: base/templates/base/profile.html:218
 #: base/templates/base/profile_update.html:91 base/views.py:124
 #: crm/templates/crm/lead_edit.html:52
-#: portal/templates/portal/includes/con-contact.html:13
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
@@ -305,7 +304,6 @@ msgstr "البريد الإلكتروني"
 #: base/templates/base/profile.html:211
 #: base/templates/base/profile_update.html:85 base/views.py:125
 #: crm/templates/crm/lead_edit.html:64
-#: portal/templates/portal/includes/con-contact.html:10
 msgid "Phone"
 msgstr "الهاتف"
 
@@ -512,7 +510,9 @@ msgid "Go home"
 msgstr "إلى الرئيسية"
 
 #: base/templates/base/errors/unallowed.html:15
+#: base/templates/base/includes/anonymous.html:56
 #: base/templates/base/includes/pricing.html:70
+#: base/templates/base/includes/signup-junk.html:57
 #: base/templates/base/lockout.html:16
 msgid "Contact us"
 msgstr "اتصل بنا"
@@ -745,6 +745,7 @@ msgstr "هل لا يزال لديك سؤال؟"
 
 #: base/templates/base/faqs.html:175 base/templates/base/includes/hero.html:10
 #: base/templates/base/legal.html:77 base/templates/base/legal.html:135
+#: portal/templates/portal/con-details.html:51
 msgid "Contact Us"
 msgstr "اتصل بنا"
 
@@ -752,9 +753,64 @@ msgstr "اتصل بنا"
 msgid "Home of Public Procurement Market"
 msgstr "سوق المشتريات العامة"
 
-#: base/templates/base/includes/banner.html:4
-msgid "Site under construction. Some features may not work correctly."
-msgstr "الموقع تحت الإنشاء. بعض الميزات قد لا تعمل بصورة صحيحة."
+#: base/templates/base/includes/anonymous.html:13
+#, python-format
+msgid "Better with an account. 100%% FREE"
+msgstr "أفضل مع حساب. مجاني تماماً"
+
+#: base/templates/base/includes/anonymous.html:22
+msgid "Easy and secure"
+msgstr "سهل وآمن"
+
+#: base/templates/base/includes/anonymous.html:23
+msgid "All it takes is a valid email address"
+msgstr "كل ما يتطلبه الأمر هو عنوان بريد إلكتروني صالح"
+
+#: base/templates/base/includes/anonymous.html:25
+msgid "Create your FREE account"
+msgstr "أنشئ حسابك مجانًا"
+
+#: base/templates/base/includes/anonymous.html:26
+#: base/templates/base/includes/navbar.html:139
+#: base/templates/base/includes/pricing.html:50
+#: templates/account/confirm_login_code.html:5
+#: templates/account/confirm_login_code.html:27 templates/account/login.html:7
+#: templates/account/login.html:11 templates/account/login.html:33
+#: templates/account/request_login_code.html:5
+#: templates/mfa/authenticate.html:6 templates/mfa/authenticate.html:24
+#: templates/openid/login.html:5 templates/openid/login.html:9
+#: templates/openid/login.html:20 templates/socialaccount/login.html:5
+#: templates/socialaccount/login_redirect.html:5
+msgid "Sign In"
+msgstr "تسجيل الدخول"
+
+#: base/templates/base/includes/anonymous.html:35
+msgid "Better experience"
+msgstr "تجربة أفضل"
+
+#: base/templates/base/includes/anonymous.html:36
+msgid "Registered users get access to advanced features"
+msgstr "يحصل المستخدمون المسجلون على إمكانية الوصول إلى ميزات متقدمة"
+
+#: base/templates/base/includes/anonymous.html:44
+#, python-format
+msgid "It's 100%% free"
+msgstr "إنه مجاني تماما"
+
+#: base/templates/base/includes/anonymous.html:45
+#, python-format
+msgid "Our accounts are 100%% FREE. FREE like in FREE BEER"
+msgstr "حساباتنا مجانية تماما. بالمعنى الحرفي"
+
+#: base/templates/base/includes/anonymous.html:53
+#: base/templates/base/includes/signup-junk.html:54
+msgid "Support or information"
+msgstr "دعم أو معلومات"
+
+#: base/templates/base/includes/anonymous.html:54
+#: base/templates/base/includes/signup-junk.html:55
+msgid "For support or further information, please feel free to contact us."
+msgstr "للحصول على الدعم أو مزيد من المعلومات، لا تتردد في الاتصال بنا."
 
 #: base/templates/base/includes/carousel.html:36
 #: crm/templates/crm/favos_list.html:36
@@ -780,7 +836,7 @@ msgstr "معلومات"
 
 #: base/templates/base/includes/footer.html:19
 #: base/templates/base/includes/navbar.html:51
-#: portal/templates/portal/con-details.html:348
+#: portal/templates/portal/con-details.html:364
 msgid "Contact"
 msgstr "اتصال"
 
@@ -900,19 +956,6 @@ msgstr "الإدارة"
 #: base/templates/base/includes/navbar.html:133
 msgid "Database"
 msgstr "قاعدة البيانات"
-
-#: base/templates/base/includes/navbar.html:139
-#: base/templates/base/includes/pricing.html:50
-#: templates/account/confirm_login_code.html:5
-#: templates/account/confirm_login_code.html:27 templates/account/login.html:7
-#: templates/account/login.html:11 templates/account/login.html:33
-#: templates/account/request_login_code.html:5
-#: templates/mfa/authenticate.html:6 templates/mfa/authenticate.html:24
-#: templates/openid/login.html:5 templates/openid/login.html:9
-#: templates/openid/login.html:20 templates/socialaccount/login.html:5
-#: templates/socialaccount/login_redirect.html:5
-msgid "Sign In"
-msgstr "تسجيل الدخول"
 
 #: base/templates/base/includes/pricing.html:3
 msgid "Pricing"
@@ -1037,7 +1080,7 @@ msgid "Shown data"
 msgstr "البيانات المعروضة"
 
 #: base/templates/base/includes/pricing.html:102
-#: crm/templates/crm/supervision.html:48
+#: crm/templates/crm/supervision.html:58
 msgid "Downloads"
 msgstr "التحميلات"
 
@@ -1158,6 +1201,53 @@ msgstr ""
 "الفوز بعقد هو مجرد البداية. نحن نساعد في ضمان الإنجاز الناجح من خلال تقديم "
 "الدعم في الامتثال، ومراقبة الأداء، وإدارة العلاقات، مما يمكنك من تقديم "
 "التميز في كل مرحلة."
+
+#: base/templates/base/includes/signup-junk.html:8
+msgid "Confirmation message"
+msgstr "رسالة التأكيد"
+
+#: base/templates/base/includes/signup-junk.html:17
+msgid "Valid email equired"
+msgstr "مطلوب بريد إلكتروني صالح"
+
+#: base/templates/base/includes/signup-junk.html:18
+msgid "For security reason, we send a confirmation email to your email address"
+msgstr "لأسباب أمنية، نرسل رسالة تأكيد بالبريد الإلكتروني إلى عنوان بريدك الإلكتروني"
+
+#: base/templates/base/includes/signup-junk.html:26
+#, python-format
+msgid "It's 100%% safe"
+msgstr "إنه آمن تماما"
+
+#: base/templates/base/includes/signup-junk.html:27
+msgid ""
+"We are running our own private email server and we are using the highest "
+"standards of security and privacy"
+msgstr "نحن ندير خادم البريد الإلكتروني الخاص بنا ونستخدم أعلى معايير الأمان والخصوصية"
+
+#: base/templates/base/includes/signup-junk.html:28
+msgid ""
+"The giant email providers, especially Google, do not like us and "
+"systematically flag our emails as spam for no valid reason"
+msgstr "لا يحبنا مزودو البريد الإلكتروني العملاقون، وخاصة جوجل، ويقومون بشكل منهجي بوضع علامة على رسائل البريد الإلكتروني الخاصة بنا باعتبارها بريدًا عشوائيًا دون سبب وجيه"
+
+#: base/templates/base/includes/signup-junk.html:36
+msgid "It may go to Spam/Junk"
+msgstr "قد يذهب إلى البريد العشوائي"
+
+#: base/templates/base/includes/signup-junk.html:37
+msgid ""
+"If you do not get your confirmation email in 2 minutes after signup, please "
+"check your Spam/Junk folder"
+msgstr "إذا لم تتلق رسالة التأكيد الخاصة بك خلال دقيقتين بعد التسجيل، فيرجى التحقق من مجلد البريد العشوائي"
+
+#: base/templates/base/includes/signup-junk.html:45
+msgid "You can help us"
+msgstr "يمكنكم مساعدتنا"
+
+#: base/templates/base/includes/signup-junk.html:46
+msgid "If you wish, you can help us by flagging our emails as Safe/Not spam"
+msgstr "إذا كنت ترغب في ذلك، يمكنك مساعدتنا عن طريق وضع علامة على رسائل البريد الإلكتروني الخاصة بنا على أنها آمنة/ليست بريدًا عشوائيًا"
 
 #: base/templates/base/includes/testimonials.html:3
 msgid "What Our Clients Say"
@@ -1281,7 +1371,7 @@ msgstr "هذه الصفحة قيد الإنشاء. ستكون متاحة قري�
 
 #: base/templates/base/legal.html:5 base/templates/base/legal.html:9
 #: base/templates/base/legal.html:11
-#: portal/templates/portal/con-details.html:53
+#: portal/templates/portal/con-details.html:60
 msgid "Legal Information"
 msgstr "معلومات قانونية"
 
@@ -1708,7 +1798,7 @@ msgid "Free"
 msgstr "مجاني"
 
 #: base/templates/base/profile.html:58
-#: portal/templates/portal/con-details.html:139
+#: portal/templates/portal/con-details.html:155
 msgid "Remaining days"
 msgstr "الأيام المتبقية"
 
@@ -1789,7 +1879,6 @@ msgstr "البلد"
 
 #: base/templates/base/profile.html:232
 #: base/templates/base/profile_update.html:103
-#: portal/templates/portal/includes/con-contact.html:16
 msgid "Fax"
 msgstr "الفاكس"
 
@@ -1997,6 +2086,7 @@ msgstr "مجهول"
 #: crm/templates/crm/searchquery_list.html:140
 #: crm/templates/crm/unfavorisations_list.html:29
 #: crm/templates/crm/unfavs_list.html:25
+#: crm/templates/crm/utilisateurs_list.html:104
 msgid "No records found."
 msgstr "لم يتم العثور على سجلات."
 
@@ -2007,15 +2097,17 @@ msgstr "لم يتم العثور على سجلات."
 #: crm/templates/crm/lead_edit.html:176 crm/templates/crm/leads_list.html:84
 #: crm/templates/crm/searchquery_detail.html:24
 #: crm/templates/crm/searchquery_list.html:150
-#: crm/templates/crm/supervision.html:90
+#: crm/templates/crm/supervision.html:100
 #: crm/templates/crm/unfavorisations_list.html:33
 #: crm/templates/crm/unfavs_list.html:70
+#: crm/templates/crm/utilisateur_details.html:26
+#: crm/templates/crm/utilisateurs_list.html:114
 msgid "Not allowed"
 msgstr "غير مسموح"
 
 #: crm/templates/crm/favorisations_list.html:6
 #: crm/templates/crm/favorisations_list.html:9
-#: crm/templates/crm/supervision.html:68
+#: crm/templates/crm/supervision.html:78
 msgid "Favorisations"
 msgstr "التفضيلات"
 
@@ -2049,7 +2141,7 @@ msgstr "تنقل الصفحة"
 
 #: crm/templates/crm/favourites_list.html:6
 #: crm/templates/crm/favourites_list.html:9
-#: crm/templates/crm/supervision.html:58
+#: crm/templates/crm/supervision.html:68
 msgid "Favourites"
 msgstr "المفضلات"
 
@@ -2079,16 +2171,16 @@ msgstr "مستخدم مسجل"
 
 #: crm/templates/crm/lead_edit.html:79 crm/templates/crm/lead_edit.html:113
 #: crm/templates/crm/lead_edit.html:126 crm/templates/crm/lead_edit.html:139
-#: portal/templates/portal/con-details.html:192
-#: portal/templates/portal/con-details.html:299
+#: portal/templates/portal/con-details.html:208
+#: portal/templates/portal/con-details.html:315
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "Yes"
 msgstr "نعم"
 
 #: crm/templates/crm/lead_edit.html:81 crm/templates/crm/lead_edit.html:115
 #: crm/templates/crm/lead_edit.html:128 crm/templates/crm/lead_edit.html:141
-#: portal/templates/portal/con-details.html:194
-#: portal/templates/portal/con-details.html:297
+#: portal/templates/portal/con-details.html:210
+#: portal/templates/portal/con-details.html:313
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "No"
 msgstr "لا"
@@ -2152,57 +2244,85 @@ msgid "Search Queries List"
 msgstr "لائحة البحوث"
 
 #: crm/templates/crm/supervision.html:17
-msgid "Leads"
-msgstr "الفرص"
+msgid "Users"
+msgstr "المستخدمون"
 
-#: crm/templates/crm/supervision.html:22
+#: crm/templates/crm/supervision.html:21
+msgid "Users, email addresses and sessions details."
+msgstr "تفاصيل المستخدمين وعناوين البريد الإلكتروني والجلسات."
+
+#: crm/templates/crm/supervision.html:27
+#, fuzzy
+#| msgid "Contact"
+msgid "Contacts"
+msgstr "اتصال"
+
+#: crm/templates/crm/supervision.html:32
 msgid "Contacts and messages sent from the website form"
 msgstr "نموذج جهات الاتصال والرسائل المرسلة من الموقع"
 
-#: crm/templates/crm/supervision.html:28
+#: crm/templates/crm/supervision.html:38
 msgid "Newsletters"
 msgstr "النشرات الإخبارية"
 
-#: crm/templates/crm/supervision.html:32
+#: crm/templates/crm/supervision.html:42
 msgid ""
 "This feature is still under devlopment and will be available in future "
 "versions"
 msgstr "هذه الميزة لا تزال قيد التطوير وسوف تكون متاحة في الإصدارات المستقبلية"
 
-#: crm/templates/crm/supervision.html:38
+#: crm/templates/crm/supervision.html:48
 msgid "Search Queries"
 msgstr "مصطلحات البحث"
 
-#: crm/templates/crm/supervision.html:42
+#: crm/templates/crm/supervision.html:52
 msgid ""
 "What are the visitors searching for and how they want the results to be shown"
 msgstr "ما الذي يبحث عنه الزوار وكيف يريدون عرض النتائج"
 
-#: crm/templates/crm/supervision.html:52
+#: crm/templates/crm/supervision.html:62
 msgid "What files do registered users download"
 msgstr "الملفات التي يقوم المستخدمون المسجلون بتنزيلها"
 
-#: crm/templates/crm/supervision.html:62
+#: crm/templates/crm/supervision.html:72
 msgid "Tenders that are in users Favourites"
 msgstr "العناصر الموجودة في مفضلة المستخدمين"
 
-#: crm/templates/crm/supervision.html:72
+#: crm/templates/crm/supervision.html:82
 msgid "What Tenders have been added to Favorites"
 msgstr "العناصر التي تمت إضافتها إلى المفضلة"
 
-#: crm/templates/crm/supervision.html:78
+#: crm/templates/crm/supervision.html:88
 #: crm/templates/crm/unfavorisations_list.html:6
 #: crm/templates/crm/unfavorisations_list.html:9
 msgid "Unfavorisations"
 msgstr "إلغاء التفضيلات"
 
-#: crm/templates/crm/supervision.html:82
+#: crm/templates/crm/supervision.html:92
 msgid "What Tenders have been removed from Favorites"
 msgstr "العناصر التي تمت إزالتها من المفضلة"
 
 #: crm/templates/crm/unfavs_list.html:6 crm/templates/crm/unfavs_list.html:9
 msgid "Unfavorisations List"
 msgstr "قائمة إزالة من المفضلة"
+
+#: crm/templates/crm/utilisateur_details.html:6
+#: crm/templates/crm/utilisateur_details.html:9
+msgid "Utilisateur details"
+msgstr "تفاصيل المستخدم"
+
+#: crm/templates/crm/utilisateur_details.html:15
+msgid "Joined"
+msgstr "انضم"
+
+#: crm/templates/crm/utilisateur_details.html:16
+msgid "Latest login"
+msgstr "أحدث دخول"
+
+#: crm/templates/crm/utilisateurs_list.html:6
+#: crm/templates/crm/utilisateurs_list.html:9
+msgid "Utilisateurs"
+msgstr "المستخدمون"
 
 #: emarches/settings.py:137
 msgid "English"
@@ -2228,11 +2348,11 @@ msgstr "الإسبانية"
 msgid "German"
 msgstr "الألمانية"
 
-#: portal/models.py:351
+#: portal/models.py:349
 msgid "Download DCE"
 msgstr "تنزيل الملف"
 
-#: portal/models.py:352
+#: portal/models.py:350
 msgid "Downloads DCE"
 msgstr "تنزيلات الملفات"
 
@@ -2249,7 +2369,7 @@ msgid "Official Website"
 msgstr "الموقع الرسمي"
 
 #: portal/templates/portal/con-details.html:7
-#: portal/templates/portal/con-details.html:72
+#: portal/templates/portal/con-details.html:79
 msgid "Tender details"
 msgstr "تفاصيل المناقصة"
 
@@ -2275,58 +2395,58 @@ msgid ""
 "process."
 msgstr "بمجرد النقر على عنصر، سيتولى يتولى المتصفح أو جهازك عملية التنزيل."
 
-#: portal/templates/portal/con-details.html:45
+#: portal/templates/portal/con-details.html:46
 msgid "Sorry. We could not get the files for this Tender."
 msgstr "عذرًا. لم نتمكن من الحصول على ملفات هذه المناقصة."
 
-#: portal/templates/portal/con-details.html:46
+#: portal/templates/portal/con-details.html:47
 msgid "Please try again later, or contact us if this problem persists."
 msgstr "يرجى المحاولة لاحقًا، أو الاتصال بنا إذا استمرت هذه المشكلة."
 
-#: portal/templates/portal/con-details.html:57
+#: portal/templates/portal/con-details.html:64
 msgid "Close"
 msgstr "اغلاق"
 
-#: portal/templates/portal/con-details.html:67
+#: portal/templates/portal/con-details.html:84
 msgid "Cancelled"
 msgstr "ملغاة"
 
-#: portal/templates/portal/con-details.html:84 templates/mfa/index.html:102
+#: portal/templates/portal/con-details.html:98 templates/mfa/index.html:102
 msgid "Download"
 msgstr "تنزيل"
 
-#: portal/templates/portal/con-details.html:92
+#: portal/templates/portal/con-details.html:106
 msgid "Share"
 msgstr "إرسال"
 
-#: portal/templates/portal/con-details.html:104
+#: portal/templates/portal/con-details.html:118
 msgid "Toggle Favourite"
 msgstr "تبديل المفضلة"
 
-#: portal/templates/portal/con-details.html:116
+#: portal/templates/portal/con-details.html:130
 msgid "Bid"
 msgstr "مشاركة"
 
-#: portal/templates/portal/con-details.html:126
+#: portal/templates/portal/con-details.html:142
 #: portal/templates/portal/cons-search-advanced-form.html:17
 #: portal/templates/portal/cons-search-basic-form.html:17
 #: portal/templates/portal/includes/con-lots-details.html:10
 msgid "Object"
 msgstr "الموضوع"
 
-#: portal/templates/portal/con-details.html:133
+#: portal/templates/portal/con-details.html:149
 msgid "Bidding Deadline"
 msgstr "آخر موعد المشاركة"
 
-#: portal/templates/portal/con-details.html:134
+#: portal/templates/portal/con-details.html:150
 msgid "Morocco Time"
 msgstr "توقيت المغرب"
 
-#: portal/templates/portal/con-details.html:140
+#: portal/templates/portal/con-details.html:156
 msgid "days"
 msgstr "أيام"
 
-#: portal/templates/portal/con-details.html:147
+#: portal/templates/portal/con-details.html:163
 #: portal/templates/portal/cons-search-advanced-form.html:169
 #: portal/templates/portal/cons-search-advanced-form.html:170
 #: portal/templates/portal/cons-search-basic-form.html:54
@@ -2334,7 +2454,7 @@ msgstr "أيام"
 msgid "Total Estimate"
 msgstr "إجمالي التقدير"
 
-#: portal/templates/portal/con-details.html:151
+#: portal/templates/portal/con-details.html:167
 #: portal/templates/portal/cons-search-advanced-form.html:171
 #: portal/templates/portal/cons-search-advanced-form.html:172
 #: portal/templates/portal/cons-search-basic-form.html:56
@@ -2342,121 +2462,121 @@ msgstr "إجمالي التقدير"
 msgid "Temporary Caution"
 msgstr "الضمان المؤقت"
 
-#: portal/templates/portal/con-details.html:163
+#: portal/templates/portal/con-details.html:179
 #: portal/templates/portal/cons-search-advanced-form.html:23
 #: portal/templates/portal/cons-search-basic-form.html:23
 msgid "Reference"
 msgstr "المرجع"
 
-#: portal/templates/portal/con-details.html:171
+#: portal/templates/portal/con-details.html:187
 msgid "Date published"
 msgstr "تاريخ النشر"
 
-#: portal/templates/portal/con-details.html:184
+#: portal/templates/portal/con-details.html:200
 msgid "Main Category"
 msgstr "الفئة الرئيسية"
 
-#: portal/templates/portal/con-details.html:190
+#: portal/templates/portal/con-details.html:206
 msgid "Reserved to SMB+"
 msgstr "مخصص للصغار+"
 
-#: portal/templates/portal/con-details.html:198
+#: portal/templates/portal/con-details.html:214
 msgid "Lots count"
 msgstr "عدد الحزم"
 
-#: portal/templates/portal/con-details.html:206
+#: portal/templates/portal/con-details.html:222
 msgid "Execution location"
 msgstr "مكان الإنجاز"
 
-#: portal/templates/portal/con-details.html:210
+#: portal/templates/portal/con-details.html:226
 msgid "Public client"
 msgstr "الزبون العام"
 
-#: portal/templates/portal/con-details.html:222
+#: portal/templates/portal/con-details.html:238
 #: portal/templates/portal/cons-search-advanced-form.html:59
 msgid "Procedure"
 msgstr "نوع الإجراء"
 
-#: portal/templates/portal/con-details.html:227
+#: portal/templates/portal/con-details.html:243
 msgid "Online bidding"
 msgstr "المشاركة الإلكترونية"
 
-#: portal/templates/portal/con-details.html:229
+#: portal/templates/portal/con-details.html:245
 #: portal/templates/portal/cons-search-advanced-form.html:120
 msgid "Required, e-Sign required"
 msgstr "إلزامية، التوقيع الإلكتروني إلزامي"
 
-#: portal/templates/portal/con-details.html:231
+#: portal/templates/portal/con-details.html:247
 #: portal/templates/portal/cons-search-advanced-form.html:121
 msgid "Required, e-Sign not required"
 msgstr "إلزامية، التوقيع الإلكتروني غير إلزامي"
 
-#: portal/templates/portal/con-details.html:233
+#: portal/templates/portal/con-details.html:249
 #: portal/templates/portal/cons-search-advanced-form.html:122
 msgid "Not required, e-Sign required"
 msgstr "غير إلزامية، التوقيع الإلكتروني إلزامي"
 
-#: portal/templates/portal/con-details.html:235
+#: portal/templates/portal/con-details.html:251
 #: portal/templates/portal/cons-search-advanced-form.html:123
 msgid "Not required, e-Sign not required"
 msgstr "غير إلزامية، التوقيع الإلكتروني غير إلزامي"
 
-#: portal/templates/portal/con-details.html:237
+#: portal/templates/portal/con-details.html:253
 #: portal/templates/portal/cons-search-advanced-form.html:124
 msgid "Not Applicable"
 msgstr "غير قابل للتطبيق"
 
-#: portal/templates/portal/con-details.html:245
+#: portal/templates/portal/con-details.html:261
 msgid "Domains of activity"
 msgstr "مجالات النشاط"
 
-#: portal/templates/portal/con-details.html:255
+#: portal/templates/portal/con-details.html:271
 #: portal/templates/portal/includes/con-lots-details.html:20
 msgid "Qualifications"
 msgstr "المؤهلات"
 
-#: portal/templates/portal/con-details.html:262
+#: portal/templates/portal/con-details.html:278
 #: portal/templates/portal/includes/con-lots-details.html:23
 msgid "Agrements"
 msgstr "الاعتمادات"
 
-#: portal/templates/portal/con-details.html:269
+#: portal/templates/portal/con-details.html:285
 #: portal/templates/portal/includes/con-lots-details.html:27
 msgid "Samples"
 msgstr "العينات"
 
-#: portal/templates/portal/con-details.html:276
+#: portal/templates/portal/con-details.html:292
 #: portal/templates/portal/includes/con-lots-details.html:31
 msgid "Meetings"
 msgstr "الاجتماعات"
 
-#: portal/templates/portal/con-details.html:283
+#: portal/templates/portal/con-details.html:299
 #: portal/templates/portal/includes/con-lots-details.html:35
 msgid "In-Site Visits"
 msgstr "الزيارات الميدانية"
 
-#: portal/templates/portal/con-details.html:291
+#: portal/templates/portal/con-details.html:307
 msgid "Price of Plans"
 msgstr "سعر التصاميم"
 
-#: portal/templates/portal/con-details.html:295
+#: portal/templates/portal/con-details.html:311
 #: portal/templates/portal/includes/con-lots-details.html:39
 msgid "Variante"
 msgstr "البديل"
 
-#: portal/templates/portal/con-details.html:309
+#: portal/templates/portal/con-details.html:325
 msgid "Lots details"
 msgstr "تفاصيل الحزم"
 
-#: portal/templates/portal/con-details.html:316
+#: portal/templates/portal/con-details.html:332
 msgid "Withdrawal address"
 msgstr "عنوان السحب"
 
-#: portal/templates/portal/con-details.html:327
+#: portal/templates/portal/con-details.html:343
 msgid "Bidding address"
 msgstr "عنوان المشاركة"
 
-#: portal/templates/portal/con-details.html:338
+#: portal/templates/portal/con-details.html:354
 msgid "Opening address"
 msgstr "عنوان فتح العروض"
 
@@ -2782,10 +2902,6 @@ msgstr "يمكن فقط للمستخدمين المسجلين رؤية هذا"
 #: portal/templates/portal/includes/con.html:87
 msgid "Details not available"
 msgstr "التفاصيل غير متاحة"
-
-#: portal/templates/portal/includes/con-contact.html:7
-msgid "Person"
-msgstr "الشخص"
 
 #: portal/templates/portal/includes/con-lots-details.html:12
 msgid "Description"
@@ -3418,26 +3534,26 @@ msgstr "خيارات تسجيل الدخول الأخرى"
 msgid "Signup"
 msgstr "تسجيل"
 
-#: templates/account/signup.html:11 templates/account/signup.html:32
+#: templates/account/signup.html:13 templates/account/signup.html:36
 #: templates/account/signup_by_passkey.html:29
 #: templates/socialaccount/signup.html:9 templates/socialaccount/signup.html:25
 msgid "Sign Up"
 msgstr "إنشاء حساب"
 
-#: templates/account/signup.html:16 templates/account/signup_by_passkey.html:17
+#: templates/account/signup.html:18 templates/account/signup_by_passkey.html:17
 #, python-format
 msgid "Already have an account? Then please %(link)ssign in%(end_link)s."
 msgstr "هل لديك حساب بالفعل؟ إذن يرجى %(link)sتسجيل الدخول%(end_link)s."
 
-#: templates/account/signup.html:26
+#: templates/account/signup.html:28
 msgid "Terms and conditions apply"
 msgstr "تطبق الشروط و الأحكام"
 
-#: templates/account/signup.html:26
+#: templates/account/signup.html:28
 msgid "Read more"
 msgstr "قراءة المزيد"
 
-#: templates/account/signup.html:43
+#: templates/account/signup.html:47
 msgid "Sign up using a passkey"
 msgstr "إنشاء حساب باستخدام مفتاح مرور"
 
@@ -3998,6 +4114,15 @@ msgstr "الحالي"
 #: templates/usersessions/usersession_list.html:60
 msgid "Sign Out Other Sessions"
 msgstr "تسجيل الخروج من الجلسات الأخرى"
+
+msgid "Site under construction. Some features may not work correctly."
+msgstr "الموقع تحت الإنشاء. بعض الميزات قد لا تعمل بصورة صحيحة."
+
+msgid "Leads"
+msgstr "الفرص"
+
+msgid "Person"
+msgstr "الشخص"
 
 msgid "Download should start shortly... Please wait."
 msgstr "سيبدأ التنزيل قريبًا... يرجى الانتظار."
