@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-21 20:07+0000\n"
+"POT-Creation-Date: 2025-09-21 20:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -827,12 +827,12 @@ msgstr ""
 #: base/templates/base/includes/anonymous.html:53
 #: base/templates/base/includes/signup-junk.html:54
 msgid "Support or information"
-msgstr ""
+msgstr "Support or information"
 
 #: base/templates/base/includes/anonymous.html:54
 #: base/templates/base/includes/signup-junk.html:55
 msgid "For support or further information, please feel free to contact us."
-msgstr ""
+msgstr "For support or further information, please feel free to contact us"
 
 #: base/templates/base/includes/carousel.html:36
 #: crm/templates/crm/favos_list.html:36
@@ -1242,7 +1242,8 @@ msgstr "Valid email equired"
 
 #: base/templates/base/includes/signup-junk.html:18
 msgid "For security reason, we send a confirmation email to your email address"
-msgstr "For security reason, we send a confirmation email to your email address"
+msgstr ""
+"For security reason, we send a confirmation email to your email address"
 
 #: base/templates/base/includes/signup-junk.html:26
 #, python-format
@@ -2525,7 +2526,7 @@ msgstr "Total Estimate"
 #: portal/templates/portal/cons-search-basic-form.html:56
 #: portal/templates/portal/cons-search-basic-form.html:57
 msgid "Temporary Caution"
-msgstr "Temporary Caution"
+msgstr "Provisional guarantee"
 
 #: portal/templates/portal/con-details.html:179
 #: portal/templates/portal/cons-search-advanced-form.html:23
@@ -2981,7 +2982,7 @@ msgstr "Estimate"
 
 #: portal/templates/portal/includes/con-lots-details.html:15
 msgid "Caution"
-msgstr "Caution"
+msgstr "Provisional guarantee"
 
 #: portal/templates/portal/includes/cons-legend.html:8
 msgid "Legend"
@@ -4196,88 +4197,88 @@ msgstr "Current"
 msgid "Sign Out Other Sessions"
 msgstr "Sign Out Other Sessions"
 
-msgid "Site under construction. Some features may not work correctly."
-msgstr "Site under construction. Some features may not work correctly."
+#~ msgid "Site under construction. Some features may not work correctly."
+#~ msgstr "Site under construction. Some features may not work correctly."
 
-msgid "Leads"
-msgstr "Leads"
+#~ msgid "Leads"
+#~ msgstr "Leads"
 
-msgid "Person"
-msgstr "Person"
+#~ msgid "Person"
+#~ msgstr "Person"
 
-msgid "Download should start shortly... Please wait."
-msgstr "Download should start shortly... Please wait."
+#~ msgid "Download should start shortly... Please wait."
+#~ msgstr "Download should start shortly... Please wait."
 
-msgid ""
-"Sorry, we could not get your files. If this happens often, please let us "
-"know."
-msgstr ""
-"Sorry, we could not get your files. If this happens often, please let us "
-"know."
+#~ msgid ""
+#~ "Sorry, we could not get your files. If this happens often, please let us "
+#~ "know."
+#~ msgstr ""
+#~ "Sorry, we could not get your files. If this happens often, please let us "
+#~ "know."
 
-msgid "Multi-lots"
-msgstr "Multi-lots"
+#~ msgid "Multi-lots"
+#~ msgstr "Multi-lots"
 
-msgid "Electronic response and signature"
-msgstr "Electronic Response and Signature"
+#~ msgid "Electronic response and signature"
+#~ msgstr "Electronic Response and Signature"
 
-msgid "Download List"
-msgstr "Download List"
+#~ msgid "Download List"
+#~ msgstr "Download List"
 
-msgid ""
-"This file is only for authenticated users and you should not have "
-"accessed it."
-msgstr ""
-"This file is only for authenticated users and you should not have "
-"accessed it."
+#~ msgid ""
+#~ "This file is only for authenticated users and you should not have "
+#~ "accessed it."
+#~ msgstr ""
+#~ "This file is only for authenticated users and you should not have "
+#~ "accessed it."
 
-msgid ""
-"Our servers security mechanism replaced the original content with this "
-"message."
-msgstr ""
-"Our servers' security mechanism replaced the original content with this "
-"message."
+#~ msgid ""
+#~ "Our servers security mechanism replaced the original content with this "
+#~ "message."
+#~ msgstr ""
+#~ "Our servers' security mechanism replaced the original content with this "
+#~ "message."
 
-msgid ""
-"If you got this file from our servers, we would like to know how you did."
-msgstr ""
-"If you got this file from our servers, we would like to know how you did."
+#~ msgid ""
+#~ "If you got this file from our servers, we would like to know how you did."
+#~ msgstr ""
+#~ "If you got this file from our servers, we would like to know how you did."
 
-msgid "We may hire you. Please contact us. Links on eMarches.com"
-msgstr "We may hire you. Please contact us. Links on eMarches.com"
+#~ msgid "We may hire you. Please contact us. Links on eMarches.com"
+#~ msgstr "We may hire you. Please contact us. Links on eMarches.com"
 
-msgid "Total downloaded size"
-msgstr "Total downloaded size"
+#~ msgid "Total downloaded size"
+#~ msgstr "Total downloaded size"
 
-msgid "Top last"
-msgstr "Top last"
+#~ msgid "Top last"
+#~ msgstr "Top last"
 
-msgid "Here is a list of files associated with the Tender."
-msgstr "Here is a list of files associated with the Tender."
+#~ msgid "Here is a list of files associated with the Tender."
+#~ msgstr "Here is a list of files associated with the Tender."
 
-msgid "Portfolio"
-msgstr "Portfolio"
+#~ msgid "Portfolio"
+#~ msgstr "Portfolio"
 
-msgid "Mobile"
-msgstr "Mobile"
+#~ msgid "Mobile"
+#~ msgstr "Mobile"
 
-msgid "Profile not set"
-msgstr "Profile not set"
+#~ msgid "Profile not set"
+#~ msgstr "Profile not set"
 
-msgid "Profile Stats"
-msgstr "Profile Stats"
+#~ msgid "Profile Stats"
+#~ msgstr "Profile Stats"
 
-msgid "Unlimited"
-msgstr "Unlimited"
+#~ msgid "Unlimited"
+#~ msgstr "Unlimited"
 
-msgid "Browse"
-msgstr "Browse"
+#~ msgid "Browse"
+#~ msgstr "Browse"
 
-msgid "Manage Addresses"
-msgstr "Manage Addresses"
+#~ msgid "Manage Addresses"
+#~ msgstr "Manage Addresses"
 
-msgid "Exit Favourites"
-msgstr "Exit Favorites"
+#~ msgid "Exit Favourites"
+#~ msgstr "Exit Favorites"
 
-msgid "Forgot your password?"
-msgstr "Forgot your password?"
+#~ msgid "Forgot your password?"
+#~ msgstr "Forgot your password?"
