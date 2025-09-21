@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-21 20:08+0000\n"
+"POT-Creation-Date: 2025-09-21 21:18+0000\n"
 "PO-Revision-Date: 2025-01-29 12:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1212,7 +1212,8 @@ msgstr "مطلوب بريد إلكتروني صالح"
 
 #: base/templates/base/includes/signup-junk.html:18
 msgid "For security reason, we send a confirmation email to your email address"
-msgstr "لأسباب أمنية، نرسل رسالة تأكيد بالبريد الإلكتروني إلى عنوان بريدك الإلكتروني"
+msgstr ""
+"لأسباب أمنية، نرسل رسالة تأكيد بالبريد الإلكتروني إلى عنوان بريدك الإلكتروني"
 
 #: base/templates/base/includes/signup-junk.html:26
 #, python-format
@@ -1223,13 +1224,18 @@ msgstr "إنه آمن تماما"
 msgid ""
 "We are running our own private email server and we are using the highest "
 "standards of security and privacy"
-msgstr "نحن ندير خادم البريد الإلكتروني الخاص بنا ونستخدم أعلى معايير الأمان والخصوصية"
+msgstr ""
+"نحن ندير خادم البريد الإلكتروني الخاص بنا ونستخدم أعلى معايير الأمان "
+"والخصوصية"
 
 #: base/templates/base/includes/signup-junk.html:28
 msgid ""
 "The giant email providers, especially Google, do not like us and "
 "systematically flag our emails as spam for no valid reason"
-msgstr "لا يحبنا مزودو البريد الإلكتروني العملاقون، وخاصة جوجل، ويقومون بشكل منهجي بوضع علامة على رسائل البريد الإلكتروني الخاصة بنا باعتبارها بريدًا عشوائيًا دون سبب وجيه"
+msgstr ""
+"لا يحبنا مزودو البريد الإلكتروني العملاقون، وخاصة جوجل، ويقومون بشكل منهجي "
+"بوضع علامة على رسائل البريد الإلكتروني الخاصة بنا باعتبارها بريدًا عشوائيًا "
+"دون سبب وجيه"
 
 #: base/templates/base/includes/signup-junk.html:36
 msgid "It may go to Spam/Junk"
@@ -1239,7 +1245,9 @@ msgstr "قد يذهب إلى البريد العشوائي"
 msgid ""
 "If you do not get your confirmation email in 2 minutes after signup, please "
 "check your Spam/Junk folder"
-msgstr "إذا لم تتلق رسالة التأكيد الخاصة بك خلال دقيقتين بعد التسجيل، فيرجى التحقق من مجلد البريد العشوائي"
+msgstr ""
+"إذا لم تتلق رسالة التأكيد الخاصة بك خلال دقيقتين بعد التسجيل، فيرجى التحقق "
+"من مجلد البريد العشوائي"
 
 #: base/templates/base/includes/signup-junk.html:45
 msgid "You can help us"
@@ -1247,7 +1255,9 @@ msgstr "يمكنكم مساعدتنا"
 
 #: base/templates/base/includes/signup-junk.html:46
 msgid "If you wish, you can help us by flagging our emails as Safe/Not spam"
-msgstr "إذا كنت ترغب في ذلك، يمكنك مساعدتنا عن طريق وضع علامة على رسائل البريد الإلكتروني الخاصة بنا على أنها آمنة/ليست بريدًا عشوائيًا"
+msgstr ""
+"إذا كنت ترغب في ذلك، يمكنك مساعدتنا عن طريق وضع علامة على رسائل البريد "
+"الإلكتروني الخاصة بنا على أنها آمنة/ليست بريدًا عشوائيًا"
 
 #: base/templates/base/includes/testimonials.html:3
 msgid "What Our Clients Say"
