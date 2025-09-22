@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-21 20:59+0000\n"
+"POT-Creation-Date: 2025-09-22 11:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -519,7 +519,7 @@ msgid "Go home"
 msgstr "Go home"
 
 #: base/templates/base/errors/unallowed.html:15
-#: base/templates/base/includes/anonymous.html:56
+#: base/templates/base/includes/anonymous.html:55
 #: base/templates/base/includes/pricing.html:70
 #: base/templates/base/includes/signup-junk.html:57
 #: base/templates/base/lockout.html:16
@@ -763,7 +763,7 @@ msgstr "Still have questions?"
 
 #: base/templates/base/faqs.html:175 base/templates/base/includes/hero.html:10
 #: base/templates/base/legal.html:77 base/templates/base/legal.html:135
-#: portal/templates/portal/con-details.html:51
+#: portal/templates/portal/con-details.html:43
 msgid "Contact Us"
 msgstr "Contact Us"
 
@@ -788,44 +788,30 @@ msgstr ""
 msgid "Create your FREE account"
 msgstr "Create your FREE account"
 
-#: base/templates/base/includes/anonymous.html:26
-#: base/templates/base/includes/navbar.html:139
-#: base/templates/base/includes/pricing.html:50
-#: templates/account/confirm_login_code.html:5
-#: templates/account/confirm_login_code.html:27 templates/account/login.html:7
-#: templates/account/login.html:11 templates/account/login.html:33
-#: templates/account/request_login_code.html:5
-#: templates/mfa/authenticate.html:6 templates/mfa/authenticate.html:24
-#: templates/openid/login.html:5 templates/openid/login.html:9
-#: templates/openid/login.html:20 templates/socialaccount/login.html:5
-#: templates/socialaccount/login_redirect.html:5
-msgid "Sign In"
-msgstr "Sign In"
-
-#: base/templates/base/includes/anonymous.html:35
+#: base/templates/base/includes/anonymous.html:34
 msgid "Better experience"
 msgstr "Better experience"
 
-#: base/templates/base/includes/anonymous.html:36
+#: base/templates/base/includes/anonymous.html:35
 msgid "Registered users get access to advanced features"
 msgstr "Registered users get access to advanced features"
 
-#: base/templates/base/includes/anonymous.html:44
+#: base/templates/base/includes/anonymous.html:43
 #, python-format
 msgid "It's 100%% free"
 msgstr "It's 100%% free"
 
-#: base/templates/base/includes/anonymous.html:45
+#: base/templates/base/includes/anonymous.html:44
 #, python-format
 msgid "Our accounts are 100%% FREE. FREE like in FREE BEER"
 msgstr "Our accounts are 100%% FREE. FREE like in FREE BEER"
 
-#: base/templates/base/includes/anonymous.html:53
+#: base/templates/base/includes/anonymous.html:52
 #: base/templates/base/includes/signup-junk.html:54
 msgid "Support or information"
 msgstr "Support or information"
 
-#: base/templates/base/includes/anonymous.html:54
+#: base/templates/base/includes/anonymous.html:53
 #: base/templates/base/includes/signup-junk.html:55
 msgid "For support or further information, please feel free to contact us."
 msgstr "For support or further information, please feel free to contact us"
@@ -854,7 +840,7 @@ msgstr "About"
 
 #: base/templates/base/includes/footer.html:19
 #: base/templates/base/includes/navbar.html:51
-#: portal/templates/portal/con-details.html:364
+#: portal/templates/portal/con-details.html:351
 msgid "Contact"
 msgstr "Contact"
 
@@ -975,6 +961,19 @@ msgstr "Administration"
 #: base/templates/base/includes/navbar.html:133
 msgid "Database"
 msgstr "Database"
+
+#: base/templates/base/includes/navbar.html:139
+#: base/templates/base/includes/pricing.html:50
+#: templates/account/confirm_login_code.html:5
+#: templates/account/confirm_login_code.html:27 templates/account/login.html:7
+#: templates/account/login.html:11 templates/account/login.html:33
+#: templates/account/request_login_code.html:5
+#: templates/mfa/authenticate.html:6 templates/mfa/authenticate.html:24
+#: templates/openid/login.html:5 templates/openid/login.html:9
+#: templates/openid/login.html:20 templates/socialaccount/login.html:5
+#: templates/socialaccount/login_redirect.html:5
+msgid "Sign In"
+msgstr "Sign In"
 
 #: base/templates/base/includes/pricing.html:3
 msgid "Pricing"
@@ -1275,6 +1274,7 @@ msgstr ""
 "check your Spam/Junk folder"
 
 #: base/templates/base/includes/signup-junk.html:45
+#: portal/templates/portal/includes/con-tos.html:41
 msgid "You can help us"
 msgstr "You can help us"
 
@@ -1410,7 +1410,7 @@ msgstr "This page is under construction. It will be available soon."
 
 #: base/templates/base/legal.html:5 base/templates/base/legal.html:9
 #: base/templates/base/legal.html:11
-#: portal/templates/portal/con-details.html:60
+#: portal/templates/portal/con-details.html:52
 msgid "Legal Information"
 msgstr "Legal Information"
 
@@ -1855,7 +1855,7 @@ msgid "Free"
 msgstr "Free"
 
 #: base/templates/base/profile.html:58
-#: portal/templates/portal/con-details.html:155
+#: portal/templates/portal/con-details.html:142
 msgid "Remaining days"
 msgstr "Remaining days"
 
@@ -2228,16 +2228,16 @@ msgstr "Authenticated user"
 
 #: crm/templates/crm/lead_edit.html:79 crm/templates/crm/lead_edit.html:113
 #: crm/templates/crm/lead_edit.html:126 crm/templates/crm/lead_edit.html:139
-#: portal/templates/portal/con-details.html:208
-#: portal/templates/portal/con-details.html:315
+#: portal/templates/portal/con-details.html:195
+#: portal/templates/portal/con-details.html:302
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "Yes"
 msgstr "Yes"
 
 #: crm/templates/crm/lead_edit.html:81 crm/templates/crm/lead_edit.html:115
 #: crm/templates/crm/lead_edit.html:128 crm/templates/crm/lead_edit.html:141
-#: portal/templates/portal/con-details.html:210
-#: portal/templates/portal/con-details.html:313
+#: portal/templates/portal/con-details.html:197
+#: portal/templates/portal/con-details.html:300
 #: portal/templates/portal/includes/con-lots-details.html:17
 msgid "No"
 msgstr "No"
@@ -2406,11 +2406,11 @@ msgstr "Spanish"
 msgid "German"
 msgstr "German"
 
-#: portal/models.py:349
+#: portal/models.py:377
 msgid "Download DCE"
 msgstr "DCE Download"
 
-#: portal/models.py:350
+#: portal/models.py:378
 msgid "Downloads DCE"
 msgstr "DCE Downloads"
 
@@ -2427,7 +2427,7 @@ msgid "Official Website"
 msgstr "Official Website"
 
 #: portal/templates/portal/con-details.html:7
-#: portal/templates/portal/con-details.html:79
+#: portal/templates/portal/con-details.html:68
 msgid "Tender details"
 msgstr "Tender details"
 
@@ -2447,7 +2447,7 @@ msgstr "URL was copied to clipboard."
 msgid "Download Tender's files"
 msgstr "Download Tender's files"
 
-#: portal/templates/portal/con-details.html:27
+#: portal/templates/portal/con-details.html:29
 msgid ""
 "Once you click on an item, your browser or device should handle the download "
 "process."
@@ -2455,58 +2455,55 @@ msgstr ""
 "Once you click on an item, your browser or device should handle the download "
 "process."
 
-#: portal/templates/portal/con-details.html:46
+#: portal/templates/portal/con-details.html:38
 msgid "Sorry. We could not get the files for this Tender."
 msgstr "Sorry. We could not get the files for this Tender."
 
-#: portal/templates/portal/con-details.html:47
+#: portal/templates/portal/con-details.html:39
 msgid "Please try again later, or contact us if this problem persists."
 msgstr "Please try again later, or contact us if this problem persists."
 
-#: portal/templates/portal/con-details.html:64
+#: portal/templates/portal/con-details.html:56
 msgid "Close"
 msgstr ""
 
-#: portal/templates/portal/con-details.html:84
+#: portal/templates/portal/con-details.html:73
 msgid "Cancelled"
 msgstr "Cancelled"
 
-#: portal/templates/portal/con-details.html:98 templates/mfa/index.html:102
+#: portal/templates/portal/con-details.html:87 templates/mfa/index.html:102
 msgid "Download"
 msgstr "Download"
 
-#: portal/templates/portal/con-details.html:106
+#: portal/templates/portal/con-details.html:95
+#: portal/templates/portal/includes/con-tos.html:57
 msgid "Share"
 msgstr "Share"
 
-#: portal/templates/portal/con-details.html:118
+#: portal/templates/portal/con-details.html:107
 msgid "Toggle Favourite"
 msgstr "Toggle Favourite"
 
-#: portal/templates/portal/con-details.html:130
+#: portal/templates/portal/con-details.html:119
 msgid "Bid"
 msgstr "Bid"
 
-#: portal/templates/portal/con-details.html:142
+#: portal/templates/portal/con-details.html:130
 #: portal/templates/portal/cons-search-advanced-form.html:17
 #: portal/templates/portal/cons-search-basic-form.html:17
 #: portal/templates/portal/includes/con-lots-details.html:10
 msgid "Object"
 msgstr "Object"
 
-#: portal/templates/portal/con-details.html:149
+#: portal/templates/portal/con-details.html:137
 msgid "Bidding Deadline"
 msgstr "Bidding Deadline"
 
-#: portal/templates/portal/con-details.html:150
-msgid "Morocco Time"
-msgstr "Morocco time"
-
-#: portal/templates/portal/con-details.html:156
+#: portal/templates/portal/con-details.html:143
 msgid "days"
 msgstr "days"
 
-#: portal/templates/portal/con-details.html:163
+#: portal/templates/portal/con-details.html:150
 #: portal/templates/portal/cons-search-advanced-form.html:169
 #: portal/templates/portal/cons-search-advanced-form.html:170
 #: portal/templates/portal/cons-search-basic-form.html:54
@@ -2514,7 +2511,7 @@ msgstr "days"
 msgid "Total Estimate"
 msgstr "Total Estimate"
 
-#: portal/templates/portal/con-details.html:167
+#: portal/templates/portal/con-details.html:154
 #: portal/templates/portal/cons-search-advanced-form.html:171
 #: portal/templates/portal/cons-search-advanced-form.html:172
 #: portal/templates/portal/cons-search-basic-form.html:56
@@ -2522,121 +2519,121 @@ msgstr "Total Estimate"
 msgid "Temporary Caution"
 msgstr "Provisional guarantee"
 
-#: portal/templates/portal/con-details.html:179
+#: portal/templates/portal/con-details.html:166
 #: portal/templates/portal/cons-search-advanced-form.html:23
 #: portal/templates/portal/cons-search-basic-form.html:23
 msgid "Reference"
 msgstr "Reference"
 
-#: portal/templates/portal/con-details.html:187
+#: portal/templates/portal/con-details.html:174
 msgid "Date published"
 msgstr "Date Published"
 
-#: portal/templates/portal/con-details.html:200
+#: portal/templates/portal/con-details.html:187
 msgid "Main Category"
 msgstr "Main Category"
 
-#: portal/templates/portal/con-details.html:206
+#: portal/templates/portal/con-details.html:193
 msgid "Reserved to SMB+"
 msgstr "Reserved for SMB+"
 
-#: portal/templates/portal/con-details.html:214
+#: portal/templates/portal/con-details.html:201
 msgid "Lots count"
 msgstr "Lots Count"
 
-#: portal/templates/portal/con-details.html:222
+#: portal/templates/portal/con-details.html:209
 msgid "Execution location"
 msgstr "Execution Location"
 
-#: portal/templates/portal/con-details.html:226
+#: portal/templates/portal/con-details.html:213
 msgid "Public client"
 msgstr "Public Client"
 
-#: portal/templates/portal/con-details.html:238
+#: portal/templates/portal/con-details.html:225
 #: portal/templates/portal/cons-search-advanced-form.html:59
 msgid "Procedure"
 msgstr "Procedure"
 
-#: portal/templates/portal/con-details.html:243
+#: portal/templates/portal/con-details.html:230
 msgid "Online bidding"
 msgstr "Online bidding"
 
-#: portal/templates/portal/con-details.html:245
+#: portal/templates/portal/con-details.html:232
 #: portal/templates/portal/cons-search-advanced-form.html:120
 msgid "Required, e-Sign required"
 msgstr "Required, e-Signature Required"
 
-#: portal/templates/portal/con-details.html:247
+#: portal/templates/portal/con-details.html:234
 #: portal/templates/portal/cons-search-advanced-form.html:121
 msgid "Required, e-Sign not required"
 msgstr "Required, e-Signature Not Required"
 
-#: portal/templates/portal/con-details.html:249
+#: portal/templates/portal/con-details.html:236
 #: portal/templates/portal/cons-search-advanced-form.html:122
 msgid "Not required, e-Sign required"
 msgstr "Not Required, e-Signature Required"
 
-#: portal/templates/portal/con-details.html:251
+#: portal/templates/portal/con-details.html:238
 #: portal/templates/portal/cons-search-advanced-form.html:123
 msgid "Not required, e-Sign not required"
 msgstr "Not Required, e-Signature Not Required"
 
-#: portal/templates/portal/con-details.html:253
+#: portal/templates/portal/con-details.html:240
 #: portal/templates/portal/cons-search-advanced-form.html:124
 msgid "Not Applicable"
 msgstr "Not Applicable"
 
-#: portal/templates/portal/con-details.html:261
+#: portal/templates/portal/con-details.html:248
 msgid "Domains of activity"
 msgstr "Domains of Activity"
 
-#: portal/templates/portal/con-details.html:271
+#: portal/templates/portal/con-details.html:258
 #: portal/templates/portal/includes/con-lots-details.html:20
 msgid "Qualifications"
 msgstr "Qualifications"
 
-#: portal/templates/portal/con-details.html:278
+#: portal/templates/portal/con-details.html:265
 #: portal/templates/portal/includes/con-lots-details.html:23
 msgid "Agrements"
 msgstr "Agreements"
 
-#: portal/templates/portal/con-details.html:285
+#: portal/templates/portal/con-details.html:272
 #: portal/templates/portal/includes/con-lots-details.html:27
 msgid "Samples"
 msgstr "Samples"
 
-#: portal/templates/portal/con-details.html:292
+#: portal/templates/portal/con-details.html:279
 #: portal/templates/portal/includes/con-lots-details.html:31
 msgid "Meetings"
 msgstr "Meetings"
 
-#: portal/templates/portal/con-details.html:299
+#: portal/templates/portal/con-details.html:286
 #: portal/templates/portal/includes/con-lots-details.html:35
 msgid "In-Site Visits"
 msgstr "In-Site Visits"
 
-#: portal/templates/portal/con-details.html:307
+#: portal/templates/portal/con-details.html:294
 msgid "Price of Plans"
 msgstr "Price of Plans"
 
-#: portal/templates/portal/con-details.html:311
+#: portal/templates/portal/con-details.html:298
 #: portal/templates/portal/includes/con-lots-details.html:39
 msgid "Variante"
 msgstr "Variant"
 
-#: portal/templates/portal/con-details.html:325
+#: portal/templates/portal/con-details.html:312
 msgid "Lots details"
 msgstr "Lot Details"
 
-#: portal/templates/portal/con-details.html:332
+#: portal/templates/portal/con-details.html:319
 msgid "Withdrawal address"
 msgstr "Withdrawal Address"
 
-#: portal/templates/portal/con-details.html:343
+#: portal/templates/portal/con-details.html:330
 msgid "Bidding address"
 msgstr "Bidding Address"
 
-#: portal/templates/portal/con-details.html:354
+#: portal/templates/portal/con-details.html:341
 msgid "Opening address"
 msgstr "Opening Address"
 
@@ -2977,6 +2974,96 @@ msgstr "Estimate"
 #: portal/templates/portal/includes/con-lots-details.html:15
 msgid "Caution"
 msgstr "Provisional guarantee"
+
+#: portal/templates/portal/includes/con-tos.html:13
+msgid "Know before downloading"
+msgstr "Know before downloading"
+
+#: portal/templates/portal/includes/con-tos.html:14
+msgid "Important"
+msgstr "Important"
+
+#: portal/templates/portal/includes/con-tos.html:23
+msgid "We are eMarches.com"
+msgstr "We are eMarches.com"
+
+#: portal/templates/portal/includes/con-tos.html:24
+msgid "We, eMarches.com, are not affiliated with any governmental entity"
+msgstr "We, eMarches.com, are not affiliated with any governmental entity"
+
+#: portal/templates/portal/includes/con-tos.html:25
+msgid ""
+"We provide these files from the pulic portal for informational purposes only"
+msgstr ""
+"We provide these files from the pulic portal for informational purposes only"
+
+#: portal/templates/portal/includes/con-tos.html:26
+msgid "Before bidding, please refer to the official website"
+msgstr "Before bidding, please refer to the official website"
+
+#: portal/templates/portal/includes/con-tos.html:40
+msgid "You can help"
+msgstr "You can help"
+
+#: portal/templates/portal/includes/con-tos.html:50
+msgid "It's never too perfect"
+msgstr "It's never too perfect"
+
+#: portal/templates/portal/includes/con-tos.html:51
+msgid ""
+"Optionally, you can help us to further improve our services. Here are some "
+"helpful things you could do"
+msgstr ""
+"Optionally, you can help us to further improve our services. Here are some "
+"helpful things you could do"
+
+#: portal/templates/portal/includes/con-tos.html:60
+msgid "Spreading the word and sharing our links"
+msgstr "Spreading the word and sharing our links"
+
+#: portal/templates/portal/includes/con-tos.html:66
+msgid "Report"
+msgstr "Report"
+
+#: portal/templates/portal/includes/con-tos.html:69
+msgid "Reporting any malfunction or bug"
+msgstr "Reporting any malfunction or bug"
+
+#: portal/templates/portal/includes/con-tos.html:75
+msgid "Suggest"
+msgstr "Suggest"
+
+#: portal/templates/portal/includes/con-tos.html:77
+msgid "Proposing improvements"
+msgstr "Proposing improvements"
+
+#: portal/templates/portal/includes/con-tos.html:83
+msgid "Ask"
+msgstr "Ask"
+
+#: portal/templates/portal/includes/con-tos.html:86
+msgid "Requesting new features"
+msgstr "Requesting new features"
+
+#: portal/templates/portal/includes/con-tos.html:92
+msgid "Buy"
+msgstr "Buy"
+
+#: portal/templates/portal/includes/con-tos.html:95
+msgid "Hiring us for our services"
+msgstr "Hiring us for our services"
+
+#: portal/templates/portal/includes/con-tos.html:101
+msgid "Donate"
+msgstr "Donate"
+
+#: portal/templates/portal/includes/con-tos.html:104
+msgid "Buying a coffee for our developers"
+msgstr "Buying coffee for our developers"
+
+#: portal/templates/portal/includes/con-tos.html:105
+msgid "Those complex machines produce owesome things but are greedy on coffee"
+msgstr "Those complex machines produce owesome things but are greedy on coffee"
 
 #: portal/templates/portal/includes/cons-legend.html:8
 msgid "Legend"
@@ -4190,6 +4277,9 @@ msgstr "Current"
 #: templates/usersessions/usersession_list.html:60
 msgid "Sign Out Other Sessions"
 msgstr "Sign Out Other Sessions"
+
+msgid "Morocco Time"
+msgstr "Morocco time"
 
 msgid "Site under construction. Some features may not work correctly."
 msgstr "Site under construction. Some features may not work correctly."
