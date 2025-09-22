@@ -1,7 +1,23 @@
 {% if request.user.is_authenticated %}
     <ul class="list-unstyled mb-3 p-0">  
         {% for q in con.lot_set.first.qualifications.all %}
-            <li class="mt-1">— {{ q.qualification }}</li>
+            <!-- <li class="mt-1">— {{ q.qualification.label }}</li> -->
+            <li class="mt-1">
+                <span>—</span>
+                <span>
+                    <a class="badge bg-secondary small" data-bs-toggle="collapse" href="#{{ q.qualification.id }}" role="button" aria-expanded="false" aria-controls="{{ q.qualification.id }}">
+                        {{ q.qualification.label }}
+                    </a>
+                </span>
+                <!-- <span>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#{{ q.qualification.id }}" aria-expanded="false" aria-controls="{{ q.qualification.id }}">
+                        {{ q.qualification.label }}
+                    </button>
+                </span> -->
+                <span class="collapse small text-muted" id="{{ q.qualification.id }}">
+                    {{ q.qualification }}
+                </span>
+            </li>
         {% endfor %}
     </ul>
 {% else %}

@@ -306,9 +306,37 @@ class Qualification(models.Model):
 
     class Meta:
         db_table = 'base_qualification'
-                
+
     def __str__(self):
         return self.nom
+
+
+    def save(self, *args, **kwargs):
+        try: dom = self.nom.split(' ')[0].strip()
+        except: dom = ""
+        try: cla = self.nom.split('/ Classe ')[1].strip()
+        except: cla = ""
+
+        try:
+            mdm = self.nom.split(" / ")[2]
+            acr = mdm.split(" ")[0]
+            if acr.find(".", 2) > 1:
+                acr = acr[:acr.find('.', 2)].strip()
+            if acr.find("-", 2) > 1:
+                acr = acr[:acr.find('-', 2)].strip()
+        except: acr = ""
+        
+        if cla != "":
+            self.classe = cla
+            if acr != "":
+                self.label = f"{dom} {acr} / Classe {cla}"
+            else:
+                if dom != "":
+                    self.label = f"{dom} / Classe {cla}"
+        else:
+            self.label = f"{dom}"
+
+        return super().save(*args, **kwargs)
 
 
 class Reglage(models.Model):
