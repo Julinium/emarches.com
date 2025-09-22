@@ -213,7 +213,7 @@ class SearchQuery(models.Model):
     def check_botness(self, ua_string):
         user_agent = ua_string.lower()
         bot_keywords = [
-            'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests', '15e148 safari',
+            'bot', 'crawler', 'spider', 'scrapy', 'curl', 'python-requests',
             'wget', 'headless', 'phantomjs', 'mechanize', 'googlebot', 'bingbot', 'nexus 5x build' ]       
         if any(keyword in user_agent for keyword in bot_keywords):
             return True # Check for bot keywords 
