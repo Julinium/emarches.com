@@ -256,29 +256,13 @@ def con_details(request, pk=None):
 						"priv": 1
 					})
 	
-	readme_info = []
-	readmedia = os.path.join(C.MEDIA_ROOT, 'readme')
-	if os.path.exists(readmedia):
-		readme_list = os.listdir(readmedia)
-		for entry in readme_list:
-			full_path = os.path.join(readmedia, entry)
-			if os.path.exists(full_path):
-				if os.path.isfile(full_path):
-					sizens = os.path.getsize(full_path)
-					readme_info.append({
-						"name": entry,
-						"size": sizens,
-						"priv": 0
-					})
-
-	files_count = len(files_info) + len(readme_info)
+	files_count = len(files_info)
 	context = {
 		"con": con,
 		"dlink": con.portal_link,
 		'faved': faved,
 		'dsize': total_size,
 		'finfo': files_info,
-		'rinfo': readme_info,
 		'files_count': files_count,
 		'dce_dir': dce_dir,
 		}
@@ -288,7 +272,6 @@ def con_details(request, pk=None):
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def con_portal_details(request, pid=None):
-	# if request.method != 'GET': return HttpResponse(status=403)
 	con = get_object_or_404(Consultation, portal_id=pid)
 	if con: return redirect("portal_con_details", pk=str(con.id))
 	return HttpResponse(status=404)
