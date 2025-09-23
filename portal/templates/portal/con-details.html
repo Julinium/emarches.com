@@ -94,7 +94,7 @@
                         <span><i class="bi bi-share-fill"></i></span>
                         <span class="d-none d-md-inline ms-1"> {% trans "Share" %}</span>
                     </div>
-                    {% include "base/includes/share-button.html" %}
+                    {% include "portal/includes/share.js.html" %}
                 </button>
 
                 <a id="favbtn" type="button" class="btn btn-outline-primary mt-1 px-2" {% if request.user.is_authenticated %} onclick="toggleFav('/cons/fav/{{ con.id }}')" {% else %} href="{% url 'account_login' %}?next={{ request.get_full_path }}"{% endif %}>
