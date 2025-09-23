@@ -1,17 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# eMarches.com English translation.
+# Copyright (C) 2025 MODE 777
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# W. Tahiri <w.tahiri@mode-777.com>, 2024.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-22 11:07+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2025-09-23 11:04+0000\n"
+"PO-Revision-Date: 2025-09-23 11:04+0000\n"
+"Last-Translator: Walid Tahiri <w.tahiri@mode-777.com>\n"
+"Language-Team: MODE 777 <w.tahiri@mode-777.com>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -431,8 +431,8 @@ msgid "You can visit our Website for more information"
 msgstr "You can visit our Website for more information"
 
 #: base/templates/base/errors/400.html:5 base/templates/base/errors/400.html:9
-msgid "Bad Request Error"
-msgstr "Bad Request Error"
+msgid "Bad Request"
+msgstr "Bad Request"
 
 #: base/templates/base/errors/400.html:10
 msgid "We did not understand !"
@@ -451,8 +451,8 @@ msgid "Read FAQs"
 msgstr "Read FAQs"
 
 #: base/templates/base/errors/403.html:5 base/templates/base/errors/403.html:9
-msgid "Forbidden Error"
-msgstr "Forbidden Error"
+msgid "Forbidden"
+msgstr "Forbidden"
 
 #: base/templates/base/errors/403.html:10
 msgid "That's not for you !"
@@ -463,8 +463,8 @@ msgid "You are not authorized to access this page or resource."
 msgstr "You are not authorized to access this page or resource."
 
 #: base/templates/base/errors/404.html:5 base/templates/base/errors/404.html:9
-msgid "Not Found Error"
-msgstr "Not Found Error"
+msgid "Not Found"
+msgstr "Not Found"
 
 #: base/templates/base/errors/404.html:10
 msgid "We don't have it !"
@@ -474,13 +474,9 @@ msgstr "We don't have it!"
 msgid "Our server could not find the requested page or resource."
 msgstr "Our server could not find the requested page or resource."
 
-#: base/templates/base/errors/500.html:5
+#: base/templates/base/errors/500.html:5 base/templates/base/errors/500.html:9
 msgid "Internal Server Error"
 msgstr "Internal Server Error"
-
-#: base/templates/base/errors/500.html:9
-msgid "Internal Server Error."
-msgstr "Internal Server Error."
 
 #: base/templates/base/errors/500.html:10
 msgid "This one is on us !"
@@ -4277,6 +4273,9 @@ msgstr "Current"
 #: templates/usersessions/usersession_list.html:60
 msgid "Sign Out Other Sessions"
 msgstr "Sign Out Other Sessions"
+
+msgid "Internal Server Error."
+msgstr "Internal Server Error."
 
 msgid "Morocco Time"
 msgstr "Morocco time"
