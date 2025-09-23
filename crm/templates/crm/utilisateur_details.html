@@ -9,7 +9,7 @@
     <h1 class="text-center mb-4">{% trans "Utilisateur details" %}</h1>
     {% if request.user|in_group:'CRM' %}
         <div class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="mx-0 my-2">
                     <div class="oneline" data-bs-toggle="tooltip" title="{{ utilisateur }}"><strong>{{ utilisateur.username }}</strong>: {{ utilisateur.email }}</div>
                     <span class="oneline text-muted">{% trans 'Joined' %}: {{ utilisateur.date_joined }}</span>
@@ -20,7 +20,49 @@
                 {% else %}
                     <span class="badge text-white bg-danger rounded-pill">Unverified</span>
                 {% endif %}
-            </li>
+            </div>
+            <div class="list-group-item">
+                <div class="mx-0 my-2">
+                    <span>{% trans 'Profile' %}:</span>
+                    <span class="ms-1 fw-bold">
+                        {% if profile %}
+                            {{ profile }}
+                        {% else %}
+                            {% trans "Not found" %}
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+            <a class="list-group-item" href="{% url 'crm_downloads' %}?&user={{ utilisateur.id }}">
+                <div class="mx-0 my-2">
+                    <span class="fw-bold">{{ downloads.all|length }}</span>
+                    <span class="ms-1">{% trans 'Downloads' %}</span>                    
+                </div>
+            </a>
+            <a class="list-group-item" href="{% url 'search_queries_list' %}?&user={{ utilisateur.id }}">
+                <div class="mx-0 my-2">
+                    <span class="fw-bold">{{ queries.all|length }}</span>
+                    <span class="ms-1">{% trans 'Searches' %} </span>                   
+                </div>
+            </a>
+            <div class="list-group-item">
+                <div class="mx-0 my-2">
+                    <span class="fw-bold">{{ favos.all|length }}</span>
+                    <span class="ms-1">{% trans 'Favorizations' %} </span>                   
+                </div>
+            </div>
+            <div class="list-group-item">
+                <div class="mx-0 my-2">
+                    <span class="fw-bold">{{ unfavs.all|length }}</span>
+                    <span class="ms-1">{% trans 'Unfavorizations' %} </span>                   
+                </div>
+            </div>
+            <div class="list-group-item">
+                <div class="mx-0 my-2">
+                    {% trans 'Contacts' %}
+                    {{ contacts.all|length }}
+                </div>
+            </div>
         </div>
     {% else %}
         <p class="text-danger">{% trans 'Not allowed' %}</p>

@@ -13,7 +13,7 @@ from . views import get_trans_ratio
 
 def pillets(request):
 
-    rounder = 10
+    rounder = 5
     min_ratio = 5
 
     context = {}
@@ -34,10 +34,11 @@ def pillets(request):
     context['m7'] = str(random.randint(1, 7))
     context['transes'] = sorted_transes
 
-    if request.user.is_authenticated :
-        profacs = ProfileFavCon.objects.filter(user=request.user).values("consultation")
-        context['user_favs'] = user_favs = Consultation.objects.filter(portal_id__in = profacs)
-        context['new_contactings'] = Contacting.objects.filter(replied = False) if request.user.groups.filter(name='CRM').exists() else None
+    if request.user:
+        if request.user.is_authenticated :
+            profacs = ProfileFavCon.objects.filter(user=request.user).values("consultation")
+            context['user_favs'] = user_favs = Consultation.objects.filter(portal_id__in = profacs)
+            context['new_contactings'] = Contacting.objects.filter(replied = False) if request.user.groups.filter(name='CRM').exists() else None
 
     return context
 

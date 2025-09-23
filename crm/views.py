@@ -14,7 +14,7 @@ from django.views.generic import ListView, DetailView
 from allauth.account.models import EmailAddress
 
 from .models import Contacting, Favorisation, Unfavorisation, SearchQuery
-from portal.models import UserDownloadFile, ProfileFavCon, Consultation
+from portal.models import Profile, UserDownloadFile, ProfileFavCon, Consultation
 from emarches import constants as C
 
 from django.contrib.auth import get_user_model # To get the User model
@@ -316,9 +316,16 @@ def utilisateur(request, pk):
         email_address = get_object_or_404(EmailAddress, email=utilisateur.email)
         context['verified'] = email_address.verified
         context['utilisateur'] = utilisateur
-        
-        profile = Profile.objects.filter(user=utilisateur).first()
-        downloads = utilisateur.downloads
+
+        context['profile'] = Profile.objects.filter(user=utilisateur).first()
+
+        context['downloads'] = utilisateur.downloads
+        context['queries']   = utilisateur.search_query
+        context['spamming']  = utilisateur.spamming
+        context['contacts']  = utilisateur.contacting
+        context['favos']     = utilisateur.favorisation
+        context['unfavs']    = utilisateur.unfavorisation
+
 
         return render(request, 'crm/utilisateur_details.html', context)
     
