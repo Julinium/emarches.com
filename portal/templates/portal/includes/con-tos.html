@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col px-0">
             <div class="accordion mb-3" id="accordionSignup">
-                <div class="accordion-item">
+                <div class="accordion-item bg-warning-subtle shadow">
                     <h2 class="accordion-header">
                         <button class="accordion-button bg-warning-subtle p-2 collapsed" type="button"
                             data-bs-toggle="collapse" data-bs-target="#collapseReadMe" aria-expanded="false"
@@ -14,21 +14,28 @@
                         </button>
                     </h2>
                     <div id="collapseReadMe" class="accordion-collapse collapse" data-bs-parent="#accordionSignup">
-                        <div class="accordion-body py-2">
+                        <div class="accordion-body py-0">
                             <div class="my-3">
                                 <div class="d-flex">
-                                    <div class="ms-2 w-100">
+                                    <div class="w-100">
                                         <span class="small">{% trans "We, eMarches.com, are not affiliated with any governmental entity" %}.</span>
                                         <span class="small">{% trans "We provide these files from the pulic portal for informational purposes only" %}.</span>
                                         <span class="small pe-1">{% trans "Before bidding, please refer to the official website" %}:</span>
-                                        <span><a class="" href="{{ con.portal_link }}">merchespublics.gov.ma</a></span>
+                                        <span><a class="" target="_blank" href="{{ con.portal_link }}">merchespublics.gov.ma</a></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col px-0">
+            <div class="accordion mb-3" id="accordionHelp">
+                <div class="accordion-item bg-success-subtle shadow">
                     <h2 class="accordion-header">
                         <button class="accordion-button bg-success-subtle p-2 collapsed" type="button"
                             data-bs-toggle="collapse" data-bs-target="#collapseHelpUs" aria-expanded="false"
@@ -37,67 +44,49 @@
                             <span class="ms-1">{% trans "You can help us" %}</span>
                         </button>
                     </h2>
-                    <div id="collapseHelpUs" class="accordion-collapse collapse hide" data-bs-parent="#accordionSignup">
-                        <div class="accordion-body py-2">
+                    <div id="collapseHelpUs" class="accordion-collapse collapse hide" data-bs-parent="#accordionHelp">
+                        <div class="accordion-body py-0">
                             <div class="my-3">
                                 <div class="d-flex">
-                                    <div class="ms-2 w-100">
+                                    <div class="w-100">
                                         <span class="small">{% trans "Optionally, you can help us to further improve our services. Here are some helpful things you could do" %}:</span>
-                                        <div class="ul">
-                                            <li class="list-group-item mt-2">
-                                                <span class="">
-                                                    <div class="badge bg-success">
-                                                        <i class="bi bi-share-fill"></i>
-                                                        <span class="ms-1">{% trans "Share" %}</span>
-                                                    </div>
-                                                </span>
-                                                <span class="ms-1">{% trans "Spreading the word and sharing our links" %}.</span>
-                                            </li>
-                                            <li class="list-group-item mt-2">
-                                                <span class="">
-                                                    <div class="badge bg-success">
-                                                        <i class="bi bi-bug-fill"></i>
-                                                        <span class="ms-1">{% trans "Report" %}</span>
-                                                    </div>
-                                                </span>
-                                                <span class="ms-1">{% trans "Reporting any malfunction or bug" %}.</span>
-                                            </li>
-                                            <li class="list-group-item mt-2">
-                                                <span class="">
-                                                    <div class="badge bg-success">
-                                                        <i class="bi bi-bar-chart-line-fill"></i></span>
-                                                        <span class="ms-1">{% trans "Suggest" %}</span>
-                                                    </div>
-                                                <span class="ms-1">{% trans "Proposing improvements" %}.</span>
-                                            </li>
-                                            <li class="list-group-item mt-2">
-                                                <span class="">
-                                                    <div class="badge bg-success">
-                                                        <i class="bi bi-cloud-plus-fill"></i>
-                                                        <span class="ms-1">{% trans "Ask" %}</span>
-                                                    </div>
-                                                </span>
-                                                <span class="ms-1">{% trans "Requesting new features" %}.</span>
-                                            </li>
-                                            <li class="list-group-item mt-2">
-                                                <span class="">
-                                                    <div class="badge bg-success">
-                                                        <i class="bi bi-bag-check-fill"></i>
-                                                        <span class="ms-1">{% trans "Buy" %}</span>
-                                                    </div>
-                                                </span>
-                                                <span class="ms-1">{% trans "Hiring us for our services" %}.</span>
-                                            </li>
-                                            <li class="list-group-item mt-2">
-                                                <span class="">
-                                                    <div class="badge bg-success">
-                                                        <i class="bi bi-cup-hot-fill"></i>
-                                                        <span class="ms-1">{% trans "Donate" %}</span>
-                                                    </div>
-                                                </span>
-                                                <span class="ms-1">{% trans "Buying a coffee for our developers" %}.</span>
-                                                <span class="ms-1 small text-muted">{% trans "Those complex machines produce owesome things but are greedy on coffee" %}.</span>
-                                            </li>
+                                        <div class="mt-2">
+                                            <span class="">
+                                                <div class="badge bg-success mt-1 py-2">
+                                                    <i class="bi bi-share-fill"></i>
+                                                    <span class="ms-1 fw-light">{% trans "Share" %}</span>
+                                                </div>
+                                            </span>
+                                            <span class="">
+                                                <div class="badge bg-success mt-1 py-2">
+                                                    <i class="bi bi-bug-fill"></i>
+                                                    <span class="ms-1 fw-light">{% trans "Report" %}</span>
+                                                </div>
+                                            </span>
+                                            <span class="">
+                                                <div class="badge bg-success mt-1 py-2">
+                                                    <i class="bi bi-bar-chart-line-fill"></i>
+                                                    <span class="ms-1 fw-light">{% trans "Suggest" %}</span>
+                                                </div>
+                                            </span>
+                                            <span class="">
+                                                <div class="badge bg-success mt-1 py-2">
+                                                    <i class="bi bi-cloud-plus-fill"></i>
+                                                    <span class="ms-1 fw-light">{% trans "Ask" %}</span>
+                                                </div>
+                                            </span>
+                                            <span class="">
+                                                <div class="badge bg-success mt-1 py-2">
+                                                    <i class="bi bi-bag-check-fill"></i>
+                                                    <span class="ms-1 fw-light">{% trans "Buy" %}</span>
+                                                </div>
+                                            </span>
+                                            <span class="">
+                                                <div class="badge bg-success mt-1 py-2">
+                                                    <i class="bi bi-cup-hot-fill"></i>
+                                                    <span class="ms-1 fw-light">{% trans "Donate" %}</span>
+                                                </div>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
