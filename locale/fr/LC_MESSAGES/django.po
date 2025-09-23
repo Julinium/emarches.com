@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-22 11:07+0000\n"
+"POT-Creation-Date: 2025-09-23 11:14+0000\n"
 "PO-Revision-Date: 2025-01-16 12:25+0100\n"
 "Last-Translator: Amina Bouhou <a.bouhou@emarches.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -442,8 +442,8 @@ msgid "You can visit our Website for more information"
 msgstr "Vous pouvez visiter notre site Web pour plus d'informations"
 
 #: base/templates/base/errors/400.html:5 base/templates/base/errors/400.html:9
-msgid "Bad Request Error"
-msgstr "Erreur de requête incorrecte"
+msgid "Bad Request"
+msgstr "Requête incorrecte"
 
 #: base/templates/base/errors/400.html:10
 msgid "We did not understand !"
@@ -462,8 +462,8 @@ msgid "Read FAQs"
 msgstr "Lire les FAQ"
 
 #: base/templates/base/errors/403.html:5 base/templates/base/errors/403.html:9
-msgid "Forbidden Error"
-msgstr "Erreur interdite"
+msgid "Forbidden"
+msgstr "Interdit"
 
 #: base/templates/base/errors/403.html:10
 msgid "That's not for you !"
@@ -474,8 +474,8 @@ msgid "You are not authorized to access this page or resource."
 msgstr "Vous n'êtes pas autorisé à accéder à cette page ou ressource."
 
 #: base/templates/base/errors/404.html:5 base/templates/base/errors/404.html:9
-msgid "Not Found Error"
-msgstr "Erreur non trouvée"
+msgid "Not Found"
+msgstr "Non trouvé"
 
 #: base/templates/base/errors/404.html:10
 msgid "We don't have it !"
@@ -485,13 +485,9 @@ msgstr "Nous ne l'avons pas !"
 msgid "Our server could not find the requested page or resource."
 msgstr "Notre serveur n'a pas pu trouver la page ou la ressource demandée."
 
-#: base/templates/base/errors/500.html:5
+#: base/templates/base/errors/500.html:5 base/templates/base/errors/500.html:9
 msgid "Internal Server Error"
 msgstr "Erreur interne du serveur"
-
-#: base/templates/base/errors/500.html:9
-msgid "Internal Server Error."
-msgstr "Erreur interne du serveur."
 
 #: base/templates/base/errors/500.html:10
 msgid "This one is on us !"
@@ -3082,7 +3078,9 @@ msgstr "Rien n'est jamais trop parfait"
 msgid ""
 "Optionally, you can help us to further improve our services. Here are some "
 "helpful things you could do"
-msgstr "Facultaivement, vous pouvez nous aider à améliorer nos services. Voici certaines choses que vous pouvez faire pour nous"
+msgstr ""
+"Facultaivement, vous pouvez nous aider à améliorer nos services. Voici "
+"certaines choses que vous pouvez faire pour nous"
 
 #: portal/templates/portal/includes/con-tos.html:60
 msgid "Spreading the word and sharing our links"
@@ -3130,7 +3128,8 @@ msgstr "Acheter du café pour nos dévelopeurs"
 
 #: portal/templates/portal/includes/con-tos.html:105
 msgid "Those complex machines produce owesome things but are greedy on coffee"
-msgstr "Ces machines complexes font des trucs super mais sont gourmandes en café"
+msgstr ""
+"Ces machines complexes font des trucs super mais sont gourmandes en café"
 
 #: portal/templates/portal/includes/cons-legend.html:8
 msgid "Legend"
@@ -4371,96 +4370,99 @@ msgstr "Actuel"
 msgid "Sign Out Other Sessions"
 msgstr "Se déconnecter des autres sessions"
 
-msgid "Morocco Time"
-msgstr "Heure du Maroc"
+#~ msgid "Internal Server Error."
+#~ msgstr "Erreur interne du serveur."
 
-msgid "Site under construction. Some features may not work correctly."
-msgstr ""
-"Site en construction. Certaines fonctionnalités peuvent ne pas "
-"fonctionner correctement."
+#~ msgid "Morocco Time"
+#~ msgstr "Heure du Maroc"
 
-msgid "Leads"
-msgstr "Prospects"
+#~ msgid "Site under construction. Some features may not work correctly."
+#~ msgstr ""
+#~ "Site en construction. Certaines fonctionnalités peuvent ne pas "
+#~ "fonctionner correctement."
 
-msgid "Person"
-msgstr "Personne"
+#~ msgid "Leads"
+#~ msgstr "Prospects"
 
-msgid "Download should start shortly... Please wait."
-msgstr "Le téléchargement va bientôt commencer... Veuillez patienter."
+#~ msgid "Person"
+#~ msgstr "Personne"
 
-msgid ""
-"Sorry, we could not get your files. If this happens often, please let us "
-"know."
-msgstr ""
-"Désolés, nous n'avons pas pu obtenir vos fichiers. Si cela se reproduit "
-"souvent, merci de nous le faire savoir."
+#~ msgid "Download should start shortly... Please wait."
+#~ msgstr "Le téléchargement va bientôt commencer... Veuillez patienter."
 
-msgid "Multi-lots"
-msgstr "Multi-lots"
+#~ msgid ""
+#~ "Sorry, we could not get your files. If this happens often, please let us "
+#~ "know."
+#~ msgstr ""
+#~ "Désolés, nous n'avons pas pu obtenir vos fichiers. Si cela se reproduit "
+#~ "souvent, merci de nous le faire savoir."
 
-msgid "Electronic response and signature"
-msgstr "Réponse électronique et signature"
+#~ msgid "Multi-lots"
+#~ msgstr "Multi-lots"
 
-msgid "Download List"
-msgstr "Télécharger la liste"
+#~ msgid "Electronic response and signature"
+#~ msgstr "Réponse électronique et signature"
 
-msgid ""
-"This file is only for authenticated users and you should not have "
-"accessed it."
-msgstr ""
-"Ce fichier est réservé aux utilisateurs authentifiés et vous n'auriez pas "
-"dû y accéder."
+#~ msgid "Download List"
+#~ msgstr "Télécharger la liste"
 
-msgid ""
-"Our servers security mechanism replaced the original content with this "
-"message."
-msgstr ""
-"Le mécanisme de sécurité de nos serveurs a remplacé le contenu original "
-"par ce message."
+#~ msgid ""
+#~ "This file is only for authenticated users and you should not have "
+#~ "accessed it."
+#~ msgstr ""
+#~ "Ce fichier est réservé aux utilisateurs authentifiés et vous n'auriez pas "
+#~ "dû y accéder."
 
-msgid ""
-"If you got this file from our servers, we would like to know how you did."
-msgstr ""
-"Si vous avez obtenu ce fichier depuis nos serveurs, nous aimerions savoir "
-"comment vous avez fait."
+#~ msgid ""
+#~ "Our servers security mechanism replaced the original content with this "
+#~ "message."
+#~ msgstr ""
+#~ "Le mécanisme de sécurité de nos serveurs a remplacé le contenu original "
+#~ "par ce message."
 
-msgid "We may hire you. Please contact us. Links on eMarches.com"
-msgstr ""
-"Nous pourrions vous embaucher. Veuillez nous contacter. Liens sur "
-"eMarches.com"
+#~ msgid ""
+#~ "If you got this file from our servers, we would like to know how you did."
+#~ msgstr ""
+#~ "Si vous avez obtenu ce fichier depuis nos serveurs, nous aimerions savoir "
+#~ "comment vous avez fait."
 
-msgid "Total downloaded size"
-msgstr "Taille totale des téléchargements"
+#~ msgid "We may hire you. Please contact us. Links on eMarches.com"
+#~ msgstr ""
+#~ "Nous pourrions vous embaucher. Veuillez nous contacter. Liens sur "
+#~ "eMarches.com"
 
-msgid "Top last"
-msgstr "Top derniers"
+#~ msgid "Total downloaded size"
+#~ msgstr "Taille totale des téléchargements"
 
-msgid "Here is a list of files associated with the Tender."
-msgstr "Voici une liste des fichiers associés à la Consultation."
+#~ msgid "Top last"
+#~ msgstr "Top derniers"
 
-msgid "Portfolio"
-msgstr "Portfolio"
+#~ msgid "Here is a list of files associated with the Tender."
+#~ msgstr "Voici une liste des fichiers associés à la Consultation."
 
-msgid "Mobile"
-msgstr "Mobile"
+#~ msgid "Portfolio"
+#~ msgstr "Portfolio"
 
-msgid "Profile not set"
-msgstr "Profil non défini"
+#~ msgid "Mobile"
+#~ msgstr "Mobile"
 
-msgid "Profile Stats"
-msgstr "Statistiques utilisateur"
+#~ msgid "Profile not set"
+#~ msgstr "Profil non défini"
 
-msgid "Unlimited"
-msgstr "Illimité"
+#~ msgid "Profile Stats"
+#~ msgstr "Statistiques utilisateur"
 
-msgid "Browse"
-msgstr "Parcourir"
+#~ msgid "Unlimited"
+#~ msgstr "Illimité"
 
-msgid "Manage Addresses"
-msgstr "Gérer les adresses"
+#~ msgid "Browse"
+#~ msgstr "Parcourir"
 
-msgid "Exit Favourites"
-msgstr "Quitter les favoris"
+#~ msgid "Manage Addresses"
+#~ msgstr "Gérer les adresses"
+
+#~ msgid "Exit Favourites"
+#~ msgstr "Quitter les favoris"
 
 msgid "Forgot your password?"
 msgstr "Mot de passe oublié ?"
