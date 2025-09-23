@@ -13,6 +13,7 @@ from django.views.generic import ListView, DetailView
 
 from allauth.account.models import EmailAddress
 
+from .utils import get_user_sessions
 from .models import Contacting, Favorisation, Unfavorisation, SearchQuery
 from portal.models import Profile, UserDownloadFile, ProfileFavCon, Consultation
 from emarches import constants as C
@@ -318,6 +319,7 @@ def utilisateur(request, pk):
         context['utilisateur'] = utilisateur
 
         context['profile'] = Profile.objects.filter(user=utilisateur).first()
+        context['sess'] = get_user_sessions(utilisateur)
 
         context['downloads'] = utilisateur.downloads
         context['queries']   = utilisateur.search_query

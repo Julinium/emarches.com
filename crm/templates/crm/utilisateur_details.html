@@ -42,25 +42,42 @@
             <a class="list-group-item" href="{% url 'search_queries_list' %}?&user={{ utilisateur.id }}">
                 <div class="mx-0 my-2">
                     <span class="fw-bold">{{ queries.all|length }}</span>
-                    <span class="ms-1">{% trans 'Searches' %} </span>                   
+                    <span class="ms-1">{% trans 'Searches' %}</span>                   
                 </div>
             </a>
             <div class="list-group-item">
                 <div class="mx-0 my-2">
                     <span class="fw-bold">{{ favos.all|length }}</span>
-                    <span class="ms-1">{% trans 'Favorizations' %} </span>                   
+                    <span class="ms-1">{% trans 'Favorizations' %}</span>                   
                 </div>
             </div>
             <div class="list-group-item">
                 <div class="mx-0 my-2">
                     <span class="fw-bold">{{ unfavs.all|length }}</span>
-                    <span class="ms-1">{% trans 'Unfavorizations' %} </span>                   
+                    <span class="ms-1">{% trans 'Unfavorizations' %}</span>                   
                 </div>
             </div>
             <div class="list-group-item">
                 <div class="mx-0 my-2">
-                    {% trans 'Contacts' %}
-                    {{ contacts.all|length }}
+                    <span class="fw-bold">{{ contacts.all|length }}</span>
+                    <span class="ms-1">{% trans 'Contacts' %}</span>      
+                </div>
+            </div>
+            <div class="list-group-item">
+                <div class="mx-0 my-2">
+                    <span class="fw-bold">{{ sess|length }}</span>
+                    <span class="ms-1">{% trans 'Sessions' %}</span>
+                    {% if sess|length > 0 %}
+                        <div>
+                            {% for s in sess %}
+                                <div class="mt-2">- {{ s.session_key }}</div>
+                                <div>- {{ s.expire_date }}</div>
+                                <div>- {{ s.last_activity }}</div>
+                            {% empty %}
+                                {% trans 'None found' %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
