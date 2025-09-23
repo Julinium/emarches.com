@@ -2,11 +2,11 @@
 {% load i18n %}
 {% load static%}
 
-{% block title %} 404 - {% translate 'Not Found Error' %} {% endblock title %}
+{% block title %} 404 - {% translate 'Not Found' %} {% endblock title %}
 
 
 {% block content %}
-    {% trans "Not Found Error" as top_title %}
+    {% trans "Not Found" as top_title %}
     {% trans "We don't have it !" as subtitle %}
     {% trans "Our server could not find the requested page or resource." as paragraph %}
     {% with 'img/errors/error-'|add:m7|add:'.jpg' as image %}

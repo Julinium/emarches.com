@@ -2,11 +2,11 @@
 {% load i18n %}
 {% load static%}
 
-{% block title %} 400 - {% translate 'Bad Request Error' %} {% endblock title %}
+{% block title %} 400 - {% translate 'Bad Request' %} {% endblock title %}
 
 
 {% block content %}
-    {% trans "Bad Request Error" as top_title %}
+    {% trans "Bad Request" as top_title %}
     {% trans "We did not understand !" as subtitle %}
     {% trans "Our server did not understand and could not handle your request." as paragraph %}
     {% with 'img/errors/error-'|add:m7|add:'.jpg' as image %}

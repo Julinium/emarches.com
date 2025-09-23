@@ -2,11 +2,11 @@
 {% load i18n %}
 {% load static%}
 
-{% block title %} 403 - {% translate 'Forbidden Error' %} {% endblock title %}
+{% block title %} 403 - {% translate 'Forbidden' %} {% endblock title %}
 
 
 {% block content %}
-    {% trans "Forbidden Error" as top_title %}
+    {% trans "Forbidden" as top_title %}
     {% trans "That's not for you !" as subtitle %}
     {% trans "You are not authorized to access this page or resource." as paragraph %}
     {% with 'img/errors/error-'|add:m7|add:'.jpg' as image %}
