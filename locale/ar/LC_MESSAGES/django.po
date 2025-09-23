@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-22 11:07+0000\n"
+"POT-Creation-Date: 2025-09-23 11:20+0000\n"
 "PO-Revision-Date: 2025-01-29 12:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -422,7 +422,7 @@ msgid "You can visit our Website for more information"
 msgstr "يمكنك زيارة موقعنا الإلكتروني لمزيد من المعلومات"
 
 #: base/templates/base/errors/400.html:5 base/templates/base/errors/400.html:9
-msgid "Bad Request Error"
+msgid "Bad Request"
 msgstr "خطأ في الطلب"
 
 #: base/templates/base/errors/400.html:10
@@ -442,7 +442,7 @@ msgid "Read FAQs"
 msgstr "اقرأ الأسئلة الشائعة"
 
 #: base/templates/base/errors/403.html:5 base/templates/base/errors/403.html:9
-msgid "Forbidden Error"
+msgid "Forbidden"
 msgstr "خطأ في الوصول"
 
 #: base/templates/base/errors/403.html:10
@@ -454,7 +454,7 @@ msgid "You are not authorized to access this page or resource."
 msgstr "أنت غير مخول للوصول إلى هذه الصفحة أو المورد."
 
 #: base/templates/base/errors/404.html:5 base/templates/base/errors/404.html:9
-msgid "Not Found Error"
+msgid "Not Found"
 msgstr "خطأ في العثور"
 
 #: base/templates/base/errors/404.html:10
@@ -465,13 +465,9 @@ msgstr "ليس لدينا ذلك !"
 msgid "Our server could not find the requested page or resource."
 msgstr "لم يتمكن خادمنا من العثور على الصفحة أو المورد المطلوب."
 
-#: base/templates/base/errors/500.html:5
+#: base/templates/base/errors/500.html:5 base/templates/base/errors/500.html:9
 msgid "Internal Server Error"
 msgstr "خطأ في الخادم الداخلي"
-
-#: base/templates/base/errors/500.html:9
-msgid "Internal Server Error."
-msgstr "خطأ في الخادم الداخلي."
 
 #: base/templates/base/errors/500.html:10
 msgid "This one is on us !"
@@ -2262,10 +2258,8 @@ msgid "Users, email addresses and sessions details."
 msgstr "تفاصيل المستخدمين وعناوين البريد الإلكتروني والجلسات."
 
 #: crm/templates/crm/supervision.html:27
-#, fuzzy
-#| msgid "Contact"
 msgid "Contacts"
-msgstr "اتصال"
+msgstr "اتصالات"
 
 #: crm/templates/crm/supervision.html:32
 msgid "Contacts and messages sent from the website form"
@@ -2959,7 +2953,9 @@ msgstr "لا يوجد شيء مثالي"
 msgid ""
 "Optionally, you can help us to further improve our services. Here are some "
 "helpful things you could do"
-msgstr "اختياريًا، يمكنك مساعدتنا في تحسين خدماتنا. إليك بعض الأمور المفيدة التي يمكنك القيام بها"
+msgstr ""
+"اختياريًا، يمكنك مساعدتنا في تحسين خدماتنا. إليك بعض الأمور المفيدة التي "
+"يمكنك القيام بها"
 
 #: portal/templates/portal/includes/con-tos.html:60
 msgid "Spreading the word and sharing our links"
@@ -4208,6 +4204,9 @@ msgstr "الحالي"
 #: templates/usersessions/usersession_list.html:60
 msgid "Sign Out Other Sessions"
 msgstr "تسجيل الخروج من الجلسات الأخرى"
+
+msgid "Internal Server Error."
+msgstr "خطأ في الخادم الداخلي."
 
 msgid "Morocco Time"
 msgstr "توقيت المغرب"
