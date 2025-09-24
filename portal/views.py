@@ -208,6 +208,13 @@ def cons_list(request):
 	page_obj = paginator.page(page_number)
 	page_range = list(paginator.get_elided_page_range(number=page_number, on_each_side=1, on_ends=1))
 
+	files_count = 0
+	if page_obj:
+		for con in page_obj:
+			dce_dir = os.path.join(os.path.join(C.MEDIA_ROOT, 'dce'), C.DL_PATH_PREFIX + con.portal_id)
+			if os.path.exists(dce_dir):
+				files_count = len([f for f in os.listdir(dce_dir) if os.path.isfile(os.path.join(dce_dir, f))])
+
 	try: logSerachQuery(request, qd, len(cons))
 	except: pass
 
@@ -220,6 +227,7 @@ def cons_list(request):
 		'procs': procs,
 		'repels': repels,
 		'favs' : favs,
+		'files_count': files_count,
 		'cons_age' : cons_age,
 
 		}
