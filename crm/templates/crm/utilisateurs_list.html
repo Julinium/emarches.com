@@ -82,19 +82,21 @@
                             <img class="img-fluid border rounded-circle mx-1" src="{{ MEDIA_URL }}{% if utilisateur.profile.avatar %}{{ utilisateur.profile.avatar }}{% else %}users/avatars/default.png{% endif %}" alt="X" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
                             <div class="d-flex justify-content-between align-items-start w-100">
                                 <div>
-                                    <div>
-                                        <span><strong>{{ utilisateur.username }}</strong></span>
-                                        <span class="ms-2"><i class="me-1 bi bi-envelope"></i>{{ utilisateur.email }}</span>
+                                    <div class="twolines">
+                                        <span><strong class="text-break me-2">{{ utilisateur.username }}</strong></span>
+                                        {% if utilisateur.username != utilisateur.email %}
+                                            <span class="text-break small text-muted">{{ utilisateur.email }}</span>
+                                        {% endif %}
                                     </div>
-                                    <div class="mt-1">
+                                    <div class="mt-1 twolines">
                                         <span class=""><i class="me-1 bi bi-cake2"></i>{{ utilisateur.date_joined|date }}</span>
                                         <span class="ms-2"><i class="me-1 bi bi-key"></i>{{ utilisateur.last_login }}</span>
                                     </div>
                                 </div>
                                 {% if not utilisateur.verified %}
-                                    <span class="badge text-white bg-danger rounded-pill">Unverified</span>
+                                    <span class="badge ms-1 text-white bg-danger rounded-pill">Unverified</span>
                                 {% else %}
-                                    <span class="badge text-white bg-success rounded-pill">Verified</span>
+                                    <span class="badge ms-1 text-white bg-success rounded-pill">Verified</span>
                                 {% endif %}
                             </div>
                         </div>

@@ -13,10 +13,17 @@
 {% if con %}
     <meta name="description" content="{{ con.objet }}">
     <meta name="keywords" content="{{ con.acheteur_public }} {{ con.lieu_execution }} {{ con.objet }}">
+    <meta property="og:title" content="{{ con.objet }}">
+    <meta property="og:description" content="{{ con.objet }}">
 {% else %}
     <meta name="description" content="{% translate 'eMarches portal. Morocco Public Procurement Market. Access to public Tenders and Puchase orders. Paperless dematerialized procedure' %}">
     <meta name="keywords" content="{% translate 'PMMP Morocco Public Procurement Market Purchase Order Tenders Offers Free Listing Files Download' %}">
+    <meta property="og:title" content="{% translate 'eMarches.com' %}">
+    <meta property="og:description" content="{% translate 'eMarches portal. Morocco Public Procurement Market. Access to public Tenders and Puchase orders. Paperless dematerialized procedure' %}">
 {% endif %}
+    <meta property="og:image" content="https://www.emarches.com/static/img/success.webp">
+    <meta property="og:type" content="website">
+
 
 <meta name="author" content="eMarches.com">
 

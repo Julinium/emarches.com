@@ -114,3 +114,15 @@ window.addEventListener('scroll', () => {
         navbar.classList.add('pt-3', 'pb-4');
     }
 });
+
+// When a btn is clicked, make it lose focus to return to its initial appearance.
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('.btn').forEach(function(btn) {
+    btn.addEventListener('touchend', function() {
+      this.blur();
+    });
+    btn.addEventListener('mouseup', function() {
+      this.blur();
+    });
+  });
+});
