@@ -68,10 +68,12 @@
             <span class="h2">{% translate 'Tender details' %}</span>
         </div>
         {% if con.cancelled %}
-            <div class="my-2">
-                <span id="cancelledStar">
-                    <span class="mb-1 fw-bold fs-2 me-3 text-danger"><img src="{% static 'img/cancelled.svg' %}" class="pb-1 mx-1" alt="{% translate 'Cancelled' %}">{% translate 'Cancelled' %}</span>
-                </span>
+            <div class="badge w-100 my-2 border border-2 border-danger">
+                <div id="cancelledStar" class="text-danger fs-3 p-1 me-2">
+                    <span><i class="bi bi-dash-circle-fill align-middle"></i></span>
+                    <span class="text-uppercase fw-bold mx-1 align-middle">{% translate 'Cancelled' %}</span>
+                    <span><i class="bi bi-dash-circle-fill align-middle"></i></span>
+                </div>
             </div>
         {% endif %}
         
