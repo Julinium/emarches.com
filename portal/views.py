@@ -74,7 +74,7 @@ def cons_list(request):
 	qd = {}
 	ct = mn = mx = o = r = c = l = None #, None, None, None, None, None
 	cons = Consultation.objects.filter(active = True, cancelled = False)
-	cons = cons.filter(date_limite_depot__gte = datetime.now() - timedelta(hours=C.PAST_GRACEFUL_HOURS))
+	# cons = cons.filter(date_limite_depot__gte = datetime.now() - timedelta(hours=C.PAST_GRACEFUL_HOURS))
 	if 'pr' in request.GET and request.GET['pr']:
 		pr = request.GET['pr']
 		if pr != '' : cons = cons.filter(procedure_annonce__id = str(pr))
