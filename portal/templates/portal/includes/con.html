@@ -4,7 +4,7 @@
 
 {% if con %}
 	{% get_current_language as LC %}
-	<div class="my-2 card shadow btn-preload {% now 'YmdHis' as wassa %}{% if con.date_limite_depot|date:'YmdHis' < wassa %}text-decoration-line-through{% endif %}{% if con.cancelled %}text-decoration-line-through text-danger{% endif %}">
+	<div class="my-2 card shadow btn-preload {% now 'YmdHis' as wassa %}{% if con.date_limite_depot|date:'YmdHis' < wassa %}text-danger{% endif %}{% if con.cancelled %}text-decoration-line-through text-danger{% endif %}">
 		<a href="{% url 'portal_con_details' con.id %}" 
 			class="card list-group-item border border-0 d-flex flex-row align-items-center px-0 pt-2 pb-2" 
 			{% if faved %}style="background-color:#D7F4EE; color: inherit; text-decoration: none;"{% else %}style="color: inherit; text-decoration: none;"{% endif %}>
@@ -32,7 +32,7 @@
 
 			<div id="title-details" class="text-start px-2">
 
-				<div class="twolines {% now 'YmdHis' as wassa %}{% if con.date_limite_depot|date:'YmdHis' < wassa %}text-decoration-line-through{% endif %}" data-bs-toggle="tooltip" title="{{ con.objet }}" style="text-align: start;">
+				<div class="twolines {% now 'YmdHis' as wassa %}{% if con.date_limite_depot|date:'YmdHis' < wassa %}text-danger{% endif %}" data-bs-toggle="tooltip" title="{{ con.objet }}" style="text-align: start;">
 					{{ con.objet }}
 				</div>
 
