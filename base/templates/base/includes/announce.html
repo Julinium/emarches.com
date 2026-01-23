@@ -1,0 +1,47 @@
+{% load i18n %}
+
+
+<div class="container">  
+    <div class="bg-success-subtle rounded text-center p-0">
+        <button class="btn w-100 m-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnnounce" aria-expanded="false" aria-controls="collapseAnnounce">
+            <div>
+                <span class="me-1 text-success small fw-light">{% trans "Nouvelle version bientôt" %}:</span>
+                <span class="badge bg-success rounded px-2 py-1 text-light">{% trans "Résultats" %}</span>
+                <span class="badge bg-success rounded px-2 py-1 text-light">{% trans "Concurrents" %}</span>
+                <span class="badge bg-success rounded px-2 py-1 text-light">{% trans "Soumissions" %}</span>
+                <span class="badge bg-success rounded px-2 py-1 text-light">{% trans "Cautions" %}</span>
+                <span class="badge bg-success rounded px-2 py-1 text-light">{% trans "Contracts" %}</span>
+                <span class="badge bg-success rounded px-2 py-1 text-light">{% trans "Dépenses" %}</span>
+                <span class="badge bg-success rounded px-2 py-1 text-light">{% trans "Paiements" %}</span>
+                <span class="badge bg-success rounded px-2 py-1 text-light">{% trans "Bons de commandes" %}</span>
+                <span>...</span>
+            </div>
+        </button>
+    </div>
+    <div class="collapse" id="collapseAnnounce">
+        <div class=" border-0 border-bottom py-2">
+            <div class="small">
+                <p>
+                    <span class="me-1">{% trans "Nous travaillons dur pour améliorer eMarchés" %}.</span>
+                    <span class="me-1">{% trans "Une vraie transformation pour boucler la boucle des marchés publiques" %}:</span>
+                </p>
+                <ul>
+                    <li class="">{% trans "Résultats détaillés des appels d'offres" %}.</li>
+                    <li class="">{% trans "Statistiques avancées et tendances des Concurrents" %}.</li>
+                    <li class="">{% trans "Gestion des Soumissions/réponses aux appels d'offres" %}.</li>
+                    <li class="">{% trans "Gestion et suivi des Cautions temporaires et garanties" %}.</li>
+                    <li class="">{% trans "Gestion des Contracts jusqu'à la récéption définitive" %}.</li>
+                    <li class="">{% trans "Gestion des Dépenses et Paiements (relatifs aux soumissions et aux contrats)" %}.</li>
+                    <li class="">{% trans "Travail en équipe d'utilisateurs avec une multitude des compagnies" %}.</li>
+                    <li class="">{% trans "Recherche améliorée des appels d'offres. Groupement par Client, Catégorie, Domaine, Préfecture" %}.</li>
+                    <li class="">{% trans "Surveillance des appels d'offres pour les changements après publication" %}.</li>
+                    <li class="">{% trans "Intégration des Bons de commandes avec résultats détaillés" %}.</li>
+                    <li class="">{% trans "Enregistrement des comptes et connexion avec Google, Telegram et LinkedIn" %}.</li>
+                    <li class="">{% trans "Et bien plus encore" %}.</li>
+                </ul>
+                <p><span class="">{% trans "La migration des utilisateurs enregistrés sera automatique une fois la nouvelle version lancée" %}.</span></p>
+            </div>
+        </div>
+    </div>  
+</div>
+
