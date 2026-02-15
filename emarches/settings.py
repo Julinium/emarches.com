@@ -14,6 +14,7 @@ load_dotenv(dotenv_path=env_path)
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG_MODE") == "True"
+# DEBUG = True
 
 
 ALLOWED_HOSTS = ['www.emarches.com', 'emarches.com', 'localhost' , '127.0.0.1', ]
@@ -159,9 +160,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = 'base_home'
 LOGOUT_REDIRECT_URL = 'portal_cons_favs'
-ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+# ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_LOGIN_METHODS = {'username', 'email'}
 ACCOUNT_CHANGE_EMAIL = False
-ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'eMarches - '
 ACCOUNT_SIGNUP_FORM_HONEYPOT_FIELD = 'age'
