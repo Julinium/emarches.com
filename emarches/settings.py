@@ -155,15 +155,17 @@ MEDIA_ROOT = os.getenv("MEDIA_ROOT")
 # MEDIA_README_DIR = os.getenv("MEDIA_README_DIR")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 # Django_allauth parameters
+
 LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = 'base_home'
 LOGOUT_REDIRECT_URL = 'portal_cons_favs'
 # ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+
 ACCOUNT_LOGIN_METHODS = {'username', 'email'}
 ACCOUNT_CHANGE_EMAIL = False
-# ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = True
+
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'eMarches - '

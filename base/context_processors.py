@@ -34,11 +34,21 @@ def pillets(request):
     context['m7'] = str(random.randint(1, 7))
     context['transes'] = sorted_transes
 
-    if request.user:
-        if request.user.is_authenticated :
-            profacs = ProfileFavCon.objects.filter(user=request.user).values("consultation")
-            context['user_favs'] = user_favs = Consultation.objects.filter(portal_id__in = profacs)
-            context['new_contactings'] = Contacting.objects.filter(replied = False) if request.user.groups.filter(name='CRM').exists() else None
+    user_favs = None
+    new_contactings = None
+
+    # try:
+    #     if request.user:
+    #         if request.user.is_authenticated :
+    #             profacs = ProfileFavCon.objects.filter(user=request.user).values("consultation")
+    #             user_favs = Consultation.objects.filter(portal_id__in = profacs)
+    #             new_contactings = Contacting.objects.filter(replied = False) if request.user.groups.filter(name='CRM').exists() else None
+    # except:
+    #     pass
+
+    context['user_favs'] = user_favs
+    context['new_contactings'] = new_contactings
+
 
     return context
 
